@@ -20,7 +20,7 @@ import cucumber.api.java.en.When;
 public class JobApply_ToNaukri {
 
 	public WebDriver driver;
-	String oldTab;
+	String oldTab; //while job apply
 	
 	@Given("^user successfully login to portal and user is on Home page$")
 	public void user_successfully_login_to_portal_and_user_is_on_Home_page() throws InterruptedException
