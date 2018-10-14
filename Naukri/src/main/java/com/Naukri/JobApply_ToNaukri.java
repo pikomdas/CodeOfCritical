@@ -1,8 +1,8 @@
 package com.Naukri;
 
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Set;
+import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -19,9 +19,8 @@ import cucumber.api.java.en.When;
 
 public class JobApply_ToNaukri {
 
-	public WebDriver driver;
-	String oldTab; //while job apply
-	
+	static WebDriver driver;
+	static WebDriverWait w1;
 	@Given("^user successfully login to portal and user is on Home page$")
 	public void user_successfully_login_to_portal_and_user_is_on_Home_page() throws InterruptedException
 	{
@@ -29,7 +28,7 @@ public class JobApply_ToNaukri {
 		driver = new ChromeDriver();
 		driver.get("https://www.naukri.com");
 		driver.manage().window().maximize();
-		System.out.println("Naukri.com launched from mandate()");
+		System.out.println("Naukri.com launched");
 		String originalHandle = driver.getWindowHandle();
 		// Close all popup tabs **URGENT*****
 		for (String handle : driver.getWindowHandles()) {
@@ -48,33 +47,12 @@ public class JobApply_ToNaukri {
 			Thread.sleep(4000);
 		}
 
-		// User throw ID and PASSWORD and CLICK on LOGIN button
-		List<WebElement> usr = new ArrayList<WebElement>();
-		usr.add(driver.findElement(By.id("eLogin")));
-		usr.add(driver.findElement(By.id("eLoginNew")));
-		usr.add(driver.findElement(By.id("usernameField")));
-		try {
-			for (int i = 0; i <= usr.size(); i++) {
-				try {
-				if (usr.get(i).isDisplayed()) {
-					usr.get(i).sendKeys("pikom.das@gmail.com");
-				}
-			}catch (Exception e) {e.getMessage();}
-			}
-		} catch (Exception e) {
-			e.getMessage();
-		}
+		// User throws ID and PASSWORD and CLICKs on LOGIN button
+	
+		driver.findElement(By.name("email")).sendKeys("pikom.das@gmail.com");
+		driver.findElement(By.name("PASSWORD")).sendKeys("9038583164");
 		
-		        
-        
-		WebElement[] pass = {driver.findElement(By.id("passwordField")),driver.findElement(By.id("pLogin"))};
-		for(WebElement e: pass) {
-		if (e.isDisplayed() == true) {
-			System.out.println("password FIELD IS PRESENT " + pass);
-			e.sendKeys("9038583164");
-		}}
-
-		WebElement btn = driver.findElement(By.xpath("//button[contains(text(),'Login')]"));
+        WebElement btn = driver.findElement(By.xpath("//button[contains(text(),'Login')]"));
 		if (btn.isDisplayed() == true) {
 			System.out.println("Button IS PRESENT " + btn.getText());
 			btn.click();
@@ -85,10 +63,8 @@ public class JobApply_ToNaukri {
 	@When("^user clicks  on Search Jobs and insert text and click search$")
 	public void user_clicks_on_Search_Job_and_insert_text_and_click_search() throws InterruptedException
 	{
-		
-			Thread.sleep(8000);
-			WebDriverWait wait = new WebDriverWait(driver, 10);
-			WebElement srch1Click = wait.until(
+		w1 = new WebDriverWait(driver, 10);
+			WebElement srch1Click = w1.until(
 					ExpectedConditions.elementToBeClickable(By.xpath("//*[@id='qsb-keyskill-sugg' and @name='qp']")));
 			if (srch1Click.isDisplayed() == true) {
 				System.out.println("textbox1 IS PRESENT " + srch1Click.getText());
@@ -101,6 +77,8 @@ public class JobApply_ToNaukri {
 					WebElement srch2Click = driver.findElement(By.xpath("//*[@id='search-jobs']/button"));
 					if (srch2Click.isDisplayed() == true) {
 						System.out.println("button2 IS PRESENT " + srch2Click.getText());
+						//Location set
+						//Click on Search button to search JOB
 						srch2Click.click();
 						System.out.println("button2 IS Clicked " + srch2Click.getText());
 					}
@@ -112,61 +90,82 @@ public class JobApply_ToNaukri {
 	@Then("^search results are displayed$")
 	public void search_results_are_displayed()
 	{
-		System.out.println(driver.getTitle());
+		System.out.println("Search resuts are displayed on "+driver.getTitle()+ " page");
 	}
-	@Then("^user clicks on a job link and navigates to jobs description page$")
+	
+	@Then("^user clicks on a job link and navigates to jobs description page and navigate back to sarch page$")
 	public void user_clicks_on_a_job_link_and_navigates_to_jobs_description_page() throws InterruptedException
 	{
+		Thread.sleep(4000);
 		By mySelector = By.className("desig");
 		List<WebElement> myElements = driver.findElements(mySelector);
 		for (WebElement e : myElements) {
-			WebDriverWait wait2 = new WebDriverWait(driver, 10);
-			wait2.until(ExpectedConditions.elementToBeClickable(e));
+			w1 = new WebDriverWait(driver, 10);
+			w1.until(ExpectedConditions.elementToBeClickable(e));
 			System.out.println(e.getText() + " >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>job link in displayed");
-			oldTab = driver.getWindowHandle();
+			String oldTab = driver.getWindowHandle();
 			e.click(); // CLicked on Job Link
-			user_clicks_on_Apply_button_and_navigates_back_to_search_result_page();
-		} // End of FOR LOOP
-	
-    }
-	
-	@And("^user clicks on Apply button and navigates back to search result page$")
-	public void user_clicks_on_Apply_button_and_navigates_back_to_search_result_page() throws InterruptedException
-	{
-		Set<String> handles = driver.getWindowHandles();
-		for (String handle : handles) {
+			Set<String> handles = driver.getWindowHandles();
+			for (String handle : handles) {
 
-			if (!handle.equals(oldTab)) {
-				driver.switchTo().window(handle);
-				Thread.sleep(4000);
-				clickonJobApplyButton();
-				Thread.sleep(4000);
+				if (!handle.equals(oldTab)) {
+					driver.switchTo().window(handle);
+					driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
+					clickonJobApplyButton();
+					Thread.sleep(4000);
+				}
 			}
-		}
-		driver.switchTo().window(oldTab);
-		System.out.println("Navigated back to>>>>>>>>>>>>>>>>>>>>>>>>>>> : " + oldTab.toUpperCase());
+			driver.switchTo().window(oldTab);
+			System.out.println("Navigated back to>>>>>>>>>>>>>>>>>>>>>>>>>>> : " + oldTab.toUpperCase());
+		} // End of FOR LOOP
+
 	}
 	
-	public void	clickonJobApplyButton() {			
+	public void clickonJobApplyButton() {
+
+		System.out.println("Navigated to Job page Name: " + driver.getTitle());
+
+		//Job Name, output as String
+		String Jobname= driver.findElement(By.cssSelector(".cTitle.f16.lh30")).getText();
+		//Company name 
+		String companyName=driver.findElement(By.id("jdCpName")).getText();
+		//Location of Job
+		String jobLocation=driver.findElement(By.xpath("/html/body/div[2]/div[2]/div[2]/div[1]/div[1]/div/div[2]/div/a")).getText();
+		//salary f Job
+		String salary=driver.findElement(By.xpath("/html/body/div[2]/div[2]/div[2]/div[2]/div[2]/p[1]/span/span")).getText();
+		//Role of Job
+		String jobRole=driver.findElement(By.xpath("/html/body/div[2]/div[2]/div[2]/div[2]/div[2]/p[5]/span")).getText();
+		/*
+		 * EMAIL and PHONE NUMBER IF FOUND
+		 * AFTER CLICKING on View Contact Details LINK
+		 */
+		WebElement ContactDetails=driver.findElement(By.linkText("View Contact Details"));
+		ContactDetails.click();
+		String email= driver.findElement(By.xpath("//*[@id=\"viewContact\"]/p[2]/span/img")).getText();
+		String recruiterName=driver.findElement(By.xpath("//*[@id=\"viewContact\"]/p[1]/span")).getText();
 		
-		System.out.println("New WebPage Name is : " + driver.getTitle());
-
-		driver.findElement(By.cssSelector("ul.listing.mt10.wb")).getText();
-		WebDriverWait wait1 = new WebDriverWait(driver, 10);
-		By buttonSelector = By.cssSelector("[id*='trig1']");
-		WebElement jobApply = wait1.until(ExpectedConditions.visibilityOfElementLocated(buttonSelector));
-
-		if (jobApply.isDisplayed() == true) {
-			System.out.println("Blue Color Apply button is dispayed : " + jobApply.getText());
-			Actions action = new Actions(driver);
-			action.moveToElement(jobApply).click().perform();
-			String appluButton = jobApply.getText();
-			System.out.println(appluButton);
-			// Finally Apply on Quickly Review and update your Profile
-			driver.findElement(By.id("qupSubmit")).click();
-			driver.close();
-		} else {
-			driver.close(); // Closing the tab where apply not possible
+		System.out.println("Jobname "+Jobname+" from Company "+companyName+" on Location "+jobLocation+" Offering Salary"
+				+salary+ " for Role of the "+jobRole+ " and email of HR "+recruiterName+ is +email);
+		try {
+			//driver.findElement(By.cssSelector("ul.listing.mt10.wb")).getText();
+			w1 = new WebDriverWait(driver, 10);
+			By buttonSelector = By.cssSelector("[id*='trig1']");
+			WebElement jobApply = w1.until(ExpectedConditions.visibilityOfElementLocated(buttonSelector));
+			if (jobApply.isDisplayed() == true) {
+				System.out.println("Blue Color Apply button is dispayed : " + jobApply.getText());
+				Actions action = new Actions(driver);
+				action.moveToElement(jobApply).click().perform();
+				String appluButton = jobApply.getText();
+				System.out.println(appluButton);
+				// Finally Apply on Quickly Review and update your Profile
+				driver.findElement(By.id("qupSubmit")).click();
+				driver.close();
+			} else {
+				System.out.println("Job Apply blue colored button not found");
+				driver.close(); // Closing the tab where apply not possible
+			} 
+		} catch (Exception e) {
+			e.getMessage();
 		}
 	}
 

@@ -25,6 +25,7 @@ public class browser {
 			String exePath = "/opt/selenium/Chrome_Linux/chromedriver";
 			System.setProperty("webdriver.chrome.driver", exePath);
 			driver = new ChromeDriver();
+			//BrowserConfig.selectBrowserToExecute("chrome");
 			driver.get(getMyProperty.readmyFile("url"));
 			
 			Log.info("URL is Presented");
