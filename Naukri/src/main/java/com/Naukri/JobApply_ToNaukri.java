@@ -10,6 +10,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import cucumber.api.java.en.And;
@@ -67,13 +68,21 @@ public class JobApply_ToNaukri {
 			WebElement srch1Click = w1.until(
 					ExpectedConditions.elementToBeClickable(By.xpath("//*[@id='qsb-keyskill-sugg' and @name='qp']")));
 			if (srch1Click.isDisplayed() == true) {
-				System.out.println("textbox1 IS PRESENT " + srch1Click.getText());
+				System.out.println("textbox1 IS PRESENT " + srch1Click.getAttribute("innerHtml"));
 				srch1Click.click();
 
-				WebElement jobSrchTxt = driver.findElement(By.name("qp"));
+				WebElement jobName = driver.findElement(By.name("qp"));
+				WebElement jobLocation=driver.findElement(By.name("ql"));
+				WebElement experience=driver.findElement(By.id("expDroope-experienceFor"));
+				WebElement Salary=driver.findElement(By.id("salaryDroope-salaryFor"));
 				if (srch1Click.isDisplayed() == true) {
-					System.out.println("textbox2 IS PRESENT " + jobSrchTxt.getText());
-					jobSrchTxt.sendKeys("Selenium");
+					System.out.println("textbox2 IS PRESENT " + jobName.getAttribute("innerHtml"));
+					jobName.sendKeys("Selenium");
+					jobLocation.sendKeys("Pune");
+					experience.click();
+					driver.findElement(By.xpath("//*[@id=\"ul_expDroope-experience\"]/ul/li[6]/a")).click();
+					Salary.click();
+					driver.findElement(By.xpath("//*[@id=\"ul_salaryDroope-salary\"]/ul/li[8]/a")).click();
 					WebElement srch2Click = driver.findElement(By.xpath("//*[@id='search-jobs']/button"));
 					if (srch2Click.isDisplayed() == true) {
 						System.out.println("button2 IS PRESENT " + srch2Click.getText());
@@ -125,27 +134,33 @@ public class JobApply_ToNaukri {
 
 		System.out.println("Navigated to Job page Name: " + driver.getTitle());
 
-		//Job Name, output as String
-		String Jobname= driver.findElement(By.cssSelector(".cTitle.f16.lh30")).getText();
-		//Company name 
-		String companyName=driver.findElement(By.id("jdCpName")).getText();
-		//Location of Job
-		String jobLocation=driver.findElement(By.xpath("/html/body/div[2]/div[2]/div[2]/div[1]/div[1]/div/div[2]/div/a")).getText();
-		//salary f Job
-		String salary=driver.findElement(By.xpath("/html/body/div[2]/div[2]/div[2]/div[2]/div[2]/p[1]/span/span")).getText();
-		//Role of Job
-		String jobRole=driver.findElement(By.xpath("/html/body/div[2]/div[2]/div[2]/div[2]/div[2]/p[5]/span")).getText();
-		/*
-		 * EMAIL and PHONE NUMBER IF FOUND
-		 * AFTER CLICKING on View Contact Details LINK
-		 */
-		WebElement ContactDetails=driver.findElement(By.linkText("View Contact Details"));
-		ContactDetails.click();
-		String email= driver.findElement(By.xpath("//*[@id=\"viewContact\"]/p[2]/span/img")).getText();
-		String recruiterName=driver.findElement(By.xpath("//*[@id=\"viewContact\"]/p[1]/span")).getText();
-		
-		System.out.println("Jobname "+Jobname+" from Company "+companyName+" on Location "+jobLocation+" Offering Salary"
-				+salary+ " for Role of the "+jobRole+ " and email of HR "+recruiterName+ is +email);
+		try {
+			//Job Name, output as String
+			String Jobname= driver.findElement(By.xpath("/html/body/div[2]/div[2]/div[2]/div[1]/div[1]/div/h1/text()")).getText();
+			//Company name 
+			String companyName=driver.findElement(By.id("jdCpName")).getText();
+			//Location of Job
+			String jobLocation=driver.findElement(By.xpath("/html/body/div[2]/div[2]/div[2]/div[1]/div[1]/div/div[2]/div/a")).getText();
+			//salary f Job
+			String salary=driver.findElement(By.xpath("/html/body/div[2]/div[2]/div[2]/div[2]/div[2]/p[1]/span/span")).getText();
+			//Role of Job
+			String jobRole=driver.findElement(By.xpath("/html/body/div[2]/div[2]/div[2]/div[2]/div[2]/p[5]/span")).getText();
+			/*
+			 * EMAIL and PHONE NUMBER IF FOUND
+			 * AFTER CLICKING on View Contact Details LINK
+			 */
+			WebElement ContactDetails=driver.findElement(By.linkText("View Contact Details"));
+			ContactDetails.click();
+			String email= driver.findElement(By.xpath("//*[@id=\"viewContact\"]/p[2]/span/img")).getText();
+			String recruiterName=driver.findElement(By.xpath("//*[@id=\"viewContact\"]/p[1]/span")).getText();
+			
+			System.out.println("Jobname "+Jobname+" from Company "+companyName+" on Location "+jobLocation+
+					" Offering Salary" +salary+ " for Role of the "+jobRole+ " and email of HR "
+					+recruiterName+ " is " +email);
+		} catch (Exception e1) {
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
+		}
 		try {
 			//driver.findElement(By.cssSelector("ul.listing.mt10.wb")).getText();
 			w1 = new WebDriverWait(driver, 10);

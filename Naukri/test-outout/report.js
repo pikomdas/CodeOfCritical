@@ -1,4 +1,4 @@
-$(document).ready(function() {var formatter = new CucumberHTML.DOMFormatter($('.cucumber-report'));formatter.uri("/home/amit/eclipse-workspace/Naukri/src/main/java/featureFiles/ApplyJob.feature");
+$(document).ready(function() {var formatter = new CucumberHTML.DOMFormatter($('.cucumber-report'));formatter.uri("/home/amit/git/CodeOfCritical/Naukri/src/main/java/featureFiles/ApplyJob.feature");
 formatter.feature({
   "line": 1,
   "name": "user is applying job on www.naukri.com",
@@ -31,41 +31,30 @@ formatter.step({
 });
 formatter.step({
   "line": 8,
-  "name": "user clicks on a job link and navigates to jobs description page",
+  "name": "user clicks on a job link and navigates to jobs description page and navigate back to sarch page",
   "keyword": "Then "
-});
-formatter.step({
-  "line": 9,
-  "name": "user clicks on Apply button and navigates back to search result page",
-  "keyword": "And "
 });
 formatter.match({
   "location": "JobApply_ToNaukri.user_successfully_login_to_portal_and_user_is_on_Home_page()"
 });
 formatter.result({
-  "duration": 29938384807,
+  "duration": 46066324433,
   "status": "passed"
 });
 formatter.match({
   "location": "JobApply_ToNaukri.user_clicks_on_Search_Job_and_insert_text_and_click_search()"
 });
 formatter.result({
-  "duration": 1074746084,
+  "duration": 2263329234,
   "status": "passed"
 });
 formatter.match({
   "location": "JobApply_ToNaukri.search_results_are_displayed()"
 });
 formatter.result({
-  "duration": 28231307,
+  "duration": 12369267,
   "status": "passed"
 });
-formatter.match({});
-formatter.result({
-  "status": "undefined"
-});
-formatter.match({});
-formatter.result({
-  "status": "undefined"
-});
+formatter.match({
+  "location": "JobApply_ToNaukri.user_clicks_on_a_job_link_and_navigates_to_jobs_description_page()"
 });
