@@ -1,4 +1,4 @@
-package com.Naukri;
+package com.Naukri.stepDefinations;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;

@@ -1,4 +1,4 @@
-package com.Naukri;
+package com.Naukri.stepDefinations;
 
 import java.util.List;
 import java.util.Set;
@@ -22,8 +22,8 @@ public class JobApply_ToNaukri {
 
 	static WebDriver driver;
 	static WebDriverWait w1;
-	@Given("^user successfully login to portal and user is on Home page$")
-	public void user_successfully_login_to_portal_and_user_is_on_Home_page() throws InterruptedException
+	@Given("^user successfully login to portal with \"([^\"]*)\" and \"([^\"]*)\" and user is on Home page$") // \"(.*)\"
+	public void user_successfully_login_to_portal_and_user_is_on_Home_page(String username, String password) throws InterruptedException
 	{
 		System.setProperty("webdriver.chrome.driver", "/opt/selenium/Chrome_Linux/chromedriver");
 		driver = new ChromeDriver();
@@ -31,7 +31,7 @@ public class JobApply_ToNaukri {
 		driver.manage().window().maximize();
 		System.out.println("Naukri.com launched");
 		String originalHandle = driver.getWindowHandle();
-		// Close all popup tabs **URGENT*****
+		// Closing all popUp windows while LogIn
 		for (String handle : driver.getWindowHandles()) {
 			if (!handle.equals(originalHandle)) {
 				driver.switchTo().window(handle);
@@ -50,8 +50,8 @@ public class JobApply_ToNaukri {
 
 		// User throws ID and PASSWORD and CLICKs on LOGIN button
 	
-		driver.findElement(By.name("email")).sendKeys("pikom.das@gmail.com");
-		driver.findElement(By.name("PASSWORD")).sendKeys("9038583164");
+		driver.findElement(By.name("email")).sendKeys(username);
+		driver.findElement(By.name("PASSWORD")).sendKeys(password);
 		
         WebElement btn = driver.findElement(By.xpath("//button[contains(text(),'Login')]"));
 		if (btn.isDisplayed() == true) {
@@ -77,9 +77,9 @@ public class JobApply_ToNaukri {
 				WebElement Salary=driver.findElement(By.id("salaryDroope-salaryFor"));
 				if (srch1Click.isDisplayed() == true) {
 					System.out.println("textbox2 IS PRESENT " + jobName.getAttribute("innerHtml"));
-					jobName.sendKeys("Selenium");
-					jobLocation.sendKeys("Pune");
-					experience.click();
+					jobName.sendKeys("Selenium"); //Sent Job skill
+					jobLocation.sendKeys("Pune"); //Sent Job Location
+					experience.click(); 
 					driver.findElement(By.xpath("//*[@id=\"ul_expDroope-experience\"]/ul/li[6]/a")).click();
 					Salary.click();
 					driver.findElement(By.xpath("//*[@id=\"ul_salaryDroope-salary\"]/ul/li[8]/a")).click();
@@ -112,20 +112,20 @@ public class JobApply_ToNaukri {
 			w1 = new WebDriverWait(driver, 10);
 			w1.until(ExpectedConditions.elementToBeClickable(e));
 			System.out.println(e.getText() + " >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>job link in displayed");
-			String oldTab = driver.getWindowHandle();
+			String JobSearchResultTab = driver.getWindowHandle();
 			e.click(); // CLicked on Job Link
-			Set<String> handles = driver.getWindowHandles();
-			for (String handle : handles) {
+			Set<String> handlesOfAllJobpage = driver.getWindowHandles();
+			for (String handleOfOnepage : handlesOfAllJobpage) {
 
-				if (!handle.equals(oldTab)) {
-					driver.switchTo().window(handle);
+				if (!handleOfOnepage.equals(JobSearchResultTab)) {
+					driver.switchTo().window(handleOfOnepage);
 					driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
 					clickonJobApplyButton();
 					Thread.sleep(4000);
 				}
 			}
-			driver.switchTo().window(oldTab);
-			System.out.println("Navigated back to>>>>>>>>>>>>>>>>>>>>>>>>>>> : " + oldTab.toUpperCase());
+			driver.switchTo().window(JobSearchResultTab);
+			System.out.println("Navigated back to>>>>>>>>>>>>>>>>>>>>>>>>>>> : " + JobSearchResultTab.toUpperCase());
 		} // End of FOR LOOP
 
 	}
@@ -134,33 +134,6 @@ public class JobApply_ToNaukri {
 
 		System.out.println("Navigated to Job page Name: " + driver.getTitle());
 
-		try {
-			//Job Name, output as String
-			String Jobname= driver.findElement(By.xpath("/html/body/div[2]/div[2]/div[2]/div[1]/div[1]/div/h1/text()")).getText();
-			//Company name 
-			String companyName=driver.findElement(By.id("jdCpName")).getText();
-			//Location of Job
-			String jobLocation=driver.findElement(By.xpath("/html/body/div[2]/div[2]/div[2]/div[1]/div[1]/div/div[2]/div/a")).getText();
-			//salary f Job
-			String salary=driver.findElement(By.xpath("/html/body/div[2]/div[2]/div[2]/div[2]/div[2]/p[1]/span/span")).getText();
-			//Role of Job
-			String jobRole=driver.findElement(By.xpath("/html/body/div[2]/div[2]/div[2]/div[2]/div[2]/p[5]/span")).getText();
-			/*
-			 * EMAIL and PHONE NUMBER IF FOUND
-			 * AFTER CLICKING on View Contact Details LINK
-			 */
-			WebElement ContactDetails=driver.findElement(By.linkText("View Contact Details"));
-			ContactDetails.click();
-			String email= driver.findElement(By.xpath("//*[@id=\"viewContact\"]/p[2]/span/img")).getText();
-			String recruiterName=driver.findElement(By.xpath("//*[@id=\"viewContact\"]/p[1]/span")).getText();
-			
-			System.out.println("Jobname "+Jobname+" from Company "+companyName+" on Location "+jobLocation+
-					" Offering Salary" +salary+ " for Role of the "+jobRole+ " and email of HR "
-					+recruiterName+ " is " +email);
-		} catch (Exception e1) {
-			// TODO Auto-generated catch block
-			e1.printStackTrace();
-		}
 		try {
 			//driver.findElement(By.cssSelector("ul.listing.mt10.wb")).getText();
 			w1 = new WebDriverWait(driver, 10);
