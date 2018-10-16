@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<testsuite failures="1" name="cucumber.runtime.formatter.JUnitFormatter" skipped="0" tests="1" time="9.718736">
+<testcase classname="user is applying job on www.naukri.com" name=": Verify that user is able to search  job and appy job" time="9.718736">
+<failure message="java.lang.NullPointerException&#10;&#9;at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:69)&#10;&#9;at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)&#10;&#9;at com.sun.proxy.$Proxy16.isDisplayed(Unknown Source)&#10;&#9;at org.openqa.selenium.support.ui.ExpectedConditions.elementIfVisible(ExpectedConditions.java:315)&#10;&#9;at org.openqa.selenium.support.ui.ExpectedConditions.access$100(ExpectedConditions.java:44)&#10;&#9;at org.openqa.selenium.support.ui.ExpectedConditions$10.apply(ExpectedConditions.java:301)&#10;&#9;at org.openqa.selenium.support.ui.ExpectedConditions$10.apply(ExpectedConditions.java:298)&#10;&#9;at org.openqa.selenium.support.ui.ExpectedConditions$23.apply(ExpectedConditions.java:686)&#10;&#9;at org.openqa.selenium.support.ui.ExpectedConditions$23.apply(ExpectedConditions.java:682)&#10;&#9;at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:260)&#10;&#9;at com.Naukri.PageObjectClasses.LandingPage.loginToNaukri(LandingPage.java:65)&#10;&#9;at com.Naukri.stepDefinations.JobApply_ToNaukri.user_successfully_login_to_portal_and_user_is_on_Home_page(JobApply_ToNaukri.java:32)&#10;&#9;at ✽.Given user successfully login to portal with &quot;pikom.das@gmail.com&quot; and &quot;9038583164&quot; and user is on Home page(/home/amit/git/CodeOfCritical/Naukri/src/main/java/com/Naukri/featureFiles/ApplyJob.feature:5)&#10;"><![CDATA[Given user successfully login to portal with "pikom.das@gmail.com" and "9038583164" and user is on Home page.failed
+When user clicks  on Search Jobs and insert text and click search...........skipped
+Then search results are displayed...........................................skipped
+Then user clicks on a job link and navigates to jobs description page and navigate back to sarch page.skipped
+
+StackTrace:
+java.lang.NullPointerException
+	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:69)
+	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
+	at com.sun.proxy.$Proxy16.isDisplayed(Unknown Source)
+	at org.openqa.selenium.support.ui.ExpectedConditions.elementIfVisible(ExpectedConditions.java:315)
+	at org.openqa.selenium.support.ui.ExpectedConditions.access$100(ExpectedConditions.java:44)
+	at org.openqa.selenium.support.ui.ExpectedConditions$10.apply(ExpectedConditions.java:301)
+	at org.openqa.selenium.support.ui.ExpectedConditions$10.apply(ExpectedConditions.java:298)
+	at org.openqa.selenium.support.ui.ExpectedConditions$23.apply(ExpectedConditions.java:686)
+	at org.openqa.selenium.support.ui.ExpectedConditions$23.apply(ExpectedConditions.java:682)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:260)
+	at com.Naukri.PageObjectClasses.LandingPage.loginToNaukri(LandingPage.java:65)
+	at com.Naukri.stepDefinations.JobApply_ToNaukri.user_successfully_login_to_portal_and_user_is_on_Home_page(JobApply_ToNaukri.java:32)
+	at ✽.Given user successfully login to portal with "pikom.das@gmail.com" and "9038583164" and user is on Home page(/home/amit/git/CodeOfCritical/Naukri/src/main/java/com/Naukri/featureFiles/ApplyJob.feature:5)
+]]></failure>
+</testcase>
+</testsuite>

@@ -13,6 +13,8 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import com.Naukri.PageObjectClasses.LandingPage;
+
 import cucumber.api.java.en.And;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
@@ -25,39 +27,9 @@ public class JobApply_ToNaukri {
 	@Given("^user successfully login to portal with \"([^\"]*)\" and \"([^\"]*)\" and user is on Home page$") // \"(.*)\"
 	public void user_successfully_login_to_portal_and_user_is_on_Home_page(String username, String password) throws InterruptedException
 	{
-		System.setProperty("webdriver.chrome.driver", "/opt/selenium/Chrome_Linux/chromedriver");
-		driver = new ChromeDriver();
-		driver.get("https://www.naukri.com");
-		driver.manage().window().maximize();
-		System.out.println("Naukri.com launched");
-		String originalHandle = driver.getWindowHandle();
-		// Closing all popUp windows while LogIn
-		for (String handle : driver.getWindowHandles()) {
-			if (!handle.equals(originalHandle)) {
-				driver.switchTo().window(handle);
-				driver.close();
-			}
-		}
-		driver.switchTo().window(originalHandle);
-		// Click on LOGIN on Landing page
-		WebElement lgin = driver.findElement(By.xpath("/html/body/div[2]/div/ul/li[6]/a/div"));
-		if (lgin.isDisplayed() == true) {
-			String login = lgin.getText();
-			System.out.println("LOGIN FIELD IS PRESENT " + login);
-			lgin.click();
-			Thread.sleep(4000);
-		}
-
-		// User throws ID and PASSWORD and CLICKs on LOGIN button
-	
-		driver.findElement(By.name("email")).sendKeys(username);
-		driver.findElement(By.name("PASSWORD")).sendKeys(password);
 		
-        WebElement btn = driver.findElement(By.xpath("//button[contains(text(),'Login')]"));
-		if (btn.isDisplayed() == true) {
-			System.out.println("Button IS PRESENT " + btn.getText());
-			btn.click();
-		}
+		LandingPage lp=new LandingPage(driver);
+		lp.loginToNaukri(username, password);
 		} 
 	
 	

@@ -13,7 +13,7 @@ import cucumber.api.junit.Cucumber;
 
 	@RunWith(Cucumber.class)
 	@CucumberOptions(
-			features = "/home/amit/git/CodeOfCritical/Naukri/src/main/java/featureFiles/ApplyJob.feature", //the path of the feature files
+			features = "/home/amit/git/CodeOfCritical/Naukri/src/main/java/com/Naukri/featureFiles/ApplyJob.feature", //the path of the feature files
 			glue={"com.Naukri"}, //the path of the step definition files
 			plugin= {"pretty","html:test-outout", "json:json_output/cucumber.json", "junit:junit_xml/cucumber.xml","com.cucumber.listener.ExtentCucumberFormatter:target/cucumber-reports/report.html"}, //to generate different types of reporting
 			monochrome = true, //display the console output in a proper readable format
@@ -27,7 +27,7 @@ import cucumber.api.junit.Cucumber;
 		@AfterClass
 		public static void writeExtentReport() {
 			//Reporter.loadXMLConfig(new File(FileReaderManager.getInstance().getConfigReader().getReportConfigPath()));
-			Reporter.loadXMLConfig(new File("/home/amit/git/CodeOfCritical/Naukri/src/main/java/utility/configFiles/extent-config.xml"));
+			Reporter.loadXMLConfig(new File("/home/amit/git/CodeOfCritical/Naukri/src/main/java/com/Naukri/utility/configFiles/extent-config.xml"));
 			Reporter.setSystemInfo("User Name", System.getProperty("user.name"));
 		    Reporter.setSystemInfo("Time Zone", System.getProperty("user.timezone"));
 		    Reporter.setSystemInfo("Machine", 	"Windows 10" + "64 Bit");

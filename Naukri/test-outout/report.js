@@ -1,4 +1,4 @@
-$(document).ready(function() {var formatter = new CucumberHTML.DOMFormatter($('.cucumber-report'));formatter.uri("/home/amit/git/CodeOfCritical/Naukri/src/main/java/featureFiles/ApplyJob.feature");
+$(document).ready(function() {var formatter = new CucumberHTML.DOMFormatter($('.cucumber-report'));formatter.uri("/home/amit/git/CodeOfCritical/Naukri/src/main/java/com/Naukri/featureFiles/ApplyJob.feature");
 formatter.feature({
   "line": 1,
   "name": "user is applying job on www.naukri.com",
@@ -105,23 +105,26 @@ formatter.match({
   "location": "JobApply_ToNaukri.user_successfully_login_to_portal_and_user_is_on_Home_page(String,String)"
 });
 formatter.result({
-  "duration": 28115991561,
-  "status": "passed"
+  "duration": 9718735511,
+  "error_message": "java.lang.NullPointerException\n\tat org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:69)\n\tat org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)\n\tat com.sun.proxy.$Proxy16.isDisplayed(Unknown Source)\n\tat org.openqa.selenium.support.ui.ExpectedConditions.elementIfVisible(ExpectedConditions.java:315)\n\tat org.openqa.selenium.support.ui.ExpectedConditions.access$100(ExpectedConditions.java:44)\n\tat org.openqa.selenium.support.ui.ExpectedConditions$10.apply(ExpectedConditions.java:301)\n\tat org.openqa.selenium.support.ui.ExpectedConditions$10.apply(ExpectedConditions.java:298)\n\tat org.openqa.selenium.support.ui.ExpectedConditions$23.apply(ExpectedConditions.java:686)\n\tat org.openqa.selenium.support.ui.ExpectedConditions$23.apply(ExpectedConditions.java:682)\n\tat org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:260)\n\tat com.Naukri.PageObjectClasses.LandingPage.loginToNaukri(LandingPage.java:65)\n\tat com.Naukri.stepDefinations.JobApply_ToNaukri.user_successfully_login_to_portal_and_user_is_on_Home_page(JobApply_ToNaukri.java:32)\n\tat ✽.Given user successfully login to portal with \"pikom.das@gmail.com\" and \"9038583164\" and user is on Home page(/home/amit/git/CodeOfCritical/Naukri/src/main/java/com/Naukri/featureFiles/ApplyJob.feature:5)\n",
+  "status": "failed"
 });
 formatter.match({
   "location": "JobApply_ToNaukri.user_clicks_on_Search_Job_and_insert_text_and_click_search()"
 });
 formatter.result({
-  "duration": 2335857230,
-  "status": "passed"
+  "status": "skipped"
 });
 formatter.match({
   "location": "JobApply_ToNaukri.search_results_are_displayed()"
 });
 formatter.result({
-  "duration": 14094628,
-  "status": "passed"
+  "status": "skipped"
 });
 formatter.match({
   "location": "JobApply_ToNaukri.user_clicks_on_a_job_link_and_navigates_to_jobs_description_page()"
+});
+formatter.result({
+  "status": "skipped"
+});
 });
