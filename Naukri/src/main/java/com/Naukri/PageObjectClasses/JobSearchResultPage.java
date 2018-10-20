@@ -15,7 +15,7 @@ import com.naukri.BrowserBase.browser;
 public class JobSearchResultPage extends browser {
 
 	public JobSearchResultPage(WebDriver driver) {
-		this.driver = driver;
+		browser.driver = driver;
 		PageFactory.initElements(driver, this);
 	}
 
@@ -64,32 +64,39 @@ public class JobSearchResultPage extends browser {
 
 	public void appyjob1by1() throws Throwable {
 		Thread.sleep(4000);
-		JobDetailsToApplyPage jdta=new JobDetailsToApplyPage(driver);
-		
-		for (WebElement e : getJobName()) {
+		JobDetailsToApplyPage jdta = new JobDetailsToApplyPage(driver);
+
+		for (WebElement e : getJobName()) 
+		{
 			System.out.println("Job Name ================================> " + e.getText());
-			for (WebElement f : getOrganisation()) {
+			for (WebElement f : getOrganisation()) 
+			{
 				System.out.print("Organisation Name ================================> " + f.getText());
-				for (WebElement g : getSalaryRange()) {
+				for (WebElement g : getSalaryRange()) 
+				{
 					System.out.println("Salary offere ranged: " + g.getText());
 					String JobSearchResultTab = driver.getWindowHandle();
 					e.click();
 					Set<String> handlesOfAllJobpage = driver.getWindowHandles();
-					for (String handleOfOnepage : handlesOfAllJobpage) {
-
+					 for (String handleOfOnepage : handlesOfAllJobpage) 
+					 {
 						if (!handleOfOnepage.equals(JobSearchResultTab)) {
 							driver.switchTo().window(handleOfOnepage);
 							driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
 							jdta.appyTheJob();
 							Thread.sleep(4000);
 						}
-					}
+					 }
 					driver.switchTo().window(JobSearchResultTab);
 					System.out.println(
 							"Navigated back to >>>>>>>>>>>>>>>>>>>>>>>>>>> : " + JobSearchResultTab.toUpperCase());
+					break;
 				}
+				break;
 			}
+
 		}
+
 	}
 
 }// End of class

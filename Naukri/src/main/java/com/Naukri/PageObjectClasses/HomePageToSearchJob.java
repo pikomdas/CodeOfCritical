@@ -11,7 +11,8 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import com.naukri.BrowserBase.browser;
 
 public class HomePageToSearchJob extends browser {
- WebDriverWait w1= new WebDriverWait(driver,10);
+	WebDriverWait w1 = new WebDriverWait(driver, 10);
+
 	public HomePageToSearchJob(WebDriver driver) {
 		browser.driver = driver;
 		PageFactory.initElements(driver, this);
@@ -173,6 +174,7 @@ public class HomePageToSearchJob extends browser {
 		System.out.println("Clicked on JobSearch button");
 
 	}
+
 //get Profile details
 	public void profileDetails() {
 		System.out.println("Profile name: " + getProfilename().getText());
@@ -181,9 +183,9 @@ public class HomePageToSearchJob extends browser {
 		System.out.println("Pending notification count: " + getPendingActions().getText());
 		System.out.println("Profile views count: " + getProfileViews().getText());
 		System.out.println("Profile Notification count: " + getNotificationCount().getText());
-		System.out.println("Job Application status count: "+getApplicationStatusCount().getText());
-		System.out.println("Job recommendation count: "+getJobRecommendationCount().getText());
-		System.out.println("Message from recruiter count: "+getRecruiterMessageCount());
+		System.out.println("Job Application status count: " + getApplicationStatusCount().getText());
+		System.out.println("Job recommendation count: " + getJobRecommendationCount().getText());
+		System.out.println("Message from recruiter count: " + getRecruiterMessageCount());
 		System.out.println("Completed Profile details");
 	}
 }// End of class

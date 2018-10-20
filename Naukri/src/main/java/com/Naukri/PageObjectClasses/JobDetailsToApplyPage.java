@@ -15,7 +15,7 @@ public class JobDetailsToApplyPage extends browser {
 	WebDriverWait w2 = new WebDriverWait(driver, 10);
 
 	public JobDetailsToApplyPage(WebDriver driver) {
-		this.driver = driver;
+		browser.driver = driver;
 		PageFactory.initElements(driver, this);
 	}
 
@@ -55,8 +55,11 @@ public class JobDetailsToApplyPage extends browser {
 				action.moveToElement(getJobApplyButton()).click().perform();
 				System.out.println(getJobApplyButton().getText());
 				// Finally Apply on Quickly Review and update your Profile
-				getUpdateProfileButton().click();
-				driver.close();
+				if (getUpdateProfileButton().isDisplayed()) {
+					System.out.print("update carieer pop-up displayed");
+					getUpdateProfileButton().click();
+					driver.close();
+				}
 			} else {
 				System.out.println("Job Apply blue colored button not found");
 				driver.close(); // Closing the tab where apply not possible
