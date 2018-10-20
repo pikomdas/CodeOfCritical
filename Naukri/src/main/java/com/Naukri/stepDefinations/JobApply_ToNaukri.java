@@ -1,34 +1,37 @@
 package com.Naukri.stepDefinations;
 
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.support.ui.WebDriverWait;
-
 import com.Naukri.PageObjectClasses.HomePageToSearchJob;
 import com.Naukri.PageObjectClasses.JobSearchResultPage;
 import com.Naukri.PageObjectClasses.LandingPage;
+import com.naukri.BrowserBase.browser;
 
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
 
-public class JobApply_ToNaukri {
-
-	static WebDriver driver;
-	static WebDriverWait w1;
+public class JobApply_ToNaukri extends browser{
 
 	@Given("^user successfully login to portal with \"([^\"]*)\" and \"([^\"]*)\" and user is on Home page$") // \"(.*)\"
-	public void user_successfully_login_to_portal_and_user_is_on_Home_page(String username, String password)
-			throws InterruptedException {
+	public void user_successfully_login_to_portal_and_user_is_on_Home_page(String username, String password){
 
+		browser br=new browser();
+		br.selectBrowser();
 		LandingPage lp = new LandingPage(driver);
-		lp.loginToNaukri(username, password);
+		lp.clickOnTopsideLoginButton();
+		try {
+			lp.loginToNaukri(username, password);
+		} catch (Throwable e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
 	}
 
-	@When("^user clicks  on Search Jobs and insert text and click search$")
+	@When("^user clicks on Search Jobs and insert text and click search$")
 	public void user_clicks_on_Search_Job_and_insert_text_and_click_search() throws InterruptedException {
 		HomePageToSearchJob hptsj = new HomePageToSearchJob(driver);
-		hptsj.searchJob("Selenium", "Pune");
 		hptsj.profileDetails();
+		hptsj.searchJob("Selenium", "Pune");
 	}
 
 	@Then("^search results are displayed$")

@@ -64,7 +64,7 @@ public class JobSearchResultPage extends browser {
 
 	public void appyjob1by1() throws Throwable {
 		Thread.sleep(4000);
-		JobDetailsToApplyPage jdta=new JobDetailsToApplyPage(driver)
+		JobDetailsToApplyPage jdta=new JobDetailsToApplyPage(driver);
 		
 		for (WebElement e : getJobName()) {
 			System.out.println("Job Name ================================> " + e.getText());

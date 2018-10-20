@@ -10,13 +10,13 @@ import com.Naukri.enums.DriverType;
 import com.Naukri.enums.EnvironmentType;
 
 public class ConfigFileReader {	
-	private static Properties properties;
+	private Properties properties;
 	private final String propertyFilePath= "/home/amit/git/CodeOfCritical/Naukri/src/main/java/com/Naukri/utility/configFiles/masterConfig.properties";
 
 	public ConfigFileReader(){
 		BufferedReader reader;
 		try {
-			reader = new BufferedReader(new FileReader("/home/amit/git/CodeOfCritical/Naukri/src/main/java/com/Naukri/utility/configFiles/masterConfig.properties"));
+			reader = new BufferedReader(new FileReader(propertyFilePath));
 			properties = new Properties();
 			try {
 				properties.load(reader);
@@ -30,13 +30,13 @@ public class ConfigFileReader {
 		}		
 	}
 
-	public static String getDriverPath(){
+	public String getDriverPath(){
 		String driverPath = properties.getProperty("driverPath");
 		if(driverPath!= null) return driverPath;
 		else throw new RuntimeException("Driver Path not specified in the Configuration.properties file for the Key:driverPath");		
 	}
 
-	public static long getImplicitlyWait() {		
+	public long getImplicitlyWait() {		
 		String implicitlyWait = properties.getProperty("implicitlyWait");
 		if(implicitlyWait != null) {
 			try{
@@ -48,13 +48,13 @@ public class ConfigFileReader {
 		return 10;		// changed from 30
 	}
 
-	public static String getApplicationUrl() {
+	public String getApplicationUrl() {
 		String url = properties.getProperty("url");
 		if(url != null) return url;
 		else throw new RuntimeException("Application Url not specified in the Configuration.properties file for the Key:url");
 	}
 
-	public static DriverType getBrowser() {
+	public DriverType getBrowser() {
 		String browserName = properties.getProperty("browser");
 		if(browserName == null || browserName.equals("chrome")) return DriverType.CHROME;
 		else if(browserName.equalsIgnoreCase("firefox")) return DriverType.FIREFOX;
@@ -62,14 +62,14 @@ public class ConfigFileReader {
 		else throw new RuntimeException("Browser Name Key value in Configuration.properties is not matched : " + browserName);
 	}
 
-	public static EnvironmentType getEnvironment() {
+	public EnvironmentType getEnvironment() {
 		String environmentName = properties.getProperty("environment");
 		if(environmentName == null || environmentName.equalsIgnoreCase("local")) return EnvironmentType.LOCAL;
 		else if(environmentName.equals("remote")) return EnvironmentType.REMOTE;
 		else throw new RuntimeException("Environment Type Key value in Configuration.properties is not matched : " + environmentName);
 	}
 
-	public static Boolean getBrowserWindowSize() {
+	public Boolean getBrowserWindowSize() {
 		String windowSize = properties.getProperty("windowMaximize");
 		if(windowSize != null) return Boolean.valueOf(windowSize);
 		return true;

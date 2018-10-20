@@ -1,72 +1,81 @@
 package com.Naukri.PageObjectClasses;
 
+import org.openqa.selenium.ElementNotVisibleException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
 
+import com.Naukri.FileReaderManager.Log;
 import com.naukri.BrowserBase.browser;
 
-public class LandingPage extends browser{
+public class LandingPage extends browser {
 
-	WebDriverWait w1=new WebDriverWait(driver,10);
-public LandingPage( WebDriver driver) {
-	this.driver = driver;
-	PageFactory.initElements(driver, this);
-}
+	public LandingPage(final WebDriver driver) {
+		browser.driver = driver;
+		PageFactory.initElements(driver, this);
+	}
 
-@FindBy(xpath="//*[@id=\"login_Layer\"]/div")
-WebElement LoginButtonOnTopSide;
+	@FindBy(xpath = "//*[@id='login_Layer']/div") // xpath "/html/body/div[2]/div/ul/li[6]/a/div"
+	WebElement LoginButtonOnTopSide;
+    @FindBy(name = "email")
+	WebElement UserName;
+    @FindBy(name = "PASSWORD")
+	WebElement Password;
+    @FindBy(xpath = "//*[@id=\'lgnFrmNew\']/div[9]/button")
+	WebElement loginButton;
 
-@FindBy(name="email")
-WebElement UserName;
+	public WebElement getLoginButton() {
+		return loginButton;
+	}
 
-@FindBy(name="PASSWORD")
-WebElement Password;
+	public void setLoginButton(final WebElement loginButton) {
+		this.loginButton = loginButton;
+	}
 
-@FindBy(xpath="")
-WebElement loginButton;
+	public WebElement getLoginButtonOnTopSide() {
+		return LoginButtonOnTopSide;
+	}
 
-public WebElement getLoginButton() {
-	return loginButton;
-}
+	public void setLoginButtonOnTopSide(final WebElement loginButtonOnTopSide) {
+		this.LoginButtonOnTopSide = loginButtonOnTopSide;
+	}
 
-public void setLoginButton(WebElement loginButton) {
-	this.loginButton = loginButton;
-}
+	public WebElement getUserName() {
+		return UserName;
+	}
 
-public WebElement getLoginButtonOnTopSide() {
-	return LoginButtonOnTopSide;
-}
+	public void setUserName(final WebElement userName) {
+		this.UserName = userName;
+	}
 
-public void setLoginButtonOnTopSide(WebElement loginButtonOnTopSide) {
-	LoginButtonOnTopSide = loginButtonOnTopSide;
-}
+	public WebElement getPassword() {
+		return Password;
+	}
 
-public WebElement getUserName() {
-	return UserName;
-}
+	public void setPassword(final WebElement password) {
+		this.Password = password;
+	}
 
-public void setUserName(WebElement userName) {
-	UserName = userName;
-}
+	// Click on top side login Button
+	public void clickOnTopsideLoginButton() {
+		 Log.info("Page name is: " +driver.getTitle());
+//		 WebDriverWait w1 = new WebDriverWait(driver, 10);
+//		 w1.until(ExpectedConditions.visibilityOf(getLoginButtonOnTopSide()));
+//       driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
+		if (getLoginButtonOnTopSide().isDisplayed() == true) {
+			System.out.println("TOP SIDE LOGIN button is Present");
+			getLoginButtonOnTopSide().click();
+		} else {
+			throw new ElementNotVisibleException("Top Side LogIn button is not available");
+		}
+	}
 
-public WebElement getPassword() {
-	return Password;
-}
+	// Method to login
+	public void loginToNaukri(final String username, final String Password) throws Throwable {
+		getUserName().sendKeys(username);
+		getPassword().sendKeys(Password);
+		getLoginButton().click();
+	}
 
-public void setPassword(WebElement password) {
-	Password = password;
-}
- //Method to login
-public void loginToNaukri(String username,String Password) {
-	w1.until(ExpectedConditions.elementToBeClickable(getLoginButtonOnTopSide()));
-	getLoginButtonOnTopSide().click();
-	getUserName().sendKeys(username);
-	getPassword().sendKeys(Password);
-	getLoginButton().click();
-}
-
-}//End of Class
+}// End of Class

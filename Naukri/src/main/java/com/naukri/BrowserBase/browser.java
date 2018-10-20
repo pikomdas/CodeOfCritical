@@ -1,20 +1,26 @@
 package com.naukri.BrowserBase;
 
+import org.apache.log4j.BasicConfigurator;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 
 import com.Naukri.FileReaderManager.ConfigFileReader;
+import com.Naukri.FileReaderManager.Log;
+
+
 
 public class browser {
 
-	protected WebDriver driver=null;
-
-	protected browser() {
-		System.setProperty("webdriver.chrome.driver", ConfigFileReader.getDriverPath());
+    public static WebDriver driver;
+	ConfigFileReader cfr=new ConfigFileReader();
+	
+	public void selectBrowser() {
+		System.setProperty("webdriver.chrome.driver", cfr.getDriverPath());
 		driver = new ChromeDriver();
-		driver.get(ConfigFileReader.getApplicationUrl());
+		driver.get(cfr.getApplicationUrl());
 		driver.manage().window().maximize();
-		System.out.println("Naukri.com launched");
+		BasicConfigurator.configure();
+		Log.info("Naukri.com launched");
 		
 		String originalHandle = driver.getWindowHandle();
 		// Closing all popUp windows while LogIn

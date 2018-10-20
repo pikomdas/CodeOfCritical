@@ -13,7 +13,7 @@ import com.naukri.BrowserBase.browser;
 public class HomePageToSearchJob extends browser {
  WebDriverWait w1= new WebDriverWait(driver,10);
 	public HomePageToSearchJob(WebDriver driver) {
-		this.driver = driver;
+		browser.driver = driver;
 		PageFactory.initElements(driver, this);
 	}
 
@@ -30,7 +30,7 @@ public class HomePageToSearchJob extends browser {
 	@FindBy(xpath = "//*[@id='search-jobs']/button")
 	WebElement JobSearchButton;
 
-	@FindBy(css = "//*[@id=\'root\']/div/div/span/div/div/div[2]/div[1]/div[2]/div[1]/div/a[1]/div[2]/div[1]")
+	@FindBy(css = ".user-name.roboto-bold-text")
 	WebElement profilename;
 	@FindBy(xpath = "//*[@id=\'root\']/div/div/span/div/div/div[2]/div[1]/div[2]/div[1]/div/div[2]/a[1]/span[1]")
 	WebElement profileViews;

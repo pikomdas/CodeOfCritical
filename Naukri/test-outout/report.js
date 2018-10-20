@@ -21,7 +21,7 @@ formatter.step({
 });
 formatter.step({
   "line": 6,
-  "name": "user clicks  on Search Jobs and insert text and click search",
+  "name": "user clicks on Search Jobs and insert text and click search",
   "keyword": "When "
 });
 formatter.step({
@@ -78,7 +78,7 @@ formatter.step({
 });
 formatter.step({
   "line": 6,
-  "name": "user clicks  on Search Jobs and insert text and click search",
+  "name": "user clicks on Search Jobs and insert text and click search",
   "keyword": "When "
 });
 formatter.step({
@@ -105,26 +105,23 @@ formatter.match({
   "location": "JobApply_ToNaukri.user_successfully_login_to_portal_and_user_is_on_Home_page(String,String)"
 });
 formatter.result({
-  "duration": 185268844,
-  "error_message": "java.lang.NullPointerException\n\tat com.Naukri.FileReaderManager.ConfigFileReader.getDriverPath(ConfigFileReader.java:34)\n\tat com.naukri.BrowserBase.browser.\u003cinit\u003e(browser.java:13)\n\tat com.Naukri.PageObjectClasses.LandingPage.\u003cinit\u003e(LandingPage.java:15)\n\tat com.Naukri.stepDefinations.JobApply_ToNaukri.user_successfully_login_to_portal_and_user_is_on_Home_page(JobApply_ToNaukri.java:31)\n\tat ✽.Given user successfully login to portal with \"pikom.das@gmail.com\" and \"9038583164\" and user is on Home page(/home/amit/git/CodeOfCritical/Naukri/src/main/java/com/Naukri/featureFiles/ApplyJob.feature:5)\n",
-  "status": "failed"
+  "duration": 46383017500,
+  "status": "passed"
 });
 formatter.match({
   "location": "JobApply_ToNaukri.user_clicks_on_Search_Job_and_insert_text_and_click_search()"
 });
 formatter.result({
-  "status": "skipped"
+  "duration": 2866483863,
+  "status": "passed"
 });
 formatter.match({
   "location": "JobApply_ToNaukri.search_results_are_displayed()"
 });
 formatter.result({
-  "status": "skipped"
+  "duration": 15822399,
+  "status": "passed"
 });
 formatter.match({
   "location": "JobApply_ToNaukri.user_clicks_on_a_job_link_and_navigates_to_jobs_description_page()"
-});
-formatter.result({
-  "status": "skipped"
-});
 });
