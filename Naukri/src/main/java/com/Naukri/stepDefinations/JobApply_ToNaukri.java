@@ -31,7 +31,7 @@ public class JobApply_ToNaukri extends browser{
 	public void user_clicks_on_Search_Job_and_insert_text_and_click_search() throws InterruptedException {
 		HomePageToSearchJob hptsj = new HomePageToSearchJob(driver);
 		hptsj.profileDetails();
-		hptsj.searchJob("Selenium", "Kolkata");
+		hptsj.searchJob("Selenium", "Pune");
 	}
 
 	@Then("^search results are displayed$")
