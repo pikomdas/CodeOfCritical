@@ -21,4 +21,4 @@ public class Largest_Number
         }
     
 
-}//endof class
+}//end of class

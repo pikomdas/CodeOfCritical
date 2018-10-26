@@ -30,7 +30,7 @@ public class searchJobApplyPage extends browser {
 	@FindBy(xpath= "//button[starts-with(@class,'jobs-candidate-initiate-referral__referral-button button-tertiary-large full-width')]")
 	WebElement askForAReferral;
 	@FindAll({
-		@FindBy(css = "h3[class='.job-card-search__title.lt-line-clamplt-line-clamp--multi-line.ember-view']")})
+		@FindBy(css = "div[class='.job-card-search__title-line']")})
 	List<WebElement> jobName;
 	@FindAll({
 		@FindBy(xpath = "//h3[@class,'job-card-search__company-name']")})
@@ -116,17 +116,23 @@ public class searchJobApplyPage extends browser {
 
 		for (WebElement e : getJobName()) {
 
-			w.until(ExpectedConditions.visibilityOf(e));
+			//w.until(ExpectedConditions.elementToBeClickable(e));
 			System.out.println(e.getText().toString());
 			e.click();
 			Log.info("Clicked on Job --- Location on Page :     " + e.getLocation());
+			int jobApplyNumber =0;
 			for (WebElement f : getCmpanyName()) {
-			    w.until(ExpectedConditions.visibilityOf(f));
+			   // w.until(ExpectedConditions.visibilityOf(f));
 				System.out.println(f.getText());
 				Log.info("Company name is : " + f.getText());
-				clickonEasyApply();
-				int jobApplyNumber =1;
-				Log.info("Completed One Job Apply." + jobApplyNumber++);
+				try {
+					clickonEasyApply();
+				} catch (Exception e1) {
+					// TODO Auto-generated catch block
+					e1.printStackTrace();
+				}
+				jobApplyNumber =jobApplyNumber + 1;
+				Log.info("Completed One Job Apply." + jobApplyNumber);
 			}
 		}
      }

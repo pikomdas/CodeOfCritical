@@ -146,7 +146,7 @@ public class feedPage extends browser{
 
 	public void clickOnJobButton() {
 		getJobSearchButtonOnFeedpage().click();
-		Log.info("Clicked on JobButton");
+		Log.info("Clicked on JobButton on Feed Page");
 		System.out.println("Current page name is : " +driver.getTitle());
 		
 	}

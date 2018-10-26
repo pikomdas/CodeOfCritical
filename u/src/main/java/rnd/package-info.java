@@ -1,8 +1,0 @@
-/**
- * 
- */
-/**
- * @author Critical
- *
- */
-package rnd;

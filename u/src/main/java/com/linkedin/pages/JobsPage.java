@@ -9,6 +9,7 @@ import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import Browser.browser;
+import commomUtil.Log;
 import commomUtil.getMyProperty;
 
 public class JobsPage extends browser {
@@ -84,5 +85,6 @@ public class JobsPage extends browser {
 		            getLocation().clear();
 		            getLocation().sendKeys(getMyProperty.readmyFile("location1"));
 		            getJobSearchButtonOnJobpage().click();
+		            Log.info("Clicked on JOB SEARCH BUTTON");
 	}
 }
