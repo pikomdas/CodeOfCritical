@@ -1,6 +1,6 @@
 package com.naukri.BrowserBase;
 
-import org.apache.log4j.BasicConfigurator;
+import org.apache.log4j.xml.DOMConfigurator;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 
@@ -19,7 +19,7 @@ public class browser {
 		driver = new ChromeDriver();
 		driver.get(cfr.getApplicationUrl());
 		driver.manage().window().maximize();
-		BasicConfigurator.configure();
+		DOMConfigurator.configure("log4j.xml");
 		Log.info("Naukri.com launched");
 		
 		String originalHandle = driver.getWindowHandle();

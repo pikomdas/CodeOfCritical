@@ -1,5 +1,6 @@
  package com.Naukri.FileReaderManager;
 
+import org.apache.log4j.BasicConfigurator;
 import org.apache.log4j.Logger;
 
  public class Log {
@@ -49,7 +50,7 @@ import org.apache.log4j.Logger;
 		}
 
  public static void warn(String message) {
-
+	 BasicConfigurator.configure();
     Log.warn(message);
 
 	}

@@ -1,5 +1,6 @@
 package com.Naukri.PageObjectClasses;
 
+import org.openqa.selenium.ElementNotVisibleException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
@@ -8,6 +9,7 @@ import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import com.Naukri.FileReaderManager.Log;
 import com.naukri.BrowserBase.browser;
 
 public class JobDetailsToApplyPage extends browser {
@@ -44,27 +46,31 @@ public class JobDetailsToApplyPage extends browser {
 		System.out.println("Navigated to Job page Name: " + driver.getTitle());
 
 		try {
-			// driver.findElement(By.cssSelector("ul.listing.mt10.wb")).getText();
-			// By buttonSelector = By.cssSelector("[id*='trig1']");
-			// WebElement jobApply =
-			// w1.until(ExpectedConditions.visibilityOfElementLocated(buttonSelector));
 			w2.until(ExpectedConditions.elementToBeClickable(getJobApplyButton()));
-			if (getJobApplyButton().isDisplayed() == true) {
+			if (getJobApplyButton().isDisplayed()) 
+			{
 				System.out.println("Blue Color Apply button is dispayed : " + getJobApplyButton().getText());
 				Actions action = new Actions(driver);
 				action.moveToElement(getJobApplyButton()).click().perform();
-				System.out.println(getJobApplyButton().getText());
+				Log.info("Apply button clicked on postion : " + getJobApplyButton().getLocation().getX()
+						+ getJobApplyButton().getLocation().getY());
+
 				// Finally Apply on Quickly Review and update your Profile
 				if (getUpdateProfileButton().isDisplayed()) {
 					System.out.print("update carieer pop-up displayed");
 					getUpdateProfileButton().click();
-					driver.close();
 				}
+				driver.close();
+				Thread.sleep(2000);
 			} else {
 				System.out.println("Job Apply blue colored button not found");
 				driver.close(); // Closing the tab where apply not possible
+				Thread.sleep(2000);
 			}
-		} catch (Exception e) {
+		} catch (ElementNotVisibleException e) {
+			e.getMessage();
+		}
+		catch (Exception e) {
 			e.getMessage();
 		}
 	}
