@@ -6,21 +6,17 @@ import java.io.IOException;
 import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
-import org.openqa.selenium.WebDriver;
-import org.testng.ITestContext;
 import org.testng.ITestResult;
+
+import com.linkedin.interfaces.screenShotInterface;
 
 import Browser.browser;
 
 
 
-public class screenshotCapture extends browser implements interfaceAsaService {
+public class screenshotCapture extends browser implements screenShotInterface {
 
-//	public MyScreenshot(final WebDriver driver) {
-//		// TODO Auto-generated constructor stub
-	//	WebDriver driver;
-//		
-//	}
+	
     public void takeScreenShotofCurrentpage() throws IOException {
 		//final File src=((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
 		try {
@@ -37,5 +33,71 @@ public class screenshotCapture extends browser implements interfaceAsaService {
 		
 	}
 
+	public void startTestCase(String sTestCaseName) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	public void endTestCase(String sTestCaseName) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	public void info(String message) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	public void warn(String message) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	public void error(String message) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	public void fatal(String message) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	public void debug(String message) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	public void onTestStart(ITestResult result) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	public void onTestSuccess(ITestResult result) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	public void onTestFailure(ITestResult result) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	public void onTestSkipped(ITestResult result) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	public void onStart(ITestResult result) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	public void onFinish(ITestResult result) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	
 	
 }

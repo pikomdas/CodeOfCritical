@@ -8,12 +8,15 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import com.linkedin.interfaces.interfaceAsaService;
+
 import Browser.browser;
 import commomUtil.Log;
 import commomUtil.getMyProperty;
 
 public class JobsPage extends browser {
 
+	interfaceAsaService Log = new Log();
 	public JobsPage(final WebDriver driver) {
 		browser.driver = driver;
 		PageFactory.initElements(driver, this);

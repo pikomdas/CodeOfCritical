@@ -1,45 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="0" ignored="0" total="8" passed="8">
+<testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="139" started-at="2018-11-01T06:15:57Z" finished-at="2018-11-01T06:15:57Z">
+  <suite name="Default suite" duration-ms="34994" started-at="2018-11-03T12:34:08Z" finished-at="2018-11-03T12:34:43Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="139" started-at="2018-11-01T06:15:57Z" finished-at="2018-11-01T06:15:57Z">
-      <class name="rnd.starProgram">
-        <test-method status="PASS" signature="program1()[pri:1, instance:rnd.starProgram@589838eb]" name="program1" duration-ms="21" started-at="2018-11-01T06:15:57Z" finished-at="2018-11-01T06:15:57Z">
+    <test name="Default test" duration-ms="34994" started-at="2018-11-03T12:34:08Z" finished-at="2018-11-03T12:34:43Z">
+      <class name="LINKEDIN.linkedin_DDT">
+        <test-method status="PASS" signature="openBrowserToLogin()[pri:0, instance:LINKEDIN.linkedin_DDT@2038ae61]" name="openBrowserToLogin" is-config="true" duration-ms="9328" started-at="2018-11-03T12:34:08Z" finished-at="2018-11-03T12:34:17Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- program1 -->
-        <test-method status="PASS" signature="program2()[pri:2, instance:rnd.starProgram@589838eb]" name="program2" duration-ms="5" started-at="2018-11-01T06:15:57Z" finished-at="2018-11-01T06:15:57Z">
+        </test-method> <!-- openBrowserToLogin -->
+        <test-method status="PASS" signature="executin()[pri:0, instance:LINKEDIN.linkedin_DDT@2038ae61]" name="executin" duration-ms="25083" started-at="2018-11-03T12:34:17Z" finished-at="2018-11-03T12:34:42Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- program2 -->
-        <test-method status="PASS" signature="numberPyramid()[pri:3, instance:rnd.starProgram@589838eb]" name="numberPyramid" duration-ms="3" started-at="2018-11-01T06:15:57Z" finished-at="2018-11-01T06:15:57Z">
+        </test-method> <!-- executin -->
+        <test-method status="PASS" signature="aaahhhh()[pri:0, instance:LINKEDIN.linkedin_DDT@2038ae61]" name="aaahhhh" is-config="true" duration-ms="441" started-at="2018-11-03T12:34:42Z" finished-at="2018-11-03T12:34:43Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- numberPyramid -->
-        <test-method status="PASS" signature="program3()[pri:4, instance:rnd.starProgram@589838eb]" name="program3" duration-ms="3" started-at="2018-11-01T06:15:57Z" finished-at="2018-11-01T06:15:57Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- program3 -->
-        <test-method status="PASS" signature="program4()[pri:5, instance:rnd.starProgram@589838eb]" name="program4" duration-ms="4" started-at="2018-11-01T06:15:57Z" finished-at="2018-11-01T06:15:57Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- program4 -->
-        <test-method status="PASS" signature="diamondProgram()[pri:6, instance:rnd.starProgram@589838eb]" name="diamondProgram" duration-ms="4" started-at="2018-11-01T06:15:57Z" finished-at="2018-11-01T06:15:57Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- diamondProgram -->
-        <test-method status="PASS" signature="diamondNumber()[pri:7, instance:rnd.starProgram@589838eb]" name="diamondNumber" duration-ms="4" started-at="2018-11-01T06:15:57Z" finished-at="2018-11-01T06:15:57Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- diamondNumber -->
-        <test-method status="PASS" signature="RevNumberPyramid1()[pri:8, instance:rnd.starProgram@589838eb]" name="RevNumberPyramid1" duration-ms="3" started-at="2018-11-01T06:15:57Z" finished-at="2018-11-01T06:15:57Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- RevNumberPyramid1 -->
-      </class> <!-- rnd.starProgram -->
+        </test-method> <!-- aaahhhh -->
+      </class> <!-- LINKEDIN.linkedin_DDT -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

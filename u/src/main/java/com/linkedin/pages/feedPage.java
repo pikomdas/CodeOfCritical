@@ -7,13 +7,15 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
+import com.linkedin.interfaces.interfaceAsaService;
+
 import Browser.browser;
 import commomUtil.Log;
 
 //Test passed
 
 public class feedPage extends browser{
-	
+	interfaceAsaService Log = new Log();
 	public feedPage(final WebDriver driver) {
 		browser.driver = driver;
 		PageFactory.initElements(driver, this);

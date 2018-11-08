@@ -5,6 +5,8 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
+import com.linkedin.interfaces.interfaceAsaService;
+
 import Browser.browser;
 import commomUtil.Log;
 
@@ -12,8 +14,7 @@ import commomUtil.Log;
 
 public class loginToLinkedin extends browser {
 
-	// public static final org.apache.log4j.Logger log =
-	// org.apache.log4j.Logger.getLogger("LoginModel");
+	interfaceAsaService Log = new Log();
 
 	@FindBy(xpath = "//input[@id='login-email']")
 	WebElement loginEmailId;

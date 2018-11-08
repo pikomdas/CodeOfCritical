@@ -2,10 +2,12 @@ package LINKEDIN;
 
 import java.io.IOException;
 import org.apache.log4j.BasicConfigurator;
+import org.testng.ITestResult;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
+import com.linkedin.interfaces.interfaceAsaService;
 import com.linkedin.pages.JobsPage;
 import com.linkedin.pages.feedPage;
 import com.linkedin.pages.loginToLinkedin;
@@ -13,8 +15,8 @@ import com.linkedin.pages.searchJobApplyPage;
 
 import Browser.browser;
 import commomUtil.Log;
+import commomUtil.MyReport;
 import commomUtil.getMyProperty;
-import commomUtil.interfaceAsaService;
 import commomUtil.screenshotCapture;
 /**
  * www.linkedin.com
@@ -22,8 +24,10 @@ import commomUtil.screenshotCapture;
  */
 public class linkedin_DDT extends browser {
 
-	interfaceAsaService myservice=new screenshotCapture();
-	
+	interfaceAsaService log=new Log();
+	interfaceAsaService screenShot=new screenshotCapture();
+	interfaceAsaService report=new MyReport();
+	ITestResult result = null;
 	
 	public linkedin_DDT() {
 		super();
@@ -32,45 +36,50 @@ public class linkedin_DDT extends browser {
 	@BeforeMethod
 	public void openBrowserToLogin() throws Exception {
 		BasicConfigurator.configure();
-		Log.startTestCase("test");
+		log.startTestCase("test");
 		openBrowserandNavigate();
+		report.onStart(result);
 		}
 
     @Test
 	public void executin() throws Exception,InterruptedException,IOException {
     	
-        Log.info("$$$$$$$$$$$$$$$$$$ EXECUTION IN PROGRESS $$$$$$$$$$$$$$$$$$$$");
+        log.info("$$$$$$$$$$$$$$$$$$ EXECUTION IN PROGRESS $$$$$$$$$$$$$$$$$$$$");
         
         //login to linkedin
         loginToLinkedin login = new loginToLinkedin(driver);
    
         //take screenshot
-        myservice.takeScreenShotofCurrentpage();
+        screenShot.takeScreenShotofCurrentpage();
         
         //throw credential and login
         login.userNamePasswordAndlogin("pikom.das@"+getMyProperty.readmyFile("username"),getMyProperty.readmyFile("password"));
-        Log.info(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>  LOGIN SUCCESSFULL");
+        log.info(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>  LOGIN SUCCESSFULL");
+        
         
         //Click on Job Apply on FEEDS page
         feedPage fp=new feedPage(driver);
         fp.informationAboutMyProfile();
         fp.clickOnJobButton();
-        Log.info(">>>>>>>>>>>>>>>>>>>>> Clicked on JOB link present on Feed page");
-        myservice.takeScreenShotofCurrentpage();
+        log.info(">>>>>>>>>>>>>>>>>>>>> Clicked on JOB link present on Feed page");
+        screenShot.takeScreenShotofCurrentpage();
+        
         
         //jobs pageSearch
         JobsPage jp=new JobsPage(driver);
         jp.jobSearch();
-        Log.info(">>>>>>>>>>>>>>>>>>>>> JOB details Entered and searched");
-        myservice.takeScreenShotofCurrentpage();
+        log.info(">>>>>>>>>>>>>>>>>>>>> JOB details Entered and searched");
+        screenShot.takeScreenShotofCurrentpage();
+        
         
         // Search JOB page , check if the EasyApply button is active or not
         // Return Back to previous page
          
         searchJobApplyPage sjp=new searchJobApplyPage(driver);
-        Log.info(">>>>>>>>>>>>>>>>>>>>>  Applying for jobs");
+        log.info(">>>>>>>>>>>>>>>>>>>>>  Applying for jobs");
         sjp.clickOnJoblink();
-        myservice.takeScreenShotofCurrentpage();
+        screenShot.takeScreenShotofCurrentpage();
+        
       //  sjp.navigateBack(); 
     }
 
@@ -79,7 +88,8 @@ public class linkedin_DDT extends browser {
 	@AfterMethod
 	public void aaahhhh() {
 		//teardown();
-		Log.endTestCase("Test");
+		log.endTestCase("Test");
+		report.onFinish(result);
 	}
 
 }

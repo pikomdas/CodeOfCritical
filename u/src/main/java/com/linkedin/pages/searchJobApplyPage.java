@@ -11,13 +11,15 @@ import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import com.linkedin.interfaces.interfaceAsaService;
+
 import Browser.browser;
 import commomUtil.Log;
 
 public class searchJobApplyPage extends browser {
 
 	WebDriverWait w =new WebDriverWait(driver,5);
-	
+	interfaceAsaService Log = new Log();
 	public searchJobApplyPage(final WebDriver driver) {
 		browser.driver = driver;
 		PageFactory.initElements(driver, this);

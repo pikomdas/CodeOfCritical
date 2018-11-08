@@ -10,7 +10,7 @@ public class jj {
 
 		final Scanner s = new Scanner(System.in);
 		final String w = s.nextLine();
-		final String clean = w.replaceAll("[^a-z]", "");
+		final String clean = w.replaceAll("[a-z]", "");
 		System.out.println(clean);
 		s.close();s.close();
 		getDiamondStructure(clean);
