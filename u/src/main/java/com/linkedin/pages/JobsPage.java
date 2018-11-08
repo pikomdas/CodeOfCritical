@@ -8,11 +8,10 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import com.linkedin.Browser.browser;
+import com.linkedin.commomUtil.Log;
+import com.linkedin.commomUtil.getMyProperty;
 import com.linkedin.interfaces.interfaceAsaService;
-
-import Browser.browser;
-import commomUtil.Log;
-import commomUtil.getMyProperty;
 
 public class JobsPage extends browser {
 

@@ -1,4 +1,4 @@
-package commomUtil;
+package com.linkedin.commomUtil;
 
 import java.io.FileReader;
 import java.io.IOException;

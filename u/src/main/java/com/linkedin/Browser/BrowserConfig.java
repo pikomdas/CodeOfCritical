@@ -1,4 +1,4 @@
-package Browser;
+package com.linkedin.Browser;
 
 import java.util.Scanner;
 

@@ -1,4 +1,4 @@
-package Browser;
+package com.linkedin.Browser;
 
 import java.io.File;
 import java.io.FileInputStream;
@@ -7,11 +7,9 @@ import java.util.Properties;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 
+import com.linkedin.commomUtil.Log;
+import com.linkedin.commomUtil.getMyProperty;
 import com.linkedin.interfaces.interfaceAsaService;
-
-import commomUtil.getMyProperty;
-
-import commomUtil.Log;
 
 public class browser extends BrowserConfig {
 

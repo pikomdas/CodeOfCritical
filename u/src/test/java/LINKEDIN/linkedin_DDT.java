@@ -7,17 +7,16 @@ import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
+import com.linkedin.Browser.browser;
+import com.linkedin.commomUtil.Log;
+import com.linkedin.commomUtil.MyReport;
+import com.linkedin.commomUtil.getMyProperty;
+import com.linkedin.commomUtil.screenshotCapture;
 import com.linkedin.interfaces.interfaceAsaService;
 import com.linkedin.pages.JobsPage;
 import com.linkedin.pages.feedPage;
 import com.linkedin.pages.loginToLinkedin;
 import com.linkedin.pages.searchJobApplyPage;
-
-import Browser.browser;
-import commomUtil.Log;
-import commomUtil.MyReport;
-import commomUtil.getMyProperty;
-import commomUtil.screenshotCapture;
 /**
  * www.linkedin.com
  *

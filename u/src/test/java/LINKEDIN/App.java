@@ -3,13 +3,13 @@ import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
+import com.linkedin.Browser.browser;
+import com.linkedin.commomUtil.getMyProperty;
+import com.linkedin.commomUtil.screenshotCapture;
 import com.linkedin.pages.JobsPage;
 import com.linkedin.pages.feedPage;
 import com.linkedin.pages.loginToLinkedin;
 import com.linkedin.pages.searchJobApplyPage;
-import commomUtil.getMyProperty;
-import commomUtil.screenshotCapture;
-import Browser.browser;
 
 /**
  * www.linkedin.com

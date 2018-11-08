@@ -1,168 +1,189 @@
 package com.linkedin.pages;
 
 import java.util.List;
+import java.util.Set;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindAll;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
-import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import com.linkedin.Browser.browser;
+import com.linkedin.commomUtil.Log;
 import com.linkedin.interfaces.interfaceAsaService;
-
-import Browser.browser;
-import commomUtil.Log;
 
 public class searchJobApplyPage extends browser {
 
-	WebDriverWait w =new WebDriverWait(driver,5);
+	WebDriverWait w = new WebDriverWait(driver, 5);
 	interfaceAsaService Log = new Log();
+
 	public searchJobApplyPage(final WebDriver driver) {
 		browser.driver = driver;
 		PageFactory.initElements(driver, this);
 	}
 
-	@FindBy(xpath= "//button[starts-with(@class,'jobs-apply-form__upload-options-text Sans-15px-black-70%-semibold')]")
+	// Final JOB apply selectors
+	@FindBy(css = ".jobs-apply-form__upload-options-text.t-14.t-black--light.t-bold")
 	WebElement resumeSelect;
-	@FindBy(xpath= "//button[starts-with(@class,'jobs-apply-form__submit-button button-primary-large ')]")
+	@FindBy(css = ".jobs-apply-form__recent-resume.display-flex.align-items-center")
+	WebElement selectAttachedResume;
+	@FindBy(xpath = "//button[starts-with(@class,'jobs-apply-form__submit-button button-primary-large ')]")
 	WebElement submitApplicationButton;
-	@FindBy(xpath= "//button[starts-with(@class,'jobs-candidate-initiate-referral__referral-button button-tertiary-large full-width')]")
+	// Selecting a particular job link and company name etc
+	@FindBy(xpath = "//button[starts-with(@class,'jobs-candidate-initiate-referral__referral-button button-tertiary-large full-width')]")
 	WebElement askForAReferral;
-	@FindAll({
-		@FindBy(css = "div[class='.job-card-search__title-line']")})
+	@FindAll({ @FindBy(css = ".job-card-search__title-line") })
 	List<WebElement> jobName;
-	@FindAll({
-		@FindBy(xpath = "//h3[@class,'job-card-search__company-name']")})
+	@FindAll({ @FindBy(css = ".job-card-search__company-name") })
 	List<WebElement> cmpanyName;
-	
-	@FindBy(xpath= "//button[starts-with(@class,'job-card-search__easy-apply-text')]")
+	// Apply buttons on page
+	@FindBy(css = ".jobs-apply-button--top-card.artdeco-button--3.jobs-apply-button.artdeco-button.ember-view")
 	WebElement easyApplyButton;
-	/**
-	 * @return the easyApplyButton
-	 */
-	public final WebElement getEasyApplyButton() {
-		return easyApplyButton;
+	@FindBy(css = ".jobs-apply-button--top-card.artdeco-button--3.jobs-apply-button.artdeco-button.ember-view")
+	WebElement ApplyButton;
+	@FindBy(css = ".artdeco-inline-feedback__message")
+	WebElement messageWhereApplynotPossible;
+
+	public final WebElement getMessageWhereApplynotPossible() {
+		return messageWhereApplynotPossible;
 	}
-	/**
-	 * @param easyApplyButton the easyApplyButton to set
-	 */
-	public final void setEasyApplyButton(WebElement easyApplyButton) {
-		this.easyApplyButton = easyApplyButton;
+
+	public final void setMessageWhereApplynotPossible(WebElement messageWhereApplynotPossible) {
+		this.messageWhereApplynotPossible = messageWhereApplynotPossible;
 	}
-	/**
-	 * @return the resumeSelect
-	 */
+
+	public final WebElement getSelectAttachedResume() {
+		return selectAttachedResume;
+	}
+
+	public final void setSelectAttachedResume(WebElement selectAttachedResume) {
+		this.selectAttachedResume = selectAttachedResume;
+	}
+
 	public final WebElement getResumeSelect() {
 		return resumeSelect;
 	}
-	/**
-	 * @param resumeSelect the resumeSelect to set
-	 */
-	public final void setResumeSelect(WebElement resumeSelect) {
-		this.resumeSelect = resumeSelect;
-	}
-	/**
-	 * @return the submitApplicationButton
-	 */
+
 	public final WebElement getSubmitApplicationButton() {
 		return submitApplicationButton;
 	}
-	/**
-	 * @param submitApplicationButton the submitApplicationButton to set
-	 */
-	public final void setSubmitApplicationButton(WebElement submitApplicationButton) {
-		this.submitApplicationButton = submitApplicationButton;
-	}
-	/**
-	 * @return the askForAReferral
-	 */
+
 	public final WebElement getAskForAReferral() {
 		return askForAReferral;
 	}
-	/**
-	 * @param askForAReferral the askForAReferral to set
-	 */
-	public final void setAskForAReferral(WebElement askForAReferral) {
-		this.askForAReferral = askForAReferral;
-	}
-	/**
-	 * @return the jobName
-	 */
+
 	public final List<WebElement> getJobName() {
 		return jobName;
 	}
-	/**
-	 * @param jobName the jobName to set
-	 */
-	public final void setJobName(List<WebElement> jobName) {
-		this.jobName = jobName;
-	}
-	/**
-	 * @return the cmpanyName
-	 */
+
 	public final List<WebElement> getCmpanyName() {
 		return cmpanyName;
 	}
-	/**
-	 * @param cmpanyName the cmpanyName to set
-	 */
+
+	public final WebElement getEasyApplyButton() {
+		return easyApplyButton;
+	}
+
+	public final WebElement getApplyButton() {
+		return ApplyButton;
+	}
+
+	public final void setResumeSelect(WebElement resumeSelect) {
+		this.resumeSelect = resumeSelect;
+	}
+
+	public final void setSubmitApplicationButton(WebElement submitApplicationButton) {
+		this.submitApplicationButton = submitApplicationButton;
+	}
+
+	public final void setAskForAReferral(WebElement askForAReferral) {
+		this.askForAReferral = askForAReferral;
+	}
+
+	public final void setJobName(List<WebElement> jobName) {
+		this.jobName = jobName;
+	}
+
 	public final void setCmpanyName(List<WebElement> cmpanyName) {
 		this.cmpanyName = cmpanyName;
 	}
 
-	public void clickOnJoblink() 
-	{
+	public final void setEasyApplyButton(WebElement easyApplyButton) {
+		this.easyApplyButton = easyApplyButton;
+	}
 
+	public final void setApplyButton(WebElement applyButton) {
+		ApplyButton = applyButton;
+	}
+
+	public void clickOnJoblink() {
+		int jobApplyNumber = 0;
 		for (WebElement e : getJobName()) {
-
-			//w.until(ExpectedConditions.elementToBeClickable(e));
-			System.out.println(e.getText().toString());
-			e.click();
-			Log.info("Clicked on Job --- Location on Page :     " + e.getLocation());
-			int jobApplyNumber =0;
 			for (WebElement f : getCmpanyName()) {
-			   // w.until(ExpectedConditions.visibilityOf(f));
-				System.out.println(f.getText());
+				// w.until(ExpectedConditions.elementToBeClickable(e));
+				System.out.println("Company name is: " + e.getText().toString());
+				e.click();
+				Log.info("Clicked on Job --- Location on Page :     " + e.getLocation());
+				// w.until(ExpectedConditions.visibilityOf(f));
+				System.out.println("Job  Title is : " + f.getText().toString());
 				Log.info("Company name is : " + f.getText());
-				try {
-					clickonEasyApply();
-				} catch (Exception e1) {
-					// TODO Auto-generated catch block
-					e1.printStackTrace();
-				}
-				jobApplyNumber =jobApplyNumber + 1;
+				// Click on easy apply
+				clickonEasyApply();
+
+				jobApplyNumber = jobApplyNumber + 1;
 				Log.info("Completed One Job Apply." + jobApplyNumber);
+				break;
 			}
 		}
-     }
-	//Navigate Back
-	public void navigateBack()
-	{
-		
-		String prvPage=driver.getTitle();
-		driver.navigate().back();
-		String curPage=driver.getTitle();
-		System.out.println(prvPage + "is currentpage and navigated back to " +curPage);
-		Log.info(prvPage + "is currentpage and navigated back to " +curPage);
-		
 	}
-	//Click on Easy Apply
+
+	// Navigate Back
+	public void navigateBack() {
+
+		String prvPage = driver.getTitle();
+		driver.navigate().back();
+		String curPage = driver.getTitle();
+		System.out.println(prvPage + "is currentpage and navigated back to " + curPage);
+		Log.info(prvPage + "is currentpage and navigated back to " + curPage);
+
+	}
+
+	// Click on Easy Apply
 	public void clickonEasyApply() {
-		if(getEasyApplyButton().isDisplayed()) {
-			System.out.println("Button is displayed: " + getEasyApplyButton().getText());
-		    getEasyApplyButton().click();
-		    Log.info("clicked on " + getEasyApplyButton().getText() );
+		try {
+			if (getEasyApplyButton().isDisplayed() && !getApplyButton().isDisplayed()) {
+				System.out.println("Button is displayed: " + getEasyApplyButton().getText());
+				getEasyApplyButton().click();
+				Log.info("clicked on " + getEasyApplyButton().getText());
+				submitApplication();
+			} else if (!getEasyApplyButton().isDisplayed() && getApplyButton().isDisplayed()) {
+				String currentWindowHandle = driver.getWindowHandle();
+				getApplyButton().click();
+				Set<String> allWindowHandles = driver.getWindowHandles();
+				for (String window : allWindowHandles) {
+					if (!window.equalsIgnoreCase(currentWindowHandle)) {
+						driver.switchTo().window(currentWindowHandle);
+					}
+				}
+			} else if (!getEasyApplyButton().isDisplayed() && !getApplyButton().isDisplayed()) {
+				String mesage = getMessageWhereApplynotPossible().getText().toString();
+				Log.info(mesage);
+			}
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
 		}
 	}
 
+	// SUbmit Application pop-up
+	public void submitApplication() {
+		getResumeSelect().click();
+		getSelectAttachedResume().click();
+		getSubmitApplicationButton().click();
+	}
 
-
-
-
-
-
-
-} //end of class
+} // end of class

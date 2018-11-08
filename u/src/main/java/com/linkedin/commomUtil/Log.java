@@ -1,4 +1,4 @@
- package commomUtil;
+ package com.linkedin.commomUtil;
 
 import java.io.IOException;
 
