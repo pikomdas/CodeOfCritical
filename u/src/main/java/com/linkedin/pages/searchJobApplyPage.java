@@ -36,9 +36,9 @@ public class searchJobApplyPage extends browser {
 	// Selecting a particular job link and company name etc
 	@FindBy(xpath = "//button[starts-with(@class,'jobs-candidate-initiate-referral__referral-button button-tertiary-large full-width')]")
 	WebElement askForAReferral;
-	@FindAll({ @FindBy(css = ".job-card-search__title-line") })
+	@FindAll({ @FindBy(css = ".job-card-search__link-wrapper.js-focusable-card.ember-view") })
 	List<WebElement> jobName;
-	@FindAll({ @FindBy(css = ".job-card-search__company-name") })
+	@FindAll({ @FindBy(css = ".job-card-search__company-name-link.ember-view") })
 	List<WebElement> cmpanyName;
 	// Apply buttons on page
 	@FindBy(css = ".jobs-apply-button--top-card.artdeco-button--3.jobs-apply-button.artdeco-button.ember-view")
@@ -122,21 +122,24 @@ public class searchJobApplyPage extends browser {
 
 	public void clickOnJoblink() {
 		int jobApplyNumber = 0;
-		for (WebElement e : getJobName()) {
+		label: for (WebElement e : getJobName()) {
+			w.until(ExpectedConditions.elementToBeClickable(e));
+			System.out.println("Job Title is: " + e.getText().toString());
+			e.click();
+			// Log.info("Clicked on Job continue;--- Location on Page : " +
+			// e.getLocation());
 			for (WebElement f : getCmpanyName()) {
-				// w.until(ExpectedConditions.elementToBeClickable(e));
-				System.out.println("Company name is: " + e.getText().toString());
-				e.click();
-				Log.info("Clicked on Job --- Location on Page :     " + e.getLocation());
-				// w.until(ExpectedConditions.visibilityOf(f));
-				System.out.println("Job  Title is : " + f.getText().toString());
+				w.until(ExpectedConditions.visibilityOf(f));
+				System.out.println("Company name is: " + f.getText().toString());
 				Log.info("Company name is : " + f.getText());
 				// Click on easy apply
 				clickonEasyApply();
-
 				jobApplyNumber = jobApplyNumber + 1;
-				Log.info("Completed One Job Apply." + jobApplyNumber);
-				break;
+				Log.info("Completed Job Apply and count is - " + jobApplyNumber);
+				if (jobApplyNumber - 1 == getCmpanyName().indexOf(e)) {
+					continue label;
+				}
+
 			}
 		}
 	}
@@ -154,29 +157,39 @@ public class searchJobApplyPage extends browser {
 
 	// Click on Easy Apply
 	public void clickonEasyApply() {
+
+		WebElement[] app = { getEasyApplyButton(), getApplyButton(), getMessageWhereApplynotPossible() };
 		try {
-			if (getEasyApplyButton().isDisplayed() && !getApplyButton().isDisplayed()) {
-				System.out.println("Button is displayed: " + getEasyApplyButton().getText());
-				getEasyApplyButton().click();
-				Log.info("clicked on " + getEasyApplyButton().getText());
-				submitApplication();
-			} else if (!getEasyApplyButton().isDisplayed() && getApplyButton().isDisplayed()) {
+			if (app[1].isDisplayed())
+				app[1].click();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+
+		try {
+			if (app[2].isDisplayed()) {
 				String currentWindowHandle = driver.getWindowHandle();
-				getApplyButton().click();
+				app[2].click();
 				Set<String> allWindowHandles = driver.getWindowHandles();
 				for (String window : allWindowHandles) {
 					if (!window.equalsIgnoreCase(currentWindowHandle)) {
 						driver.switchTo().window(currentWindowHandle);
 					}
 				}
-			} else if (!getEasyApplyButton().isDisplayed() && !getApplyButton().isDisplayed()) {
-				String mesage = getMessageWhereApplynotPossible().getText().toString();
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+
+		try {
+			if (app[3].isDisplayed()) {
+				String mesage = app[3].getText().toString();
 				Log.info(mesage);
 			}
 		} catch (Exception e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+
 	}
 
 	// SUbmit Application pop-up
