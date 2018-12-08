@@ -8,18 +8,18 @@ import java.util.Date;
 import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
-import org.openqa.selenium.WebDriver;
 import org.testng.ITestContext;
 import org.testng.ITestListener;
 import org.testng.ITestResult;
 
+import com.linkedin.Browser.browser;
 import com.linkedin.interfaces.reportInterface;
 import com.relevantcodes.extentreports.ExtentReports;
 import com.relevantcodes.extentreports.ExtentTest;
 import com.relevantcodes.extentreports.LogStatus;
 
-public class MyReport implements ITestListener, reportInterface {
-	protected static WebDriver driver;
+public class MyReport extends browser implements ITestListener, reportInterface {
+
 	protected static ExtentReports reports;
 	protected static ExtentTest test;
 	protected static ITestResult result;
@@ -41,15 +41,16 @@ public class MyReport implements ITestListener, reportInterface {
 		TakesScreenshot ts = (TakesScreenshot) driver;
 		File src = ts.getScreenshotAs(OutputType.FILE);
 		try {
-			FileUtils.copyFile(src, new File("C:\\images\\" + result.getMethod().getMethodName() + ".png"));
-			String file = test.addScreenCapture("C:\\images\\" + result.getMethod().getMethodName() + ".png");
+			FileUtils.copyFile(src, new File("/home/amit/git/CodeOfCritical/Linkedin/screenShots"
+					+ result.getMethod().getMethodName() + ".png"));
+			String file = test.addScreenCapture(
+					"/home/amit/git/CodeOfCritical/Linkedin/screenShots" + result.getMethod().getMethodName() + ".png");
 			test.log(LogStatus.FAIL, result.getMethod().getMethodName() + "test is failed", file);
 			test.log(LogStatus.FAIL, result.getMethod().getMethodName() + "test is failed",
 					result.getThrowable().getMessage());
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
-
 	}
 
 	public void onTestSkipped(ITestResult result) {
@@ -61,28 +62,17 @@ public class MyReport implements ITestListener, reportInterface {
 		System.out.println("on test sucess within percentage");
 	}
 
-	public void onStart(ITestResult result) {
-		System.out.println("on start");
-		// driver = new ChromeDriver(); // Set the drivers path in environment variables
-		// to avoid code(System.setProperty())
-		reports = new ExtentReports(new SimpleDateFormat("yyyy-MM-dd hh-mm-ss-ms").format(new Date()) + "reports.html");
-	}
-
-	public void onFinish(ITestResult result) {
-		System.out.println("on finish");
-		// driver.close();
-		reports.endTest(test);
-		reports.flush();
-	}
-
 	public void onStart(ITestContext context) {
-		// TODO Auto-generated method stub
+		System.out.println("Listening TestNG steps to genarate report");
 
+		reports = new ExtentReports("test-output/extent-report/"
+				+ new SimpleDateFormat("yyyy-MM-dd hh-mm-ss-ms").format(new Date()) + "report.html");
 	}
 
 	public void onFinish(ITestContext context) {
-		// TODO Auto-generated method stub
-
+		System.out.println("on finish");
+		reports.endTest(test);
+		reports.flush();
 	}
 
 	public void takeScreenShotofCurrentpage() throws IOException {
@@ -121,6 +111,16 @@ public class MyReport implements ITestListener, reportInterface {
 	}
 
 	public void debug(String message) {
+		// TODO Auto-generated method stub
+
+	}
+
+	public void onStart(ITestResult result) {
+		// TODO Auto-generated method stub
+
+	}
+
+	public void onFinish(ITestResult result) {
 		// TODO Auto-generated method stub
 
 	}

@@ -1,38 +1,59 @@
-package test.LINKEDIN;
+package LINKEDIN;
 
-import junit.framework.Test;
-import junit.framework.TestCase;
-import junit.framework.TestSuite;
+import org.apache.log4j.BasicConfigurator;
+import org.testng.annotations.AfterMethod;
+import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.Test;
+
+import com.linkedin.Browser.browser;
+import com.linkedin.commomUtil.Log;
+import com.linkedin.commomUtil.MyReport;
+import com.linkedin.commomUtil.getMyProperty;
+import com.linkedin.commomUtil.screenshotCapture;
+import com.linkedin.interfaces.interfaceAsaService;
+import com.linkedin.pages.loginToLinkedin;
 
 /**
- * Unit test for simple App.
+ * www.linkedin.com
+ *
  */
-public class AppTest 
-    extends TestCase
-{
-    /**
-     * Create the test case
-     *
-     * @param testName name of the test case
-     */
-    public AppTest( String testName )
-    {
-        super( testName );
-    }
+public class AppTest extends MyReport {
 
-    /**
-     * @return the suite of tests being tested
-     */
-    public static Test suite()
-    {
-        return new TestSuite( AppTest.class );
-    }
+	interfaceAsaService log = new Log();
+	interfaceAsaService screenShot=new screenshotCapture();
 
-    /**
-     * Rigourous Test :-)
-     */
-    public void testApp()
-    {
-        assertTrue( true );
-    }
+	public AppTest() {
+		super();
+	}
+
+	@BeforeMethod
+	public void openBrowserToLogin() throws Exception {
+		BasicConfigurator.configure();
+		log.startTestCase("test");
+		openBrowserandNavigate();
+	}
+
+	@Test(priority=0, description="Login Scenario with correct username and password.")
+	public void executin() throws Exception {
+
+		System.out.println("EXECUTION IN PROGRESS");
+
+		// login to linkedIn
+		loginToLinkedin login = new loginToLinkedin(driver);
+		// take screenshot
+		screenShot.takeScreenShotofCurrentpage();
+
+		// throw credential and login
+		login.userNamePasswordAndlogin("pikom.das@" + getMyProperty.readmyFile("username"),
+				getMyProperty.readmyFile("password"));
+		screenShot.takeScreenShotofCurrentpage();
+
+	}
+
+	@AfterMethod
+	public void aaahhhh() {
+		browser br = new browser();
+		br.teardown();
+		log.endTestCase("Test");
+	}
 }

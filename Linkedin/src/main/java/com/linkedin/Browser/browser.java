@@ -22,7 +22,7 @@ public class browser extends BrowserConfig {
 	public void openBrowserandNavigate() throws Exception {
 		try {
 
-			BrowserConfig.selectBrowserToExecute(getBrowserName());
+			BrowserConfig.selectBrowserToExecute("chrome");
 			driver.get(getMyProperty.readmyFile("url"));
 
 			log.info("URL is Presented");
