@@ -2,20 +2,20 @@
 <testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="LinkedIn Automation FrameWork" duration-ms="13767" started-at="2018-12-08T12:45:24Z" finished-at="2018-12-08T12:45:37Z">
+  <suite name="LinkedIn Automation FrameWork" duration-ms="13363" started-at="2018-12-08T15:08:38Z" finished-at="2018-12-08T15:08:51Z">
     <groups>
     </groups>
-    <test name="ExtentReport Check" duration-ms="13767" started-at="2018-12-08T12:45:24Z" finished-at="2018-12-08T12:45:37Z">
+    <test name="ExtentReport Check" duration-ms="13363" started-at="2018-12-08T15:08:38Z" finished-at="2018-12-08T15:08:51Z">
       <class name="LINKEDIN.AppTest">
-        <test-method status="PASS" signature="openBrowserToLogin()[pri:0, instance:LINKEDIN.AppTest@dc24521]" name="openBrowserToLogin" is-config="true" duration-ms="5065" started-at="2018-12-08T12:45:24Z" finished-at="2018-12-08T12:45:29Z">
+        <test-method status="PASS" signature="openBrowserToLogin()[pri:0, instance:LINKEDIN.AppTest@dc24521]" name="openBrowserToLogin" is-config="true" duration-ms="5101" started-at="2018-12-08T15:08:38Z" finished-at="2018-12-08T15:08:43Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- openBrowserToLogin -->
-        <test-method status="PASS" signature="executin()[pri:0, instance:LINKEDIN.AppTest@dc24521]" name="executin" duration-ms="8404" started-at="2018-12-08T12:45:29Z" description="Login Scenario with correct username and password." finished-at="2018-12-08T12:45:37Z">
+        <test-method status="PASS" signature="executin()[pri:0, instance:LINKEDIN.AppTest@dc24521]" name="executin" duration-ms="7897" started-at="2018-12-08T15:08:43Z" description="Login Scenario with correct username and password." finished-at="2018-12-08T15:08:51Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- executin -->
-        <test-method status="PASS" signature="aaahhhh()[pri:0, instance:LINKEDIN.AppTest@dc24521]" name="aaahhhh" is-config="true" duration-ms="93" started-at="2018-12-08T12:45:37Z" finished-at="2018-12-08T12:45:37Z">
+        <test-method status="PASS" signature="aaahhhh()[pri:0, instance:LINKEDIN.AppTest@dc24521]" name="aaahhhh" is-config="true" duration-ms="144" started-at="2018-12-08T15:08:51Z" finished-at="2018-12-08T15:08:51Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- aaahhhh -->

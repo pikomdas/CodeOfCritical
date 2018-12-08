@@ -3,6 +3,7 @@
 import java.io.IOException;
 
 import org.apache.log4j.Logger;
+import org.testng.ITestContext;
 import org.testng.ITestResult;
 
 import com.linkedin.interfaces.logInterface;
@@ -102,14 +103,15 @@ public void onTestSkipped(ITestResult result) {
 	
 }
 
-public void onStart(ITestResult result) {
+public void onStart(ITestContext context) {
 	// TODO Auto-generated method stub
 	
 }
 
-public void onFinish(ITestResult result) {
+public void onFinish(ITestContext context) {
 	// TODO Auto-generated method stub
 	
 }
+
 
 }

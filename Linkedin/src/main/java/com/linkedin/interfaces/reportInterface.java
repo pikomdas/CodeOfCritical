@@ -1,5 +1,6 @@
 package com.linkedin.interfaces;
 
+import org.testng.ITestContext;
 import org.testng.ITestResult;
 
 public interface reportInterface extends interfaceAsaService{
@@ -12,8 +13,8 @@ public interface reportInterface extends interfaceAsaService{
 
 	public void onTestSkipped(ITestResult result);
 
-	public void onStart(ITestResult result);
+	public void onStart(ITestContext context);
 
-	public void onFinish(ITestResult result);
+	public void onFinish(ITestContext context);
 
 }

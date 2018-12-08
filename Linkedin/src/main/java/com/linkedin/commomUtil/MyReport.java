@@ -11,6 +11,7 @@ import org.openqa.selenium.TakesScreenshot;
 import org.testng.ITestContext;
 import org.testng.ITestListener;
 import org.testng.ITestResult;
+import org.testng.TestException;
 
 import com.linkedin.Browser.browser;
 import com.linkedin.interfaces.reportInterface;
@@ -25,18 +26,23 @@ public class MyReport extends browser implements ITestListener, reportInterface 
 	protected static ITestResult result;
 
 	public void onTestStart(ITestResult result) {
-		System.out.println("on test start");
-		test = reports.startTest(result.getMethod().getMethodName());
-		test.log(LogStatus.INFO, result.getMethod().getMethodName() + "test is started");
+		System.out.println("Test Case Execution starts here");
+		if(!(result==null)) {
+			test = reports.startTest(result.getMethod().getMethodName());
+			test.log(LogStatus.INFO, result.getMethod().getMethodName() + "test is started");
+		}
+		else {
+			throw new TestException("TestNG configuration problem") ;
+		}
+		
 	}
 
 	public void onTestSuccess(ITestResult result) {
-		System.out.println("on test success");
+		System.out.println("TestCase passed and report is being generated");
 		test.log(LogStatus.PASS, result.getMethod().getMethodName() + "test is passed");
 	}
-
-	public void onTestFailure(ITestResult result) {
-		System.out.println("on test failure");
+public void onTestFailure(ITestResult result) {
+		System.out.println("TestCase failed and refer to screenShot");
 		test.log(LogStatus.FAIL, result.getMethod().getMethodName() + "test is failed");
 		TakesScreenshot ts = (TakesScreenshot) driver;
 		File src = ts.getScreenshotAs(OutputType.FILE);
@@ -77,52 +83,44 @@ public class MyReport extends browser implements ITestListener, reportInterface 
 
 	public void takeScreenShotofCurrentpage() throws IOException {
 		// TODO Auto-generated method stub
-
+		
 	}
 
 	public void startTestCase(String sTestCaseName) {
 		// TODO Auto-generated method stub
-
+		
 	}
 
 	public void endTestCase(String sTestCaseName) {
 		// TODO Auto-generated method stub
-
+		
 	}
 
 	public void info(String message) {
 		// TODO Auto-generated method stub
-
+		
 	}
 
 	public void warn(String message) {
 		// TODO Auto-generated method stub
-
+		
 	}
 
 	public void error(String message) {
 		// TODO Auto-generated method stub
-
+		
 	}
 
 	public void fatal(String message) {
 		// TODO Auto-generated method stub
-
+		
 	}
 
 	public void debug(String message) {
 		// TODO Auto-generated method stub
-
+		
 	}
 
-	public void onStart(ITestResult result) {
-		// TODO Auto-generated method stub
-
-	}
-
-	public void onFinish(ITestResult result) {
-		// TODO Auto-generated method stub
-
-	}
+	
 
 }

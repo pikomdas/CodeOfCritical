@@ -2,6 +2,7 @@ package LINKEDIN;
 
 import java.io.IOException;
 import org.apache.log4j.BasicConfigurator;
+import org.testng.ITestContext;
 import org.testng.ITestResult;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
@@ -26,7 +27,7 @@ public class linkedin_DDT extends browser {
 	interfaceAsaService log=new Log();
 	interfaceAsaService screenShot=new screenshotCapture();
 	interfaceAsaService report=new MyReport();
-	ITestResult result = null;
+	ITestContext result = null;
 	
 	public linkedin_DDT() {
 		super();

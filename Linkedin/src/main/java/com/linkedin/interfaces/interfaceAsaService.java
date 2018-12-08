@@ -38,8 +38,8 @@ public interface interfaceAsaService {
 
 	public void onTestSkipped(ITestResult result);
 
-	public void onStart(ITestResult result);
+	public void onStart(ITestContext context);
 
-	public void onFinish(ITestResult result);
+	public void onFinish(ITestContext context);
 
 }

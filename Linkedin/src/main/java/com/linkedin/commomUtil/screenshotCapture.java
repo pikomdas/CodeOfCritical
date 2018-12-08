@@ -6,6 +6,7 @@ import java.io.IOException;
 import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
+import org.testng.ITestContext;
 import org.testng.ITestResult;
 
 import com.linkedin.Browser.browser;
@@ -14,13 +15,13 @@ import com.linkedin.interfaces.screenShotInterface;
 public class screenshotCapture extends browser implements screenShotInterface {
 
 	public void takeScreenShotofCurrentpage() throws IOException {
-		
+
 		try {
 			File src = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
 			FileUtils.copyFile(src, new File(
 					"/home/amit/git/CodeOfCritical/Linkedin/screenShots/" + System.currentTimeMillis() + ".png"));
 		} catch (Exception e) {
-			
+
 			e.printStackTrace();
 		}
 		System.out.println("ScreenShot is Captured");
@@ -82,12 +83,12 @@ public class screenshotCapture extends browser implements screenShotInterface {
 
 	}
 
-	public void onStart(ITestResult result) {
+	public void onStart(ITestContext context) {
 		// TODO Auto-generated method stub
 
 	}
 
-	public void onFinish(ITestResult result) {
+	public void onFinish(ITestContext context) {
 		// TODO Auto-generated method stub
 
 	}
