@@ -2,11 +2,8 @@ package rnd;
 
 import java.util.Scanner;
 
-import org.junit.Test;
-
 public class fibonacci {
-	@SuppressWarnings({ "resource", "unused" })
-	@Test
+	
 	public void fibnaccii() {
 		// TODO Auto-generated method stub
 
@@ -15,6 +12,7 @@ public class fibonacci {
 		int t1=0;
 		Scanner s=new Scanner(System.in);
 		int n=s.nextInt();
+		s.close();
 		System.out.println("First "+ n + " Terms");
 		while(i<=n) {
 		

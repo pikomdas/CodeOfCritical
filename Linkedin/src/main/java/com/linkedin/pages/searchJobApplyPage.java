@@ -1,9 +1,7 @@
 package com.linkedin.pages;
 
 import java.util.List;
-import java.util.Set;
 
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindAll;
@@ -27,16 +25,16 @@ public class searchJobApplyPage extends browser {
 	}
 
 	// Final JOB apply selectors
-	@FindBy(css = ".jobs-apply-form__upload-options-text.t-14.t-black--light.t-bold")
+	@FindBy(xpath = "//*[@id='jobs-file-upload']/div/button")
 	WebElement resumeSelect;
-	@FindBy(css = ".jobs-apply-form__recent-resume.display-flex.align-items-center")
+	@FindBy(xpath = "//*[contains(@id,'ember')]/ul/li[4]/div[1]/button")
 	WebElement selectAttachedResume;
 	@FindBy(xpath = "//button[starts-with(@class,'jobs-apply-form__submit-button button-primary-large ')]")
 	WebElement submitApplicationButton;
 	// Selecting a particular job link and company name etc
 	@FindBy(xpath = "//button[starts-with(@class,'jobs-candidate-initiate-referral__referral-button button-tertiary-large full-width')]")
 	WebElement askForAReferral;
-	@FindAll({ @FindBy(css = ".job-card-search__link-wrapper.js-focusable-card.ember-view") })
+	@FindAll({ @FindBy(xpath = "//*[@class='jobs-search-results__list artdeco-list artdeco-list--offset-4']/li/div/artdeco-entity-lockup/artdeco-entity-lockup-content/h3[1]") })
 	List<WebElement> jobName;
 	@FindAll({ @FindBy(css = ".job-card-search__company-name-link.ember-view") })
 	List<WebElement> cmpanyName;
@@ -159,38 +157,17 @@ public class searchJobApplyPage extends browser {
 	public void clickonEasyApply() {
 
 		WebElement[] app = { getEasyApplyButton(), getApplyButton(), getMessageWhereApplynotPossible() };
-		try {
-			if (app[1].isDisplayed())
-				app[1].click();
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-
-		try {
-			if (app[2].isDisplayed()) {
-				String currentWindowHandle = driver.getWindowHandle();
-				app[2].click();
-				Set<String> allWindowHandles = driver.getWindowHandles();
-				for (String window : allWindowHandles) {
-					if (!window.equalsIgnoreCase(currentWindowHandle)) {
-						driver.switchTo().window(currentWindowHandle);
-					}
-				}
+		for(WebElement button :app) {
+			if(button.isDisplayed()) {
+				button.click();
+				submitApplication();
 			}
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-
-		try {
-			if (app[3].isDisplayed()) {
-				String mesage = app[3].getText().toString();
-				Log.info(mesage);
+			else{
+				button.getText();
+				Log.error("Button is not available");
 			}
-		} catch (Exception e) {
-			e.printStackTrace();
 		}
-
-	}
+	}	
 
 	// SUbmit Application pop-up
 	public void submitApplication() {
