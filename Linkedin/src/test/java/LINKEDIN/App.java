@@ -30,7 +30,7 @@ public class App extends browser {
 		}
 
     @Test
-	public void executin() throws Exception {
+	public void executin() throws Throwable {
     	
         System.out.println("EXECUTION IN PROGRESS");
         

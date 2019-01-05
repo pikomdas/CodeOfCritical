@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindAll;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
@@ -12,12 +13,14 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 import com.linkedin.Browser.browser;
 import com.linkedin.commomUtil.Log;
+import com.linkedin.commomUtil.screenshotCapture;
 import com.linkedin.interfaces.interfaceAsaService;
 
 public class searchJobApplyPage extends browser {
 
 	WebDriverWait w = new WebDriverWait(driver, 5);
 	interfaceAsaService Log = new Log();
+	interfaceAsaService screenShot = new screenshotCapture();
 
 	public searchJobApplyPage(final WebDriver driver) {
 		browser.driver = driver;
@@ -34,7 +37,8 @@ public class searchJobApplyPage extends browser {
 	// Selecting a particular job link and company name etc
 	@FindBy(xpath = "//button[starts-with(@class,'jobs-candidate-initiate-referral__referral-button button-tertiary-large full-width')]")
 	WebElement askForAReferral;
-	@FindAll({ @FindBy(xpath = "//*[@class='jobs-search-results__list artdeco-list artdeco-list--offset-4']/li/div/artdeco-entity-lockup/artdeco-entity-lockup-content/h3[1]") })
+	@FindAll({
+			@FindBy(xpath = "//*[@class='jobs-search-results__list artdeco-list artdeco-list--offset-4']/li/div/artdeco-entity-lockup/artdeco-entity-lockup-content/h3[1]") })
 	List<WebElement> jobName;
 	@FindAll({ @FindBy(css = ".job-card-search__company-name-link.ember-view") })
 	List<WebElement> cmpanyName;
@@ -118,29 +122,47 @@ public class searchJobApplyPage extends browser {
 		ApplyButton = applyButton;
 	}
 
-	public void clickOnJoblink() {
+	public void clickOnJoblink() throws Throwable {
 		int jobApplyNumber = 0;
-		label: for (WebElement e : getJobName()) {
+		for (WebElement e : getJobName()) {
 			w.until(ExpectedConditions.elementToBeClickable(e));
 			System.out.println("Job Title is: " + e.getText().toString());
 			e.click();
-			// Log.info("Clicked on Job continue;--- Location on Page : " +
-			// e.getLocation());
-			for (WebElement f : getCmpanyName()) {
-				w.until(ExpectedConditions.visibilityOf(f));
-				System.out.println("Company name is: " + f.getText().toString());
-				Log.info("Company name is : " + f.getText());
-				// Click on easy apply
-				clickonEasyApply();
-				jobApplyNumber = jobApplyNumber + 1;
-				Log.info("Completed Job Apply and count is - " + jobApplyNumber);
-				if (jobApplyNumber - 1 == getCmpanyName().indexOf(e)) {
-					continue label;
-				}
+            w.until(ExpectedConditions.visibilityOf(getCmpanyName().get(jobApplyNumber)));
+			System.out.println("Company name is: " + getCmpanyName().get(jobApplyNumber).getText());
+			Log.info("Company name is : " + getCmpanyName().get(jobApplyNumber).getText().toUpperCase());
+			// Click on easy apply
+			clickonEasyApply();
+			jobApplyNumber = jobApplyNumber + 1;
+			Log.info("Completed Job Apply and count is -------------- " + jobApplyNumber);
+			
 
-			}
 		}
 	}
+
+//	public void clickOnJoblink() throws Throwable {
+//		int jobApplyNumber = 0;
+//		label: for (WebElement e : getJobName()) {
+//			w.until(ExpectedConditions.elementToBeClickable(e));
+//			System.out.println("Job Title is: " + e.getText().toString());
+//			e.click();
+//			// Log.info("Clicked on Job continue;--- Location on Page : " +
+//			// e.getLocation());
+//			for (WebElement f : getCmpanyName()) {
+//				w.until(ExpectedConditions.visibilityOf(f));
+//				System.out.println("Company name is: " + f.getText().toString());
+//				Log.info("Company name is : " + f.getText());
+//				// Click on easy apply
+//				clickonEasyApply();
+//				jobApplyNumber = jobApplyNumber + 1;
+//				Log.info("Completed Job Apply and count is -------------- " + jobApplyNumber);
+//				if (jobApplyNumber - 1 == getCmpanyName().indexOf(e)) {
+//					continue label;
+//				}
+//
+//			}
+//		}
+//	}
 
 	// Navigate Back
 	public void navigateBack() {
@@ -154,26 +176,51 @@ public class searchJobApplyPage extends browser {
 	}
 
 	// Click on Easy Apply
-	public void clickonEasyApply() {
+	public void clickonEasyApply() throws Throwable {
 
-		WebElement[] app = { getEasyApplyButton(), getApplyButton(), getMessageWhereApplynotPossible() };
-		for(WebElement button :app) {
-			if(button.isDisplayed()) {
-				button.click();
+		// WebElement[] app = { getEasyApplyButton(), getApplyButton(),
+		// getMessageWhereApplynotPossible() };
+		try {
+			if (getEasyApplyButton().getText() == "Easy Apply") {
+				getEasyApplyButton().click();
 				submitApplication();
 			}
-			else{
-				button.getText();
-				Log.error("Button is not available");
+		} catch (Exception e) {
+			Log.error("Easy Apply Failed");
+			try {
+				if (getApplyButton().getText() == "Apply") {
+					getApplyButton().click();
+					Log.info("Apply Button is available");
+				}
+			} catch (Exception e1) {
+				Log.error("Apply Button is not available");
+				try {
+					Log.info(getMessageWhereApplynotPossible().getText());
+				} catch (Exception e2) {
+					Log.error("Already Applied");
+				}
 			}
+
 		}
-	}	
+	}
 
 	// SUbmit Application pop-up
-	public void submitApplication() {
-		getResumeSelect().click();
+	public void submitApplication() throws Exception {
+		WebDriverWait w = new WebDriverWait(driver, 20);
+
+		w.until(ExpectedConditions.elementToBeClickable(getResumeSelect()));
+		Actions act = new Actions(driver);
+		act.moveToElement(getResumeSelect()).perform();
+		act.click();
+		Log.info("Clicked on " + getResumeSelect().getText());
+
+		w.until(ExpectedConditions.elementToBeClickable(getSelectAttachedResume()));
 		getSelectAttachedResume().click();
+		Log.info("Selected resume name is " + getSelectAttachedResume().getText());
+		screenShot.takeScreenShotofCurrentpage();
+
 		getSubmitApplicationButton().click();
+		Log.info("Job Application Submitted.");
 	}
 
 } // end of class

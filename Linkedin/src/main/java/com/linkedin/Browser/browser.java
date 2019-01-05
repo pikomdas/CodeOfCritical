@@ -4,9 +4,6 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.util.Properties;
 
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
-
 import com.linkedin.commomUtil.Log;
 import com.linkedin.commomUtil.getMyProperty;
 import com.linkedin.interfaces.interfaceAsaService;
@@ -24,6 +21,7 @@ public class browser extends BrowserConfig {
 
 			BrowserConfig.selectBrowserToExecute("chrome");
 			driver.get(getMyProperty.readmyFile("url"));
+			// driver.manage().deleteAllCookies();
 
 			log.info("URL is Presented");
 

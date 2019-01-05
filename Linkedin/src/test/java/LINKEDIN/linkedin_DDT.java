@@ -1,6 +1,5 @@
 package LINKEDIN;
 
-import java.io.IOException;
 import org.apache.log4j.BasicConfigurator;
 import org.testng.ITestContext;
 import org.testng.ITestResult;
@@ -51,7 +50,7 @@ public class linkedin_DDT extends browser {
 	}
 
 	@Test
-	public void execution() throws Exception, InterruptedException, IOException {
+	public void execution() throws Throwable {
 
 		log.info("$$$$$$$$$$$$$$$$$$ EXECUTION IN PROGRESS $$$$$$$$$$$$$$$$$$$$");
 
