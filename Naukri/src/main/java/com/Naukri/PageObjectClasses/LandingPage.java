@@ -1,5 +1,7 @@
 package com.Naukri.PageObjectClasses;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.ElementNotVisibleException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -10,7 +12,7 @@ import com.Naukri.FileReaderManager.Log;
 import com.naukri.BrowserBase.browser;
 
 public class LandingPage extends browser {
-
+	private static final Logger log = LogManager.getLogger(LandingPage.class.getName());
 	public LandingPage(final WebDriver driver) {
 		browser.driver = driver;
 		PageFactory.initElements(driver, this);
@@ -64,7 +66,7 @@ public class LandingPage extends browser {
 //		 w1.until(ExpectedConditions.visibilityOf(getLoginButtonOnTopSide()));
 //       driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
 		if (getLoginButtonOnTopSide().isDisplayed() == true) {
-			System.out.println("TOP SIDE LOGIN button is Present");
+			log.info("TOP SIDE LOGIN button is Present");
 			getLoginButtonOnTopSide().click();
 		} else {
 			throw new ElementNotVisibleException("Top Side LogIn button is not available");

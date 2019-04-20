@@ -4,6 +4,8 @@ import java.util.List;
 import java.util.Set;
 import java.util.concurrent.TimeUnit;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindAll;
@@ -14,6 +16,8 @@ import com.naukri.BrowserBase.browser;
 
 public class JobSearchResultPage extends browser {
 
+	 private static final Logger log = LogManager.getLogger(JobSearchResultPage.class.getName());
+	
 	public JobSearchResultPage(WebDriver driver) {
 		browser.driver = driver;
 		PageFactory.initElements(driver, this);
@@ -69,13 +73,13 @@ public class JobSearchResultPage extends browser {
 		
 		for (WebElement e : getJobName()) 
 		{
-			System.out.println("Job Name ================================> " + e.getText());
+			log.info("Job Name ================================> " + e.getText());
 			for (WebElement f : getOrganisation()) 
 			{
 				System.out.print("Organisation Name ================================> " + f.getText());
 				for (WebElement g : getSalaryRange()) 
 				{
-					System.out.println("Salary offere ranged: " + g.getText());
+					log.info("Salary offere ranged: " + g.getText());
 					
 					e.click();
 					Set<String> handlesOfAllJobpage = driver.getWindowHandles();
@@ -88,7 +92,7 @@ public class JobSearchResultPage extends browser {
 						}
 					 }
 					driver.switchTo().window(JobSearchResultTab);
-					System.out.println(
+					log.info(
 							"Navigated back to >>>>>>>>>>>>>>>>>>>>>>>>>>> : " + JobSearchResultTab.toUpperCase());
 					break;
 				}

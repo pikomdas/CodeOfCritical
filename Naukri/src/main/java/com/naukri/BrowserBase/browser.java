@@ -1,8 +1,9 @@
 package com.naukri.BrowserBase;
 
-import org.apache.log4j.xml.DOMConfigurator;
+//import org.openqa.selenium.PageLoadStrategy;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 
 import com.Naukri.FileReaderManager.ConfigFileReader;
 import com.Naukri.FileReaderManager.Log;
@@ -16,10 +17,15 @@ public class browser {
 	
 	public void selectBrowser() {
 		System.setProperty("webdriver.chrome.driver", cfr.getDriverPath());
-		driver = new ChromeDriver();
+		ChromeOptions options = new ChromeOptions();
+		//options.setPageLoadStrategy(PageLoadStrategy.NONE);
+		//options.setCapability("enableVNC", false);
+//		options.addArguments("--disable-default-apps");
+//		options.addArguments("--disable-translate");
+		options.addArguments("--disable-web-security");
+		driver = new ChromeDriver(options);
 		driver.get(cfr.getApplicationUrl());
 		driver.manage().window().maximize();
-		DOMConfigurator.configure("log4j.xml");
 		Log.info("Naukri.com launched");
 		
 		String originalHandle = driver.getWindowHandle();

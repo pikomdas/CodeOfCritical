@@ -2,7 +2,6 @@ package com.Naukri.BDDFrameworkTest;
 
 import java.io.File;
 
-import org.apache.log4j.BasicConfigurator;
 import org.junit.AfterClass;
 import org.junit.runner.RunWith;
 import org.testng.annotations.BeforeClass;
@@ -33,7 +32,7 @@ import cucumber.api.testng.TestNGCucumberRunner;
 		 
 	    @BeforeClass(alwaysRun = true)
 	    public void setUpClass() throws Exception {
-	    	BasicConfigurator.configure();
+	    	//BasicConfigurator.configure();
 	        testNGCucumberRunner = new TestNGCucumberRunner(this.getClass());
 	    }
 	 

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<testsuite failures="0" name="cucumber.runtime.formatter.JUnitFormatter" skipped="0" tests="1" time="35.500491">
+<testcase classname="user is applying job on www.naukri.com" name=": Verify that user is able to search  job and appy job" time="35.500491">
+<system-out><![CDATA[Given user successfully login to portal with "pikom.das@gmail.com" and "9038583164" and user is on Home page.passed
+When user clicks on Search Jobs and insert text and click search............passed
+Then search results are displayed...........................................passed
+Then user clicks on a job link and navigates to jobs description page and navigate back to sarch page.passed
+]]></system-out>
+</testcase>
+</testsuite>

@@ -1,5 +1,7 @@
 package com.Naukri.PageObjectClasses;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -12,6 +14,7 @@ import com.naukri.BrowserBase.browser;
 
 public class HomePageToSearchJob extends browser {
 	WebDriverWait w1 = new WebDriverWait(driver, 10);
+	 private static final Logger log = LogManager.getLogger(HomePageToSearchJob.class.getName());
 
 	public HomePageToSearchJob(WebDriver driver) {
 		browser.driver = driver;
@@ -35,11 +38,11 @@ public class HomePageToSearchJob extends browser {
 	WebElement profilename;
 	@FindBy(xpath = "//*[@id=\'root\']/div/div/span/div/div/div[2]/div[1]/div[2]/div[1]/div/div[2]/a[1]/span[1]")
 	WebElement profileViews;
-	@FindBy(xpath = "//*[@id=\'root\']/div/div/span/div/div/div[2]/div[1]/div[2]/div[1]/div/div[2]/a[2]/span[1]")
+	@FindBy(xpath = "//*[@class='actions']/a[2]/span[1]")
 	WebElement pendingActions;
-	@FindBy(xpath = "//span[@id=\'rJobCntr\']")
+	@FindBy(xpath = "//span[@id='rJobCntr']")
 	WebElement notificationCount;
-	@FindBy(xpath = "//*[@id=\'root\']/div/div/span/div/div/div[2]/div[1]/div[2]/div[1]/div/a[1]/div[1]/img")
+	@FindBy(xpath = "//*[@class='row']/div/img")
 	WebElement profilePicture;
 	@FindBy(xpath = "/html/body/div[1]/div/div/ul[2]/li[1]/div/ul/li[1]/a/span[2]")
 	WebElement JobRecommendationCount;
@@ -171,21 +174,22 @@ public class HomePageToSearchJob extends browser {
 		getSalary().click();
 		driver.findElement(By.xpath("//*[@id=\"ul_salaryDroope-salary\"]/ul/li[8]/a")).click();
 		getJobSearchButton().click();
-		System.out.println("Clicked on JobSearch button");
+		log.info("Clicked on JobSearch button");
 
 	}
 
 //get Profile details
 	public void profileDetails() {
-		System.out.println("Profile name: " + getProfilename().getText());
-		System.out.println("Profile picture height: " + getProfilePicture().getSize().height + " and width: "
+		w1.until(ExpectedConditions.elementToBeClickable(getProfilename()));
+		log.info("Profile name: " + getProfilename().getText());
+		log.info("Profile picture height: " + getProfilePicture().getSize().height + " and width: "
 				+ getProfilePicture().getSize().width);
-		System.out.println("Pending notification count: " + getPendingActions().getText());
-		System.out.println("Profile views count: " + getProfileViews().getText());
-		System.out.println("Profile Notification count: " + getNotificationCount().getText());
-		System.out.println("Job Application status count: " + getApplicationStatusCount().getText());
-		System.out.println("Job recommendation count: " + getJobRecommendationCount().getText());
-		System.out.println("Message from recruiter count: " + getRecruiterMessageCount());
-		System.out.println("Completed Profile details");
+		log.info("Pending notification count: " + getPendingActions().getText());
+		//log.info("Profile views count: " + getProfileViews().getText());
+		log.info("Profile Notification count: " + getNotificationCount().getText());
+		log.info("Job Application status count: " + getApplicationStatusCount().getText());
+		log.info("Job recommendation count: " + getJobRecommendationCount().getText());
+		log.info("Message from recruiter count: " + getRecruiterMessageCount());
+		log.info("Completed Profile details");
 	}
 }// End of class
