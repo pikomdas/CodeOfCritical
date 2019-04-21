@@ -11,7 +11,7 @@ import com.Naukri.enums.EnvironmentType;
 
 public class ConfigFileReader {	
 	private Properties properties;
-	private final String propertyFilePath= "/home/amit/git/CodeOfCritical/Naukri/src/main/java/com/Naukri/utility/configFiles/masterConfig.properties";
+	private final String propertyFilePath= "./src/main/java/com/Naukri/utility/configFiles/masterConfig.properties";
 
 	public ConfigFileReader(){
 		BufferedReader reader;
@@ -52,6 +52,11 @@ public class ConfigFileReader {
 		String url = properties.getProperty("url");
 		if(url != null) return url;
 		else throw new RuntimeException("Application Url not specified in the Configuration.properties file for the Key:url");
+	}
+	public String getLog4j2Path() {
+		String path = properties.getProperty("log4j2_path");
+		if(path != null) return path;
+		else throw new RuntimeException("log4j2 not specified in the masterconfig.properties file for the Key:log4j2");
 	}
 
 	public DriverType getBrowser() {

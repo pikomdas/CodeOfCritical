@@ -17,6 +17,7 @@ public class browser {
 	
 	public void selectBrowser() {
 		System.setProperty("webdriver.chrome.driver", cfr.getDriverPath());
+		System.setProperty("log4j.configurationFile", cfr.getLog4j2Path());
 		ChromeOptions options = new ChromeOptions();
 		//options.setPageLoadStrategy(PageLoadStrategy.NONE);
 		//options.setCapability("enableVNC", false);

@@ -16,8 +16,10 @@ import com.naukri.BrowserBase.browser;
 
 public class JobSearchResultPage extends browser {
 
-	 private static final Logger log = LogManager.getLogger(JobSearchResultPage.class.getName());
-	
+	private static final Logger log = LogManager.getLogger(JobSearchResultPage.class.getName());
+	JobDetailsToApplyPage jdta=null;
+	Set<String> handlesOfAllJobpage;
+
 	public JobSearchResultPage(WebDriver driver) {
 		browser.driver = driver;
 		PageFactory.initElements(driver, this);
@@ -27,9 +29,9 @@ public class JobSearchResultPage extends browser {
 	WebElement sortby1;
 	@FindAll({ @FindBy(xpath = "//*[@class='desig']") })
 	public List<WebElement> JobName;
-	@FindAll({ @FindBy(xpath = "//*[@class='salary  ']") })
+	@FindAll({ @FindBy(xpath = "//*[@class='other_details']/span[2]") })
 	public List<WebElement> SalaryRange;
-	@FindAll({ @FindBy(xpath = "//*[@class='org']") })
+	@FindAll({ @FindBy(xpath = "//*[@class='content']/span/span") })
 	public List<WebElement> organisation;
 	@FindBy(xpath = "")
 	WebElement sortby;
@@ -68,39 +70,32 @@ public class JobSearchResultPage extends browser {
 
 	public void appyjob1by1() throws Throwable {
 		Thread.sleep(4000);
-		JobDetailsToApplyPage jdta = new JobDetailsToApplyPage(driver);
 		String JobSearchResultTab = driver.getWindowHandle();
-		
-		for (WebElement e : getJobName()) 
-		{
-			log.info("Job Name ================================> " + e.getText());
-			for (WebElement f : getOrganisation()) 
-			{
-				System.out.print("Organisation Name ================================> " + f.getText());
-				for (WebElement g : getSalaryRange()) 
-				{
-					log.info("Salary offere ranged: " + g.getText());
-					
-					e.click();
-					Set<String> handlesOfAllJobpage = driver.getWindowHandles();
-					 for (String handleOfOnepage : handlesOfAllJobpage) 
-					 {
-						if (!handleOfOnepage.equals(JobSearchResultTab)) {
-							driver.switchTo().window(handleOfOnepage);
-							driver.manage().timeouts().implicitlyWait(2, TimeUnit.SECONDS);
-							jdta.appyTheJob();
-						}
-					 }
-					driver.switchTo().window(JobSearchResultTab);
-					log.info(
-							"Navigated back to >>>>>>>>>>>>>>>>>>>>>>>>>>> : " + JobSearchResultTab.toUpperCase());
-					break;
+		log.info("Total available job in the page is : " + getJobName().size());
+		int i = 0;
+		while (i < getJobName().size()) {
+			log.info("Job Name ================================> " + getJobName().get(i).getText().toString());
+			log.info("Organisation Name ================================> "
+					+ getOrganisation().get(i).getText().toString());
+			log.info("Salary offere ranged: " + getSalaryRange().get(i).getText().toString());
+
+			getJobName().get(i).click();
+			handlesOfAllJobpage = driver.getWindowHandles();
+			for (String handleOfOnepage : handlesOfAllJobpage) {
+				if (!handleOfOnepage.equals(JobSearchResultTab)) {
+					driver.switchTo().window(handleOfOnepage);
+					driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+					if (jdta == null) {
+						jdta = new JobDetailsToApplyPage(driver);
+						jdta.appyTheJob();
+						jdta=null;
+					}
 				}
-				break;
 			}
-
+			driver.switchTo().window(JobSearchResultTab);
+			log.info("Navigated back to >>>>>>>>>>>>>>>>>>>>>>>>>>> : " + JobSearchResultTab.toUpperCase());
+			i++;
 		}
-
 	}
 
 }// End of class
