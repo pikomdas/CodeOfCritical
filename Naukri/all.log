@@ -1,0 +1,120 @@
+2019-04-21 16:06:46.567 [main] INFO  com.Naukri.FileReaderManager.Log - Naukri.com launched
+2019-04-21 16:06:46.810 [main] INFO  com.Naukri.FileReaderManager.Log - Page name is: Jobs - Recruitment - Job Search - Employment - Job Vacancies - Naukri.com
+2019-04-21 16:06:46.889 [main] INFO  com.Naukri.PageObjectClasses.LandingPage - TOP SIDE LOGIN button is Present
+2019-04-21 16:06:52.821 [main] INFO  com.Naukri.PageObjectClasses.HomePageToSearchJob - Profile name: Partha Sarathi Das
+2019-04-21 16:06:52.911 [main] INFO  com.Naukri.PageObjectClasses.HomePageToSearchJob - Profile picture height: 63 and width: 63
+2019-04-21 16:06:52.997 [main] INFO  com.Naukri.PageObjectClasses.HomePageToSearchJob - Pending notification count: 00
+2019-04-21 16:06:53.074 [main] INFO  com.Naukri.PageObjectClasses.HomePageToSearchJob - Profile Notification count: 03
+2019-04-21 16:06:53.153 [main] INFO  com.Naukri.PageObjectClasses.HomePageToSearchJob - Job Application status count: 
+2019-04-21 16:06:53.217 [main] INFO  com.Naukri.PageObjectClasses.HomePageToSearchJob - Job recommendation count: 
+2019-04-21 16:06:53.251 [main] INFO  com.Naukri.PageObjectClasses.HomePageToSearchJob - Message from recruiter count: [[ChromeDriver: chrome on LINUX (6f57c33651cb769e82993625754d5476)] -> xpath: /html/body/div[1]/div/div/ul[2]/li[1]/div/ul/li[3]/a/span[2]]
+2019-04-21 16:06:53.251 [main] INFO  com.Naukri.PageObjectClasses.HomePageToSearchJob - Completed Profile details
+2019-04-21 16:06:55.185 [main] INFO  com.Naukri.PageObjectClasses.HomePageToSearchJob - Clicked on JobSearch button
+2019-04-21 16:07:02.389 [main] INFO  com.Naukri.PageObjectClasses.JobSearchResultPage - Total available job in the page is : 50
+2019-04-21 16:07:02.502 [main] INFO  com.Naukri.PageObjectClasses.JobSearchResultPage - Job Name ================================> Selenium
+2019-04-21 16:07:02.633 [main] INFO  com.Naukri.PageObjectClasses.JobSearchResultPage - Organisation Name ================================> Accenture
+2019-04-21 16:07:02.799 [main] INFO  com.Naukri.PageObjectClasses.JobSearchResultPage - Salary offere ranged: Not disclosed
+2019-04-21 16:07:05.774 [main] INFO  com.Naukri.PageObjectClasses.JobSearchResultPage - Navigated to Job page Name: Selenium - Pune - Accenture - 2 to 6 years of experience
+2019-04-21 16:07:25.955 [main] INFO  com.Naukri.PageObjectClasses.JobSearchResultPage - Navigated back to >>>>>>>>>>>>>>>>>>>>>>>>>>> : CDWINDOW-E406328A08DAC8F2D38989097C3E8C38
+2019-04-21 16:07:26.192 [main] INFO  com.Naukri.PageObjectClasses.JobSearchResultPage - Job Name ================================> Test Engineer
+2019-04-21 16:07:26.287 [main] INFO  com.Naukri.PageObjectClasses.JobSearchResultPage - Organisation Name ================================> Pune
+2019-04-21 16:07:26.374 [main] INFO  com.Naukri.PageObjectClasses.JobSearchResultPage - Salary offere ranged: Not disclosed
+2019-04-21 16:07:26.865 [main] INFO  com.Naukri.PageObjectClasses.JobSearchResultPage - Navigated to Job page Name: Selenium - Pune - Accenture - 2 to 6 years of experience
+2019-04-21 16:07:47.060 [main] INFO  com.Naukri.PageObjectClasses.JobSearchResultPage - Navigated to Job page Name: Test Engineer - Pune - Mphasis Limited - 2 to 4 years of experience
+2019-04-21 16:07:47.259 [main] INFO  com.Naukri.PageObjectClasses.JobSearchResultPage - Blue Color Apply button is dispayed : Apply
+2019-04-21 16:07:47.515 [main] INFO  com.Naukri.PageObjectClasses.JobSearchResultPage - Apply button clicked on postion : 174232
+2019-04-21 16:07:48.257 [main] INFO  com.Naukri.PageObjectClasses.JobSearchResultPage - update carieer pop-up displayed
+2019-04-21 16:07:50.674 [main] INFO  com.Naukri.PageObjectClasses.JobSearchResultPage - Navigated back to >>>>>>>>>>>>>>>>>>>>>>>>>>> : CDWINDOW-E406328A08DAC8F2D38989097C3E8C38
+2019-04-21 16:07:50.930 [main] INFO  com.Naukri.PageObjectClasses.JobSearchResultPage - Job Name ================================> Member - Technology Management
+2019-04-21 16:07:51.037 [main] INFO  com.Naukri.PageObjectClasses.JobSearchResultPage - Organisation Name ================================> Mphasis Limited
+2019-04-21 16:07:51.158 [main] INFO  com.Naukri.PageObjectClasses.JobSearchResultPage - Salary offere ranged: Not disclosed
+2019-04-21 16:07:51.493 [main] INFO  com.Naukri.PageObjectClasses.JobSearchResultPage - Navigated to Job page Name: Selenium - Pune - Accenture - 2 to 6 years of experience
+2019-04-21 16:08:11.917 [main] INFO  com.Naukri.PageObjectClasses.JobSearchResultPage - Navigated to Job page Name: Member - Technology Management - Bengaluru/Bangalore, Pune - EdgeVerve Systems Limited - 2 to 6 years of experience
+2019-04-21 16:08:32.087 [main] INFO  com.Naukri.PageObjectClasses.JobSearchResultPage - Navigated back to >>>>>>>>>>>>>>>>>>>>>>>>>>> : CDWINDOW-E406328A08DAC8F2D38989097C3E8C38
+2019-04-21 16:08:32.309 [main] INFO  com.Naukri.PageObjectClasses.JobSearchResultPage - Job Name ================================> Payments Fundtech Global Pay Plus
+2019-04-21 16:08:32.402 [main] INFO  com.Naukri.PageObjectClasses.JobSearchResultPage - Organisation Name ================================> Pune
+2019-04-21 16:08:32.481 [main] INFO  com.Naukri.PageObjectClasses.JobSearchResultPage - Salary offere ranged: Not disclosed
+2019-04-21 16:08:32.995 [main] INFO  com.Naukri.PageObjectClasses.JobSearchResultPage - Navigated to Job page Name: Selenium - Pune - Accenture - 2 to 6 years of experience
+2019-04-21 16:08:53.207 [main] INFO  com.Naukri.PageObjectClasses.JobSearchResultPage - Navigated to Job page Name: Member - Technology Management - Bengaluru/Bangalore, Pune - EdgeVerve Systems Limited - 2 to 6 years of experience
+2019-04-21 16:09:13.410 [main] INFO  com.Naukri.PageObjectClasses.JobSearchResultPage - Navigated to Job page Name: Payments Fundtech Global Pay Plus - Pune - Accenture - 3 to 4 years of experience
+2019-04-21 16:09:33.528 [main] INFO  com.Naukri.PageObjectClasses.JobSearchResultPage - Navigated back to >>>>>>>>>>>>>>>>>>>>>>>>>>> : CDWINDOW-E406328A08DAC8F2D38989097C3E8C38
+2019-04-21 16:09:33.646 [main] INFO  com.Naukri.PageObjectClasses.JobSearchResultPage - Job Name ================================> QA Automation
+2019-04-21 16:09:33.752 [main] INFO  com.Naukri.PageObjectClasses.JobSearchResultPage - Organisation Name ================================> EdgeVerve Systems Limited
+2019-04-21 16:09:33.871 [main] INFO  com.Naukri.PageObjectClasses.JobSearchResultPage - Salary offere ranged: Not disclosed
+2019-04-21 16:09:34.316 [main] INFO  com.Naukri.PageObjectClasses.JobSearchResultPage - Navigated to Job page Name: Selenium - Pune - Accenture - 2 to 6 years of experience
+2019-04-21 16:09:54.556 [main] INFO  com.Naukri.PageObjectClasses.JobSearchResultPage - Navigated to Job page Name: Member - Technology Management - Bengaluru/Bangalore, Pune - EdgeVerve Systems Limited - 2 to 6 years of experience
+2019-04-21 16:10:14.752 [main] INFO  com.Naukri.PageObjectClasses.JobSearchResultPage - Navigated to Job page Name: Payments Fundtech Global Pay Plus - Pune - Accenture - 3 to 4 years of experience
+2019-04-21 16:10:34.976 [main] INFO  com.Naukri.PageObjectClasses.JobSearchResultPage - Navigated to Job page Name: QA Automation - Pune - Talent21 Management Shared Services Pvt. ltd. - 3 to 6 years of experience
+2019-04-21 16:10:35.154 [main] INFO  com.Naukri.PageObjectClasses.JobSearchResultPage - Blue Color Apply button is dispayed : Apply
+2019-04-21 16:10:35.352 [main] INFO  com.Naukri.PageObjectClasses.JobSearchResultPage - Apply button clicked on postion : 174231
+2019-04-21 16:10:35.995 [main] INFO  com.Naukri.PageObjectClasses.JobSearchResultPage - update carieer pop-up displayed
+2019-04-21 16:10:38.402 [main] INFO  com.Naukri.PageObjectClasses.JobSearchResultPage - Navigated back to >>>>>>>>>>>>>>>>>>>>>>>>>>> : CDWINDOW-E406328A08DAC8F2D38989097C3E8C38
+2019-04-21 16:10:38.588 [main] INFO  com.Naukri.PageObjectClasses.JobSearchResultPage - Job Name ================================> Selenium C# Test Analyst
+2019-04-21 16:10:38.674 [main] INFO  com.Naukri.PageObjectClasses.JobSearchResultPage - Organisation Name ================================> Bengaluru, Pune
+2019-04-21 16:10:38.762 [main] INFO  com.Naukri.PageObjectClasses.JobSearchResultPage - Salary offere ranged: Not disclosed
+2019-04-21 16:10:39.201 [main] INFO  com.Naukri.PageObjectClasses.JobSearchResultPage - Navigated to Job page Name: Selenium - Pune - Accenture - 2 to 6 years of experience
+2019-04-21 16:10:59.383 [main] INFO  com.Naukri.PageObjectClasses.JobSearchResultPage - Navigated to Job page Name: Member - Technology Management - Bengaluru/Bangalore, Pune - EdgeVerve Systems Limited - 2 to 6 years of experience
+2019-04-21 16:11:19.510 [main] INFO  com.Naukri.PageObjectClasses.JobSearchResultPage - Navigated to Job page Name: Payments Fundtech Global Pay Plus - Pune - Accenture - 3 to 4 years of experience
+2019-04-21 16:11:39.779 [main] INFO  com.Naukri.PageObjectClasses.JobSearchResultPage - Navigated to Job page Name: Selenium C# Test Analyst - Pune - Capgemini Technology Services India Limited - 2 to 6 years of experience
+2019-04-21 16:11:40.071 [main] INFO  com.Naukri.PageObjectClasses.JobSearchResultPage - Blue Color Apply button is dispayed : Apply
+2019-04-21 16:11:40.280 [main] INFO  com.Naukri.PageObjectClasses.JobSearchResultPage - Apply button clicked on postion : 174231
+2019-04-21 16:11:41.074 [main] INFO  com.Naukri.PageObjectClasses.JobSearchResultPage - update carieer pop-up displayed
+2019-04-21 16:11:43.452 [main] INFO  com.Naukri.PageObjectClasses.JobSearchResultPage - Navigated back to >>>>>>>>>>>>>>>>>>>>>>>>>>> : CDWINDOW-E406328A08DAC8F2D38989097C3E8C38
+2019-04-21 16:11:43.621 [main] INFO  com.Naukri.PageObjectClasses.JobSearchResultPage - Job Name ================================> Selenium Test Analyst
+2019-04-21 16:11:43.762 [main] INFO  com.Naukri.PageObjectClasses.JobSearchResultPage - Organisation Name ================================> Accenture
+2019-04-21 16:11:43.841 [main] INFO  com.Naukri.PageObjectClasses.JobSearchResultPage - Salary offere ranged: Not disclosed
+2019-04-21 16:11:44.207 [main] INFO  com.Naukri.PageObjectClasses.JobSearchResultPage - Navigated to Job page Name: Selenium - Pune - Accenture - 2 to 6 years of experience
+2019-04-21 16:12:04.372 [main] INFO  com.Naukri.PageObjectClasses.JobSearchResultPage - Navigated to Job page Name: Member - Technology Management - Bengaluru/Bangalore, Pune - EdgeVerve Systems Limited - 2 to 6 years of experience
+2019-04-21 16:12:24.489 [main] INFO  com.Naukri.PageObjectClasses.JobSearchResultPage - Navigated to Job page Name: Payments Fundtech Global Pay Plus - Pune - Accenture - 3 to 4 years of experience
+2019-04-21 16:12:44.653 [main] INFO  com.Naukri.PageObjectClasses.JobSearchResultPage - Navigated to Job page Name: Selenium Test Analyst - Pune - Capgemini Technology Services India Limited - 4 to 6 years of experience
+2019-04-21 16:12:44.895 [main] INFO  com.Naukri.PageObjectClasses.JobSearchResultPage - Blue Color Apply button is dispayed : Apply
+2019-04-21 16:12:45.157 [main] INFO  com.Naukri.PageObjectClasses.JobSearchResultPage - Apply button clicked on postion : 174231
+2019-04-21 16:12:45.742 [main] INFO  com.Naukri.PageObjectClasses.JobSearchResultPage - update carieer pop-up displayed
+2019-04-21 16:12:48.275 [main] INFO  com.Naukri.PageObjectClasses.JobSearchResultPage - Navigated back to >>>>>>>>>>>>>>>>>>>>>>>>>>> : CDWINDOW-E406328A08DAC8F2D38989097C3E8C38
+2019-04-21 16:12:48.427 [main] INFO  com.Naukri.PageObjectClasses.JobSearchResultPage - Job Name ================================> Automation /selenium Testing@pune-hinjewadi
+2019-04-21 16:12:48.501 [main] INFO  com.Naukri.PageObjectClasses.JobSearchResultPage - Organisation Name ================================> Pune
+2019-04-21 16:12:48.567 [main] INFO  com.Naukri.PageObjectClasses.JobSearchResultPage - Salary offere ranged: INR 4,00,000 - 8,00,000 P.A.
+2019-04-21 16:12:49.028 [main] INFO  com.Naukri.PageObjectClasses.JobSearchResultPage - Navigated to Job page Name: Selenium - Pune - Accenture - 2 to 6 years of experience
+2019-04-21 16:13:09.217 [main] INFO  com.Naukri.PageObjectClasses.JobSearchResultPage - Navigated to Job page Name: Member - Technology Management - Bengaluru/Bangalore, Pune - EdgeVerve Systems Limited - 2 to 6 years of experience
+2019-04-21 16:13:29.402 [main] INFO  com.Naukri.PageObjectClasses.JobSearchResultPage - Navigated to Job page Name: Payments Fundtech Global Pay Plus - Pune - Accenture - 3 to 4 years of experience
+2019-04-21 16:13:49.881 [main] INFO  com.Naukri.PageObjectClasses.JobSearchResultPage - Navigated to Job page Name: Automation /selenium Testing@pune-hinjewadi - Mumbai, Pune - Sellcraft Global Solutions Private Limited - 3 to 5 years of experience
+2019-04-21 16:13:50.145 [main] INFO  com.Naukri.PageObjectClasses.JobSearchResultPage - Blue Color Apply button is dispayed : Apply
+2019-04-21 16:13:50.479 [main] INFO  com.Naukri.PageObjectClasses.JobSearchResultPage - Apply button clicked on postion : 174248
+2019-04-21 16:13:51.563 [main] INFO  com.Naukri.PageObjectClasses.JobSearchResultPage - update carieer pop-up displayed
+2019-04-21 16:13:54.136 [main] INFO  com.Naukri.PageObjectClasses.JobSearchResultPage - Navigated back to >>>>>>>>>>>>>>>>>>>>>>>>>>> : CDWINDOW-E406328A08DAC8F2D38989097C3E8C38
+2019-04-21 16:13:54.295 [main] INFO  com.Naukri.PageObjectClasses.JobSearchResultPage - Job Name ================================> Urgent Openings for Automation(qtp, Selenium, ETL)
+2019-04-21 16:13:54.442 [main] INFO  com.Naukri.PageObjectClasses.JobSearchResultPage - Organisation Name ================================> Talent21 Management Shared Services Pvt. ltd.
+2019-04-21 16:13:54.551 [main] INFO  com.Naukri.PageObjectClasses.JobSearchResultPage - Salary offere ranged: INR 4,00,000 - 6,00,000 P.A.
+2019-04-21 16:13:55.119 [main] INFO  com.Naukri.PageObjectClasses.JobSearchResultPage - Navigated to Job page Name: Selenium - Pune - Accenture - 2 to 6 years of experience
+2019-04-21 16:14:15.300 [main] INFO  com.Naukri.PageObjectClasses.JobSearchResultPage - Navigated to Job page Name: Member - Technology Management - Bengaluru/Bangalore, Pune - EdgeVerve Systems Limited - 2 to 6 years of experience
+2019-04-21 16:14:35.530 [main] INFO  com.Naukri.PageObjectClasses.JobSearchResultPage - Navigated to Job page Name: Payments Fundtech Global Pay Plus - Pune - Accenture - 3 to 4 years of experience
+2019-04-21 16:14:54.516 [main] INFO  com.Naukri.PageObjectClasses.JobSearchResultPage - Navigated to Job page Name: Urgent Openings for Automation(qtp, Selenium, ETL) - Chennai, Hyderabad / Secunderabad, Pune - Faxhion Technologies Private Limited - 2 to 4 years of experience
+2019-04-21 16:14:54.880 [main] INFO  com.Naukri.PageObjectClasses.JobSearchResultPage - Blue Color Apply button is dispayed : Apply
+2019-04-21 16:14:55.086 [main] INFO  com.Naukri.PageObjectClasses.JobSearchResultPage - Apply button clicked on postion : 174231
+2019-04-21 16:14:55.808 [main] INFO  com.Naukri.PageObjectClasses.JobSearchResultPage - update carieer pop-up displayed
+2019-04-21 16:14:58.329 [main] INFO  com.Naukri.PageObjectClasses.JobSearchResultPage - Navigated back to >>>>>>>>>>>>>>>>>>>>>>>>>>> : CDWINDOW-E406328A08DAC8F2D38989097C3E8C38
+2019-04-21 16:14:58.449 [main] INFO  com.Naukri.PageObjectClasses.JobSearchResultPage - Job Name ================================> MNC Hiring Automation Selenium Testing@mumbai-pune
+2019-04-21 16:14:58.524 [main] INFO  com.Naukri.PageObjectClasses.JobSearchResultPage - Organisation Name ================================> Pune(Viman Nagar)
+2019-04-21 16:14:58.601 [main] INFO  com.Naukri.PageObjectClasses.JobSearchResultPage - Salary offere ranged: INR 4,00,000 - 8,00,000 P.A.
+2019-04-21 16:14:59.054 [main] INFO  com.Naukri.PageObjectClasses.JobSearchResultPage - Navigated to Job page Name: Selenium - Pune - Accenture - 2 to 6 years of experience
+2019-04-21 16:15:19.281 [main] INFO  com.Naukri.PageObjectClasses.JobSearchResultPage - Navigated to Job page Name: Member - Technology Management - Bengaluru/Bangalore, Pune - EdgeVerve Systems Limited - 2 to 6 years of experience
+2019-04-21 16:15:39.599 [main] INFO  com.Naukri.PageObjectClasses.JobSearchResultPage - Navigated to Job page Name: MNC Hiring Automation Selenium Testing@mumbai-pune - Mumbai, Pune, Navi Mumbai - Sellcraft Global Solutions Private Limited - 3 to 5 years of experience
+2019-04-21 16:15:39.832 [main] INFO  com.Naukri.PageObjectClasses.JobSearchResultPage - Blue Color Apply button is dispayed : Apply
+2019-04-21 16:15:40.049 [main] INFO  com.Naukri.PageObjectClasses.JobSearchResultPage - Apply button clicked on postion : 174248
+2019-04-21 16:15:40.637 [main] INFO  com.Naukri.PageObjectClasses.JobSearchResultPage - update carieer pop-up displayed
+2019-04-21 16:15:43.035 [main] INFO  com.Naukri.PageObjectClasses.JobSearchResultPage - Navigated back to >>>>>>>>>>>>>>>>>>>>>>>>>>> : CDWINDOW-E406328A08DAC8F2D38989097C3E8C38
+2019-04-21 16:15:43.155 [main] INFO  com.Naukri.PageObjectClasses.JobSearchResultPage - Job Name ================================> Urgent Openings for Automation(qtp, Selenium, ETL)
+2019-04-21 16:15:43.298 [main] INFO  com.Naukri.PageObjectClasses.JobSearchResultPage - Organisation Name ================================> Capgemini Technology Services India Limited
+2019-04-21 16:15:43.391 [main] INFO  com.Naukri.PageObjectClasses.JobSearchResultPage - Salary offere ranged: INR 4,00,000 - 6,00,000 P.A.
+2019-04-21 16:15:43.806 [main] INFO  com.Naukri.PageObjectClasses.JobSearchResultPage - Navigated to Job page Name: Selenium - Pune - Accenture - 2 to 6 years of experience
+2019-04-21 16:16:03.990 [main] INFO  com.Naukri.PageObjectClasses.JobSearchResultPage - Navigated to Job page Name: Member - Technology Management - Bengaluru/Bangalore, Pune - EdgeVerve Systems Limited - 2 to 6 years of experience
+2019-04-21 16:16:24.433 [main] INFO  com.Naukri.PageObjectClasses.JobSearchResultPage - Navigated to Job page Name: Urgent Openings for Automation(qtp, Selenium, ETL) - Chennai, Hyderabad / Secunderabad, Pune - Faxhion Technologies Private Limited - 2 to 4 years of experience
+2019-04-21 16:16:24.675 [main] INFO  com.Naukri.PageObjectClasses.JobSearchResultPage - Blue Color Apply button is dispayed : Apply
+2019-04-21 16:16:24.865 [main] INFO  com.Naukri.PageObjectClasses.JobSearchResultPage - Apply button clicked on postion : 174231
+2019-04-21 16:16:25.541 [main] INFO  com.Naukri.PageObjectClasses.JobSearchResultPage - update carieer pop-up displayed
+2019-04-21 16:16:27.985 [main] INFO  com.Naukri.PageObjectClasses.JobSearchResultPage - Navigated back to >>>>>>>>>>>>>>>>>>>>>>>>>>> : CDWINDOW-E406328A08DAC8F2D38989097C3E8C38
+2019-04-21 16:16:28.150 [main] INFO  com.Naukri.PageObjectClasses.JobSearchResultPage - Job Name ================================> Selenium Test Engineer 2 to 4
+2019-04-21 16:16:28.253 [main] INFO  com.Naukri.PageObjectClasses.JobSearchResultPage - Organisation Name ================================> Pune
+2019-04-21 16:16:28.376 [main] INFO  com.Naukri.PageObjectClasses.JobSearchResultPage - Salary offere ranged: Not disclosed
+2019-04-21 16:16:28.745 [main] INFO  com.Naukri.PageObjectClasses.JobSearchResultPage - Navigated to Job page Name: Selenium - Pune - Accenture - 2 to 6 years of experience
+2019-04-21 16:16:48.947 [main] INFO  com.Naukri.PageObjectClasses.JobSearchResultPage - Navigated to Job page Name: Member - Technology Management - Bengaluru/Bangalore, Pune - EdgeVerve Systems Limited - 2 to 6 years of experience
