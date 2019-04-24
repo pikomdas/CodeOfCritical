@@ -1,5 +1,5 @@
 Feature: user is applying job on www.naukri.com
-
+@test
 Scenario Outline:: Verify that user is able to search  job and appy job
 
 Given user successfully login to portal with "<username>" and "<password>" and user is on Home page

@@ -6,13 +6,15 @@ import java.util.concurrent.TimeUnit;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindAll;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-import com.naukri.BrowserBase.browser;
+import com.Naukri.BrowserBase.browser;
 
 public class JobSearchResultPage extends browser {
 
@@ -83,13 +85,18 @@ public class JobSearchResultPage extends browser {
 		String JobSearchResultTab = driver.getWindowHandle();
 		log.info("Total available job in the page is : " + getJobName().size());
 		int i = 0;
-		while (i < getJobName().size()) {
+		while (i <= getJobName().size()) {
 			log.info("Job Name ================================> " + getJobName().get(i).getText().toString());
 			log.info("Organisation Name ================================> "
 					+ getOrganisation().get(i).getText().toString());
 			log.info("Salary offere ranged: " + getSalaryRange().get(i).getText().toString());
-
-			getJobName().get(i).click();
+			Actions actions = new Actions(driver);
+			actions.moveToElement(getJobName().get(i));
+			((JavascriptExecutor) driver).executeScript("arguments[0].style.border='3px solid red'",
+					getJobName().get(i));
+			actions.click();
+			actions.perform();
+			// getJobName().get(i).click();
 			handlesOfAllJobpage = driver.getWindowHandles();
 			for (String handleOfOnepage : handlesOfAllJobpage) {
 				if (!handleOfOnepage.equals(JobSearchResultTab)) {
@@ -106,15 +113,15 @@ public class JobSearchResultPage extends browser {
 			log.info("Navigated back to >>>>>>>>>>>>>>>>>>>>>>>>>>> : " + JobSearchResultTab.toUpperCase());
 
 			i++;
-			if (i == getJobName().size() - 1) {
+			if (i == getJobName().size()) {
 				log.info("Completed Page " + driver.getCurrentUrl());
 				if (getNextButton().isDisplayed()) {
 					getNextButton().click();
 					log.info("Clicked on Next button");
 					appyjob1by1();
+				} else {
+					log.info("Next button is not found");
 				}
-			} else {
-				log.info("Next button is not found");
 
 			}
 		}

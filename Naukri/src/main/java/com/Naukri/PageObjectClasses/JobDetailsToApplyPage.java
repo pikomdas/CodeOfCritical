@@ -11,7 +11,7 @@ import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-import com.naukri.BrowserBase.browser;
+import com.Naukri.BrowserBase.browser;
 
 public class JobDetailsToApplyPage extends browser {
 
@@ -65,11 +65,11 @@ public class JobDetailsToApplyPage extends browser {
 					getUpdateProfileButton().click();
 				}
 				driver.close();
-				Thread.sleep(2000);
+				Thread.sleep(1000);
 			} else {
 				log.info("Job Apply blue colored button not found");
 				driver.close(); // Closing the tab where apply not possible
-				Thread.sleep(2000);
+				Thread.sleep(1000);
 			}
 		} catch (ElementNotVisibleException e) {
 			e.getMessage();

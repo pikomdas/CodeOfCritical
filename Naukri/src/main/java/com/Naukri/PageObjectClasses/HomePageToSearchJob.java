@@ -10,7 +10,7 @@ import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-import com.naukri.BrowserBase.browser;
+import com.Naukri.BrowserBase.browser;
 
 public class HomePageToSearchJob extends browser {
 	WebDriverWait w1 = new WebDriverWait(driver, 10);

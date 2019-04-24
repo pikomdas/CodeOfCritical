@@ -8,8 +8,8 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
+import com.Naukri.BrowserBase.browser;
 import com.Naukri.FileReaderManager.Log;
-import com.naukri.BrowserBase.browser;
 
 public class LandingPage extends browser {
 	private static final Logger log = LogManager.getLogger(LandingPage.class.getName());
