@@ -105,23 +105,29 @@ formatter.match({
   "location": "JobApply_ToNaukri.user_successfully_login_to_portal_and_user_is_on_Home_page(String,String)"
 });
 formatter.result({
-  "duration": 19958507696,
+  "duration": 12721804449,
   "status": "passed"
 });
 formatter.match({
   "location": "JobApply_ToNaukri.user_clicks_on_Search_Job_and_insert_text_and_click_search()"
 });
 formatter.result({
-  "duration": 5986498910,
+  "duration": 7726073091,
   "status": "passed"
 });
 formatter.match({
   "location": "JobApply_ToNaukri.search_results_are_displayed()"
 });
 formatter.result({
-  "duration": 107049200,
+  "duration": 117743581,
   "status": "passed"
 });
 formatter.match({
   "location": "JobApply_ToNaukri.user_clicks_on_a_job_link_and_navigates_to_jobs_description_page()"
+});
+formatter.result({
+  "duration": 114381839623,
+  "error_message": "org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {\"method\":\"xpath\",\"selector\":\"//*[@class\u003d\u0027grayBtn\u0027 and text()\u003d\u0027Next\u0027]\"}\n  (Session info: chrome\u003d70.0.3538.77)\n  (Driver info: chromedriver\u003d2.42.591071 (0b695ff80972cc1a65a5cd643186d2ae582cd4ac),platform\u003dLinux 4.15.0-47-generic x86_64) (WARNING: The server did not provide any stacktrace information)\nCommand duration or timeout: 0 milliseconds\nFor documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html\nBuild info: version: \u00273.14.0\u0027, revision: \u0027aacccce0\u0027, time: \u00272018-08-02T20:19:58.91Z\u0027\nSystem info: host: \u0027Critical\u0027, ip: \u0027127.0.1.1\u0027, os.name: \u0027Linux\u0027, os.arch: \u0027amd64\u0027, os.version: \u00274.15.0-47-generic\u0027, java.version: \u00271.8.0_191\u0027\nDriver info: org.openqa.selenium.chrome.ChromeDriver\nCapabilities {acceptInsecureCerts: false, acceptSslCerts: false, applicationCacheEnabled: false, browserConnectionEnabled: false, browserName: chrome, chrome: {chromedriverVersion: 2.42.591071 (0b695ff80972cc..., userDataDir: /tmp/.org.chromium.Chromium...}, cssSelectorsEnabled: true, databaseEnabled: false, goog:chromeOptions: {debuggerAddress: localhost:36245}, handlesAlerts: true, hasTouchScreen: false, javascriptEnabled: true, locationContextEnabled: true, mobileEmulationEnabled: false, nativeEvents: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: LINUX, platformName: LINUX, rotatable: false, setWindowRect: true, takesHeapSnapshot: true, takesScreenshot: true, unexpectedAlertBehaviour: , unhandledPromptBehavior: , version: 70.0.3538.77, webStorageEnabled: true}\nSession ID: cb89dcd421602632b8b0943b5198a944\n*** Element info: {Using\u003dxpath, value\u003d//*[@class\u003d\u0027grayBtn\u0027 and text()\u003d\u0027Next\u0027]}\n\tat sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)\n\tat sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)\n\tat sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)\n\tat java.lang.reflect.Constructor.newInstance(Constructor.java:423)\n\tat org.openqa.selenium.remote.ErrorHandler.createThrowable(ErrorHandler.java:214)\n\tat org.openqa.selenium.remote.ErrorHandler.throwIfResponseFailed(ErrorHandler.java:166)\n\tat org.openqa.selenium.remote.http.JsonHttpResponseCodec.reconstructValue(JsonHttpResponseCodec.java:40)\n\tat org.openqa.selenium.remote.http.AbstractHttpResponseCodec.decode(AbstractHttpResponseCodec.java:80)\n\tat org.openqa.selenium.remote.http.AbstractHttpResponseCodec.decode(AbstractHttpResponseCodec.java:44)\n\tat org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)\n\tat org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)\n\tat org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:548)\n\tat org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:322)\n\tat org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:424)\n\tat org.openqa.selenium.By$ByXPath.findElement(By.java:353)\n\tat org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:314)\n\tat org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:69)\n\tat org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)\n\tat com.sun.proxy.$Proxy33.click(Unknown Source)\n\tat com.Naukri.PageObjectClasses.JobSearchResultPage.appyjob1by1(JobSearchResultPage.java:110)\n\tat com.Naukri.PageObjectClasses.JobSearchResultPage.appyjob1by1(JobSearchResultPage.java:112)\n\tat com.Naukri.PageObjectClasses.JobSearchResultPage.appyjob1by1(JobSearchResultPage.java:112)\n\tat com.Naukri.PageObjectClasses.JobSearchResultPage.appyjob1by1(JobSearchResultPage.java:112)\n\tat com.Naukri.PageObjectClasses.JobSearchResultPage.appyjob1by1(JobSearchResultPage.java:112)\n\tat com.Naukri.PageObjectClasses.JobSearchResultPage.appyjob1by1(JobSearchResultPage.java:112)\n\tat com.Naukri.stepDefinations.JobApply_ToNaukri.user_clicks_on_a_job_link_and_navigates_to_jobs_description_page(JobApply_ToNaukri.java:45)\n\tat ✽.Then user clicks on a job link and navigates to jobs description page and navigate back to sarch page(/home/amit/git/CodeOfCritical/Naukri/src/main/java/com/Naukri/featureFiles/ApplyJob.feature:8)\n",
+  "status": "failed"
+});
 });

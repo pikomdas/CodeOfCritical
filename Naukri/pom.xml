@@ -28,20 +28,21 @@
 		<dependency>
 			<groupId>info.cukes</groupId>
 			<artifactId>cucumber-junit</artifactId>
-			<version>1.2.4</version>
+			<version>1.2.5</version>
 			<scope>test</scope>
 		</dependency>
-		<!-- https://mvnrepository.com/artifact/info.cukes/cucumber-java -->
+		<!-- https://mvnrepository.com/artifact/info.cukes/cucumber-java8 -->
 		<dependency>
 			<groupId>info.cukes</groupId>
-			<artifactId>cucumber-java</artifactId>
-			<version>1.2.4</version>
+			<artifactId>cucumber-java8</artifactId>
+			<version>1.2.5</version>
 		</dependency>
+
 		<!-- https://mvnrepository.com/artifact/info.cukes/cucumber-core -->
 		<dependency>
 			<groupId>info.cukes</groupId>
 			<artifactId>cucumber-core</artifactId>
-			<version>1.2.4</version>
+			<version>1.2.5</version>
 		</dependency>
 		<!-- https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-java -->
 		<dependency>

@@ -27,7 +27,7 @@ import cucumber.api.testng.TestNGCucumberRunner;
 			//tags = {"~@SmokeTest" , "~@RegressionTest", "~@End2End"}			
 			)
 	 
-	public class execution_3 {
+public class execution_3 {
 		private TestNGCucumberRunner testNGCucumberRunner;
 		 
 	    @BeforeClass(alwaysRun = true)
@@ -52,7 +52,7 @@ import cucumber.api.testng.TestNGCucumberRunner;
 			Reporter.loadXMLConfig(new File("/home/amit/git/CodeOfCritical/Naukri/src/main/java/com/Naukri/utility/configFiles/extent-config.xml"));
 			Reporter.setSystemInfo("User Name", System.getProperty("user.name"));
 		    Reporter.setSystemInfo("Time Zone", System.getProperty("user.timezone"));
-		    Reporter.setSystemInfo("Machine", 	"Windows 10" + "64 Bit");
+		    Reporter.setSystemInfo("Machine", "Windows 10" + "64 Bit");
 		    Reporter.setSystemInfo("Selenium", "3.7.0");
 		    Reporter.setSystemInfo("Maven", "3.5.2");
 		    Reporter.setSystemInfo("Java Version", "1.8.0_151");

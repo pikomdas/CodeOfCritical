@@ -17,7 +17,7 @@ import com.naukri.BrowserBase.browser;
 public class JobSearchResultPage extends browser {
 
 	private static final Logger log = LogManager.getLogger(JobSearchResultPage.class.getName());
-	JobDetailsToApplyPage jdta=null;
+	JobDetailsToApplyPage jdta = null;
 	Set<String> handlesOfAllJobpage;
 
 	public JobSearchResultPage(WebDriver driver) {
@@ -35,6 +35,8 @@ public class JobSearchResultPage extends browser {
 	public List<WebElement> organisation;
 	@FindBy(xpath = "")
 	WebElement sortby;
+	@FindBy(xpath = "//*[@class='grayBtn' and text()='Next']")
+	WebElement nextButton;
 
 	protected WebElement getSortby1() {
 		return sortby1;
@@ -68,6 +70,14 @@ public class JobSearchResultPage extends browser {
 		this.organisation = organisation;
 	}
 
+	public final WebElement getNextButton() {
+		return nextButton;
+	}
+
+	public final void setNextButton(WebElement nextButton) {
+		this.nextButton = nextButton;
+	}
+
 	public void appyjob1by1() throws Throwable {
 		Thread.sleep(4000);
 		String JobSearchResultTab = driver.getWindowHandle();
@@ -88,13 +98,25 @@ public class JobSearchResultPage extends browser {
 					if (jdta == null) {
 						jdta = new JobDetailsToApplyPage(driver);
 						jdta.appyTheJob();
-						jdta=null;
+						jdta = null;
 					}
 				}
 			}
 			driver.switchTo().window(JobSearchResultTab);
 			log.info("Navigated back to >>>>>>>>>>>>>>>>>>>>>>>>>>> : " + JobSearchResultTab.toUpperCase());
+
 			i++;
+			if (i == getJobName().size() - 1) {
+				log.info("Completed Page " + driver.getCurrentUrl());
+				if (getNextButton().isDisplayed()) {
+					getNextButton().click();
+					log.info("Clicked on Next button");
+					appyjob1by1();
+				}
+			} else {
+				log.info("Next button is not found");
+
+			}
 		}
 	}
 
