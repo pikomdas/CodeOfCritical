@@ -38,6 +38,7 @@ public class HomePageToSearchJob extends browser {
 	WebElement profilename;
 	@FindBy(xpath = "//*[@id=\'root\']/div/div/span/div/div/div[2]/div[1]/div[2]/div[1]/div/div[2]/a[1]/span[1]")
 	WebElement profileViews;
+	@Deprecated
 	@FindBy(xpath = "//*[@class='actions']/a[2]/span[1]")
 	WebElement pendingActions;
 	@FindBy(xpath = "//span[@id='rJobCntr']")
@@ -184,7 +185,7 @@ public class HomePageToSearchJob extends browser {
 		log.info("Profile name: " + getProfilename().getText());
 		log.info("Profile picture height: " + getProfilePicture().getSize().height + " and width: "
 				+ getProfilePicture().getSize().width);
-		log.info("Pending notification count: " + getPendingActions().getText());
+		//log.info("Pending notification count: " + getPendingActions().getText());
 		//log.info("Profile views count: " + getProfileViews().getText());
 		log.info("Profile Notification count: " + getNotificationCount().getText());
 		log.info("Job Application status count: " + getApplicationStatusCount().getText());

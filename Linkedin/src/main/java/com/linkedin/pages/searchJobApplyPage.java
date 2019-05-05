@@ -43,12 +43,14 @@ public class searchJobApplyPage extends browser {
 	@FindAll({ @FindBy(css = ".job-card-search__company-name-link.ember-view") })
 	List<WebElement> cmpanyName;
 	// Apply buttons on page
-	@FindBy(css = ".jobs-apply-button--top-card.artdeco-button--3.jobs-apply-button.artdeco-button.ember-view")
+	@FindBy(xpath = "//*[@class='jobs-apply-button__text' and text()='Easy Apply']")
 	WebElement easyApplyButton;
 	@FindBy(css = ".jobs-apply-button--top-card.artdeco-button--3.jobs-apply-button.artdeco-button.ember-view")
 	WebElement ApplyButton;
 	@FindBy(css = ".artdeco-inline-feedback__message")
 	WebElement messageWhereApplynotPossible;
+	@FindBy(css = "//*[@class='continue-btn' and text()='Submit']")
+	WebElement submitButtonNewWindow;
 
 	public final WebElement getMessageWhereApplynotPossible() {
 		return messageWhereApplynotPossible;
@@ -122,21 +124,27 @@ public class searchJobApplyPage extends browser {
 		ApplyButton = applyButton;
 	}
 
+	public final WebElement getSubmitButtonNewWindow() {
+		return submitButtonNewWindow;
+	}
+
+	public final void setSubmitButtonNewWindow(WebElement submitButtonNewWindow) {
+		this.submitButtonNewWindow = submitButtonNewWindow;
+	}
+
 	public void clickOnJoblink() throws Throwable {
 		int jobApplyNumber = 0;
 		for (WebElement e : getJobName()) {
 			w.until(ExpectedConditions.elementToBeClickable(e));
 			System.out.println("Job Title is: " + e.getText().toString());
 			e.click();
-            w.until(ExpectedConditions.visibilityOf(getCmpanyName().get(jobApplyNumber)));
+			w.until(ExpectedConditions.visibilityOf(getCmpanyName().get(jobApplyNumber)));
 			System.out.println("Company name is: " + getCmpanyName().get(jobApplyNumber).getText());
 			Log.info("Company name is : " + getCmpanyName().get(jobApplyNumber).getText().toUpperCase());
 			// Click on easy apply
 			clickonEasyApply();
 			jobApplyNumber = jobApplyNumber + 1;
 			Log.info("Completed Job Apply and count is -------------- " + jobApplyNumber);
-			
-
 		}
 	}
 
@@ -177,29 +185,28 @@ public class searchJobApplyPage extends browser {
 
 	// Click on Easy Apply
 	public void clickonEasyApply() throws Throwable {
-
-		// WebElement[] app = { getEasyApplyButton(), getApplyButton(),
-		// getMessageWhereApplynotPossible() };
+		String originWindow=driver.getWindowHandle();
 		try {
-			if (getEasyApplyButton().getText() == "Easy Apply") {
+			if (getEasyApplyButton().isDisplayed()) {
 				getEasyApplyButton().click();
-				submitApplication();
-			}
-		} catch (Exception e) {
-			Log.error("Easy Apply Failed");
-			try {
+				if(driver.getWindowHandle()!=originWindow) {
+					getSubmitApplicationButton().click();
+				}else {
+					submitApplication();
+				}
+				
+			} else {
+				Log.error("Easy Apply Failed");
 				if (getApplyButton().getText() == "Apply") {
 					getApplyButton().click();
 					Log.info("Apply Button is available");
-				}
-			} catch (Exception e1) {
-				Log.error("Apply Button is not available");
-				try {
+				} else {
+					Log.error("Apply Button is not available");
 					Log.info(getMessageWhereApplynotPossible().getText());
-				} catch (Exception e2) {
-					Log.error("Already Applied");
 				}
 			}
+		} catch (Exception e) {
+			Log.error("Execution  error");
 
 		}
 	}

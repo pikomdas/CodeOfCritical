@@ -3,6 +3,7 @@ package com.linkedin.Browser;
 import java.io.File;
 import java.io.FileInputStream;
 import java.util.Properties;
+import java.util.concurrent.TimeUnit;
 
 import com.linkedin.commomUtil.Log;
 import com.linkedin.commomUtil.getMyProperty;
@@ -21,7 +22,7 @@ public class browser extends BrowserConfig {
 
 			BrowserConfig.selectBrowserToExecute("chrome");
 			driver.get(getMyProperty.readmyFile("url"));
-			// driver.manage().deleteAllCookies();
+			driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 
 			log.info("URL is Presented");
 

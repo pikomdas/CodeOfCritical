@@ -124,6 +124,13 @@
 			<artifactId>slf4j-api</artifactId>
 			<version>1.7.7</version>
 		</dependency>
+		<!-- https://mvnrepository.com/artifact/ru.yandex.qatools.ashot/ashot -->
+		<dependency>
+			<groupId>ru.yandex.qatools.ashot</groupId>
+			<artifactId>ashot</artifactId>
+			<version>1.5.4</version>
+		</dependency>
+
 	</dependencies>
 	<build>
 		<plugins>
@@ -188,7 +195,7 @@
 				<executions>
 					<execution>
 						<id>execution</id>
-						<phase>verify</phase>
+						<phase>test</phase>
 						<goals>
 							<goal>generate</goal>
 						</goals>

@@ -62,7 +62,7 @@ public class JobsPage extends browser {
 	/**
 	 * @return the jobSearchButtonOnJobpage
 	 */
-	@FindBy(css = "button.jobs-search-box__submit-button.button-secondary-large-inverse")
+	@FindBy(css = "button.jobs-search-box__submit-button.button-secondary-large")
 	WebElement jobSearchButtonOnJobpage;
 
 	public final WebElement getJobSearchButtonOnJobpage() {

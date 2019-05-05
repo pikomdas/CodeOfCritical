@@ -4,6 +4,8 @@ import java.io.File;
 import java.io.IOException;
 import java.time.LocalDateTime;
 
+import javax.imageio.ImageIO;
+
 import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.OutputType;
@@ -12,13 +14,24 @@ import org.openqa.selenium.WebDriverException;
 
 import com.cucumber.listener.Reporter;
 
-public class CucumberAfterStepCode extends CucumberBeforeExecution
-{
+import ru.yandex.qatools.ashot.AShot;
+import ru.yandex.qatools.ashot.Screenshot;
 
-	public CucumberAfterStepCode() throws Exception
-	{
-		try
-		{
+public class CucumberAfterStepCode extends CucumberBeforeExecution {
+
+	public CucumberAfterStepCode() throws Exception {
+		Screenshot screenshot = new AShot()
+                .takeScreenshot(driver);
+		File destinationPath = new File(
+				getProperty.readScreenshotLocation("stepImageLocation") + screenshotFolderName + "/"
+						+ String.join("_", LocalDateTime.now().toString().split("[^A-Za-z0-9]")) + ".png");
+        ImageIO.write(screenshot.getImage(), "PNG", destinationPath);
+        Reporter.addScreenCaptureFromPath(destinationPath.toString());
+	}
+
+	@Deprecated
+	public void sctake() throws Exception {
+		try {
 
 			JavascriptExecutor jsExec = (JavascriptExecutor) driver;
 
@@ -32,8 +45,7 @@ public class CucumberAfterStepCode extends CucumberBeforeExecution
 
 			scrollHeight = scrollHeight + scroll;
 
-			do
-			{
+			do {
 				TakesScreenshot ts = (TakesScreenshot) driver;
 				File sourcePath = ts.getScreenshotAs(OutputType.FILE);
 				File destinationPath = new File(
@@ -46,12 +58,9 @@ public class CucumberAfterStepCode extends CucumberBeforeExecution
 
 				innerHeight = innerHeight + scroll;
 
-			}
-			while (scrollHeight > innerHeight);
+			} while (scrollHeight > innerHeight);
 
-		}
-		catch (WebDriverException | IOException e)
-		{
+		} catch (WebDriverException | IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
