@@ -171,9 +171,9 @@ public class HomePageToSearchJob extends browser {
 		getJobSkill().sendKeys(skill);
 		getLocationofJob().sendKeys(location);
 		getExperience().click();
-		driver.findElement(By.xpath("//*[@id=\"ul_expDroope-experience\"]/ul/li[6]/a")).click();
+		driver.findElement(By.xpath("//*[@id='ul_expDroope-experience']/ul/li[6]/a")).click();
 		getSalary().click();
-		driver.findElement(By.xpath("//*[@id=\"ul_salaryDroope-salary\"]/ul/li[8]/a")).click();
+		driver.findElement(By.xpath("//*[@id='ul_salaryDroope-salary']/ul/li[8]/a")).click();
 		getJobSearchButton().click();
 		log.info("Clicked on JobSearch button");
 
