@@ -28,6 +28,8 @@ public class JobsPage extends browser {
 	WebElement jobSeaarchBox1;
 	@FindBy(xpath = "//input[starts-with(@id,'jobs-search-box-location-')]")
 	WebElement location1;
+	@FindBy(xpath = "//div[contains(@id,'ember')]/button[1][text()='Search']")
+	WebElement jobSearchButtonOnJobpage;
 
 	/**
 	 * @return the location
@@ -62,8 +64,6 @@ public class JobsPage extends browser {
 	/**
 	 * @return the jobSearchButtonOnJobpage
 	 */
-	@FindBy(css = "button.jobs-search-box__submit-button.button-secondary-large")
-	WebElement jobSearchButtonOnJobpage;
 
 	public final WebElement getJobSearchButtonOnJobpage() {
 		return jobSearchButtonOnJobpage;

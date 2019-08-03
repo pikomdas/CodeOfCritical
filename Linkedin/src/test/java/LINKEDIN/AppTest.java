@@ -34,7 +34,7 @@ public class AppTest extends MyReport {
 	}
 
 	@Test(priority=0, description="Login Scenario with correct username and password.")
-	public void executin() throws Exception {
+	public void executin() throws Throwable {
 
 		System.out.println("EXECUTION IN PROGRESS");
 
