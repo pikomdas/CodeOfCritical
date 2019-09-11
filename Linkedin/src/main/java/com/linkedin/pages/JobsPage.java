@@ -13,21 +13,25 @@ import com.linkedin.commomUtil.Log;
 import com.linkedin.commomUtil.getMyProperty;
 import com.linkedin.interfaces.interfaceAsaService;
 
-public class JobsPage extends browser {
+public class JobsPage extends browser
+{
 
 	interfaceAsaService Log = new Log();
-	public JobsPage(final WebDriver driver) {
+
+	public JobsPage(final WebDriver driver)
+	{
 		browser.driver = driver;
 		PageFactory.initElements(driver, this);
 	}
-	
-	WebDriverWait w=new WebDriverWait(driver, 5);
-	
 
-	@FindBy(xpath= "//input[starts-with(@id,'jobs-search-box-keyword-')]")
+	WebDriverWait w = new WebDriverWait(driver, 5);
+
+	@FindBy(xpath = "//input[starts-with(@id,'jobs-search-box-keyword-')]")
 	WebElement jobSeaarchBox1;
 	@FindBy(xpath = "//input[starts-with(@id,'jobs-search-box-location-')]")
 	WebElement location1;
+	@FindBy(xpath = "//div[contains(@id,'ember')]/button[1][text()='Search']")
+	WebElement jobSearchButtonOnJobpage;
 
 	/**
 	 * @return the location
@@ -62,8 +66,6 @@ public class JobsPage extends browser {
 	/**
 	 * @return the jobSearchButtonOnJobpage
 	 */
-	@FindBy(css = "button.jobs-search-box__submit-button.button-secondary-large")
-	WebElement jobSearchButtonOnJobpage;
 
 	public final WebElement getJobSearchButtonOnJobpage() {
 		return jobSearchButtonOnJobpage;
@@ -79,14 +81,14 @@ public class JobsPage extends browser {
 
 	public void jobSearch() throws IOException {
 		System.out.println("Current page name is : " + driver.getTitle());
-			
-				System.out.println("INSERTING JOB TEXT TO SEARCH");
-				//w.until(ExpectedConditions.attributeToBeNotEmpty(getJobSeaarchBox(), "Search jobs"));	
-				    getJobSeaarchBox().clear();
-					getJobSeaarchBox().sendKeys(getMyProperty.readmyFile("jobsearch1"));
-		            getLocation().clear();
-		            getLocation().sendKeys(getMyProperty.readmyFile("location1"));
-		            getJobSearchButtonOnJobpage().click();
-		            Log.info("Clicked on JOB SEARCH BUTTON");
+
+		System.out.println("INSERTING JOB TEXT TO SEARCH");
+		//w.until(ExpectedConditions.attributeToBeNotEmpty(getJobSeaarchBox(), "Search jobs"));	
+		getJobSeaarchBox().clear();
+		getJobSeaarchBox().sendKeys(getMyProperty.readmyFile("jobsearch1"));
+		getLocation().clear();
+		getLocation().sendKeys(getMyProperty.readmyFile("location1"));
+		getJobSearchButtonOnJobpage().click();
+		Log.info("Clicked on JOB SEARCH BUTTON");
 	}
 }
