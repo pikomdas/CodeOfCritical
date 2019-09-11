@@ -1,0 +1,240 @@
+package naukri;
+
+import java.util.List;
+import java.util.Set;
+
+import org.junit.*;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+
+import io.github.bonigarcia.wdm.WebDriverManager;
+
+public class loginrnD {
+	
+	public ChromeDriver driver;
+    
+	@BeforeClass
+	public static void setupClass() {
+		WebDriverManager.chromedriver().setup();
+	}
+
+	@Before
+	public void setupTest() {
+		driver = new ChromeDriver();
+		gotoNaukri();
+		clickonLoginonTopofPage();
+		logintoNaukri();
+		jobSearchm();
+	}
+
+	@After
+	public void teardown() {
+		if (driver != null) {
+			driver.quit();
+		}
+	}
+			
+ public void gotoNaukri() {
+		driver.get("https://www.naukri.com");
+		driver.manage().window().maximize();
+		System.out.println("Naukri.com launched from mandate()");
+		String originalHandle = driver.getWindowHandle();
+
+	    //Close all popup tabs **URGENT*****
+
+	    for(String handle : driver.getWindowHandles()) {
+	        if (!handle.equals(originalHandle)) {
+	            driver.switchTo().window(handle);
+	            driver.close();
+	        }
+	    }
+
+	    driver.switchTo().window(originalHandle);		
+ }
+
+    
+public void clickonLoginonTopofPage() {
+      try {
+			
+	      WebElement lgin = driver.findElement(By.xpath("/html/body/div[2]/div/ul/li[6]/a/div"));
+			if(lgin.isDisplayed()==true)
+			{
+			  String login=lgin.getText();
+			  System.out.println("LOGIN FIELD IS PRESENT " +login);
+			  lgin.click();
+			  Thread.sleep(4000);}
+		      } catch (Exception e) {
+			    System.out.println(e);}
+}
+ 
+public void	logintoNaukri() {
+	
+       try {
+    	   WebElement usr = driver.findElement(By.id("usernameField"));
+			if(usr.isDisplayed()==true)
+			{
+			System.out.println("username FIELD IS PRESENT " +usr);
+			usr.sendKeys("pikom.das@gmail.com");}}
+			catch (Exception e) {
+				System.out.println(e);
+			}
+			try {driver.findElement(By.id("eLogin")).sendKeys("pikom.das@gmail.com");}
+			catch (Exception e) {
+				System.out.println(e);
+			}
+			try { driver.findElement(By.id("eLoginNew")).sendKeys("pikom.das@gmail.com");}
+			catch (Exception e) {
+				System.out.println(e);
+			}
+			try {WebElement pass = driver.findElement(By.id("passwordField"));
+			if(pass.isDisplayed()==true)
+			{
+			System.out.println("password FIELD IS PRESENT " +pass);
+			pass.sendKeys("9038583164");}}
+			catch (Exception e) {
+				System.out.println(e);
+			}
+			try{ driver.findElement(By.id("pLogin")).sendKeys("9038583164");}
+			catch (Exception e) {
+				System.out.println(e);
+			}
+			
+			try {
+				WebElement btn = driver.findElement(By.xpath("//button[contains(text(),'Login')]"));
+				if (btn.isDisplayed() == true) {
+					System.out.println("button IS PRESENT " + btn.getText());
+					btn.click();
+				} 
+			} catch (Exception e) {
+				System.out.println(e);
+			}
+}			
+	/**
+	 * CLick on SEARCH TEXT BOX and Enter keys to search
+	 */
+ 
+public void jobSearchm() {			
+			try {
+				Thread.sleep(8000);
+				WebDriverWait wait = new WebDriverWait(driver, 10);
+				WebElement srch1Click = wait.until(ExpectedConditions
+						.elementToBeClickable(By.xpath("//*[@id='qsb-keyskill-sugg' and @name='qp']")));
+				//	WebElement srch1Click=driver.findElement(By.xpath("//*[@id='qsb-keyskill-sugg' and @name='qp']"));
+				//	WebElement srch1Click=driver.findElement(By.xpath("/html/body/div[2]/div/span/div/div/div[1]/div/div/div[2]/div[1]/form/div[2]/div/div/div/div/div[1]/div"));
+				if (srch1Click.isDisplayed() == true) {
+					System.out.println("testbox1 IS PRESENT " + srch1Click.getText());
+
+					srch1Click.click();
+
+					WebElement jobSrchTxt = driver.findElement(By.name("qp"));
+					if (srch1Click.isDisplayed() == true) {
+						System.out.println("textbox2 IS PRESENT " + jobSrchTxt.getText());
+						jobSrchTxt.sendKeys("Selenium");
+						//WebElement srch2Click = driver.findElement(By.xpath("//button[contains(text(),'Login')]"));
+						WebElement srch2Click = driver.findElement(By.xpath("//*[@id='search-jobs']/button"));
+						if (srch2Click.isDisplayed() == true) {
+							System.out.println("button2 IS PRESENT " + srch2Click.getText());
+							srch2Click.click();
+							System.out.println("button2 IS Clicked " + srch2Click.getText());
+						}
+					}
+				} 
+			} catch (Exception e) {
+				// TODO: handle exception
+			}
+}
+	/**
+	 * Click on JOB link and apply the job and come back to previous page		
+	 * @throws InterruptedException */
+	 
+@Test
+public void clickonJobLinkandNavigate() {
+            try {
+            	Thread.sleep(4000);
+				By mySelector = By.className("desig");
+				List<WebElement> myElements = driver.findElements(mySelector);
+				for (WebElement e : myElements) {
+					WebDriverWait wait2 = new WebDriverWait(driver, 10);
+					wait2.until(ExpectedConditions.elementToBeClickable(e));
+					System.out.println(
+					e.getText() + " >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>job link in displayed");
+					String oldTab = driver.getWindowHandle();
+					e.click(); // CLicked on Job Link
+					Set<String> handles = driver.getWindowHandles();
+					for (String handle : handles) {
+
+					if (!handle .equals(oldTab))
+				     {
+				         driver.switchTo().window(handle);
+					Thread.sleep(4000);
+					clickonJobApplyButton();
+					Thread.sleep(4000);
+				     }
+					}
+					driver.switchTo().window(oldTab);
+					System.out.println("Navigated back to>>>>>>>>>>>>>>>>>>>>>>>>>>> : " + oldTab.toUpperCase());
+				} // End of FOR LOOP
+			} catch (Exception f) {
+				System.out.println(f);// TODO: handle exception
+			}
+}
+
+public void	clickonJobApplyButton() {			
+				try {
+					System.out.println("New WebPage Name is : "+ driver.getTitle());
+					
+					driver.findElement(By.cssSelector("ul.listing.mt10.wb")).getText();
+					WebDriverWait wait1 = new WebDriverWait(driver, 10);
+			    	By buttonSelector=By.cssSelector("[id*='trig1']"); 
+					WebElement jobApply = wait1.until(ExpectedConditions.visibilityOfElementLocated(buttonSelector));  
+				  
+					if(jobApply.isDisplayed()==true) {
+					    System.out.println("Blue Color Apply button is dispayed : "+jobApply.getText());
+					    Actions action= new Actions(driver);
+					    action.moveToElement(jobApply).click().perform();
+					    String appluButton=jobApply.getText();
+					    System.out.println(appluButton);
+					    //Finally Apply on Quickly Review and update your Profile
+					    driver.findElement(By.id("qupSubmit")).click();
+					driver.close();
+					}
+					else {
+						driver.close(); // Closing the tab where apply not possible
+					}
+				}
+				catch (Exception e2) {
+                    System.out.println(e2);
+                    // TODO: handle exception
+                    }
+}
+
+} //END OF CLASS			
+
+
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	

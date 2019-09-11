@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="0" total="1" passed="1">
+  <reporter-output>
+  </reporter-output>
+  <suite name="Default suite" duration-ms="45849" started-at="2019-04-21T09:09:18Z" finished-at="2019-04-21T09:10:04Z">
+    <groups>
+      <group name="cucumber">
+        <method signature="execution_3.feature(cucumber.api.testng.CucumberFeatureWrapper)[pri:0, instance:com.Naukri.BDDFrameworkTest.execution_3@617faa95]" name="feature" class="com.Naukri.BDDFrameworkTest.execution_3"/>
+      </group> <!-- cucumber -->
+    </groups>
+    <test name="Default test" duration-ms="45849" started-at="2019-04-21T09:09:18Z" finished-at="2019-04-21T09:10:04Z">
+      <class name="com.Naukri.BDDFrameworkTest.execution_3">
+        <test-method status="PASS" signature="setUpClass()[pri:0, instance:com.Naukri.BDDFrameworkTest.execution_3@617faa95]" name="setUpClass" is-config="true" duration-ms="377" started-at="2019-04-21T14:39:18Z" finished-at="2019-04-21T14:39:18Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUpClass -->
+        <test-method status="PASS" signature="feature(cucumber.api.testng.CucumberFeatureWrapper)[pri:0, instance:com.Naukri.BDDFrameworkTest.execution_3@617faa95]" name="feature" duration-ms="45324" started-at="2019-04-21T14:39:18Z" description="Naukri TestAutomation" data-provider="features" finished-at="2019-04-21T14:40:04Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[user is applying job on www.naukri.com]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- feature -->
+      </class> <!-- com.Naukri.BDDFrameworkTest.execution_3 -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
+</testng-results>

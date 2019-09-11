@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCase>
+ <jobSeeker count="1">
+	<Fname>Partha</Fname>
+	<Lname>Das</Lname>
+	<jobName>Selenium</jobName>
+ </jobSeeker>
+ <jobSeeker count="2">
+	<Fname>Rekha</Fname>
+	<Lname>Das</Lname>
+	<jobName>Oracle</jobName>
+ </jobSeeker>
+</TestCase>
