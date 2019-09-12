@@ -2,6 +2,8 @@ package com.linkedin.pages;
 
 import java.util.List;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
@@ -14,7 +16,6 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import com.linkedin.Browser.browser;
-import com.linkedin.commomUtil.Log;
 import com.linkedin.commomUtil.screenshotCapture;
 import com.linkedin.interfaces.interfaceAsaService;
 
@@ -22,7 +23,7 @@ public class searchJobApplyPage extends browser
 {
 
 	WebDriverWait w = new WebDriverWait(driver, 5);
-	interfaceAsaService Log = new Log();
+	private static Logger log = LogManager.getLogger(searchJobApplyPage.class.getName());
 	interfaceAsaService screenShot = new screenshotCapture();
 
 	// Constructor with parameter
@@ -153,24 +154,24 @@ public class searchJobApplyPage extends browser
 	 */
 	public void clickOnJoblink() throws Throwable {
 		int totalJobInPage = getJobName().size();
-		Log.info("Total job available in page : " + totalJobInPage);
+		log.info("Total job available in page : " + totalJobInPage);
 		int jobApplyNumber = 0;
 		for (WebElement e : getJobName())
 		{
 			w.until(ExpectedConditions.elementToBeClickable(e));
-			Log.info("Job Title is: " + e.getText().toString());
+			log.info("Job Title is: " + e.getText().toString());
 			navigateAndHighLight(e);
 			e.click();
 			w.until(ExpectedConditions.visibilityOf(getCmpanyName().get(jobApplyNumber)));
 
-			Log.info("Company name is : " + getCmpanyName().get(jobApplyNumber).getText().toUpperCase());
+			log.info("Company name is : " + getCmpanyName().get(jobApplyNumber).getText().toUpperCase());
 			// Click on easy apply
 			clickonEasyApply();
 			jobApplyNumber++;
-			Log.info("Completed Job Apply and count is -------------- " + jobApplyNumber);
+			log.info("Completed Job Apply and count is -------------- " + jobApplyNumber);
 			if (jobApplyNumber == totalJobInPage)
 			{
-				Log.info("Calling Method through Recursion");
+				log.info("Calling Method through Recursion");
 				jobName = driver.findElements(By.xpath(
 						"//*[@class='jobs-search-results__list artdeco-list']/li/div/artdeco-entity-lockup/artdeco-entity-lockup-content/h3"));
 				Thread.sleep(2000);
@@ -189,8 +190,8 @@ public class searchJobApplyPage extends browser
 		String prvPage = driver.getTitle();
 		driver.navigate().back();
 		String curPage = driver.getTitle();
-		Log.info(prvPage + "is currentpage and navigated back to " + curPage);
-		Log.info(prvPage + "is currentpage and navigated back to " + curPage);
+		log.info(prvPage + "is currentpage and navigated back to " + curPage);
+		log.info(prvPage + "is currentpage and navigated back to " + curPage);
 
 	}
 
@@ -221,19 +222,19 @@ public class searchJobApplyPage extends browser
 			else if (getEasyApplyORApplyButton().getText() == "Apply")
 			{
 				// While easy Apply failed check if "Apply" button present or not
-				Log.error("Easy Apply Failed");
+				log.error("Easy Apply Failed");
 				// Code to be added to Apply
-				Log.info("Apply Button is available");
+				log.info("Apply Button is available");
 			}
 			else
 			{
-				Log.error("Apply Button is not available");
-				Log.info(getMessageWhereApplynotPossible().getText());
+				log.error("Apply Button is not available");
+				log.info(getMessageWhereApplynotPossible().getText());
 			}
 		}
 		catch (Exception e)
 		{
-			Log.error("Execution  error -- ");
+			log.error("Execution  error -- ");
 			throw new Error("Execution  error -- ");
 
 		}
@@ -247,22 +248,22 @@ public class searchJobApplyPage extends browser
 		Actions act = new Actions(driver);
 		act.moveToElement(getResumeSelect()).perform();
 		act.click();
-		Log.info("Clicked on " + getResumeSelect().getText());
+		log.info("Clicked on " + getResumeSelect().getText());
 
 		w.until(ExpectedConditions.elementToBeClickable(getSelectAttachedResume()));
 		getSelectAttachedResume().click();
-		Log.info("Selected resume name is " + getSelectAttachedResume().getText());
+		log.info("Selected resume name is " + getSelectAttachedResume().getText());
 		screenShot.takeScreenShotofCurrentpage();
 
 		getSubmitApplicationButton().click();
-		Log.info("Job Application Submitted.");
+		log.info("Job Application Submitted.");
 		try
 		{
 			afterApplyPopups.class.getDeclaredConstructor(WebDriver.class).newInstance(driver).pop1();
 		}
 		catch (Exception e)
 		{
-			Log.info("POP1 UP NOT DISPLAYED");
+			log.info("POP1 UP NOT DISPLAYED");
 		}
 		try
 		{
@@ -270,7 +271,7 @@ public class searchJobApplyPage extends browser
 		}
 		catch (Exception f)
 		{
-			Log.info("POP2 UP NOT DISPLAYED");
+			log.info("POP2 UP NOT DISPLAYED");
 		}
 	}
 

@@ -1,6 +1,3 @@
-/**
- * 
- */
 package com.linkedin.interfaces;
 
 import java.io.IOException;
@@ -12,7 +9,8 @@ import org.testng.ITestResult;
  * @author Critical 
  * Main Interface to be called
  */
-public interface interfaceAsaService {
+public interface interfaceAsaService
+{
 
 	void takeScreenShotofCurrentpage() throws IOException;
 
@@ -30,16 +28,16 @@ public interface interfaceAsaService {
 
 	void debug(String message);
 
-	public void onTestStart(ITestResult result);
+	void onTestStart(ITestResult result);
 
-	public void onTestSuccess(ITestResult result);
+	void onTestSuccess(ITestResult result);
 
-	public void onTestFailure(ITestResult result);
+	void onTestFailure(ITestResult result);
 
-	public void onTestSkipped(ITestResult result);
+	void onTestSkipped(ITestResult result);
 
-	public void onStart(ITestContext context);
+	void onStart(ITestContext context);
 
-	public void onFinish(ITestContext context);
+	void onFinish(ITestContext context);
 
 }

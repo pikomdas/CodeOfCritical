@@ -1,19 +1,20 @@
 package com.linkedin.pages;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
 import com.linkedin.Browser.browser;
-import com.linkedin.commomUtil.Log;
-import com.linkedin.interfaces.interfaceAsaService;
 
 //TEST PASSED
 
-public class loginToLinkedin extends browser {
+public class loginToLinkedin extends browser
+{
 
-	interfaceAsaService Log = new Log();
+	private static Logger log = LogManager.getLogger(loginToLinkedin.class.getName());
 
 	@FindBy(xpath = "//input[@id='username']")
 	WebElement loginEmailId;
@@ -24,7 +25,8 @@ public class loginToLinkedin extends browser {
 	@FindBy(xpath = "//*[@class='nav__button-secondary' and text()='Sign in']")
 	WebElement signIn;
 
-	public loginToLinkedin(final WebDriver driver) {
+	public loginToLinkedin(final WebDriver driver)
+	{
 		browser.driver = driver;
 		PageFactory.initElements(driver, this);
 	}
@@ -65,17 +67,16 @@ public class loginToLinkedin extends browser {
 	// wait2.until(ExpectedConditions.elementToBeClickable(getEmailId()));
 	// wait2.until(ExpectedConditions.elementToBeClickable(getPassword()));
 	// public void userNamePasswordAndlogin () throws Exception
-	public void userNamePasswordAndlogin(final String strUserName, final String strPasword)
-			throws Throwable {
+	public void userNamePasswordAndlogin(final String strUserName, final String strPasword) throws Throwable {
 		getSignIn().click();
-		Log.info(driver.getTitle());
+		log.info(driver.getTitle());
 		System.out.print(getLoginEmailId().getText());
 		getLoginEmailId().sendKeys(strUserName);
-		Log.info("UserID is thrown");
+		log.info("UserID is thrown");
 		getPassword().sendKeys(strPasword);
-		Log.info("Password is  thrown");
+		log.info("Password is  thrown");
 		getLogInBtn().click();
-		Log.info("LINKEDIN login successful");
+		log.info("LINKEDIN login successful");
 
 	}
 }

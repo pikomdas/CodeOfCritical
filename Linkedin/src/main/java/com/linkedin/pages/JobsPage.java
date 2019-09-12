@@ -2,6 +2,8 @@ package com.linkedin.pages;
 
 import java.io.IOException;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -9,14 +11,12 @@ import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import com.linkedin.Browser.browser;
-import com.linkedin.commomUtil.Log;
 import com.linkedin.commomUtil.getMyProperty;
-import com.linkedin.interfaces.interfaceAsaService;
 
 public class JobsPage extends browser
 {
 
-	interfaceAsaService Log = new Log();
+	private static Logger log = LogManager.getLogger(JobsPage.class.getName());
 
 	public JobsPage(final WebDriver driver)
 	{
@@ -80,15 +80,15 @@ public class JobsPage extends browser
 	}
 
 	public void jobSearch() throws IOException {
-		System.out.println("Current page name is : " + driver.getTitle());
+		log.info("Current page name is : " + driver.getTitle());
 
-		System.out.println("INSERTING JOB TEXT TO SEARCH");
+		log.info("INSERTING JOB TEXT TO SEARCH");
 		//w.until(ExpectedConditions.attributeToBeNotEmpty(getJobSeaarchBox(), "Search jobs"));	
 		getJobSeaarchBox().clear();
 		getJobSeaarchBox().sendKeys(getMyProperty.readmyFile("jobsearch1"));
 		getLocation().clear();
 		getLocation().sendKeys(getMyProperty.readmyFile("location1"));
 		getJobSearchButtonOnJobpage().click();
-		Log.info("Clicked on JOB SEARCH BUTTON");
+		log.info("Clicked on JOB SEARCH BUTTON");
 	}
 }

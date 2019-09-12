@@ -1,6 +1,8 @@
 package LINKEDIN;
 
 import org.apache.log4j.BasicConfigurator;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.testng.ITestContext;
 import org.testng.ITestResult;
 import org.testng.annotations.AfterMethod;
@@ -10,7 +12,7 @@ import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
 import com.linkedin.Browser.browser;
-import com.linkedin.commomUtil.Log;
+import com.linkedin.commomUtil.CustomLog;
 import com.linkedin.commomUtil.MyReport;
 import com.linkedin.commomUtil.getMyProperty;
 import com.linkedin.commomUtil.screenshotCapture;
@@ -25,20 +27,22 @@ import com.linkedin.pages.searchJobApplyPage;
  *
  */
 
-public class linkedin_DDT extends browser {
+public class linkedin_DDT extends browser
+{
 
-	interfaceAsaService log = new Log();
+	private static Logger log = LogManager.getLogger(linkedin_DDT.class.getName());
 	interfaceAsaService screenShot = new screenshotCapture();
 	interfaceAsaService report = new MyReport();
 
-	public linkedin_DDT() {
+	public linkedin_DDT()
+	{
 		super();
 	}
 
 	@BeforeTest
 	public void openBrowserToLogin(ITestContext result) throws Exception {
 		BasicConfigurator.configure();
-		log.startTestCase(getClass().getName());
+		CustomLog.class.getDeclaredConstructor().newInstance().startTestCase(getClass().getName());
 		openBrowserandNavigate();
 		report.onStart(result);
 
@@ -92,17 +96,21 @@ public class linkedin_DDT extends browser {
 
 	@AfterMethod
 	public void conclution(ITestResult result) {
-		if (result.isSuccess()) {
+		if (result.isSuccess())
+		{
 			report.onTestSuccess(result);
-		} else {
+		}
+		else
+		{
 			report.onTestFailure(result);
 		}
 	}
 
 	@AfterTest
-	public void aaahhhh(ITestContext result) {
+	public void aaahhhh(ITestContext result) throws Throwable {
 		// teardown();
-		log.endTestCase(getClass().getName());
+
+		CustomLog.class.getDeclaredConstructor().newInstance().endTestCase(getClass().getName());
 		report.onFinish(result);
 	}
 

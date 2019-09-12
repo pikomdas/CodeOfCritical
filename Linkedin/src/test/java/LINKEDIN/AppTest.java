@@ -6,7 +6,7 @@ import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
 import com.linkedin.Browser.browser;
-import com.linkedin.commomUtil.Log;
+import com.linkedin.commomUtil.CustomLog;
 import com.linkedin.commomUtil.MyReport;
 import com.linkedin.commomUtil.getMyProperty;
 import com.linkedin.commomUtil.screenshotCapture;
@@ -17,12 +17,14 @@ import com.linkedin.pages.loginToLinkedin;
  * www.linkedin.com
  *
  */
-public class AppTest extends MyReport {
+public class AppTest extends MyReport
+{
 
-	interfaceAsaService log = new Log();
-	interfaceAsaService screenShot=new screenshotCapture();
+	CustomLog log = new CustomLog();
+	interfaceAsaService screenShot = new screenshotCapture();
 
-	public AppTest() {
+	public AppTest()
+	{
 		super();
 	}
 
@@ -33,7 +35,7 @@ public class AppTest extends MyReport {
 		openBrowserandNavigate();
 	}
 
-	@Test(priority=0, description="Login Scenario with correct username and password.")
+	@Test(priority = 0, description = "Login Scenario with correct username and password.")
 	public void executin() throws Throwable {
 
 		System.out.println("EXECUTION IN PROGRESS");
