@@ -8,9 +8,8 @@ import org.testng.annotations.Test;
 import com.linkedin.Browser.browser;
 import com.linkedin.commomUtil.CustomLog;
 import com.linkedin.commomUtil.MyReport;
+import com.linkedin.commomUtil.ScreenshotCapture;
 import com.linkedin.commomUtil.getMyProperty;
-import com.linkedin.commomUtil.screenshotCapture;
-import com.linkedin.interfaces.interfaceAsaService;
 import com.linkedin.pages.loginToLinkedin;
 
 /**
@@ -21,7 +20,7 @@ public class AppTest extends MyReport
 {
 
 	CustomLog log = new CustomLog();
-	interfaceAsaService screenShot = new screenshotCapture();
+	ScreenshotCapture screenShot = new ScreenshotCapture();
 
 	public AppTest()
 	{

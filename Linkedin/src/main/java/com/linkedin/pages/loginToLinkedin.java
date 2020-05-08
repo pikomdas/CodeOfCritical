@@ -6,24 +6,25 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 import com.linkedin.Browser.browser;
 
-//TEST PASSED
 
 public class loginToLinkedin extends browser
 {
-
+	private WebDriverWait w1=new WebDriverWait(driver,10);
 	private static Logger log = LogManager.getLogger(loginToLinkedin.class.getName());
 
 	@FindBy(xpath = "//input[@id='username']")
-	WebElement loginEmailId;
+	private WebElement loginEmailId;
 	@FindBy(css = "input[id*='password']")
-	WebElement password;
+	private WebElement password;
 	@FindBy(xpath = "//*[text()='Sign in']")
-	WebElement logInBtn;
+	private WebElement logInBtn;
 	@FindBy(xpath = "//*[@class='nav__button-secondary' and text()='Sign in']")
-	WebElement signIn;
+	private WebElement signIn;
 
 	public loginToLinkedin(final WebDriver driver)
 	{
@@ -31,52 +32,53 @@ public class loginToLinkedin extends browser
 		PageFactory.initElements(driver, this);
 	}
 
-	public final WebElement getLoginEmailId() {
+	public final WebElement getLoginEmailId()
+	{
 		return loginEmailId;
 	}
 
-	public final WebElement getPassword() {
+	public final WebElement getPassword()
+	{
 		return password;
 	}
 
-	public final WebElement getLogInBtn() {
+	public final WebElement getLogInBtn()
+	{
 		return logInBtn;
 	}
 
-	public final WebElement getSignIn() {
+	public final WebElement getSignIn()
+	{
 		return signIn;
 	}
 
-	public final void setLoginEmailId(WebElement loginEmailId) {
-		this.loginEmailId = loginEmailId;
-	}
 
-	public final void setPassword(WebElement password) {
-		this.password = password;
-	}
+	public void userNamePasswordAndlogin(final String strUserName, final String strPasword) throws Throwable
+	{
+		// Click on Sign in
+		ClickOnElement(getSignIn());
+		String title=driver.getTitle();
+		log.info(title);
 
-	public final void setLogInBtn(WebElement logInBtn) {
-		this.logInBtn = logInBtn;
-	}
-
-	public final void setSignIn(WebElement signIn) {
-		this.signIn = signIn;
-	}
-
-	// WebDriverWait wait2 = new WebDriverWait(driver, 10);
-	// wait2.until(ExpectedConditions.elementToBeClickable(getEmailId()));
-	// wait2.until(ExpectedConditions.elementToBeClickable(getPassword()));
-	// public void userNamePasswordAndlogin () throws Exception
-	public void userNamePasswordAndlogin(final String strUserName, final String strPasword) throws Throwable {
-		getSignIn().click();
-		log.info(driver.getTitle());
-		System.out.print(getLoginEmailId().getText());
-		getLoginEmailId().sendKeys(strUserName);
+		// Sending userName
+		SendKeysTo(getLoginEmailId(), strUserName);
 		log.info("UserID is thrown");
-		getPassword().sendKeys(strPasword);
+		// Sending Password
+		SendKeysTo(getPassword(), strPasword);
 		log.info("Password is  thrown");
-		getLogInBtn().click();
+		// Click on Login Button
+		ClickOnElement(getLogInBtn());
 		log.info("LINKEDIN login successful");
-
+		
+		try
+		{
+			if(w1.until(ExpectedConditions.titleIs(title))){
+				userNamePasswordAndlogin(strUserName, strPasword);
+			}
+		} catch (Throwable e)
+		{
+			log.warn(e.getMessage());
+		}
+		
 	}
 }

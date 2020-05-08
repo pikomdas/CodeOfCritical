@@ -24,27 +24,29 @@ public class feedPage extends browser
 	}
 
 	@FindBy(css = "span[id*='mynetwork-tab-icon']")
-	WebElement myNetworkTabIcon;
+	private WebElement myNetworkTabIcon;
 	@FindBy(css = "span[id*='jobs-tab-icon']")
-	WebElement jobSearchButtonOnFeedpage;
+	private WebElement jobSearchButtonOnFeedpage;
 	@FindBy(css = "span[class*='nav-item__badge-count']")
-	WebElement notificationCount;
+	private WebElement notificationCount;
 	@FindBy(css = "span[id*='notifications-tab-icon']")
-	WebElement notificationIcon;
-	@FindBy(css = ".lazy-image.loaded.feed-identity-module__member-photo.profile-rail-card__member-photo.EntityPhoto-circle-5")
-	WebElement profiePicture;
+	private WebElement notificationIcon;
+	@FindBy(xpath = "//*[@class='feed-identity-module__member-photo profile-rail-card__member-photo EntityPhoto-circle-5 lazy-image ember-view']")
+	private WebElement profiePicture;
 	@FindBy(css = "span[class*='feed-identity-module__stat link-without-visited-state']")
-	WebElement howManyViewedmyProfile;
+	private WebElement howManyViewedmyProfile;
 	@FindBy(css = "button[class*='widget-route']")
-	WebElement viewsOfMyPost;
+	private WebElement viewsOfMyPost;
 	@FindBy(css = ".Sans-17px-black-85%-semibold")
-	WebElement profileName;
+	private WebElement profileName;
 
-	public WebElement getProfileName() {
+	public WebElement getProfileName()
+	{
 		return profileName;
 	}
 
-	public void setProfileName(WebElement profileName) {
+	public void setProfileName(WebElement profileName)
+	{
 		this.profileName = profileName;
 	}
 
@@ -54,127 +56,145 @@ public class feedPage extends browser
 	/**
 	 * @return the feedIcon
 	 */
-	public final WebElement getFeedIcon() {
+	public final WebElement getFeedIcon()
+	{
 		return feedIcon;
 	}
 
 	/**
 	 * @param feedIcon the feedIcon to set
 	 */
-	public final void setFeedIcon(WebElement feedIcon) {
+	public final void setFeedIcon(WebElement feedIcon)
+	{
 		this.feedIcon = feedIcon;
 	}
 
 	/**
 	 * @return the myNetworkTabIcon
 	 */
-	public final WebElement getMyNetworkTabIcon() {
+	public final WebElement getMyNetworkTabIcon()
+	{
 		return myNetworkTabIcon;
 	}
 
 	/**
 	 * @param myNetworkTabIcon the myNetworkTabIcon to set
 	 */
-	public final void setMyNetworkTabIcon(WebElement myNetworkTabIcon) {
+	public final void setMyNetworkTabIcon(WebElement myNetworkTabIcon)
+	{
 		this.myNetworkTabIcon = myNetworkTabIcon;
 	}
 
 	/**
 	 * @return the jobSearchButtonOnFeedpage
 	 */
-	public final WebElement getJobSearchButtonOnFeedpage() {
+	public final WebElement getJobSearchButtonOnFeedpage()
+	{
 		return jobSearchButtonOnFeedpage;
 	}
 
 	/**
 	 * @param jobSearchButtonOnFeedpage the jobSearchButtonOnFeedpage to set
 	 */
-	public final void setJobSearchButtonOnFeedpage(WebElement jobSearchButtonOnFeedpage) {
+	public final void setJobSearchButtonOnFeedpage(WebElement jobSearchButtonOnFeedpage)
+	{
 		this.jobSearchButtonOnFeedpage = jobSearchButtonOnFeedpage;
 	}
 
 	/**
 	 * @return the notificationCount
 	 */
-	public final WebElement getNotificationCount() {
+	public final WebElement getNotificationCount()
+	{
 		return notificationCount;
 	}
 
 	/**
 	 * @param notificationCount the notificationCount to set
 	 */
-	public final void setNotificationCount(WebElement notificationCount) {
+	public final void setNotificationCount(WebElement notificationCount)
+	{
 		this.notificationCount = notificationCount;
 	}
 
 	/**
 	 * @return the notificationIcon
 	 */
-	public final WebElement getNotificationIcon() {
+	public final WebElement getNotificationIcon()
+	{
 		return notificationIcon;
 	}
 
 	/**
 	 * @param notificationIcon the notificationIcon to set
 	 */
-	public final void setNotificationIcon(WebElement notificationIcon) {
+	public final void setNotificationIcon(WebElement notificationIcon)
+	{
 		this.notificationIcon = notificationIcon;
 	}
 
 	/**
 	 * @return the profiePicture
 	 */
-	public final WebElement getProfiePicture() {
+	public final WebElement getProfiePicture()
+	{
 		return profiePicture;
 	}
 
 	/**
 	 * @param profiePicture the profiePicture to set
 	 */
-	public final void setProfiePicture(WebElement profiePicture) {
+	public final void setProfiePicture(WebElement profiePicture)
+	{
 		this.profiePicture = profiePicture;
 	}
 
 	/**
 	 * @return the howManyViewedmyProfile
 	 */
-	public final WebElement getHowManyViewedmyProfile() {
+	public final WebElement getHowManyViewedmyProfile()
+	{
 		return howManyViewedmyProfile;
 	}
 
 	/**
 	 * @param howManyViewedmyProfile the howManyViewedmyProfile to set
 	 */
-	public final void setHowManyViewedmyProfile(WebElement howManyViewedmyProfile) {
+	public final void setHowManyViewedmyProfile(WebElement howManyViewedmyProfile)
+	{
 		this.howManyViewedmyProfile = howManyViewedmyProfile;
 	}
 
 	/**
 	 * @return the viewsOfMyPost
 	 */
-	public final WebElement getViewsOfMyPost() {
+	public final WebElement getViewsOfMyPost()
+	{
 		return viewsOfMyPost;
 	}
 
 	/**
 	 * @param viewsOfMyPost the viewsOfMyPost to set
 	 */
-	public final void setViewsOfMyPost(WebElement viewsOfMyPost) {
+	public final void setViewsOfMyPost(WebElement viewsOfMyPost)
+	{
 		this.viewsOfMyPost = viewsOfMyPost;
 	}
 
-	public void clickOnJobButton() {
+	public void clickOnJobButton()
+	{
 		getJobSearchButtonOnFeedpage().click();
 		log.info("Clicked on JobButton on Feed Page");
 		log.info("Current page name is : " + driver.getTitle());
 
 	}
 
-	public void informationAboutMyProfile() {
+	public void informationAboutMyProfile()
+	{
 		log.info("Waiting to load the page");
 		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 
-		if (getMyNetworkTabIcon().isDisplayed() || getProfileName().isDisplayed())
+		if(getMyNetworkTabIcon().isDisplayed() || getProfileName().isDisplayed())
 		{
 			log.info("Profile picture x: " + getProfiePicture().getSize().getWidth() + " Profile picture y: "
 					+ getProfiePicture().getSize().getHeight());

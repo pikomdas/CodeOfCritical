@@ -207,7 +207,7 @@ public abstract class BrowserConfig
 	/**
 	 * @param element
 	 */
-	public abstract <T, T1> void ClickOnElement(T element);
+	public abstract <T> void ClickOnElement(T element);
 
 	/**
 	 * @param element

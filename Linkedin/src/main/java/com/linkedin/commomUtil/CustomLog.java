@@ -46,6 +46,4 @@ public class CustomLog
 
 	}
 
-	// Need to create these methods, so that they can be called  
-
 }

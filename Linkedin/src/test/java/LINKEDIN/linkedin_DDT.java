@@ -14,13 +14,12 @@ import org.testng.annotations.Test;
 import com.linkedin.Browser.browser;
 import com.linkedin.commomUtil.CustomLog;
 import com.linkedin.commomUtil.MyReport;
+import com.linkedin.commomUtil.ScreenshotCapture;
 import com.linkedin.commomUtil.getMyProperty;
-import com.linkedin.commomUtil.screenshotCapture;
-import com.linkedin.interfaces.interfaceAsaService;
 import com.linkedin.pages.JobsPage;
+import com.linkedin.pages.SearchJobApplyPage;
 import com.linkedin.pages.feedPage;
 import com.linkedin.pages.loginToLinkedin;
-import com.linkedin.pages.searchJobApplyPage;
 
 /**
  * www.linkedin.com
@@ -31,8 +30,8 @@ public class linkedin_DDT extends browser
 {
 
 	private static Logger log = LogManager.getLogger(linkedin_DDT.class.getName());
-	interfaceAsaService screenShot = new screenshotCapture();
-	interfaceAsaService report = new MyReport();
+	ScreenshotCapture screenShot = new ScreenshotCapture();
+	MyReport report = new MyReport();
 
 	public linkedin_DDT()
 	{
@@ -85,7 +84,7 @@ public class linkedin_DDT extends browser
 		// Search JOB page , check if the EasyApply button is active or not
 		// Return Back to previous page
 
-		searchJobApplyPage sjp = new searchJobApplyPage(driver);
+		SearchJobApplyPage sjp = new SearchJobApplyPage(driver);
 		log.info(">>>>>>>>>>>>>>>>>>>>>  Applying for jobs");
 		sjp.clickOnJoblink();
 		screenShot.takeScreenShotofCurrentpage();

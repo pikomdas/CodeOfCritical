@@ -8,6 +8,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import com.linkedin.Browser.browser;
@@ -24,7 +25,7 @@ public class JobsPage extends browser
 		PageFactory.initElements(driver, this);
 	}
 
-	WebDriverWait w = new WebDriverWait(driver, 5);
+	WebDriverWait w1 = new WebDriverWait(driver, 10);
 
 	@FindBy(xpath = "//input[starts-with(@id,'jobs-search-box-keyword-')]")
 	WebElement jobSeaarchBox1;
@@ -36,30 +37,32 @@ public class JobsPage extends browser
 	/**
 	 * @return the location
 	 */
-	public final WebElement getLocation() {
+	public final WebElement getLocation()
+	{
 		return location1;
 	}
 
 	/**
-	 * @param location
-	 *            the location to set
+	 * @param location the location to set
 	 */
-	public final void setLocation(final WebElement location) {
+	public final void setLocation(final WebElement location)
+	{
 		this.location1 = location;
 	}
 
 	/**
 	 * @return the jobSeaarchBox
 	 */
-	public final WebElement getJobSeaarchBox() {
+	public final WebElement getJobSeaarchBox()
+	{
 		return jobSeaarchBox1;
 	}
 
 	/**
-	 * @param jobSeaarchBox
-	 *            the jobSeaarchBox to set
+	 * @param jobSeaarchBox the jobSeaarchBox to set
 	 */
-	public final void setJobSeaarchBox(final WebElement jobSeaarchBox) {
+	public final void setJobSeaarchBox(final WebElement jobSeaarchBox)
+	{
 		this.jobSeaarchBox1 = jobSeaarchBox;
 	}
 
@@ -67,28 +70,43 @@ public class JobsPage extends browser
 	 * @return the jobSearchButtonOnJobpage
 	 */
 
-	public final WebElement getJobSearchButtonOnJobpage() {
+	public final WebElement getJobSearchButtonOnJobpage()
+	{
 		return jobSearchButtonOnJobpage;
 	}
 
 	/**
-	 * @param jobSearchButtonOnJobpage
-	 *            the jobSearchButtonOnJobpage to set
+	 * @param jobSearchButtonOnJobpage the jobSearchButtonOnJobpage to set
 	 */
-	public final void setJobSearchButtonOnJobpage(final WebElement jobSearchButtonOnJobpage) {
+	public final void setJobSearchButtonOnJobpage(final WebElement jobSearchButtonOnJobpage)
+	{
 		this.jobSearchButtonOnJobpage = jobSearchButtonOnJobpage;
 	}
 
-	public void jobSearch() throws IOException {
-		log.info("Current page name is : " + driver.getTitle());
+	public void jobSearch() throws IOException
+	{
+		String currentTitle = driver.getTitle();
+		log.info("Current page name is : " + currentTitle);
 
 		log.info("INSERTING JOB TEXT TO SEARCH");
-		//w.until(ExpectedConditions.attributeToBeNotEmpty(getJobSeaarchBox(), "Search jobs"));	
-		getJobSeaarchBox().clear();
-		getJobSeaarchBox().sendKeys(getMyProperty.readmyFile("jobsearch1"));
-		getLocation().clear();
-		getLocation().sendKeys(getMyProperty.readmyFile("location1"));
+		w1.until(ExpectedConditions.visibilityOf(getJobSeaarchBox()));
+		// Sending Job search text
+		SendKeysTo(getJobSeaarchBox(), getMyProperty.readmyFile("jobsearch1"));
+		// Sending Location
+		SendKeysTo(getLocation(), getMyProperty.readmyFile("location1"));
+		// Clicking on job search button
 		getJobSearchButtonOnJobpage().click();
 		log.info("Clicked on JOB SEARCH BUTTON");
+		
+		try
+		{
+			if(w1.until(ExpectedConditions.titleIs(currentTitle))){
+				jobSearch();
+			}
+		} catch (Throwable e)
+		{
+			log.warn(e.getMessage());
+		}
+		
 	}
 }

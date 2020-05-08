@@ -4,6 +4,7 @@ import java.io.File;
 import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.parsers.DocumentBuilder;
 
+import org.testng.annotations.Test;
 import org.w3c.dom.Document;
 import org.w3c.dom.NodeList;
 import org.w3c.dom.Node;
@@ -11,7 +12,7 @@ import org.w3c.dom.Element;
 
 public class readXMLfile {
 
-	@org.testng.annotations.Test
+	@Test
 	public void getTestData() {
 
 		try {

@@ -9,6 +9,8 @@ import java.util.concurrent.TimeUnit;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.By;
+import org.openqa.selenium.NoSuchElementException;
+import org.openqa.selenium.StaleElementReferenceException;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
@@ -24,9 +26,11 @@ public class browser extends BrowserConfig
 	FileInputStream fileInput;
 	private static Logger log = LogManager.getLogger(browser.class.getName());
 	private static WebDriverWait w1;
+	private int exceptionCount = 0;
 
 	// TEST PASSED
-	public void openBrowserandNavigate() throws Exception {
+	public void openBrowserandNavigate() throws Exception
+	{
 		try
 		{
 
@@ -40,15 +44,15 @@ public class browser extends BrowserConfig
 			driver.manage().window().maximize();
 
 			log.info("Browser is MAXIMIZED");
-		}
-		catch (Exception e)
+		} catch (Exception e)
 		{
 			e.printStackTrace();
 		}
 	}
 
-	public void teardown() {
-		if (driver != null)
+	public void teardown()
+	{
+		if(driver != null)
 		{
 			driver.quit();
 			log.info("Browser Closed");
@@ -57,8 +61,9 @@ public class browser extends BrowserConfig
 	}
 
 	@Override
-	public <T, T1> void DropdownSelect(T element, T1 text) {
-		if (((WebElement) element).getTagName() != null)
+	public <T, T1> void DropdownSelect(T element, T1 text)
+	{
+		if(((WebElement) element).getTagName() != null)
 		{
 			w1 = new WebDriverWait(driver, 20);
 			w1.until(
@@ -68,14 +73,13 @@ public class browser extends BrowserConfig
 			try
 			{
 				select.deselectAll();
-			}
-			catch (Exception e)
+			} catch (Exception e)
 			{
 				log.error(e.getMessage());
 			}
 			for (WebElement e : allDropDownOptions)
 			{
-				if (e.getText().contains((String) text))
+				if(e.getText().contains((String) text))
 				{
 					select.selectByVisibleText(e.getText());
 					break;
@@ -96,8 +100,9 @@ public class browser extends BrowserConfig
 	 * @return
 	 */
 	@Override
-	public <T, T1> void ExactDropdownSelect(T element, T1 text) {
-		if (((WebElement) element).getTagName() != null)
+	public <T, T1> void ExactDropdownSelect(T element, T1 text)
+	{
+		if(((WebElement) element).getTagName() != null)
 		{
 			w1 = new WebDriverWait(driver, 20);
 			w1.until(
@@ -107,14 +112,13 @@ public class browser extends BrowserConfig
 			try
 			{
 				select.deselectAll();
-			}
-			catch (Exception e)
+			} catch (Exception e)
 			{
 				log.error(e.getMessage());
 			}
 			for (WebElement e : allDropDownOptions)
 			{
-				if (e.getText().equalsIgnoreCase((String) text))
+				if(e.getText().equalsIgnoreCase((String) text))
 				{
 					select.selectByVisibleText(e.getText());
 					break;
@@ -132,28 +136,58 @@ public class browser extends BrowserConfig
 	 * This method will CLICK on element
 	 */
 	@Override
-	public <T, T1> void ClickOnElement(T element) {
-		if (((WebElement) element).isDisplayed())
+	public <T> void ClickOnElement(T element)
+	{
+		try
 		{
 			w1 = new WebDriverWait(driver, 10);
-			w1.until(ExpectedConditions.elementToBeClickable(((WebElement) element)));
-			((WebElement) element).click();
-			// new ScrollAndHighlight(((WebElement) element));
-		}
-		else
+			w1.until(ExpectedConditions.visibilityOf(((WebElement) element)));
+
+			if(((WebElement) element).isDisplayed())
+			{
+				w1 = new WebDriverWait(driver, 10);
+				w1.until(ExpectedConditions.elementToBeClickable(((WebElement) element)));
+				((WebElement) element).click();
+				// new ScrollAndHighlight(((WebElement) element));
+			}
+			else
+			{
+				throw new Exception("Unable to Click on Element because element is not displayed");
+			}
+		} catch (Exception e)
 		{
-			throw new Error("Unable to Click on Element because element is not displayed");
+			log.error(e.getMessage());
+
+			if(e instanceof StaleElementReferenceException)
+			{
+				if(exceptionCount < 3)
+				{
+					exceptionCount++;
+					log.warn(e.getMessage());
+					ClickOnElement(element);
+				}
+			}
+			else if(e.getCause() instanceof NoSuchElementException)
+			{
+				throw new Error("script breaked because of wrong element");
+			}
+			else
+			{
+				e.printStackTrace();
+			}
+
 		}
+		exceptionCount = 0;
 	}
 
 	/**
 	 * This method will clear the text box and send keys
 	 */
 	@Override
-	public <T, T1> void SendKeysTo(T element, T1 text) {
-		if (((WebElement) element).isDisplayed())
+	public <T, T1> void SendKeysTo(T element, T1 text)
+	{
+		if(((WebElement) element).isDisplayed())
 		{
-			//new ScrollAndHighlight(((WebElement) element));
 			((WebElement) element).clear();
 			((WebElement) element).sendKeys((String) text);
 
@@ -165,34 +199,4 @@ public class browser extends BrowserConfig
 		}
 	}
 
-	//	/**
-	//	 * This method will handle the dynamic table All rows LIST need to be provided
-	//	 * and return sorted List of List WebElement will be returned (non-Javadoc)
-	//	 * 
-	//	 * @see com.assetvantage.baseClass.browserConfig#handleTable(java.util.List)
-	//	 * 
-	//	 */
-	//	@Override
-	//	public List<List<WebElement>> handleTable(List<WebElement> allrow) {
-	//		List<List<WebElement>> returnColumns = new ArrayList<List<WebElement>>();
-	//		for (WebElement eachRow : allrow)
-	//		{
-	//			List<WebElement> eachColumnForOneRow = eachRow.findElements(By.tagName("td"));
-	//			returnColumns.add(eachColumnForOneRow);
-	//			// eachColumnForOneRow.clear();
-	//		}
-	//		Collections.sort(returnColumns, new Comparator<List<WebElement>>()
-	//		{
-	//
-	//			@Override
-	//			public int compare(List<WebElement> o1, List<WebElement> o2) {
-	//				// TODO Auto-generated method stub
-	//				return o1.hashCode() - o2.hashCode();
-	//			}
-	//
-	//		});
-	//
-	//		Collections.reverse(returnColumns);
-	//		return returnColumns;
-	//	}
 }
