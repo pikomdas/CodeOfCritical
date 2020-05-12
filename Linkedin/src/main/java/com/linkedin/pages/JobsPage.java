@@ -83,13 +83,13 @@ public class JobsPage extends browser
 		this.jobSearchButtonOnJobpage = jobSearchButtonOnJobpage;
 	}
 
-	public void jobSearch() throws IOException
+	public void jobSearch() throws IOException, InterruptedException
 	{
-		String currentTitle = driver.getTitle();
-		log.info("Current page name is : " + currentTitle);
 
 		log.info("INSERTING JOB TEXT TO SEARCH");
 		w1.until(ExpectedConditions.visibilityOf(getJobSeaarchBox()));
+		String currentTitle = driver.getTitle();
+		log.info("Current page name is : " + currentTitle);
 		// Sending Job search text
 		SendKeysTo(getJobSeaarchBox(), getMyProperty.readmyFile("jobsearch1"));
 		// Sending Location
@@ -98,15 +98,7 @@ public class JobsPage extends browser
 		getJobSearchButtonOnJobpage().click();
 		log.info("Clicked on JOB SEARCH BUTTON");
 		
-		try
-		{
-			if(w1.until(ExpectedConditions.titleIs(currentTitle))){
-				jobSearch();
-			}
-		} catch (Throwable e)
-		{
-			log.warn(e.getMessage());
-		}
+		Thread.sleep(5000);
 		
 	}
 }

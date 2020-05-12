@@ -21,7 +21,7 @@ import com.linkedin.commomUtil.ScreenshotCapture;
 public class SearchJobApplyPage extends JobsPage
 {
 
-	WebDriverWait w = new WebDriverWait(driver, 5);
+	WebDriverWait w = new WebDriverWait(driver, 30);
 	private static Logger log = LogManager.getLogger(SearchJobApplyPage.class.getName());
 	ScreenshotCapture screenShot = new ScreenshotCapture();
 
@@ -46,17 +46,17 @@ public class SearchJobApplyPage extends JobsPage
 	private WebElement selectAttachedResume;
 	@FindBy(xpath = "//*[text()='Submit application']")
 	private WebElement submitApplicationButton;
-	
+
 	// Selecting a particular job link and company name etc
 	@FindBy(xpath = "//button[starts-with(@class,'jobs-candidate-initiate-referral__referral-button button-tertiary-large full-width')]")
 	private WebElement askForAReferral;
-	@FindAll({
-			@FindBy(xpath = "//*[@class='jobs-search-results__list artdeco-list']/li/div/following::h3") })
-	private List<WebElement> jobName;
+
+	@FindBy(xpath = "//*[@class='jobs-search-results__list artdeco-list']")
+	private WebElement jobDiv;
 	@FindAll({
 			@FindBy(css = ".job-card-search__company-name.t-14.t-black.artdeco-entity-lockup__subtitle.ember-view") })
 	private List<WebElement> cmpanyName;
-	
+
 	// Apply or Easy Apply buttons common Xpath on page
 	@FindBy(xpath = "//*[@class='jobs-details-top-card__actions mt4 display-flex align-items-center']/div[3]/button]")
 	private WebElement easyApplyORApplyButton;
@@ -71,6 +71,11 @@ public class SearchJobApplyPage extends JobsPage
 	 * Getter and Setter // EncapSulation
 	 * XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 	 */
+
+	private final WebElement getJobDiv()
+	{
+		return jobDiv;
+	}
 
 	private final WebElement getResumeSelect()
 	{
@@ -90,11 +95,6 @@ public class SearchJobApplyPage extends JobsPage
 	private final WebElement getAskForAReferral()
 	{
 		return askForAReferral;
-	}
-
-	private final List<WebElement> getJobName()
-	{
-		return jobName;
 	}
 
 	private final List<WebElement> getCmpanyName()
@@ -120,37 +120,58 @@ public class SearchJobApplyPage extends JobsPage
 	/*
 	 * METHODS start from here ONLY This method will be called to apply job
 	 */
-	public void clickOnJoblink() throws Throwable
+	int pageCount = 1;
+
+	public void applyAllAvailableJobs() throws Throwable
 	{
-		int totalJobInPage = getJobName().size();
-		log.info("Total job available in page : " + totalJobInPage);
-		int jobApplyNumber = 0;
-		for (WebElement e : getJobName())
+		Thread.sleep(10000);
+		// Scrolling to end of div
+		JavascriptExecutor jse = (JavascriptExecutor) driver;
+		long scrollHeightOfDiv = (long) jse.executeScript(
+				"return document.getElementsByClassName('jobs-search-results jobs-search-results--is-two-pane')[0].scrollHeight;");
+		long toScroll = 0;
+		while (scrollHeightOfDiv >= toScroll)
 		{
-			w.until(ExpectedConditions.elementToBeClickable(e));
-			log.info("Job Title is: " + e.getText().toString());
+			toScroll = toScroll + 200;
+			jse.executeScript(
+					"document.getElementsByClassName('jobs-search-results jobs-search-results--is-two-pane')[0].scroll(0,"
+							+ toScroll + ");");
+		}
+
+		Thread.sleep(2000);
+		// Scrolling to beginning of div
+		jse.executeScript(
+				"document.getElementsByClassName('jobs-search-results jobs-search-results--is-two-pane')[0].scroll(0,0);");
+		Thread.sleep(10000);
+
+		// Storing all available jobs on Page
+		List<WebElement> allJobsOnePage = getJobDiv().findElements(By.xpath("./li/div/div/div/h3"));
+		int totalJobInPage = allJobsOnePage.size();
+		log.info("Total job available on page : " + totalJobInPage);
+
+		int count = 0;
+
+		for (WebElement e : allJobsOnePage)
+		{
 			navigateAndHighLight(e);
-			e.click();
-			w.until(ExpectedConditions.visibilityOf(getCmpanyName().get(jobApplyNumber)));
+			log.info("Job name " + e.getText());
+//			WebElement companyName = e.findElement(By.xpath("./following-sibling::div/a"));
+//			log.info("Company Name " + companyName.getText());
+			ClickOnElement(e);
 
-			log.info("Company name is : " + getCmpanyName().get(jobApplyNumber).getText().toUpperCase());
-			// Click on easy apply
-			clickonEasyApply();
-			jobApplyNumber++;
-			log.info("Completed Job Apply and count is -------------- " + jobApplyNumber);
-			if(jobApplyNumber == totalJobInPage)
+			if(count == allJobsOnePage.size() - 1)
 			{
-				log.info("Calling Method through Recursion");
-				jobName = driver.findElements(By.xpath(
-						"//*[@class='jobs-search-results__list artdeco-list']/li/div/artdeco-entity-lockup/artdeco-entity-lockup-content/h3"));
-				Thread.sleep(2000);
-				if(jobApplyNumber == 25)
-					break;
-				clickOnJoblink();
-
+				log.info("Finished one page");
+				driver.findElement(By.xpath(
+						"//*[@class='artdeco-pagination__pages artdeco-pagination__pages--number']/li//span[text()='"
+								+ ++pageCount + "']"))
+						.click();
+				applyAllAvailableJobs();
 			}
 
+			count++;
 		}
+
 	}
 
 	// Navigate Back
@@ -206,7 +227,6 @@ public class SearchJobApplyPage extends JobsPage
 		{
 			log.error("Execution  error -- ");
 			e.printStackTrace();
-
 		}
 	}
 
@@ -244,11 +264,4 @@ public class SearchJobApplyPage extends JobsPage
 		}
 	}
 
-	private void navigateAndHighLight(WebElement element)
-	{
-		Actions act = new Actions(driver);
-		act.moveToElement(element).build().perform();
-		JavascriptExecutor js = (JavascriptExecutor) driver;
-		js.executeScript("arguments[0].setAttribute('style', 'background: yellow; border: 2px solid red;');", element);
-	}
 } // end of class

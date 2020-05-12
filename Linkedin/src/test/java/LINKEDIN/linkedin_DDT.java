@@ -86,7 +86,7 @@ public class linkedin_DDT extends browser
 
 		SearchJobApplyPage sjp = new SearchJobApplyPage(driver);
 		log.info(">>>>>>>>>>>>>>>>>>>>>  Applying for jobs");
-		sjp.clickOnJoblink();
+		sjp.applyAllAvailableJobs();
 		screenShot.takeScreenShotofCurrentpage();
 
 		// sjp.navigateBack();

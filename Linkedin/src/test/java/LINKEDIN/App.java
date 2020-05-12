@@ -56,7 +56,7 @@ public class App extends browser {
          * Return Back to previous page
          */
         SearchJobApplyPage sjp=new SearchJobApplyPage(driver);
-        sjp.clickOnJoblink();
+        sjp.applyAllAvailableJobs();
         sc.takeScreenShotofCurrentpage();
       //  sjp.navigateBack();
     }

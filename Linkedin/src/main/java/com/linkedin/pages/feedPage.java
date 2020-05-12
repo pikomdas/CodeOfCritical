@@ -183,7 +183,7 @@ public class feedPage extends browser
 
 	public void clickOnJobButton()
 	{
-		getJobSearchButtonOnFeedpage().click();
+		ClickOnElement(getJobSearchButtonOnFeedpage());
 		log.info("Clicked on JobButton on Feed Page");
 		log.info("Current page name is : " + driver.getTitle());
 

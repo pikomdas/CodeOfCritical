@@ -9,9 +9,11 @@ import java.util.concurrent.TimeUnit;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.StaleElementReferenceException;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -34,13 +36,13 @@ public class browser extends BrowserConfig
 		try
 		{
 
-			BrowserConfig.selectBrowserToExecute("chrome");
+			selectBrowserToExecute("chrome");
 			driver.get(getMyProperty.readmyFile("url"));
 			driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 
 			log.info("URL is Presented");
 
-			// driver.manage().deleteAllCookies();
+			driver.manage().deleteAllCookies();
 			driver.manage().window().maximize();
 
 			log.info("Browser is MAXIMIZED");
@@ -186,6 +188,8 @@ public class browser extends BrowserConfig
 	@Override
 	public <T, T1> void SendKeysTo(T element, T1 text)
 	{
+		w1 = new WebDriverWait(driver, 20);
+		w1.until(ExpectedConditions.visibilityOf((WebElement) element));
 		if(((WebElement) element).isDisplayed())
 		{
 			((WebElement) element).clear();
@@ -197,6 +201,15 @@ public class browser extends BrowserConfig
 			throw new Error(String.format("Unable to Enter text %s to text box because element is not displayed",
 					((String) text)));
 		}
+
+	}
+
+	public void navigateAndHighLight(WebElement element)
+	{
+		Actions act = new Actions(driver);
+		act.moveToElement(element).build().perform();
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+		js.executeScript("arguments[0].setAttribute('style', 'background: yellow; border: 2px solid red;');", element);
 	}
 
 }
