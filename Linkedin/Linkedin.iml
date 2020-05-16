@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <module org.jetbrains.idea.maven.project.MavenProjectsManager.isMavenModule="true" type="JAVA_MODULE" version="4">
-  <component name="NewModuleRootManager" LANGUAGE_LEVEL="JDK_1_8">
+  <component name="NewModuleRootManager" LANGUAGE_LEVEL="JDK_11">
     <output url="file://$MODULE_DIR$/target/classes" />
     <output-test url="file://$MODULE_DIR$/target/test-classes" />
     <content url="file://$MODULE_DIR$">
@@ -40,9 +40,12 @@
     <orderEntry type="library" name="Maven: com.squareup.okhttp3:okhttp:3.11.0" level="project" />
     <orderEntry type="library" name="Maven: com.squareup.okio:okio:1.14.0" level="project" />
     <orderEntry type="library" name="Maven: log4j:log4j:1.2.17" level="project" />
-    <orderEntry type="library" name="Maven: org.testng:testng:6.9.10" level="project" />
-    <orderEntry type="library" name="Maven: com.beust:jcommander:1.48" level="project" />
-    <orderEntry type="library" name="Maven: org.beanshell:bsh:2.0b4" level="project" />
+    <orderEntry type="library" name="Maven: org.testng:testng:7.1.0" level="project" />
+    <orderEntry type="library" name="Maven: com.beust:jcommander:1.72" level="project" />
+    <orderEntry type="library" name="Maven: com.google.inject:guice:no_aop:4.1.0" level="project" />
+    <orderEntry type="library" name="Maven: javax.inject:javax.inject:1" level="project" />
+    <orderEntry type="library" name="Maven: aopalliance:aopalliance:1.0" level="project" />
+    <orderEntry type="library" name="Maven: org.yaml:snakeyaml:1.21" level="project" />
     <orderEntry type="library" name="Maven: org.apache.directory.studio:org.apache.commons.io:2.4" level="project" />
     <orderEntry type="library" name="Maven: commons-io:commons-io:2.4" level="project" />
     <orderEntry type="library" name="Maven: org.apache.logging.log4j:log4j-core:2.11.1" level="project" />

@@ -58,7 +58,7 @@ public class SearchJobApplyPage extends JobsPage
 	private List<WebElement> cmpanyName;
 
 	// Apply or Easy Apply buttons common Xpath on page
-	@FindBy(xpath = "//*[@class='jobs-details-top-card__actions mt4 display-flex align-items-center']/div[3]/button]")
+	@FindBy(xpath = "//button[contains(@id,'ember') and contains(@class,'jobs-apply-button')]/span")
 	private WebElement easyApplyORApplyButton;
 
 	@FindBy(css = ".artdeco-inline-feedback__message")
@@ -66,9 +66,9 @@ public class SearchJobApplyPage extends JobsPage
 	@FindBy(css = "//*[@class='continue-btn' and text()='Submit']")
 	private WebElement submitButtonNewWindow;
 
-	/*
+	/**
 	 * XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
-	 * Getter and Setter // EncapSulation
+	 * Getter and Setter // Encapsulation
 	 * XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 	 */
 
@@ -158,7 +158,8 @@ public class SearchJobApplyPage extends JobsPage
 //			WebElement companyName = e.findElement(By.xpath("./following-sibling::div/a"));
 //			log.info("Company Name " + companyName.getText());
 			ClickOnElement(e);
-
+			// Apply for Jobs
+			applyJobs();
 			if(count == allJobsOnePage.size() - 1)
 			{
 				log.info("Finished one page");
@@ -190,7 +191,7 @@ public class SearchJobApplyPage extends JobsPage
 	 * This method is liable to Handle EasyApply , Apply button If Already Applied
 	 * the it will show message that "Apply Button is not available"
 	 */
-	private void clickonEasyApply() throws Throwable
+	private void applyJobs() throws Throwable
 	{
 		String originWindow = driver.getWindowHandle();
 		try
