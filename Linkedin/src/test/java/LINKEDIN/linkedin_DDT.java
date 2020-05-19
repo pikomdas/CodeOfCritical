@@ -17,9 +17,9 @@ import com.linkedin.commomUtil.MyReport;
 import com.linkedin.commomUtil.ScreenshotCapture;
 import com.linkedin.commomUtil.getMyProperty;
 import com.linkedin.pages.JobsPage;
+import com.linkedin.pages.LoginToLinkedin;
 import com.linkedin.pages.SearchJobApplyPage;
 import com.linkedin.pages.feedPage;
-import com.linkedin.pages.loginToLinkedin;
 
 /**
  * www.linkedin.com
@@ -58,7 +58,7 @@ public class linkedin_DDT extends browser
 		log.info("$$$$$$$$$$$$$$$$$$ EXECUTION IN PROGRESS $$$$$$$$$$$$$$$$$$$$");
 
 		// login to linkedin
-		loginToLinkedin login = new loginToLinkedin(driver);
+		LoginToLinkedin login = new LoginToLinkedin(driver);
 
 		// take screenshot
 		screenShot.takeScreenShotofCurrentpage();

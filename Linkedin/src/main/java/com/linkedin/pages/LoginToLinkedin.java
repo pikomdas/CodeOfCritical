@@ -6,16 +6,15 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
-import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import com.linkedin.Browser.browser;
+import com.linkedin.commomUtil.CheckPageLoadingState;
 
-
-public class loginToLinkedin extends browser
+public class LoginToLinkedin extends browser
 {
-	private WebDriverWait w1=new WebDriverWait(driver,10);
-	private static Logger log = LogManager.getLogger(loginToLinkedin.class.getName());
+	private WebDriverWait w1 = new WebDriverWait(driver, 10);
+	private static Logger log = LogManager.getLogger(LoginToLinkedin.class.getName());
 
 	@FindBy(xpath = "//input[@id='username']")
 	private WebElement loginEmailId;
@@ -26,7 +25,7 @@ public class loginToLinkedin extends browser
 	@FindBy(xpath = "//*[@class='nav__button-secondary' and text()='Sign in']")
 	private WebElement signIn;
 
-	public loginToLinkedin(final WebDriver driver)
+	public LoginToLinkedin(final WebDriver driver)
 	{
 		browser.driver = driver;
 		PageFactory.initElements(driver, this);
@@ -52,13 +51,15 @@ public class loginToLinkedin extends browser
 		return signIn;
 	}
 
-
-	public void userNamePasswordAndlogin(final String strUserName, final String strPasword) throws Throwable
+	public void userNamePasswordAndlogin(final String strUserName, final String strPasword) throws Exception
 	{
 		// Click on Sign in
 		ClickOnElement(getSignIn());
-		String title=driver.getTitle();
-		log.info(title);
+		// Waiting to complete the page loading
+		CheckPageLoadingState.waitToLoadPage();
+
+		String title1 = driver.getTitle();
+		log.info("Page title is :" + title1);
 
 		// Sending userName
 		SendKeysTo(getLoginEmailId(), strUserName);
@@ -68,17 +69,20 @@ public class loginToLinkedin extends browser
 		log.info("Password is  thrown");
 		// Click on Login Button
 		ClickOnElement(getLogInBtn());
-		log.info("LINKEDIN login successful");
+
+		// Waiting to complete the page loading
+		CheckPageLoadingState.waitToLoadPage();
 		
-		try
+		// New page title
+		String title2 = driver.getTitle();
+		if (title1.equals(title2))
 		{
-			if(w1.until(ExpectedConditions.titleIs(title))){
-				userNamePasswordAndlogin(strUserName, strPasword);
-			}
-		} catch (Throwable e)
-		{
-			log.warn(e.getMessage());
+			log.error("Login Failed");
 		}
-		
+		else
+		{
+			log.info("LINKEDIN login successful");
+		}
+
 	}
 }

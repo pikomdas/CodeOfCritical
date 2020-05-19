@@ -31,6 +31,7 @@ public class ScrollAndCaptureImage
 {
 	public static void main(String[] args) throws IOException, InterruptedException
 	{
+		System.out.println(System.getProperty("user.dir"));
 		OpenBrowserAndNavigate o = new OpenBrowserAndNavigate();
 		o.trigger();
 		TakeImage ti = new TakeImage();

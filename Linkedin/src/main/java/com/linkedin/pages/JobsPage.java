@@ -12,6 +12,7 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import com.linkedin.Browser.browser;
+import com.linkedin.commomUtil.CheckPageLoadingState;
 import com.linkedin.commomUtil.getMyProperty;
 
 public class JobsPage extends browser
@@ -85,7 +86,8 @@ public class JobsPage extends browser
 
 	public void jobSearch() throws IOException, InterruptedException
 	{
-
+		CheckPageLoadingState.waitToLoadPage();
+		
 		log.info("INSERTING JOB TEXT TO SEARCH");
 		w1.until(ExpectedConditions.visibilityOf(getJobSeaarchBox()));
 		String currentTitle = driver.getTitle();
@@ -97,8 +99,6 @@ public class JobsPage extends browser
 		// Clicking on job search button
 		getJobSearchButtonOnJobpage().click();
 		log.info("Clicked on JOB SEARCH BUTTON");
-		
-		Thread.sleep(5000);
 		
 	}
 }

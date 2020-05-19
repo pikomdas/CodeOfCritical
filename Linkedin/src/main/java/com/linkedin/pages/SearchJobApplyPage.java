@@ -15,7 +15,7 @@ import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-import com.linkedin.Browser.browser;
+import com.linkedin.commomUtil.CheckPageLoadingState;
 import com.linkedin.commomUtil.ScreenshotCapture;
 
 public class SearchJobApplyPage extends JobsPage
@@ -124,7 +124,8 @@ public class SearchJobApplyPage extends JobsPage
 
 	public void applyAllAvailableJobs() throws Throwable
 	{
-		Thread.sleep(10000);
+		CheckPageLoadingState.waitToLoadPage();
+		
 		// Scrolling to end of div
 		JavascriptExecutor jse = (JavascriptExecutor) driver;
 		long scrollHeightOfDiv = (long) jse.executeScript(
@@ -221,8 +222,8 @@ public class SearchJobApplyPage extends JobsPage
 			}
 			else
 			{
-				log.error("Apply Button is not available");
-				log.info(getMessageWhereApplynotPossible().getText());
+				log.error("Neither Apply button not Easy Apply button is available");
+				//log.info(getMessageWhereApplynotPossible().getText());
 			}
 		} catch (Exception e)
 		{

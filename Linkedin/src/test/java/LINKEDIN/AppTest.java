@@ -10,7 +10,7 @@ import com.linkedin.commomUtil.CustomLog;
 import com.linkedin.commomUtil.MyReport;
 import com.linkedin.commomUtil.ScreenshotCapture;
 import com.linkedin.commomUtil.getMyProperty;
-import com.linkedin.pages.loginToLinkedin;
+import com.linkedin.pages.LoginToLinkedin;
 
 /**
  * www.linkedin.com
@@ -40,7 +40,7 @@ public class AppTest extends MyReport
 		System.out.println("EXECUTION IN PROGRESS");
 
 		// login to linkedIn
-		loginToLinkedin login = new loginToLinkedin(driver);
+		LoginToLinkedin login = new LoginToLinkedin(driver);
 		// take screenshot
 		screenShot.takeScreenShotofCurrentpage();
 
