@@ -3,6 +3,7 @@
  */
 package rnd;
 
+import java.awt.Graphics2D;
 import java.awt.image.BufferedImage;
 import java.awt.image.RenderedImage;
 import java.io.ByteArrayInputStream;
@@ -16,12 +17,17 @@ import java.util.List;
 import javax.imageio.ImageIO;
 
 import org.apache.commons.io.output.ByteArrayOutputStream;
+import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindAll;
+import org.openqa.selenium.support.FindBy;
 
 import com.linkedin.Browser.browser;
+import com.linkedin.commomUtil.ScreenshotCapture;
 
 /**
  * @author partha.das
@@ -29,13 +35,17 @@ import com.linkedin.Browser.browser;
  */
 public class ScrollAndCaptureImage
 {
+
 	public static void main(String[] args) throws IOException, InterruptedException
 	{
 		System.out.println(System.getProperty("user.dir"));
 		OpenBrowserAndNavigate o = new OpenBrowserAndNavigate();
-		o.trigger();
-		TakeImage ti = new TakeImage();
-		ti.scrollElement();
+		WebDriver driver = o.trigger();
+//		TakeImage ti = new TakeImage();
+//		ti.scrollElement();
+
+		ScreenshotCapture sc = new ScreenshotCapture();
+		sc.takeScreenShot(ScrollAndCaptureImage.class, driver.findElements(By.xpath("//*[@class='hljs xml']")).get(0));
 	}
 }
 
@@ -46,33 +56,41 @@ class TakeImage extends browser
 		JavascriptExecutor je = (JavascriptExecutor) driver;
 		long scrollheight = (long) je.executeScript("return document.scrollingElement.scrollHeight;");
 		long windowHeight = (long) je.executeScript("return document.scrollingElement.clientHeight;");
-		List<byte[]> imageAll = new ArrayList<byte[]>();
+		List<BufferedImage> images = new ArrayList<BufferedImage>();
+		int widthOfImage = 0;
+
 		while (windowHeight <= scrollheight)
 		{
-			windowHeight = windowHeight + windowHeight;
-			je.executeScript("document.scrollingElement.scroll(0," + scrollheight + ");");
-			System.out.println("Scrolled " + windowHeight);
-			Thread.sleep(3000);
-			byte[] image = ((TakesScreenshot) driver).getScreenshotAs(OutputType.BYTES);
-			imageAll.add(image);
-		}
-		
-		byte[] x = imageAll.stream().collect(() -> new ByteArrayOutputStream(), (b, e) ->
-		{
-			try
-			{
-				b.write(e);
-			} catch (IOException e1)
-			{
-				throw new RuntimeException(e1);
-			}
-		}, (a, b) ->
-		{
-		}).toByteArray();
-		InputStream in = new ByteArrayInputStream(x);
-		BufferedImage finalImage = ImageIO.read(in);
+			File screen = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
+			BufferedImage img = ImageIO.read(screen);
+			widthOfImage = img.getWidth();
+			images.add(img);
 
-		ImageIO.write(finalImage, "png", new File("./screenShots/test.png"));
+			windowHeight = windowHeight + windowHeight;
+			je.executeScript("document.scrollingElement.scroll(0," + windowHeight + ");");
+			System.out.println("Scrolled " + windowHeight);
+			Thread.sleep(1000);
+
+		}
+
+		int heightTotal = 0;
+		for (int j = 0; j < images.size(); j++)
+		{
+			heightTotal += images.get(j).getHeight();
+
+		}
+
+		int heightCurr = 0;
+		BufferedImage concatImage = new BufferedImage(widthOfImage, heightTotal, BufferedImage.TYPE_INT_RGB);
+		Graphics2D g2d = concatImage.createGraphics();
+		for (int j = 0; j < images.size(); j++)
+		{
+			g2d.drawImage(images.get(j), 0, heightCurr, null);
+			heightCurr += images.get(j).getHeight();
+		}
+		g2d.dispose();
+
+		ImageIO.write(concatImage, "png", new File("./screenShots/test.png"));
 	}
 }
 
@@ -81,7 +99,7 @@ class OpenBrowserAndNavigate extends browser
 	public WebDriver trigger()
 	{
 		selectBrowserToExecute("chrome");
-		driver.get("https://assetvantage.com");
+		driver.get("https://www.sitepoint.com/community/t/div-inside-table-any-solution/2999");
 		driver.manage().window().maximize();
 		return driver;
 	}
