@@ -101,4 +101,5 @@ public class JobsPage extends browser
 		log.info("Clicked on JOB SEARCH BUTTON");
 		
 	}
+	
 }
