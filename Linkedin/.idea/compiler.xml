@@ -6,11 +6,14 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="Naukri" />
         <module name="Linkedin" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
+      <module name="Google-mail-api" target="8" />
       <module name="Linkedin" target="11" />
+      <module name="Naukri" target="1.8" />
       <module name="u" target="1.5" />
     </bytecodeTargetLevel>
   </component>

@@ -54,7 +54,7 @@ public class SearchJobApplyPage extends JobsPage
 	@FindBy(xpath = "//*[@class='jobs-search-results__list artdeco-list']")
 	private WebElement jobDiv;
 	@FindAll({
-			@FindBy(css = ".job-card-search__company-name.t-14.t-black.artdeco-entity-lockup__subtitle.ember-view") })
+			@FindBy(css = ".job-card-search__company-name.t-14.t-black.artdeco-entity-lockup__subtitle.ember-view")})
 	private List<WebElement> cmpanyName;
 
 	// Apply or Easy Apply buttons common Xpath on page
@@ -125,7 +125,7 @@ public class SearchJobApplyPage extends JobsPage
 	public void applyAllAvailableJobs() throws Throwable
 	{
 		CheckPageLoadingState.waitToLoadPage();
-		
+
 		// Scrolling to end of div
 		JavascriptExecutor jse = (JavascriptExecutor) driver;
 		long scrollHeightOfDiv = (long) jse.executeScript(
@@ -161,7 +161,7 @@ public class SearchJobApplyPage extends JobsPage
 			ClickOnElement(e);
 			// Apply for Jobs
 			applyJobs();
-			if(count == allJobsOnePage.size() - 1)
+			if (count == allJobsOnePage.size() - 1)
 			{
 				log.info("Finished one page");
 				driver.findElement(By.xpath(
@@ -197,12 +197,12 @@ public class SearchJobApplyPage extends JobsPage
 		String originWindow = driver.getWindowHandle();
 		try
 		{
-			if(getEasyApplyORApplyButton().getText() == "Easy Apply")
+			if (getEasyApplyORApplyButton().getText() == "Easy Apply")
 			{
 				getEasyApplyORApplyButton().click();
 				// After Clicking on Easy Apply if new Window is opened
 				// Then navigate to new Window and come back to origin window
-				if(driver.getWindowHandle() != originWindow)
+				if (driver.getWindowHandle() != originWindow)
 				{
 					getSubmitApplicationButton().click();
 				}
@@ -213,7 +213,7 @@ public class SearchJobApplyPage extends JobsPage
 				}
 
 			}
-			else if(getEasyApplyORApplyButton().getText() == "Apply")
+			else if (getEasyApplyORApplyButton().getText() == "Apply")
 			{
 				// While easy Apply failed check if "Apply" button present or not
 				log.error("Easy Apply Failed");
