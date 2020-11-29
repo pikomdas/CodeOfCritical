@@ -1,0 +1,12 @@
+{
+    "maven.excludedFolders": [
+
+        "**/.*",
+        "**/node_modules",
+        "**/target",
+        "**/bin"
+    ],
+    "projectManager.git.baseFolders": [
+    "CodeOfCritical"
+    ]
+}

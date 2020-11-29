@@ -1,7 +1,7 @@
 /**
  * 
  */
-package rnd;
+package src.main.java.rnd;
 
 import java.awt.Graphics2D;
 import java.awt.image.BufferedImage;

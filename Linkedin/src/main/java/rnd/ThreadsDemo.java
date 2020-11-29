@@ -1,4 +1,4 @@
-package rnd;
+package src.main.java.rnd;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.By;
@@ -14,6 +14,8 @@ public class ThreadsDemo
 {
 	public static void main(String[] args) throws InterruptedException
 	{
+		long l1,l2;
+		l1=System.currentTimeMillis();
 		List<WebDriver> li = new ArrayList<WebDriver>();
 
 		Runnable r1 = () -> {
@@ -34,6 +36,15 @@ public class ThreadsDemo
 				new Service(x.getTagName(), x.getAttribute("href")).addData();
 			});
 		};
+		Runnable r3 = () -> {
+			WebDriver driver = new browser().trigger();
+			li.add(driver);
+			driver.get("https://netflix.com");
+			List<WebElement> ll = driver.findElements(By.xpath("//a"));
+			ll.forEach(x -> {
+				new Service(x.getTagName(), x.getAttribute("href")).addData();
+			});
+		};
 		Runnable quitDriver = () -> {
 			li.forEach(x -> x.quit());
 		};
@@ -41,13 +52,20 @@ public class ThreadsDemo
 
 		Thread t1 = new Thread(r1);
 		Thread t2 = new Thread(r2);
-		Thread t3 = new Thread(quitDriver);
+		Thread t3 = new Thread(r3);
+		Thread t4 = new Thread(quitDriver);
 		t1.start();
 		t2.start();
+		t3.start();
 		t1.join();
 		t2.join();
-		t3.start();
+		t3.join();
+
+		t4.start();
+
 		Service.ss.forEach(System.out::println);
+		l2=System.currentTimeMillis();
+		System.out.println((l2-l1)/1000); //25
 	}
 }
 

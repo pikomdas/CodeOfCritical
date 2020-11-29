@@ -1,4 +1,4 @@
-package com.linkedin.pages;
+package src.main.java.com.linkedin.pages;
 
 import java.util.List;
 

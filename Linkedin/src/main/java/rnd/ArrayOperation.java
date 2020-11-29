@@ -1,4 +1,4 @@
-package rnd;
+package src.main.java.rnd;
 
 import java.awt.image.BufferedImage;
 import java.io.File;

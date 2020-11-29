@@ -1,7 +1,7 @@
 /**
  * 
  */
-package com.linkedin.commomUtil;
+package src.main.java.com.linkedin.commomUtil;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;

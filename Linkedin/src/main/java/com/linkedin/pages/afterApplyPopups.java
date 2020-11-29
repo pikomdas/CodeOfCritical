@@ -1,4 +1,4 @@
-package com.linkedin.pages;
+package src.main.java.com.linkedin.pages;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;

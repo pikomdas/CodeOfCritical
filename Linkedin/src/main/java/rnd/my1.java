@@ -1,4 +1,4 @@
-package rnd;
+package src.main.java.rnd;
 
 public class my1 {
 //TEstpassed

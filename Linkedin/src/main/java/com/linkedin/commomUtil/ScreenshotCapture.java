@@ -1,4 +1,4 @@
-package com.linkedin.commomUtil;
+package src.main.java.com.linkedin.commomUtil;
 
 import java.awt.Graphics2D;
 import java.awt.image.BufferedImage;

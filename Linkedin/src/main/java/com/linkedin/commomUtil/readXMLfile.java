@@ -1,4 +1,4 @@
-package com.linkedin.commomUtil;
+package src.main.java.com.linkedin.commomUtil;
 
 import java.io.File;
 import javax.xml.parsers.DocumentBuilderFactory;

@@ -1,4 +1,4 @@
-package com.linkedin.Browser;
+package src.main.java.com.linkedin.Browser;
 
 import java.io.File;
 import java.util.ArrayList;

@@ -1,4 +1,4 @@
-package rnd;
+package src.main.java.rnd;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.By;

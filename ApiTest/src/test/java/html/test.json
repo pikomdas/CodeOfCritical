@@ -1,0 +1,249 @@
+{
+  "Scenarios": [
+    {
+      "Scenario Name": "Verify Wealth Register summation for \"William LLC\" between \"https://hotfix.assetvantage.com\" and \"https://masterscenarios.assetvantage.com\"",
+      "Entities": [
+        {
+          "Deviations": [
+            {
+              "Exception Message": "Un-Realized Gain/Loss Percentage in environment1: 5032280.13000000 \u003c/br\u003eUn-Realized Gain/Loss Percentage in environment2: 5508827.13000000"
+            }
+          ],
+          "Entity Name": "William LLC"
+        }
+      ]
+    },
+    {
+      "Scenario Name": "Verify Wealth Register summation for \"TWRR Testing\" between \"https://hotfix.assetvantage.com\" and \"https://masterscenarios.assetvantage.com\"",
+      "Entities": [
+        {
+          "Deviations": [
+            {
+              "Exception Message": "Un-Realized Gain/Loss in environment1: 245789.00000000 \u003c/br\u003eUn-Realized Gain/Loss in environment2: 246714.00000000"
+            },
+            {
+              "Exception Message": "Un-Realized Gain/Loss Percentage in environment1: 224410.00000000 \u003c/br\u003eUn-Realized Gain/Loss Percentage in environment2: 225335.00000000"
+            }
+          ],
+          "Entity Name": "TWRR Testing"
+        }
+      ]
+    },
+    {
+      "Scenario Name": "Verify Wealth Register summation for \"TWRR Check\" between \"https://hotfix.assetvantage.com\" and \"https://masterscenarios.assetvantage.com\"",
+      "Entities": [
+        {
+          "Deviations": [
+            {
+              "Exception Message": "IRR in environment1: -12.37505341 \u003c/br\u003eIRR in environment2: -13.64849091"
+            },
+            {
+              "Exception Message": "Un-Realized Gain/Loss in environment1: 5602.20000000 \u003c/br\u003eUn-Realized Gain/Loss in environment2: 5171.70000000"
+            },
+            {
+              "Exception Message": "Un-Realized Gain/Loss Percentage in environment1: -1256.25000000 \u003c/br\u003eUn-Realized Gain/Loss Percentage in environment2: -1686.75000000"
+            }
+          ],
+          "Entity Name": "TWRR Check"
+        }
+      ]
+    },
+    {
+      "Scenario Name": "Verify Wealth Register summation for \"Smith Alexander\" between \"https://hotfix.assetvantage.com\" and \"https://masterscenarios.assetvantage.com\"",
+      "Entities": [
+        {
+          "Deviations": [
+            {
+              "Exception Message": "IRR in environment1: 16.08367157 \u003c/br\u003eIRR in environment2: 20.88983917"
+            },
+            {
+              "Exception Message": "Un-Realized Gain/Loss in environment1: -1123390.76213613 \u003c/br\u003eUn-Realized Gain/Loss in environment2: -239835.60486000"
+            },
+            {
+              "Exception Message": "Un-Realized Gain/Loss Percentage in environment1: 3436.04192219 \u003c/br\u003eUn-Realized Gain/Loss Percentage in environment2: 886991.19919832"
+            }
+          ],
+          "Entity Name": "Smith Alexander"
+        }
+      ]
+    },
+    {
+      "Scenario Name": "Verify Wealth Register summation for \"Siddharth Kapoor\" between \"https://hotfix.assetvantage.com\" and \"https://masterscenarios.assetvantage.com\"",
+      "Entities": [
+        {
+          "Deviations": [
+            {
+              "Exception Message": "IRR in environment1: 5.48072815 \u003c/br\u003eIRR in environment2: 5.45982361"
+            },
+            {
+              "Exception Message": "Un-Realized Gain/Loss in environment1: 60286555.61944040 \u003c/br\u003eUn-Realized Gain/Loss in environment2: 60162682.61944040"
+            },
+            {
+              "Exception Message": "Un-Realized Gain/Loss Percentage in environment1: 19936607.13033860 \u003c/br\u003eUn-Realized Gain/Loss Percentage in environment2: 19853734.13033860"
+            }
+          ],
+          "Entity Name": "Siddharth Kapoor"
+        }
+      ]
+    },
+    {
+      "Scenario Name": "Verify Wealth Register summation for \"Robert Alexander\" between \"https://hotfix.assetvantage.com\" and \"https://masterscenarios.assetvantage.com\"",
+      "Entities": [
+        {
+          "Deviations": [
+            {
+              "Exception Message": "IRR in environment1: 13.88381195 \u003c/br\u003eIRR in environment2: 13.45316315"
+            },
+            {
+              "Exception Message": "Un-Realized Gain/Loss in environment1: 215075223.54722500 \u003c/br\u003eUn-Realized Gain/Loss in environment2: 201201158.99885400"
+            },
+            {
+              "Exception Message": "Un-Realized Gain/Loss Percentage in environment1: 113299317.76665000 \u003c/br\u003eUn-Realized Gain/Loss Percentage in environment2: 115297416.12828000"
+            }
+          ],
+          "Entity Name": "Robert Alexander"
+        }
+      ]
+    },
+    {
+      "Scenario Name": "Verify Wealth Register summation for \"Rob \u0026 Angel Alexander\" between \"https://hotfix.assetvantage.com\" and \"https://masterscenarios.assetvantage.com\"",
+      "Entities": [
+        {
+          "Deviations": [
+            {
+              "Exception Message": "IRR in environment1: -1.74476624 \u003c/br\u003eIRR in environment2: -1.74465179"
+            }
+          ],
+          "Entity Name": "Rob \u0026 Angel Alexander"
+        }
+      ]
+    },
+    {
+      "Scenario Name": "Verify Wealth Register summation for \"QA Zee Media\" between \"https://hotfix.assetvantage.com\" and \"https://masterscenarios.assetvantage.com\"",
+      "Entities": [
+        {
+          "Deviations": [
+            {
+              "Exception Message": "IRR in environment1: 4.00459290 \u003c/br\u003eIRR in environment2: 3.52470398"
+            },
+            {
+              "Exception Message": "Un-Realized Gain/Loss in environment1: 163324257.39709600 \u003c/br\u003eUn-Realized Gain/Loss in environment2: 157882730.40259600"
+            },
+            {
+              "Exception Message": "Un-Realized Gain/Loss Percentage in environment1: 39656214.51516850 \u003c/br\u003eUn-Realized Gain/Loss Percentage in environment2: 34254687.52066860"
+            }
+          ],
+          "Entity Name": "QA Zee Media"
+        }
+      ]
+    },
+    {
+      "Scenario Name": "Verify Wealth Register summation for \"QA Vicky Malhotra\" between \"https://hotfix.assetvantage.com\" and \"https://masterscenarios.assetvantage.com\"",
+      "Entities": [
+        {
+          "Deviations": [
+            {
+              "Exception Message": "IRR in environment1: 3.98658752 \u003c/br\u003eIRR in environment2: 3.48487854"
+            },
+            {
+              "Exception Message": "Un-Realized Gain/Loss in environment1: 156324257.39709600 \u003c/br\u003eUn-Realized Gain/Loss in environment2: 150882730.40259600"
+            },
+            {
+              "Exception Message": "Un-Realized Gain/Loss Percentage in environment1: 32656214.51516850 \u003c/br\u003eUn-Realized Gain/Loss Percentage in environment2: 27254687.52066850"
+            }
+          ],
+          "Entity Name": "QA Vicky Malhotra"
+        }
+      ]
+    },
+    {
+      "Scenario Name": "Verify Wealth Register summation for \"QA Urvashi Gaur\" between \"https://hotfix.assetvantage.com\" and \"https://masterscenarios.assetvantage.com\"",
+      "Entities": [
+        {
+          "Deviations": [
+            {
+              "Exception Message": "IRR in environment1: 0.06294250 \u003c/br\u003eIRR in environment2: -15.30721283"
+            },
+            {
+              "Exception Message": "Un-Realized Gain/Loss in environment1: 1036656.22788000 \u003c/br\u003eUn-Realized Gain/Loss in environment2: 477697.50000000"
+            },
+            {
+              "Exception Message": "Un-Realized Gain/Loss Percentage in environment1: 3029.00000000 \u003c/br\u003eUn-Realized Gain/Loss Percentage in environment2: -555929.72788000"
+            }
+          ],
+          "Entity Name": "QA Urvashi Gaur"
+        }
+      ]
+    },
+    {
+      "Scenario Name": "Verify Wealth Register summation for \"QA Transaction By Account\" between \"https://hotfix.assetvantage.com\" and \"https://masterscenarios.assetvantage.com\"",
+      "Entities": [
+        {
+          "Deviations": [
+            {
+              "Exception Message": "IRR in environment1: 4.20372009 \u003c/br\u003eIRR in environment2: 4.16709900"
+            },
+            {
+              "Exception Message": "Un-Realized Gain/Loss in environment1: 179453844.24561300 \u003c/br\u003eUn-Realized Gain/Loss in environment2: 178989240.25061300"
+            },
+            {
+              "Exception Message": "Un-Realized Gain/Loss Percentage in environment1: 40733306.93950430 \u003c/br\u003eUn-Realized Gain/Loss Percentage in environment2: 40308702.94450430"
+            }
+          ],
+          "Entity Name": "QA Transaction By Account"
+        }
+      ]
+    },
+    {
+      "Scenario Name": "Verify Wealth Register summation for \"QA Sidharth Kapoor\" between \"https://hotfix.assetvantage.com\" and \"https://masterscenarios.assetvantage.com\"",
+      "Entities": [
+        {
+          "Deviations": [
+            {
+              "Exception Message": "IRR in environment1: 3.98658752 \u003c/br\u003eIRR in environment2: 3.48487854"
+            },
+            {
+              "Exception Message": "Un-Realized Gain/Loss in environment1: 156324257.39709600 \u003c/br\u003eUn-Realized Gain/Loss in environment2: 150882730.40259600"
+            },
+            {
+              "Exception Message": "Un-Realized Gain/Loss Percentage in environment1: 32656214.51516850 \u003c/br\u003eUn-Realized Gain/Loss Percentage in environment2: 27254687.52066850"
+            }
+          ],
+          "Entity Name": "QA Sidharth Kapoor"
+        }
+      ]
+    },
+    {
+      "Scenario Name": "Verify Wealth Register summation for \"QA Rahul  Pancholi\" between \"https://hotfix.assetvantage.com\" and \"https://masterscenarios.assetvantage.com\"",
+      "Entities": [
+        {
+          "Deviations": [
+            {
+              "Exception Message": "IRR in environment1: 4.06105042 \u003c/br\u003eIRR in environment2: 16.73986053"
+            },
+            {
+              "Exception Message": "Un-Realized Gain/Loss in environment1: 721037.21017600 \u003c/br\u003eUn-Realized Gain/Loss in environment2: 1730881.41017600"
+            },
+            {
+              "Exception Message": "Un-Realized Gain/Loss Percentage in environment1: 6119.09536623 \u003c/br\u003eUn-Realized Gain/Loss Percentage in environment2: 1015963.29536623"
+            }
+          ],
+          "Entity Name": "QA Rahul  Pancholi"
+        }
+      ]
+    },
+    {
+      "Scenario Name": "Verify Wealth Register summation for \"QA Mark Ruffalo\" between \"https://hotfix.assetvantage.com\" and \"https://masterscenarios.assetvantage.com\"",
+      "Entities": [
+        {
+          "Deviations": [
+            {
+              "Exception Message": "Un-Realized Gain/Loss Percentage in environment1: 22074318.69906520 \u003c/br\u003eUn-Realized Gain/Loss Percentage in environment2: 22114318.69906520"
+            }
+          ],
+          "Entity Name": "QA Mark Ruffalo"
+        }
+      ]
+    }
+  ]
+}
