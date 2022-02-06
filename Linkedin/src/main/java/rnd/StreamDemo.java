@@ -18,7 +18,7 @@ public class StreamDemo
 	{
 		long l1, l2;
 		l1 = System.currentTimeMillis();
-		Stream<String> mystream = Stream.of("https://assetvantage.com", "https://hotstar.com", "https://netflix.com");
+		Stream<String> mystream = Stream.of("https://codeOfCritical.com", "https://hotstar.com", "https://netflix.com");
 		mystream.parallel().forEach(x -> {
 			WebDriver driver = new browser().trigger();
 

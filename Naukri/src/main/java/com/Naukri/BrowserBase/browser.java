@@ -57,7 +57,7 @@ public class browser {
 				webDriverPool.add(driver);
 				
 			} else if (browserName.equalsIgnoreCase("firefox")) {
-				String exePath = "../src/main/java/com/assetvantage/browserDriver/geckodriver.exe";
+				String exePath = "../src/main/java/com/codeOfCritical/browserDriver/geckodriver.exe";
 				// System.setProperty("webdriver.firefox.marionette", exePath);
 				System.setProperty("webdriver.gecko.driver", exePath);
 				FirefoxOptions caps = new FirefoxOptions();
@@ -72,7 +72,7 @@ public class browser {
 				webDriverPool.add(driver);
 				
 			} else if (browserName.equalsIgnoreCase("IE")) {
-				String exePath = "../src/main/java/com/assetvantage/browserDriver/MicrosoftWebDriver.exe";
+				String exePath = "../src/main/java/com/codeOfCritical/browserDriver/MicrosoftWebDriver.exe";
 				System.setProperty("webdriver.edge.driver", exePath);
 				EdgeOptions cap = new EdgeOptions();
 				cap.setPageLoadStrategy("--disable-web-security");
@@ -83,7 +83,7 @@ public class browser {
 				webDriverPool.add(driver);
 				
 			} else if (browserName.equalsIgnoreCase("opera")) {
-				String exePath = "./src/main/java/com/assetvantage/browserDriver/operadriver.exe";
+				String exePath = "./src/main/java/com/codeOfCritical/browserDriver/operadriver.exe";
 				System.setProperty("webdriver.opera.driver", exePath);
 				OperaOptions caps = new OperaOptions();
 				driver = new OperaDriver(caps);

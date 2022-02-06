@@ -1,7 +1,7 @@
 /**
  * /////////////////// \\\\\\\\\\\\\\\\\\
- * WWW.ASSETVANTAGE.COM PRIVACY POLICY © 2012
- * MigratoryBirds.java belongs to AssetVantage 
+ * WWW.codeOfCritical.COM PRIVACY POLICY © 2012
+ * MigratoryBirds.java belongs to codeOfCritical 
  * Do not COPY or PASTE code to WEB from demoBDDFramework
  * Creation date-time : 12-Apr-2020 - 9:46:16 pm
  * /////////////////// \\\\\\\\\\\\\\\\\\

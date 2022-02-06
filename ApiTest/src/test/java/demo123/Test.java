@@ -20,7 +20,7 @@ public class Test implements Runnable
 		ll.add(19);ll.add(3);ll.add(7);
 		List<Integer>ff=ll.stream().skip(1).collect(Collectors.toList());
 		System.out.println(ff);*/
-//		String s="Verify Gains Report summation for \"TWR Checking\" between \"https://masterscenarios.assetvantage.com\" and \"https://hotfix.assetvantage.com\"";
+//		String s="Verify Gains Report summation for \"TWR Checking\" between \"https://masterscenarios.codeOfCritical.com\" and \"https://hotfix.codeOfCritical.com\"";
 //		System.out.println(s.replaceAll("[^a-zA-Z]","_").toString());
 		String s1= "48.02248978% \n (S&P Indices S&P 500 Index Total Return)";
 		System.out.println(s1.split("\n")[0]);

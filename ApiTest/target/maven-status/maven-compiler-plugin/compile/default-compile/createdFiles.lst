@@ -1,5 +1,5 @@
-org\assetvantage\api\api\utils\GetAdapter$1.class
-org\assetvantage\api\api\utils\DeleteAdapter$1.class
-org\assetvantage\api\api\utils\AbstractAdapter$1.class
-org\assetvantage\api\api\utils\PostAdapter$1.class
-org\assetvantage\api\api\utils\PutAdapter$1.class
+org\codeOfCritical\api\api\utils\GetAdapter$1.class
+org\codeOfCritical\api\api\utils\DeleteAdapter$1.class
+org\codeOfCritical\api\api\utils\AbstractAdapter$1.class
+org\codeOfCritical\api\api\utils\PostAdapter$1.class
+org\codeOfCritical\api\api\utils\PutAdapter$1.class

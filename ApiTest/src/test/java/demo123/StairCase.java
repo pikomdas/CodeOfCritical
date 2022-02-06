@@ -1,7 +1,7 @@
 /**
  * /////////////////// \\\\\\\\\\\\\\\\\\
- * WWW.ASSETVANTAGE.COM PRIVACY POLICY © 2012
- * StairCase.java belongs to AssetVantage 
+ * WWW.codeOfCritical.COM PRIVACY POLICY © 2012
+ * StairCase.java belongs to codeOfCritical 
  * Do not COPY or PASTE code to WEB from demoBDDFramework
  * Creation date-time : 08-Apr-2020 - 10:33:46 pm
  * /////////////////// \\\\\\\\\\\\\\\\\\

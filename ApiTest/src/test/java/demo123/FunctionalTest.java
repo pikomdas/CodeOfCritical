@@ -1,7 +1,7 @@
 /**
  * /////////////////// \\\\\\\\\\\\\\\\\\
- * WWW.ASSETVANTAGE.COM PRIVACY POLICY © 2012
- * FunctionalTest.java belongs to AssetVantage 
+ * WWW.codeOfCritical.COM PRIVACY POLICY © 2012
+ * FunctionalTest.java belongs to codeOfCritical 
  * Do not COPY or PASTE code to WEB from demoBDDFramework
  * Creation date-time : 04-Apr-2020 - 5:58:51 pm
  * /////////////////// \\\\\\\\\\\\\\\\\\

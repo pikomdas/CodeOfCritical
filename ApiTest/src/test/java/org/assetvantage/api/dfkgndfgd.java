@@ -1,7 +1,7 @@
 /**
  * /////////////////// \\\\\\\\\\\\\\\\\\
- * WWW.ASSETVANTAGE.COM PRIVACY POLICY © 2012
- * dfkgndfgd.java belongs to AssetVantage 
+ * WWW.codeOfCritical.COM PRIVACY POLICY © 2012
+ * dfkgndfgd.java belongs to codeOfCritical 
  * Do not COPY or PASTE code to WEB from demoBDDFramework
  * Creation date-time : 03-Apr-20207:42:35 pm
  * /////////////////// \\\\\\\\\\\\\\\\\\
@@ -11,7 +11,7 @@
 /**
  * 
  */
-package org.assetvantage.api;
+package org.codeOfCritical.api;
 
 /**
  * @author partha.das

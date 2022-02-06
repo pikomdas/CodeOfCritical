@@ -1,4 +1,4 @@
-package org.assetvantage.api.api.utils;
+package org.codeOfCritical.api.api.utils;
 
 /**
  * This interface will be used to trigger

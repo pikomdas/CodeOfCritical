@@ -1,7 +1,7 @@
 /**
  * /////////////////// \\\\\\\\\\\\\\\\\\
- * WWW.ASSETVANTAGE.COM PRIVACY POLICY © 2012
- * Probability.java belongs to AssetVantage 
+ * WWW.codeOfCritical.COM PRIVACY POLICY © 2012
+ * Probability.java belongs to codeOfCritical 
  * Do not COPY or PASTE code to WEB from demoBDDFramework
  * Creation date-time : 06-Apr-2020 - 4:42:25 pm
  * /////////////////// \\\\\\\\\\\\\\\\\\

@@ -10,16 +10,28 @@
 
 	<name>Naukri</name>
 	<url>http://maven.apache.org</url>
+	<licenses>
+		<license>
+			<name>The Apache License, Version 2.0</name>
+			<url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
+		</license>
+	</licenses>
 
 	<developers>
 		<developer>
 			<name>Partha Sarathi Das</name>
-			<id>partha.das@assetvantage.com</id>
+			<id>partha.das@codeOfCritical.com</id>
 			<roles>
 				<role>Owner</role>
 			</roles>
 		</developer>
 	</developers>
+
+	<scm>
+		<connection>scm:git:git://github.com/pikomdas/CodeOfCritical.git</connection>
+		<developerConnection>scm:git:ssh://github.com/pikomdas/CodeOfCritical.git</developerConnection>
+		<url>http://github.com/pikomdas/CodeOfCritical/tree/master</url>
+	</scm>
 
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -155,7 +167,7 @@
 				<artifactId>maven-surefire-plugin</artifactId>
 				<version>3.0.0-M3</version>            <!-- 2.22.1 -->
 				<configuration>
-					<glue>
+					<!--<glue>
 						<package>com.Naukri.stepDefinations</package>
 					</glue>
 					<resources>
@@ -163,7 +175,7 @@
 							<directory>${project.basedir}/src/main/java/com/Naukri/stepDefinations</directory>
 						</resource>
 					</resources>
-					<featuresDirectory>${project.basedir}/src/main/java/com/Naukri/featureFiles</featuresDirectory>
+					<featuresDirectory>${project.basedir}/src/main/java/com/Naukri/featureFiles</featuresDirectory>-->
 					<includes>
 						<include>**/*execution*.java</include>
 					</includes>

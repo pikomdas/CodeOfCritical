@@ -1,7 +1,7 @@
 /*
  *   /////////////////// \\\\\\\\\\\\\\\\\\
- *   WWW.ASSETVANTAGE.COM PRIVACY POLICY © 2012
- *   Test.java belongs to AssetVantage
+ *   WWW.codeOfCritical.COM PRIVACY POLICY © 2012
+ *   Test.java belongs to codeOfCritical
  *   Do not COPY or PASTE code to WEB from demoBDDFramework
  *   Creation date-time : 18/06/20, 2:46 PM
  *   Developer: partha.das

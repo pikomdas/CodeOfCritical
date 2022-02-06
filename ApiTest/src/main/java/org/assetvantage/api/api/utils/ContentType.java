@@ -1,4 +1,4 @@
-package org.assetvantage.api.api.utils;
+package org.codeOfCritical.api.api.utils;
 
 /**
  * Created by syed.sayem on 6/26/15.

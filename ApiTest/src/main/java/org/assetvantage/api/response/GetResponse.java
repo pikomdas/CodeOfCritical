@@ -1,4 +1,4 @@
-package org.assetvantage.api.response;
+package org.codeOfCritical.api.response;
 
 public class GetResponse
 {

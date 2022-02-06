@@ -1,7 +1,7 @@
 /*
  *   /////////////////// \\\\\\\\\\\\\\\\\\
- *   WWW.ASSETVANTAGE.COM PRIVACY POLICY © 2012
- *   ListTest.java belongs to AssetVantage
+ *   WWW.codeOfCritical.COM PRIVACY POLICY © 2012
+ *   ListTest.java belongs to codeOfCritical
  *   Do not COPY or PASTE code to WEB from demoBDDFramework
  *   Creation date-time : 24/06/20, 11:37 PM
  *   Developer: partha.das

@@ -10,7 +10,7 @@ public class getProperty
 	public static String readmyFile(String fieldname) throws IOException {
 		Properties prop = new Properties();
 		FileReader reader = new FileReader(
-				"../demoBDDFramework/src/main/java/com/assetvantage/configFiles/basicDetails.properties");
+				"../demoBDDFramework/src/main/java/com/codeOfCritical/configFiles/basicDetails.properties");
 		prop.load(reader);
 		return prop.getProperty(fieldname);
 	}

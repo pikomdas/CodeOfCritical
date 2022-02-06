@@ -1,0 +1,163 @@
+[
+  {
+    "Scenario Name": "Verify that user successfully added the DirectEquity transaction and verify Voucher -- [\"Buy\", \"Scenario1.1\"]",
+    "UI Value": "Automation QA Transaction\nIndividual",
+    "Field Name": "Entity",
+    "JSON Value": "Automation QA Transaction2",
+    "Date": "2021-07-20"
+  },
+  {
+    "Scenario Name": "Verify that user successfully added the DirectEquity transaction and verify Voucher -- [\"Buy\", \"Scenario1.1\"]",
+    "UI Value": "Buy",
+    "Field Name": "Type",
+    "JSON Value": "Buy2",
+    "Date": "2021-07-20"
+  },
+  {
+    "Scenario Name": "Verify that user successfully added the DirectEquity transaction and verify Voucher -- [\"Buy\", \"Scenario1.1\"]",
+    "UI Value": "02-Jan-2021",
+    "Field Name": "TransactionDate",
+    "JSON Value": "02-Jan-20212",
+    "Date": "2021-07-20"
+  },
+  {
+    "Scenario Name": "Verify that user successfully added the DirectEquity transaction and verify Voucher -- [\"Buy\", \"Scenario1.1\"]",
+    "UI Value": "10",
+    "Field Name": "Units",
+    "JSON Value": "102",
+    "Date": "2021-07-20"
+  },
+  {
+    "Scenario Name": "Verify that user successfully added the DirectEquity transaction and verify Voucher -- [\"Buy\", \"Scenario1.1\"]",
+    "UI Value": "580",
+    "Field Name": "Price",
+    "JSON Value": "5802",
+    "Date": "2021-07-20"
+  },
+  {
+    "Scenario Name": "Verify that user successfully added the DirectEquity transaction and verify Voucher -- [\"Buy\", \"Scenario1.1\"]",
+    "UI Value": "5800",
+    "Field Name": "NetAmount",
+    "JSON Value": "58002",
+    "Date": "2021-07-20"
+  },
+  {
+    "Scenario Name": "Verify that user successfully added the DirectEquity transaction and verify Voucher -- [\"Buy\", \"Scenario1.1\"]",
+    "UI Value": "HDFC Custodian - Custodian Accounts\n1122334455 - CA - INR - Custodian",
+    "Field Name": "AccountFor",
+    "JSON Value": "11223344552",
+    "Date": "2021-07-20"
+  },
+  {
+    "Scenario Name": "Verify that user successfully added the DirectEquity transaction and verify Voucher -- [\"Buy\", \"Scenario1.1\"]",
+    "UI Value": "HDFC Bank - Bank\n11223344 - BA - INR - Bank",
+    "Field Name": "Payee_Payor_Bank",
+    "JSON Value": "112233442",
+    "Date": "2021-07-20"
+  },
+  {
+    "Scenario Name": "Verify that user successfully added the DirectEquity transaction and verify Voucher -- [\"Buy\", \"Scenario1.1\"]",
+    "UI Value": "ABB India Ltd.\nINE117A01022-ABB",
+    "Field Name": "SecurityName",
+    "JSON Value": "INE117A010222",
+    "Date": "2021-07-20"
+  },
+  {
+    "Scenario Name": "Verify that user successfully added the DirectEquity transaction and verify Voucher -- [\"Buy\", \"Scenario1.1\"]",
+    "UI Value": "1",
+    "Field Name": "Brokerage",
+    "JSON Value": "12",
+    "Date": "2021-07-20"
+  },
+  {
+    "Scenario Name": "Verify that user successfully added the DirectEquity transaction and verify Voucher -- [\"Buy\", \"Scenario1.1\"]",
+    "UI Value": "2",
+    "Field Name": "STTCharges",
+    "JSON Value": "22",
+    "Date": "2021-07-20"
+  },
+  {
+    "Scenario Name": "Verify that user successfully added the DirectEquity transaction and verify Voucher -- [\"Buy\", \"Scenario1.1\"]",
+    "UI Value": "3",
+    "Field Name": "ServiceTax",
+    "JSON Value": "32",
+    "Date": "2021-07-20"
+  },
+  {
+    "Scenario Name": "Verify that user successfully added the DirectEquity transaction and verify Voucher -- [\"Buy\", \"Scenario1.1\"]",
+    "UI Value": "5",
+    "Field Name": "StampDuty",
+    "JSON Value": "52",
+    "Date": "2021-07-20"
+  },
+  {
+    "Scenario Name": "Verify that user successfully added the DirectEquity transaction and verify Voucher -- [\"Buy\", \"Scenario1.1\"]",
+    "UI Value": "6",
+    "Field Name": "OtherCharges",
+    "JSON Value": "62",
+    "Date": "2021-07-20"
+  },
+  {
+    "Scenario Name": "Verify that user successfully added the DirectEquity transaction and verify Voucher -- [\"Buy\", \"Scenario1.1\"]",
+    "UI Value": "4",
+    "Field Name": "TransactionCharge",
+    "JSON Value": "42",
+    "Date": "2021-07-20"
+  },
+  {
+    "Scenario Name": "Verify that user successfully added the DirectEquity transaction and verify Voucher -- [\"Buy\", \"Scenario1.1\"]",
+    "UI Value": "7",
+    "Field Name": "CGST",
+    "JSON Value": "72",
+    "Date": "2021-07-20"
+  },
+  {
+    "Scenario Name": "Verify that user successfully added the DirectEquity transaction and verify Voucher -- [\"Buy\", \"Scenario1.1\"]",
+    "UI Value": "9",
+    "Field Name": "IGST",
+    "JSON Value": "92",
+    "Date": "2021-07-20"
+  },
+  {
+    "Scenario Name": "Verify that user successfully added the DirectEquity transaction and verify Voucher -- [\"Buy\", \"Scenario1.1\"]",
+    "UI Value": "8",
+    "Field Name": "SGST",
+    "JSON Value": "82",
+    "Date": "2021-07-20"
+  },
+  {
+    "Scenario Name": "Verify that user successfully added the DirectEquity transaction and verify Voucher -- [\"Buy\", \"Scenario1.1\"]",
+    "UI Value": "10",
+    "Field Name": "UTGST",
+    "JSON Value": "102",
+    "Date": "2021-07-20"
+  },
+  {
+    "Scenario Name": "Verify that user successfully added the DirectEquity transaction and verify Voucher -- [\"Buy\", \"Scenario1.1\"]",
+    "UI Value": "5855",
+    "Field Name": "GrossAmount",
+    "JSON Value": "58552",
+    "Date": "2021-07-20"
+  },
+  {
+    "Scenario Name": "Verify that user successfully added the DirectEquity transaction and verify Voucher -- [\"Buy\", \"Scenario1.1\"]",
+    "UI Value": "10.0",
+    "Field Name": "Credit",
+    "JSON Value": "0.0",
+    "Date": "2021-07-20"
+  },
+  {
+    "Scenario Name": "Verify that user successfully added the DirectEquity transaction and verify Voucher -- [\"Buy\", \"Scenario1.1\"]",
+    "UI Value": "5800.0",
+    "Field Name": "Credit",
+    "JSON Value": "0.0",
+    "Date": "2021-07-20"
+  },
+  {
+    "Scenario Name": "Verify that user successfully added the DirectEquity transaction and verify Voucher -- [\"Buy\", \"Scenario1.1\"]",
+    "UI Value": "9.0",
+    "Field Name": "Credit",
+    "JSON Value": "0.0",
+    "Date": "2021-07-20"
+  }
+]

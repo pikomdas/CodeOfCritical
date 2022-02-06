@@ -1,4 +1,4 @@
-package org.assetvantage.api.response;
+package org.codeOfCritical.api.response;
 
 /**
  * Created by syed.sayem on 6/23/15.

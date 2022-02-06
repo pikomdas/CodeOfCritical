@@ -21,7 +21,7 @@ public class ThreadsDemo
 		Runnable r1 = () -> {
 			WebDriver driver = new browser().trigger();
 			li.add(driver);
-			driver.get("https://assetvantage.com");
+			driver.get("https://codeOfCritical.com");
 			List<WebElement> ll = driver.findElements(By.xpath("//a"));
 			ll.forEach(x -> {
 				new Service(x.getTagName(), x.getAttribute("href")).addData();

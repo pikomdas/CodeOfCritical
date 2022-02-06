@@ -1,7 +1,7 @@
 /*
  *   /////////////////// \\\\\\\\\\\\\\\\\\
- *   WWW.ASSETVANTAGE.COM PRIVACY POLICY © 2012
- *   ListWithClassObject.java belongs to AssetVantage
+ *   WWW.codeOfCritical.COM PRIVACY POLICY © 2012
+ *   ListWithClassObject.java belongs to codeOfCritical
  *   Do not COPY or PASTE code to WEB from demoBDDFramework
  *   Creation date-time : 11/07/20, 12:43 AM
  *   Developer: partha.das

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/Automated_Execution_Report/Automated_Execution_Report.iml" filepath="$PROJECT_DIR$/Automated_Execution_Report/Automated_Execution_Report.iml" />
+      <module fileurl="file://$PROJECT_DIR$/CodeOfCritical.iml" filepath="$PROJECT_DIR$/CodeOfCritical.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Naukri/Naukri.iml" filepath="$PROJECT_DIR$/Naukri/Naukri.iml" />
+    </modules>
+  </component>
+</project>

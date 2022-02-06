@@ -1,4 +1,4 @@
-package org.assetvantage.api.api.utils;
+package org.codeOfCritical.api.api.utils;
 
 import java.io.BufferedReader;
 import java.io.IOException;

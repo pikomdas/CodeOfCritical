@@ -1,7 +1,7 @@
 /*
  *   /////////////////// \\\\\\\\\\\\\\\\\\
- *   WWW.ASSETVANTAGE.COM PRIVACY POLICY © 2012
- *   FileWriting_mt.java belongs to AssetVantage
+ *   WWW.codeOfCritical.COM PRIVACY POLICY © 2012
+ *   FileWriting_mt.java belongs to codeOfCritical
  *   Do not COPY or PASTE code to WEB from demoBDDFramework
  *   Creation date-time : 24/06/20, 2:50 PM
  *   Developer: partha.das

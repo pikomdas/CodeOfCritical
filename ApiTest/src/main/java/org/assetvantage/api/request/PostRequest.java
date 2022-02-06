@@ -1,4 +1,4 @@
-package org.assetvantage.api.request;
+package org.codeOfCritical.api.request;
 
 /**
  * Created by syed.sayem on 6/23/15.

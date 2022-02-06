@@ -1,4 +1,4 @@
-package org.assetvantage.api.api.utils;
+package org.codeOfCritical.api.api.utils;
 
 import com.google.gson.Gson;
 

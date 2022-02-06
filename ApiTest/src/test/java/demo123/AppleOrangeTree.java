@@ -1,7 +1,7 @@
 /**
  * /////////////////// \\\\\\\\\\\\\\\\\\
- * WWW.ASSETVANTAGE.COM PRIVACY POLICY © 2012
- * AppleOrangeTree.java belongs to AssetVantage 
+ * WWW.codeOfCritical.COM PRIVACY POLICY © 2012
+ * AppleOrangeTree.java belongs to codeOfCritical
  * Do not COPY or PASTE code to WEB from demoBDDFramework
  * Creation date-time : 11-Apr-2020 - 8:58:24 pm
  * /////////////////// \\\\\\\\\\\\\\\\\\

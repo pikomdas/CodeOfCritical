@@ -1,7 +1,7 @@
 /**
  * /////////////////// \\\\\\\\\\\\\\\\\\
- * WWW.ASSETVANTAGE.COM PRIVACY POLICY © 2012
- * ThreadsMain.java belongs to AssetVantage
+ * WWW.codeOfCritical.COM PRIVACY POLICY © 2012
+ * ThreadsMain.java belongs to codeOfCritical
  * Do not COPY or PASTE code to WEB from demoBDDFramework
  * Creation date-time : 12-May-2020 - 4:41:36 pm
  * /////////////////// \\\\\\\\\\\\\\\\\\

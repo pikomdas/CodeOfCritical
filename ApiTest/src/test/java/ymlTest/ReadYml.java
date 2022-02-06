@@ -1,7 +1,7 @@
 /*
  *  /////////////////// \\\\\\\\\\\\\\\\\\
- *  WWW.ASSETVANTAGE.COM PRIVACY POLICY © 2012
- * ReadYml.java belongs to AssetVantage
+ *  WWW.codeOfCritical.COM PRIVACY POLICY © 2012
+ * ReadYml.java belongs to codeOfCritical
  *  Do not COPY or PASTE code to WEB from ApiTest
  * Creation date-time : 04/09/20, 12:30 AM
  * /////////////////// \\\\\\\\\\\\\\\\\\

@@ -1,7 +1,7 @@
 /*
  *   /////////////////// \\\\\\\\\\\\\\\\\\
- *   WWW.ASSETVANTAGE.COM PRIVACY POLICY © 2012
- *   PageLevelData.java belongs to AssetVantage
+ *   WWW.codeOfCritical.COM PRIVACY POLICY © 2012
+ *   PageLevelData.java belongs to codeOfCritical
  *   Do not COPY or PASTE code to WEB from demoBDDFramework
  *   Creation date-time : 04/06/20, 8:17 PM
  *   Developer: partha.das

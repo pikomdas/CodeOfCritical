@@ -1,14 +1,14 @@
-package org.assetvantage.api;
+package org.codeOfCritical.api;
 
 import java.io.IOException;
 
-import org.assetvantage.api.api.utils.ContentType;
-import org.assetvantage.api.api.utils.GetAdapter;
-import org.assetvantage.api.api.utils.PostAdapter;
-import org.assetvantage.api.api.utils.RestAdapter;
-import org.assetvantage.api.request.PostRequest;
-import org.assetvantage.api.response.GetResponse;
-import org.assetvantage.api.response.PostResponse;
+import org.codeOfCritical.api.api.utils.ContentType;
+import org.codeOfCritical.api.api.utils.GetAdapter;
+import org.codeOfCritical.api.api.utils.PostAdapter;
+import org.codeOfCritical.api.api.utils.RestAdapter;
+import org.codeOfCritical.api.request.PostRequest;
+import org.codeOfCritical.api.response.GetResponse;
+import org.codeOfCritical.api.response.PostResponse;
 import org.junit.Test;
 
 public class ApiTest
