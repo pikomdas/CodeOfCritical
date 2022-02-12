@@ -1,7 +1,7 @@
 /*
  *   /////////////////// \\\\\\\\\\\\\\\\\\
  *   WWW.codeOfCrotical.COM PRIVACY POLICY © 2012
- *   DataCollectorJSONToUI.java belongs to codeOfCrotical
+ *   DataCollectorMultipleTime.java belongs to codeOfCrotical
  *   Do not COPY or PASTE code to WEB from codeOfCrotical
  *   Creation date-time : 05/07/20, 1:01 AM
  *   Developer: partha.das
@@ -23,8 +23,7 @@ import java.util.List;
  *
  * @author partha.das
  */
-public class DataCollectorJSONToUI
-{
+public class DataCollectorMultipleTime {
     private static final ThreadLocal<PageLevelData> pageLevelData = new ThreadLocal<>();
     private static final ThreadLocal<JSONBuilder> jsonBuilder = ThreadLocal.withInitial(() -> new JSONBuilder());
     private static final ThreadLocal<HTML_Generator> html_generator = new ThreadLocal<>();
@@ -41,11 +40,10 @@ public class DataCollectorJSONToUI
      * @param pageLevelData  CucumberBeforeExecution.SCENARIO.get().getName(), positionName, columnName,
      *                       fromJSON, fromUI, passMessage
      */
-    public DataCollectorJSONToUI(String sessionId, String currentTagName, PageLevelData pageLevelData)
-    {
+    public DataCollectorMultipleTime(String sessionId, String currentTagName, PageLevelData pageLevelData) {
         this.sessionId.set(sessionId);
         this.currentTagName.set(currentTagName);
-        DataCollectorJSONToUI.pageLevelData.set(pageLevelData);
+        DataCollectorMultipleTime.pageLevelData.set(pageLevelData);
     }
 
     /**
@@ -69,9 +67,6 @@ public class DataCollectorJSONToUI
                 .stream()
                 .forEach(x ->
                 {
-                    /*System.out.println("=============");
-                    System.out.println(x);
-                    System.out.println("=============");*/
                     jsonBuilder.get().collectData(x.getScenarioName(), x.getPageName(), x.getFieldName(), x.getExpectedValue(),
 
                             x.getActualValue(), screenshots, LocalDate.now().toString());
@@ -97,9 +92,9 @@ public class DataCollectorJSONToUI
         html_generator.remove();
         jsonBuilder.remove();
         /*
-         * remove values from linkedList to over come data duplication
+         * remove values from linkedList to overcome data duplication
          * remove the linked list from the particular thread as it is denoted as a static
-         * If second time the same thread will using the same linked list, it will get a
+         * If second time the same thread will use the same linked list, it will get a
          * blank list to store data for the particular scenario.
          * ### Here Iteration of same result in JSON issue fixed ###
          */

@@ -10,7 +10,7 @@
 
 package com.codeOfCrotical;
 
-import com.codeOfCrotical.deviatonListner.DataCollectorJSONToUI;
+import com.codeOfCrotical.deviatonListner.DataCollectorMultipleTime;
 import com.codeOfCrotical.deviatonListner.PageLevelData;
 
 import java.io.IOException;
@@ -21,11 +21,11 @@ public class TestReport_jui extends TestData
     {
         Thread t1 = new Thread(() ->
         {
-            DataCollectorJSONToUI dc = null;
+            DataCollectorMultipleTime dc = null;
             try
             {
 //                System.out.println(exp);
-                dc = new DataCollectorJSONToUI("6e057dt99ae33t", "HealthCheck",
+                dc = new DataCollectorMultipleTime("6e057dt99ae33t", "HealthCheck",
                         new PageLevelData("test scenario_1", "P1", "C1", 22.2, 22.3, "passed"));
             }
             catch (Exception e)
@@ -46,11 +46,11 @@ public class TestReport_jui extends TestData
         });
         
         Thread t2 = new Thread(() -> {
-            DataCollectorJSONToUI dc = null;
+            DataCollectorMultipleTime dc = null;
             try
             {
 //                System.out.println(exp);
-                dc = new DataCollectorJSONToUI("6e057dt99ae33t", "HealthCheck",
+                dc = new DataCollectorMultipleTime("6e057dt99ae33t", "HealthCheck",
                         new PageLevelData("test scenario_2", "P2", "C2", 22.2, 22.2, "passed"));
                 
             }
