@@ -53,8 +53,7 @@ public class DataCollectorJSONToUI
      *
      * @return scenarios, Positions, Expected values,Actual Values in form of Objects
      */
-    private synchronized List<GetDetailsOfDeviations> getListofDeviations()
-    {
+    private synchronized List<GetDetailsOfDeviations> getListonDeviations() {
         return pageLevelData.get().jsonToUI_Data.get();
     }
 
@@ -66,14 +65,15 @@ public class DataCollectorJSONToUI
      */
     private synchronized JSONObject buildJSON(List<String> screenshots) throws IOException
     {
-        getListofDeviations()
+        getListonDeviations()
                 .stream()
                 .forEach(x ->
                 {
                     /*System.out.println("=============");
                     System.out.println(x);
                     System.out.println("=============");*/
-                    jsonBuilder.get().collectData(x.getScenarioName(), x.getPositionName(), x.getColumnName(), x.getExpectedValue(),
+                    jsonBuilder.get().collectData(x.getScenarioName(), x.getPageName(), x.getFieldName(), x.getExpectedValue(),
+
                             x.getActualValue(), screenshots, LocalDate.now().toString());
                 });
         jsonBuilder.get().createJSONFile(path_of_json_file);

@@ -37,7 +37,7 @@ public class DataCollector
     private String path_of_json_file;
 
     /**
-     * This parameters will capture details for particular once scenario only.
+     * These parameters will capture details for particular once scenario only.
      *
      * @param scenarioName   - will be provided manually from base
      * @param sessionId      - will be provided manually from base
@@ -79,7 +79,7 @@ public class DataCollector
                 .forEach(x ->
                 {
 //                    System.out.println("Thread: " + Thread.currentThread().getName());
-                    jsonBuilder.collectData(scenarioName.get(), x.getPositionName(), x.getColumnName(), x.getExpectedValue(),
+                    jsonBuilder.collectData(scenarioName.get(), x.getPageName(), x.getFieldName(), x.getExpectedValue(),
                             x.getActualValue(), screenshot.get(), LocalDate.now().toString());
                 });
         jsonBuilder.createJSONFile(path_of_json_file);

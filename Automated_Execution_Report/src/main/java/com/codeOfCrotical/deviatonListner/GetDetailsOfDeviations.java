@@ -10,8 +10,8 @@
 package com.codeOfCrotical.deviatonListner;
 
 public class GetDetailsOfDeviations {
-    private final String positionName;
-    private final String columnName;
+    private final String pageName;
+    private final String fieldName;
     private final String expectedValue;
     private final String actualValue;
     private String scenarioName;
@@ -20,14 +20,14 @@ public class GetDetailsOfDeviations {
      * This Constructor will be used to capture deviation in the form Objects
      * This will capture only Health Check related scenarios
      *
-     * @param positionName
-     * @param columnName
+     * @param pageName
+     * @param fieldName
      * @param expectedValue
      * @param actualValue
      */
-    public GetDetailsOfDeviations(String positionName, String columnName, String expectedValue, String actualValue) {
-        this.positionName = positionName;
-        this.columnName = columnName;
+    public GetDetailsOfDeviations(String pageName, String fieldName, String expectedValue, String actualValue) {
+        this.pageName = pageName;
+        this.fieldName = fieldName;
         this.expectedValue = expectedValue;
         this.actualValue = actualValue;
     }
@@ -37,25 +37,25 @@ public class GetDetailsOfDeviations {
      * This will capture only for JSON to UI scenarios
      *
      * @param scenarioName
-     * @param positionName
-     * @param columnName
+     * @param pageName
+     * @param fieldName
      * @param expectedValue
      * @param actualValue
      */
-    public GetDetailsOfDeviations(String scenarioName, String positionName, String columnName, String expectedValue, String actualValue) {
+    public GetDetailsOfDeviations(String scenarioName, String pageName, String fieldName, String expectedValue, String actualValue) {
         this.scenarioName = scenarioName;
-        this.positionName = positionName;
-        this.columnName = columnName;
+        this.pageName = pageName;
+        this.fieldName = fieldName;
         this.expectedValue = expectedValue;
         this.actualValue = actualValue;
     }
 
-    public synchronized String getPositionName() {
-        return positionName;
+    public synchronized String getPageName() {
+        return pageName;
     }
 
-    public synchronized String getColumnName() {
-        return columnName;
+    public synchronized String getFieldName() {
+        return fieldName;
     }
 
     public synchronized String getExpectedValue() {
@@ -75,16 +75,16 @@ public class GetDetailsOfDeviations {
     public String toString() {
         if (scenarioName != null) {
             return "GetDetailsOfDeviations{" +
-                    "positionName='" + positionName + '\'' +
-                    ", columnName='" + columnName + '\'' +
+                    "pageName='" + pageName + '\'' +
+                    ", fieldName='" + fieldName + '\'' +
                     ", expectedValue='" + expectedValue + '\'' +
                     ", actualValue='" + actualValue + '\'' +
                     ", scenarioName='" + scenarioName + '\'' +
                     '}';
         } else {
             return "GetDetailsOfDeviations{" +
-                    "positionName='" + positionName + '\'' +
-                    ", columnName='" + columnName + '\'' +
+                    "pageName='" + pageName + '\'' +
+                    ", fieldName='" + fieldName + '\'' +
                     ", expectedValue='" + expectedValue + '\'' +
                     ", actualValue='" + actualValue + '\'' +
                     '}';
