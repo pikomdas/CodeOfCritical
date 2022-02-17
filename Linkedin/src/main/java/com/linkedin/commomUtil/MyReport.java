@@ -1,4 +1,4 @@
-package src.main.java.com.linkedin.commomUtil;
+package com.linkedin.commomUtil;
 
 import com.linkedin.Browser.browser;
 import com.relevantcodes.extentreports.ExtentReports;

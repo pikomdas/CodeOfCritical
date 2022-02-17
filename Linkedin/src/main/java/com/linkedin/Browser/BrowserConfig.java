@@ -1,13 +1,4 @@
-package src.main.java.com.linkedin.Browser;
-
-import java.io.File;
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-import java.util.Scanner;
-import java.util.logging.Level;
+package com.linkedin.Browser;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -26,8 +17,11 @@ import org.openqa.selenium.remote.CapabilityType;
 import org.openqa.selenium.remote.RemoteWebDriver;
 import org.openqa.selenium.remote.SessionId;
 
-public abstract class BrowserConfig
-{
+import java.io.File;
+import java.util.*;
+import java.util.logging.Level;
+
+public abstract class BrowserConfig {
 	private static Logger log = LogManager.getLogger(BrowserConfig.class.getName());
 	public static WebDriver driver;
 	private static List<WebDriver> webDriverPool = Collections.synchronizedList(new ArrayList<WebDriver>());

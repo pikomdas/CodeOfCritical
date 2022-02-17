@@ -1,4 +1,5 @@
-package src.main.java.rnd;
+package rnd;
+
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.By;
@@ -7,7 +8,6 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Stream;
 
@@ -20,7 +20,7 @@ public class StreamDemo
 		l1 = System.currentTimeMillis();
 		Stream<String> mystream = Stream.of("https://codeOfCritical.com", "https://hotstar.com", "https://netflix.com");
 		mystream.parallel().forEach(x -> {
-			WebDriver driver = new browser().trigger();
+			WebDriver driver = new browser1().trigger();
 
 			driver.get(x);
 			List<WebElement> ll = driver.findElements(By.xpath("//a"));

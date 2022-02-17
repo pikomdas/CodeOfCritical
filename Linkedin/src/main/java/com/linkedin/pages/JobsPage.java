@@ -1,7 +1,7 @@
-package src.main.java.com.linkedin.pages;
+package com.linkedin.pages;
 
-import java.io.IOException;
-
+import com.linkedin.Browser.browser;
+import com.linkedin.commomUtil.getMyProperty;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.WebDriver;
@@ -11,9 +11,9 @@ import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-import com.linkedin.Browser.browser;
-import com.linkedin.commomUtil.CheckPageLoadingState;
-import com.linkedin.commomUtil.getMyProperty;
+import java.io.IOException;
+
+import static com.linkedin.commomUtil.CheckPageLoadingState.waitToLoadPage;
 
 public class JobsPage extends browser
 {
@@ -86,7 +86,7 @@ public class JobsPage extends browser
 
 	public void jobSearch() throws IOException, InterruptedException
 	{
-		CheckPageLoadingState.waitToLoadPage();
+		waitToLoadPage();
 		
 		log.info("INSERTING JOB TEXT TO SEARCH");
 		w1.until(ExpectedConditions.visibilityOf(getJobSeaarchBox()));

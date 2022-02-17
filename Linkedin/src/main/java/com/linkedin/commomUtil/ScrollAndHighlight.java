@@ -1,10 +1,9 @@
-package src.main.java.com.linkedin.commomUtil;
+package com.linkedin.commomUtil;
 
+import com.linkedin.Browser.browser;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
-
-import com.linkedin.Browser.browser;
 
 /**
  * @author partha.das

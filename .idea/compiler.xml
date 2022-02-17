@@ -6,13 +6,29 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="Automated_Execution_Report" />
+        <module name="Linkedin" />
+        <module name="jarTest" />
+        <module name="LionsFlame" />
         <module name="Naukri" />
+        <module name="report" />
+        <module name="Automated_Execution_Report" />
+        <module name="dataSimplifier" />
+        <module name="ApiTest" />
+        <module name="setEnvironmentAndBrowser" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
+      <module name="ApiTest" target="11" />
       <module name="Automated_Execution_Report" target="11" />
+      <module name="dataSimplifier" target="11" />
+      <module name="DemoWebsite" target="11" />
+      <module name="jarTest" target="11" />
+      <module name="Linkedin" target="11" />
+      <module name="LionsFlame" target="1.7" />
       <module name="Naukri" target="1.8" />
+      <module name="report" target="11" />
+      <module name="setEnvironmentAndBrowser" target="11" />
+      <module name="untitled" target="1.5" />
     </bytecodeTargetLevel>
   </component>
 </project>

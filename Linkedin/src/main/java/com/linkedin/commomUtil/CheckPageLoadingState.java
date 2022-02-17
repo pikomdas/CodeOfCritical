@@ -1,13 +1,12 @@
 /**
  * 
  */
-package src.main.java.com.linkedin.commomUtil;
+package com.linkedin.commomUtil;
 
+import com.linkedin.Browser.browser;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.JavascriptExecutor;
-
-import com.linkedin.Browser.browser;
 
 /**
  * @author partha.das

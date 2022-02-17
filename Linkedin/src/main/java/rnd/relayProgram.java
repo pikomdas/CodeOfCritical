@@ -1,18 +1,18 @@
-package src.main.java.rnd;
-
-import java.util.Scanner;
+package rnd;
 
 import org.testng.annotations.Test;
 
+import java.util.Scanner;
+
 public class relayProgram {
 
-	public static String Station1(String Name1) {
+    public static String Station1(String Name1) {
 
-		return "Khardah";
+        return "Khardah";
 
-	}
+    }
 
-	public static String Station2(String Name2) {
+    public static String Station2(String Name2) {
 		return "Balliguanj";
 
 	}

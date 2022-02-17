@@ -1,11 +1,10 @@
-package src.main.java.com.linkedin.pages;
+package com.linkedin.pages;
 
+import com.linkedin.Browser.browser;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
-
-import com.linkedin.Browser.browser;
 
 public class afterApplyPopups extends browser {
 

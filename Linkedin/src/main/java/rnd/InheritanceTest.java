@@ -1,4 +1,4 @@
-package src.main.java.rnd;
+package rnd;
 
 public class InheritanceTest {
 

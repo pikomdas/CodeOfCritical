@@ -1,7 +1,7 @@
-package src.main.java.com.linkedin.pages;
+package com.linkedin.pages;
 
-import java.util.List;
-
+import com.linkedin.commomUtil.CheckPageLoadingState;
+import com.linkedin.commomUtil.ScreenshotCapture;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.By;
@@ -15,8 +15,7 @@ import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-import com.linkedin.commomUtil.CheckPageLoadingState;
-import com.linkedin.commomUtil.ScreenshotCapture;
+import java.util.List;
 
 public class SearchJobApplyPage extends JobsPage
 {
@@ -63,7 +62,7 @@ public class SearchJobApplyPage extends JobsPage
 
 	@FindBy(css = ".artdeco-inline-feedback__message")
 	private WebElement messageWhereApplynotPossible;
-	@FindBy(css = "//*[@class='continue-btn' and text()='Submit']")
+	@FindBy(xpath = "//*[@class='continue-btn' and text()='Submit']")
 	private WebElement submitButtonNewWindow;
 
 	/**

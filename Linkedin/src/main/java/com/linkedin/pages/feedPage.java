@@ -1,7 +1,6 @@
-package src.main.java.com.linkedin.pages;
+package com.linkedin.pages;
 
-import java.util.concurrent.TimeUnit;
-
+import com.linkedin.Browser.browser;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.WebDriver;
@@ -9,7 +8,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-import com.linkedin.Browser.browser;
+import java.util.concurrent.TimeUnit;
 
 //Test passed
 
@@ -37,7 +36,7 @@ public class feedPage extends browser
 	private WebElement howManyViewedmyProfile;
 	@FindBy(css = "button[class*='widget-route']")
 	private WebElement viewsOfMyPost;
-	@FindBy(css = ".Sans-17px-black-85%-semibold")
+	@FindBy(css = ".Sans-17px-black-85-semibold")
 	private WebElement profileName;
 
 	public WebElement getProfileName()
