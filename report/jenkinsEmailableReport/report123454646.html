@@ -1,0 +1,232 @@
+<html>
+<head>
+    <style>
+        body {
+            font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+            font-size: 14px;
+            line-height: 1.42857143;
+            color: #333;
+            background-color: #fff;
+        }
+
+        /* names of those classes must be the same as name of the statuses (to lower case) in Status class  */
+        .passed {
+            background-color: #92DD96;
+        }
+
+        .failed {
+            background-color: #F2928C;
+        }
+
+        .skipped {
+            background-color: #8AF;
+        }
+
+        .pending {
+            background-color: #F5F28F;
+        }
+
+        .undefined {
+            background-color: #F5B975;
+        }
+
+        .lead-duration {
+            float: right;
+            padding-right: 15px;
+        }
+
+        table.stats-table {
+            background-color: white;
+            color: black;
+            margin-bottom: 20px;
+            width: 100%;
+        }
+
+        table.stats-table th, table.stats-table td {
+            border: 1px solid gray;
+            padding: 5px;
+            text-align: center;
+        }
+
+        table.stats-table tr.header {
+            background-color: #66CCEE;
+        }
+
+        table.stats-table tfoot {
+            font-weight: bold;
+        }
+
+        tfoot.total, td.total, th.total {
+            background-color: lightgray;
+        }
+
+        table.stats-table td.duration {
+            text-align: right;
+            white-space: nowrap;
+        }
+
+        table.stats-table td.tagname {
+            text-align: left;
+        }
+
+        table.stats-table td.location, .location {
+            font-family: monospace;
+            text-align: left;
+        }
+
+        table.step-arguments {
+            margin-bottom: 5px;
+            margin-left: 25px;
+            margin-top: 3px;
+        }
+
+        table.step-arguments th, table.step-arguments td {
+            border: 1px solid gray;
+            padding: 3px;
+            text-align: left;
+        }
+
+        table#tablesorter thead tr:not(.dont-sort) th {
+            cursor: pointer;
+        }
+
+        tr:hover {
+            transition: background-color 0.3s;
+        }
+
+        .collapsable-control {
+            cursor: pointer;
+        }
+
+        .chevron:after {
+            content: "\f078";
+        }
+
+        .collapsed .chevron:after {
+            content: "\f054";
+        }
+
+        .footer {
+            font-size: smaller;
+            text-align: center;
+            margin-top: 30px;
+        }
+    </style>
+</head>
+<body> ;
+<table class="stats-table table-hover" id="tablesorter">
+    <thead>
+    <tr class="header dont-sort">
+        <th></th>
+        <th colspan="6">Steps</th>
+        <th colspan="3">Scenarios</th>
+        <th colspan="2">Features</th>
+    </tr>
+    <tr>
+        <th>Feature</th>
+        <th class="passed">Passed</th>
+        <th class="failed">Failed</th>
+        <th class="skipped">Skipped</th>
+        <th class="pending">Pending</th>
+        <th class="undefined">Undefined</th>
+        <th class="total">Total</th>
+        <th class="passed">Passed</th>
+        <th class="failed">Failed</th>
+        <th class="total">Total</th>
+        <th>Duration</th>
+        <th>Status</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+        <td class="tagname"><a href="report-feature_1_4199765864.html">To verify Wealth Register of partnership entity
+            for all clients</a></td>
+        <td>0</td>
+        <td>0</td>
+        <td class="skipped">96</td>
+        <td>0</td>
+        <td>0</td>
+        <td class="total">96</td>
+        <td>0</td>
+        <td class="failed">24</td>
+        <td class="total">24</td>
+        <td class="duration" data-value="0">0.000</td>
+        <td class="failed">Failed</td>
+    </tr>
+    <tr>
+        <td class="tagname"><a href="report-feature_446979661.html">Verify Balance Sheet summation for all clients</a>
+        </td>
+        <td>0</td>
+        <td>0</td>
+        <td class="skipped">30</td>
+        <td>0</td>
+        <td>0</td>
+        <td class="total">30</td>
+        <td>0</td>
+        <td class="failed">6</td>
+        <td class="total">6</td>
+        <td class="duration" data-value="0">0.000</td>
+        <td class="failed">Failed</td>
+    </tr>
+    <tr>
+        <td class="tagname"><a href="report-feature_2_3867198365.html">Verify Trail Balance for all clients</a></td>
+        <td>0</td>
+        <td>0</td>
+        <td class="skipped">12</td>
+        <td>0</td>
+        <td>0</td>
+        <td class="total">12</td>
+        <td>0</td>
+        <td class="failed">3</td>
+        <td class="total">3</td>
+        <td class="duration" data-value="0">0.000</td>
+        <td class="failed">Failed</td>
+    </tr>
+    <tr>
+        <td class="tagname"><a href="report-feature_3_845534746.html">Verify Wealth Register for all clients</a></td>
+        <td>0</td>
+        <td>0</td>
+        <td class="skipped">24</td>
+        <td>0</td>
+        <td>0</td>
+        <td class="total">24</td>
+        <td>0</td>
+        <td class="failed">3</td>
+        <td class="total">3</td>
+        <td class="duration" data-value="0">0.000</td>
+        <td class="failed">Failed</td>
+    </tr>
+    </tbody>
+    <tfoot class="total">
+    <tr>
+        <td></td>
+        <td>0</td>
+        <td>0</td>
+        <td>162</td>
+        <td>0</td>
+        <td>0</td>
+        <td>162</td>
+        <td>0</td>
+        <td>36</td>
+        <td>36</td>
+        <td class="duration">0.000</td>
+        <td>4</td>
+    </tr>
+    <tr>
+        <td></td>
+        <td>0.00%</td>
+        <td>0.00%</td>
+        <td>100.00%</td>
+        <td>0.00%</td>
+        <td>0.00%</td>
+        <td></td>
+        <td>0.00%</td>
+        <td>100.00%</td>
+        <td></td>
+        <td></td>
+        <td>0.00%</td>
+    </tr>
+    </tfoot>
+</table>
+</body>
+</html>
