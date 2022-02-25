@@ -54,6 +54,7 @@ public class DataCollector
         this.currentTagName.set(currentTagName);
         DataCollector.pageLevelData.set(pageLevelData);
         this.screenshot.set(screenShot);
+
     }
 
     /**

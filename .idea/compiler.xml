@@ -11,6 +11,7 @@
         <module name="LionsFlame" />
         <module name="Naukri" />
         <module name="report" />
+        <module name="spring-boot-web" />
         <module name="Automated_Execution_Report" />
         <module name="dataSimplifier" />
         <module name="ApiTest" />
@@ -28,7 +29,13 @@
       <module name="Naukri" target="1.8" />
       <module name="report" target="11" />
       <module name="setEnvironmentAndBrowser" target="11" />
+      <module name="spring-boot-web" target="11" />
       <module name="untitled" target="1.5" />
     </bytecodeTargetLevel>
+  </component>
+  <component name="JavacSettings">
+    <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="spring-boot-web" options="-parameters" />
+    </option>
   </component>
 </project>

@@ -12,6 +12,7 @@
       <module fileurl="file://$PROJECT_DIR$/jarTest/jarTest.iml" filepath="$PROJECT_DIR$/jarTest/jarTest.iml" />
       <module fileurl="file://$PROJECT_DIR$/report/report.iml" filepath="$PROJECT_DIR$/report/report.iml" />
       <module fileurl="file://$PROJECT_DIR$/setEnvironmentAndBrowser/setEnvironmentAndBrowser.iml" filepath="$PROJECT_DIR$/setEnvironmentAndBrowser/setEnvironmentAndBrowser.iml" />
+      <module fileurl="file://$PROJECT_DIR$/springbootwebapp-master/spring-boot-web.iml" filepath="$PROJECT_DIR$/springbootwebapp-master/spring-boot-web.iml" />
     </modules>
   </component>
 </project>
