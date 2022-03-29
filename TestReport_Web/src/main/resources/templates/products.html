@@ -1,0 +1,38 @@
+<!--
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head lang="en">
+
+    <title>Automation Test Report</title>
+
+    &lt;!&ndash;/*/ <th:block th:include="fragments/headerinc :: head"></th:block> /*/&ndash;&gt;
+</head>
+<body>
+<div class="container">
+    &lt;!&ndash;/*/ <th:block th:include="fragments/header :: header"></th:block> /*/&ndash;&gt;
+    <div th:if="${not #lists.isEmpty(deviations)}">
+        <h2>Product List</h2>
+        <table class="table table-striped">
+            <tr>
+                <th>Id</th>
+                <th>Product Id</th>
+                <th>Description</th>
+                <th>Price</th>
+                <th>View</th>
+                <th>Edit</th>
+            </tr>
+            <tr th:each="deviation : ${deviations}">
+                &lt;!&ndash;                <td th:text="${deviation.}"><a href="/product/${product.id}">Id</a></td>&ndash;&gt;
+                <td th:text="${product.productId}">Product Id</td>
+                <td th:text="${product.description}">descirption</td>
+                <td th:text="${product.price}">price</td>
+                <td><a th:href="${ '/product/' + product.id}">View</a></td>
+                <td><a th:href="${'/product/edit/' + product.id}">Edit</a></td>
+            </tr>
+        </table>
+
+    </div>
+</div>
+
+</body>
+</html>-->

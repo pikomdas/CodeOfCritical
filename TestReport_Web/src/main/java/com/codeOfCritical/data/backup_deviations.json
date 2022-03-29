@@ -1,0 +1,344 @@
+{
+  "Scenarios": [
+    {
+      "Scenario Name": "test scenario_1",
+      "Positions": [
+        {
+          "Position Name": "abc",
+          "Deviations": [
+            {
+              "Expected value": "1130.30000000",
+              "Column Name": "fd",
+              "Actual Value": "1130.30000000"
+            },
+            {
+              "Expected value": "35540.55000000",
+              "Column Name": "rd",
+              "Actual Value": "34440.44000000"
+            },
+            {
+              "Expected value": "10120.00000000",
+              "Column Name": "sav",
+              "Actual Value": "10000.00000000"
+            }
+          ]
+        },
+        {
+          "Position Name": "ether (Not Available in 2nd set)",
+          "Deviations": [
+            {
+              "Expected value": "14540.00000000",
+              "Column Name": "fd",
+              "Actual Value": "-1.00000000"
+            },
+            {
+              "Expected value": "5541.55000000",
+              "Column Name": "rd",
+              "Actual Value": "-1.00000000"
+            },
+            {
+              "Expected value": "1780.00000000",
+              "Column Name": "sav",
+              "Actual Value": "-1.00000000"
+            }
+          ]
+        },
+        {
+          "Position Name": "spirit (Not Available in 2nd set)",
+          "Deviations": [
+            {
+              "Expected value": "14710.00000000",
+              "Column Name": "fd",
+              "Actual Value": "-1.00000000"
+            },
+            {
+              "Expected value": "4334.55000000",
+              "Column Name": "rd",
+              "Actual Value": "-1.00000000"
+            },
+            {
+              "Expected value": "9770.00000000",
+              "Column Name": "sav",
+              "Actual Value": "-1.00000000"
+            }
+          ]
+        },
+        {
+          "Position Name": "fire",
+          "Deviations": [
+            {
+              "Expected value": "1130.00000000",
+              "Column Name": "fd",
+              "Actual Value": "1130.00000000"
+            },
+            {
+              "Expected value": "3450.58000000",
+              "Column Name": "rd",
+              "Actual Value": "3440.48000000"
+            },
+            {
+              "Expected value": "5127.00000000",
+              "Column Name": "sav",
+              "Actual Value": "4129.00000000"
+            }
+          ]
+        },
+        {
+          "Position Name": "ice",
+          "Deviations": [
+            {
+              "Expected value": "9805.00000000",
+              "Column Name": "fd",
+              "Actual Value": "9804.00000000"
+            },
+            {
+              "Expected value": "6340.65000000",
+              "Column Name": "rd",
+              "Actual Value": "6340.64000000"
+            },
+            {
+              "Expected value": "2213.20000000",
+              "Column Name": "sav",
+              "Actual Value": "2883.20000000"
+            }
+          ]
+        },
+        {
+          "Position Name": "water",
+          "Deviations": [
+            {
+              "Expected value": "22510.00000000",
+              "Column Name": "fd",
+              "Actual Value": "14410.00000000"
+            },
+            {
+              "Expected value": "3341.55000000",
+              "Column Name": "rd",
+              "Actual Value": "9341.44000000"
+            },
+            {
+              "Expected value": "6780.00000000",
+              "Column Name": "sav",
+              "Actual Value": "9980.00000000"
+            }
+          ]
+        }
+      ],
+      "Screen Shots": [
+        "E:\\gitClone\\codeOfCrotical\\screenShots\\07-Aug-2019__02_39_46PM\\2019_08_07T14_39_58_004443700.png",
+        "E:\\gitClone\\codeOfCrotical\\screenShots\\07-Aug-2019__02_39_46PM\\2019_08_07T14_43_28_970857100.png",
+        "E:\\gitClone\\codeOfCrotical\\screenShots\\07-Aug-2019__02_39_46PM\\2019_08_07T14_50_50_689343400.png"
+      ]
+    },
+    {
+      "Scenario Name": "test scenario_2",
+      "Positions": [
+        {
+          "Position Name": "abc",
+          "Deviations": [
+            {
+              "Expected value": "1130.30000000",
+              "Column Name": "fd",
+              "Actual Value": "1130.30000000"
+            },
+            {
+              "Expected value": "35540.55000000",
+              "Column Name": "rd",
+              "Actual Value": "34440.44000000"
+            },
+            {
+              "Expected value": "10120.00000000",
+              "Column Name": "sav",
+              "Actual Value": "10000.00000000"
+            }
+          ]
+        },
+        {
+          "Position Name": "ether",
+          "Deviations": [
+            {
+              "Expected value": "14540.00000000",
+              "Column Name": "fd",
+              "Actual Value": "14540.00000000"
+            },
+            {
+              "Expected value": "5541.55000000",
+              "Column Name": "rd",
+              "Actual Value": "5541.55000000"
+            },
+            {
+              "Expected value": "1780.00000000",
+              "Column Name": "sav",
+              "Actual Value": "1780.00000000"
+            }
+          ]
+        },
+        {
+          "Position Name": "Coke (Not Available in 1st set)",
+          "Deviations": [
+            {
+              "Expected value": "-1.00000000",
+              "Column Name": "fd",
+              "Actual Value": "94540.00000000"
+            },
+            {
+              "Expected value": "-1.00000000",
+              "Column Name": "rd",
+              "Actual Value": "5111.15000000"
+            },
+            {
+              "Expected value": "-1.00000000",
+              "Column Name": "sav",
+              "Actual Value": "1990.00000000"
+            }
+          ]
+        },
+        {
+          "Position Name": "spirit",
+          "Deviations": [
+            {
+              "Expected value": "14710.00000000",
+              "Column Name": "fd",
+              "Actual Value": "14710.00000000"
+            },
+            {
+              "Expected value": "4334.55000000",
+              "Column Name": "rd",
+              "Actual Value": "4334.55000000"
+            },
+            {
+              "Expected value": "9770.00000000",
+              "Column Name": "sav",
+              "Actual Value": "9770.00000000"
+            }
+          ]
+        },
+        {
+          "Position Name": "fire",
+          "Deviations": [
+            {
+              "Expected value": "1130.00000000",
+              "Column Name": "fd",
+              "Actual Value": "1130.00000000"
+            },
+            {
+              "Expected value": "3450.58000000",
+              "Column Name": "rd",
+              "Actual Value": "3440.48000000"
+            },
+            {
+              "Expected value": "5127.00000000",
+              "Column Name": "sav",
+              "Actual Value": "4129.00000000"
+            }
+          ]
+        },
+        {
+          "Position Name": "ice",
+          "Deviations": [
+            {
+              "Expected value": "9805.00000000",
+              "Column Name": "fd",
+              "Actual Value": "9804.00000000"
+            },
+            {
+              "Expected value": "6340.65000000",
+              "Column Name": "rd",
+              "Actual Value": "6340.64000000"
+            },
+            {
+              "Expected value": "2213.20000000",
+              "Column Name": "sav",
+              "Actual Value": "2883.20000000"
+            }
+          ]
+        },
+        {
+          "Position Name": "soda (Not Available in 1st set)",
+          "Deviations": [
+            {
+              "Expected value": "-1.00000000",
+              "Column Name": "fd",
+              "Actual Value": "22510.00000000"
+            },
+            {
+              "Expected value": "-1.00000000",
+              "Column Name": "rd",
+              "Actual Value": "3341.55000000"
+            },
+            {
+              "Expected value": "-1.00000000",
+              "Column Name": "sav",
+              "Actual Value": "6780.00000000"
+            }
+          ]
+        },
+        {
+          "Position Name": "water",
+          "Deviations": [
+            {
+              "Expected value": "22510.00000000",
+              "Column Name": "fd",
+              "Actual Value": "14410.00000000"
+            },
+            {
+              "Expected value": "3341.55000000",
+              "Column Name": "rd",
+              "Actual Value": "9341.44000000"
+            },
+            {
+              "Expected value": "6780.00000000",
+              "Column Name": "sav",
+              "Actual Value": "9980.00000000"
+            }
+          ]
+        },
+        {
+          "Position Name": "wine (Not Available in 1st set)",
+          "Deviations": [
+            {
+              "Expected value": "-1.00000000",
+              "Column Name": "fd",
+              "Actual Value": "92510.10000000"
+            },
+            {
+              "Expected value": "-1.00000000",
+              "Column Name": "rd",
+              "Actual Value": "3311.55000000"
+            },
+            {
+              "Expected value": "-1.00000000",
+              "Column Name": "sav",
+              "Actual Value": "6780.00000000"
+            }
+          ]
+        },
+        {
+          "Position Name": "Molt (Not Available in 1st set)",
+          "Deviations": [
+            {
+              "Expected value": "-1.00000000",
+              "Column Name": "fd",
+              "Actual Value": "64710.00000000"
+            },
+            {
+              "Expected value": "-1.00000000",
+              "Column Name": "rd",
+              "Actual Value": "4134.55000000"
+            },
+            {
+              "Expected value": "-1.00000000",
+              "Column Name": "sav",
+              "Actual Value": "9770.00000000"
+            }
+          ]
+        }
+      ],
+      "Screen Shots": [
+        "E:\\gitClone\\codeOfCrotical\\screenShots\\07-Aug-2019__02_39_46PM\\2019_08_07T14_39_58_004443700.png",
+        "E:\\gitClone\\codeOfCrotical\\screenShots\\07-Aug-2019__02_39_46PM\\2019_08_07T14_43_28_970857100.png",
+        "E:\\gitClone\\codeOfCrotical\\screenShots\\07-Aug-2019__02_39_46PM\\2019_08_07T14_50_50_689343400.png"
+      ]
+    }
+  ]
+}
