@@ -2,9 +2,10 @@ com\codeOfCritical\configuration\SecurityConfiguration.class
 com\codeOfCritical\repositories\WebReport.class
 com\codeOfCritical\configuration\WebConfiguration.class
 com\codeOfCritical\SpringBootWebApplication.class
+com\codeOfCritical\configuration\AppConfig.class
+com\codeOfCritical\data\ReadData.class
 com\codeOfCritical\controllers\DeviationController.class
 com\codeOfCritical\services\DeviationsService.class
-com\codeOfCritical\services\DeviationsServiceImpl.class
 com\codeOfCritical\bootstrap\DeviationLoader.class
 com\codeOfCritical\controllers\IndexController.class
 com\codeOfCritical\domain\Deviations.class

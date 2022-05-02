@@ -12,7 +12,7 @@ public class JSONTest {
     public static void main(String[] args) throws IOException, ParseException {
         AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext(AppConfig.class);
         ReadData rd = context.getBean("readdata", ReadData.class);
-        System.out.println(rd.readJSON().listAllScenarios());
+        System.out.println(rd.readJSON().listOfAllScenarios());
         context.close();
         //System.out.println(new ReadData().readJSON().listAllScenarios());
     }

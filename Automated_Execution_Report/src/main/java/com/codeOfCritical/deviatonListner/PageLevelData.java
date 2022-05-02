@@ -327,7 +327,7 @@ public class PageLevelData
             String s = "page Name is : " + pageName.toUpperCase() + " " + attribute + " || "
                     + " Value is in JSON file: " + fromJSONAsString + " Value is in UI : " + fromUIAsString;
             log.warn(s);
-            Reporter.addStepLog(s);
+//            Reporter.addStepLog(s);
             // Creating object of GetDetailsOfDeviations to catch deviations
             getDetailsOfDeviations.set(new GetDetailsOfDeviations(scenarioName, pageName, attribute,
                     fromJSONAsString, fromUIAsString));

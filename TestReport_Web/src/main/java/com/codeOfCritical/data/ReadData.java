@@ -1,21 +1,23 @@
 package com.codeOfCritical.data;
 
-import com.codeOfCritical.domain.Deviations;
 import com.codeOfCritical.services.DeviationsService;
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
+import org.springframework.context.annotation.Bean;
 import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Service;
 
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
-@Component("readdata")
-//@ComponentScan
+@Component
+@Service
 public class ReadData implements DeviationsService {
+
 
     public List<String> scenarioName = new ArrayList<>();
     private String fileName = "D:\\GitHub\\CodeOfCritical\\TestReport_Web\\src\\main\\java\\com\\codeOfCritical\\data\\backup_deviations.json";
@@ -27,6 +29,7 @@ public class ReadData implements DeviationsService {
         this.obj = (JSONObject) parser.parse(new FileReader(fileName));
     }
 
+    @Override
     public ReadData readJSON() {
 
         JSONArray jsonArray = (JSONArray) obj.get("Scenarios");
@@ -58,18 +61,16 @@ public class ReadData implements DeviationsService {
         return this;
     }
 
+    @Bean
     @Override
-    public Integer listAllScenarios() {
-        return scenarioName.size();
+    public List<String> listAllFailedScenarios() {
+        return scenarioName;
     }
 
     @Override
-    public Deviations getDeviationsByScenarioName(String name) {
+    public List<Integer> listOfAllScenarios() {
         return null;
     }
 
-    @Override
-    public Deviations saveDeviations(Deviations Deviations) {
-        return null;
-    }
+
 }

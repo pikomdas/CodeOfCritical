@@ -10,17 +10,15 @@ import org.springframework.stereotype.Component;
 
 @Component
 public class DeviationLoader implements ApplicationListener<ContextRefreshedEvent> {
-    @Autowired
-    public ReadData readData;
-
-//    private WebReport deviationsRepository;
-
     private Logger log = LogManager.getLogger(DeviationLoader.class);
 
-//    @Autowired
-//    public void setDeviationRepository(WebReport deviationsRepository) {
-//        this.deviationsRepository = deviationsRepository;
-//    }
+
+    public ReadData readData;
+
+    @Autowired
+    public void setDeviationRepository(ReadData readData) {
+        this.readData = readData;
+    }
 
     @Override
     public void onApplicationEvent(ContextRefreshedEvent event) {

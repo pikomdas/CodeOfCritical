@@ -1,28 +1,28 @@
 package com.codeOfCritical.domain;
 
+
+import org.springframework.stereotype.Component;
+
 import javax.persistence.*;
-import java.util.List;
 
 @Entity
+@Table(name = "deviations")
+@Component
 public class Deviations {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private Integer ScenarioCount;
-
     private String scenarioName;
+
+    @Column(name = "expectedValue")
     private Double expectedValue;
+
+    @Column(name = "fieldName")
     private String fieldName;
-    private Double actulValue;
-    @ElementCollection
-    private List<String> screenShots;
 
-    public Integer getScenarioCount() {
-        return ScenarioCount;
-    }
+    @Column(name = "actualValue")
+    private Double actualValue;
 
-    public void setScenarioCount(Integer scenarioCount) {
-        ScenarioCount = scenarioCount;
-    }
+    private String pageName;
 
     public String getScenarioName() {
         return scenarioName;
@@ -48,19 +48,31 @@ public class Deviations {
         this.fieldName = fieldName;
     }
 
-    public Double getActulValue() {
-        return actulValue;
+    public Double getActualValue() {
+        return actualValue;
     }
 
-    public void setActulValue(Double actulValue) {
-        this.actulValue = actulValue;
+    public void setActualValue(Double actualValue) {
+        this.actualValue = actualValue;
     }
 
-    public List<String> getScreenShots() {
+    public String getPageName() {
+        return pageName;
+    }
+
+    public void setPageName(String pageName) {
+        this.pageName = pageName;
+    }
+
+    //    @Column(name = "actualValue")
+//    private List<String> screenShots;
+
+
+    /*public List<String> getScreenShots() {
         return screenShots;
     }
 
     public void setScreenShots(List<String> screenShots) {
         this.screenShots = screenShots;
-    }
+    }*/
 }

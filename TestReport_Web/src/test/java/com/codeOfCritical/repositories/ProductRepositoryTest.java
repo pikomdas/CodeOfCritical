@@ -8,8 +8,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
-import java.util.List;
-
 @RunWith(SpringJUnit4ClassRunner.class)
 @SpringBootTest(classes = {RepositoryConfiguration.class})
 public class ProductRepositoryTest {
@@ -26,9 +24,9 @@ public class ProductRepositoryTest {
         //setup product
         Deviations deviation = new Deviations();
         deviation.setScenarioName("Spring Framework Partha");
-        deviation.setActulValue(18.95);
+//        deviation.getActualValue(18.95);
         deviation.setExpectedValue(22.22);
-        deviation.setScreenShots(List.of("A", "B"));
+//        deviation.setScreenShots(List.of("A", "B"));
         deviation.setFieldName("Price");
 
         /*//save product, verify has ID value after save

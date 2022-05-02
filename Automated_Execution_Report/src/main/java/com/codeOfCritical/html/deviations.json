@@ -1,3 +1,25 @@
 {
-  "Scenarios": []
+  "Scenarios": [
+    {
+      "Scenario Name": "test scenario_1",
+      "Positions": [
+        {
+          "Position Name": "P1",
+          "Deviations": [
+            {
+              "Expected value": "22.20000000",
+              "Column Name": "C1",
+              "Actual Value": "22.30000000"
+            }
+          ]
+        }
+      ],
+      "Screen Shots": [
+        "E:\\gitClone\\demoBDDFramework\\screenShots\\07-Aug-2019__02_39_46PM\\2019_08_07T14_39_58_004443700.png",
+        "E:\\gitClone\\demoBDDFramework\\screenShots\\07-Aug-2019__02_39_46PM\\2019_08_07T14_43_28_970857100.png",
+        "E:\\gitClone\\demoBDDFramework\\screenShots\\07-Aug-2019__02_39_46PM\\2019_08_07T14_50_50_689343400.png"
+      ],
+      "Date": "2022-02-26"
+    }
+  ]
 }

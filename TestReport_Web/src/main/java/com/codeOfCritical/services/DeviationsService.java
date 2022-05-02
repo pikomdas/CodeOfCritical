@@ -1,14 +1,16 @@
 package com.codeOfCritical.services;
 
 
-import com.codeOfCritical.domain.Deviations;
-import org.springframework.stereotype.Component;
+import com.codeOfCritical.data.ReadData;
+import org.springframework.stereotype.Service;
 
-@Component
+import java.util.List;
+
+@Service
 public interface DeviationsService {
-    Integer listAllScenarios();
+    List<String> listAllFailedScenarios();
 
-    Deviations getDeviationsByScenarioName(String name);
+    List<Integer> listOfAllScenarios();
 
-    Deviations saveDeviations(Deviations Deviations);
+    ReadData readJSON();
 }

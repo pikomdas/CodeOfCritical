@@ -1,14 +1,15 @@
+<!--
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
 <head lang="en">
 
     <title>Automation Test Report</title>
 
-    <!--/*/ <th:block th:include="fragments/headerinc :: head"></th:block> /*/-->
+    &lt;!&ndash;/*/ <th:block th:include="fragments/headerinc :: head"></th:block> /*/&ndash;&gt;
 </head>
 <body>
 <div class="container">
-    <!--/*/ <th:block th:include="fragments/header :: header"></th:block> /*/-->
+    &lt;!&ndash;/*/ <th:block th:include="fragments/header :: header"></th:block> /*/&ndash;&gt;
     <div th:if="${not #lists.isEmpty(deviations)}">
         <h2>Product List</h2>
         <table class="table table-striped">
@@ -21,7 +22,7 @@
                 <th>Edit</th>
             </tr>
             <tr th:each="deviation : ${deviations}">
-<!--                <td th:text="${deviation.}"><a href="/product/${product.id}">Id</a></td>-->
+                &lt;!&ndash;                <td th:text="${deviation.}"><a href="/product/${product.id}">Id</a></td>&ndash;&gt;
                 <td th:text="${product.productId}">Product Id</td>
                 <td th:text="${product.description}">descirption</td>
                 <td th:text="${product.price}">price</td>
@@ -34,4 +35,4 @@
 </div>
 
 </body>
-</html>
+</html>-->
