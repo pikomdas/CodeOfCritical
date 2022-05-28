@@ -16,12 +16,14 @@ public class DeviationLoader implements ApplicationListener<ContextRefreshedEven
     public ReadData readData;
 
     @Autowired
-    public void setDeviationRepository(ReadData readData) {
+    public void DeviationLoader(ReadData readData) {
         this.readData = readData;
     }
 
     @Override
     public void onApplicationEvent(ContextRefreshedEvent event) {
-        readData.readJSON();
+        if (readData != null) {
+            readData.readJSON();
+        }
     }
 }
