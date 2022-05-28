@@ -10,11 +10,11 @@
 package com.codeOfCritical.deviatonListner;
 
 public class GetDetailsOfDeviations {
-    private final String pageName;
-    private final String fieldName;
-    private final String expectedValue;
-    private final String actualValue;
-    private String scenarioName;
+    private  String pageName;
+    private  String fieldName;
+    private  String expectedValue;
+    private  String actualValue;
+    private  String scenarioName;
 
     /**
      * This Constructor will be used to capture deviation in the form Objects

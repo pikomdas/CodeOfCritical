@@ -10,13 +10,14 @@
 
 package com.codeOfCritical;
 
+import java.io.File;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
 public class TestData
-{
-    public static String pathOfReportGeneration = "D:\\GitHub\\CodeOfCritical\\Automated_Execution_Report\\src\\main\\java\\com\\codeOfCritical\\html";
+{  // D:\AM_FM\autofw\TemenosT24\Automated_Execution_Report\src\main\java\com\codeOfCritical\html\deviations.json
+    public static String pathOfReportGeneration = System.getProperty("user.dir")+ File.separator+"Automated_Execution_Report/src/main/java/com/codeOfCritical/html";
     public static List<String> screens = List.of("E:\\gitClone\\demoBDDFramework\\screenShots\\07-Aug-2019__02_39_46PM\\2019_08_07T14_39_58_004443700.png",
             "E:\\gitClone\\demoBDDFramework\\screenShots\\07-Aug-2019__02_39_46PM\\2019_08_07T14_43_28_970857100.png",
             "E:\\gitClone\\demoBDDFramework\\screenShots\\07-Aug-2019__02_39_46PM\\2019_08_07T14_50_50_689343400.png");

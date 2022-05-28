@@ -1,7 +1,10 @@
 <!DOCTYPE html>
-<html lang="en">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
 <head>
-    <meta charset="ISO-8859-1">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
     <title>Execution Report</title>
 
     <link crossorigin="anonymous"
@@ -9,28 +12,51 @@
           integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
           rel="stylesheet">
 
+    <link rel="stylesheet" th:href="@{/css/main.css}"/>
+
 </head>
 <body>
 <div class="container my-2">
-    <h1>Deviation List</h1>
+    <h2 th:text="${name}"></h2>
     <table border="1" class="table table-striped table-responsive-md">
         <thead>
         <tr>
-            <th>Page Name</th>
-            <th>Field Name</th>
-            <th>Expected Value</th>
-            <th>Actual Value</th>
+            <th>User</th>
+            <th>Date</th>
         </tr>
         </thead>
         <tbody>
-        <<!--tr th:each="deviations : ${deviations}">
-            <td th:text="${deviation.pageName}"></td>
-            <td th:text="${deviation.fieldName}"></td>
-            <td th:text="${deviation.actualValue}"></td>
-            <td th:text="${deviation.expectedValue}"></td>
-        </tr>-->
+        <tr th:each="user : ${user}">
+            <td th:text="${user}"></td>
+
+            <td th:each="date : ${date}" th:text="${date}"></td>
+        </tr>
         </tbody>
-    </table>
+        <h1>Deviation List</h1>
+        <table border="1" class="table table-striped table-responsive-md">
+            <thead>
+            <tr>
+                <th>Scenario Name</th>
+                <th>Page Name</th>
+                <th>Field Name</th>
+                <th>Expected Value</th>
+                <th>Actual Value</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr th:each="deviation : ${deviations}">
+                <td th:text="${deviation.scenarioName()}"></td>
+                <td th:text="${deviation.pageName()}"></td>
+                <td th:text="${deviation.fieldName()}"></td>
+                <td th:text="${deviation.actualValue()}"></td>
+                <td th:text="${deviation.expectedValue()}"></td>
+            </tr>
+            <!--<tr th:each="deviation : ${deviations}">
+                <td th:text="${deviation.key}"></td>
+                <td th:text="${deviation.value}"></td>
+            </tr>-->
+            </tbody>
+        </table>
 </div>
 </body>
 </html>

@@ -24,6 +24,7 @@ import java.util.List;
  * @author partha.das
  */
 public class DataCollectorMultipleTime {
+
     private static final ThreadLocal<PageLevelData> pageLevelData = new ThreadLocal<>();
     private static final ThreadLocal<JSONBuilder> jsonBuilder = ThreadLocal.withInitial(() -> new JSONBuilder());
     private static final ThreadLocal<HTML_Generator> html_generator = new ThreadLocal<>();
@@ -61,13 +62,12 @@ public class DataCollectorMultipleTime {
      * @return JSON object of the captured deviation
      * @throws IOException
      */
-    private synchronized JSONObject buildJSON(List<String> screenshots) throws IOException
-    {
+    private synchronized JSONObject buildJSON(List<String> screenshots) throws IOException {
         getListonDeviations()
                 .stream()
                 .forEach(x ->
                 {
-                    jsonBuilder.get().collectData(x.getScenarioName(), x.getPageName(), x.getFieldName(), x.getExpectedValue(),
+                    jsonBuilder.get().collectData(sessionId.get(), currentTagName.get(), x.getScenarioName(), x.getPageName(), x.getFieldName(), x.getExpectedValue(),
 
                             x.getActualValue(), screenshots, LocalDate.now().toString());
                 });
@@ -82,8 +82,7 @@ public class DataCollectorMultipleTime {
      * @param screenShots         list of screenshots path
      * @throws IOException
      */
-    public synchronized void buildHTML(String path_of_HTML_output, List<String> screenShots) throws IOException
-    {
+    public synchronized void buildHTML(String path_of_HTML_output, List<String> screenShots) throws IOException {
         this.screenshot.set(screenShots);
         this.path_of_json_file = path_of_HTML_output;
         html_generator.set(new HTML_Generator(buildJSON(this.screenshot.get())));

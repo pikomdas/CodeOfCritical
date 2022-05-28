@@ -51,7 +51,7 @@ public class TestReport extends TestData
         Thread t3 = new Thread(() -> {
             try
             {
-                DataCollector dc2 = new DataCollector("test scenario_2", "6e057dt66ae33g", "HealthCheck",
+                DataCollector dc2 = new DataCollector("test scenario_3", "6e057dt66ae44g", "HealthCheck",
                         screens, new PageLevelData(act2, List.of(""))); //List.of("QWNK"))
                 dc2.buildHTML(pathOfReportGeneration);
             } catch (IOException e)
@@ -59,8 +59,8 @@ public class TestReport extends TestData
                 e.printStackTrace();
             }
         });
-//        t1.start();
-//        t2.start();
+        t1.start();
+        t2.start();
         t3.start();
     }
 }

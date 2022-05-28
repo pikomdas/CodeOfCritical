@@ -3,25 +3,30 @@ package com.codeOfCritical.controllers;
 
 import com.codeOfCritical.services.DeviationsService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RestController;
 
 import java.time.LocalDate;
+import java.util.HashMap;
+import java.util.Map;
 
-@Controller
+@RestController
 public class DeviationController {
 
     @Autowired
     DeviationsService readData;
 
-    @RequestMapping(value = "/deviation", method = RequestMethod.GET)
+    @RequestMapping(value = "/scenarios", method = RequestMethod.GET)
     public String list(Model model) {
+        Map<String,String> scenario=new HashMap<>();
+        scenario.put("serverTime", LocalDate.now().toString());
         model.addAttribute("deviations", String.valueOf(readData.readJSON().listAllFailedScenarios()));
-        model.addAttribute("serverTime", LocalDate.now());
+//        model.addAttribute("serverTime", LocalDate.now());
         System.out.println("Returning deviations:");
         return model.getAttribute("deviations").toString();
+//        return "scenarios";
     }
 
     /*@RequestMapping("deviation/{id}")

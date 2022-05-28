@@ -4,75 +4,92 @@ package com.codeOfCritical.domain;
 import org.springframework.stereotype.Component;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Entity
 @Table(name = "deviations")
 @Component
 public class Deviations {
+
+    public Deviations() {
+
+    }
+
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private String scenarioName;
 
     @Column(name = "expectedValue")
-    private Double expectedValue;
+    private String expectedValue;
 
     @Column(name = "fieldName")
     private String fieldName;
 
     @Column(name = "actualValue")
-    private Double actualValue;
+    private String actualValue;
 
+    @Column(name = "pageName")
     private String pageName;
 
-    public String getScenarioName() {
+    @Column(name = "sessionId")
+    private String sessionId;
+
+    @Column(name = "tagName")
+    private String tagName;
+
+//    @Column(name="screenshots")
+//    private List<String> screenShots;
+
+    public Deviations(String scenarioName, String expectedValue, String fieldName, String actualValue, String pageName, String sessionId, String tagName, List<String> screenShots) {
+        this.scenarioName = scenarioName;
+        this.expectedValue = expectedValue;
+        this.fieldName = fieldName;
+        this.actualValue = actualValue;
+        this.pageName = pageName;
+        this.sessionId = sessionId;
+        this.tagName = tagName;
+       // this.screenShots = screenShots;
+    }
+
+    @Override
+    public String toString() {
+        return "Deviations{" +
+                "scenarioName='" + scenarioName + '\'' +
+                ", expectedValue=" + expectedValue +
+                ", fieldName='" + fieldName + '\'' +
+                ", actualValue=" + actualValue +
+                ", pageName='" + pageName + '\'' +
+                ", sessionId='" + sessionId + '\'' +
+                ", tagName='" + tagName + '\'' +
+//                ", screenShots=" + screenShots +
+                '}';
+    }
+
+    public String scenarioName() {
         return scenarioName;
     }
 
-    public void setScenarioName(String scenarioName) {
-        this.scenarioName = scenarioName;
-    }
-
-    public Double getExpectedValue() {
+    public String expectedValue() {
         return expectedValue;
     }
 
-    public void setExpectedValue(Double expectedValue) {
-        this.expectedValue = expectedValue;
-    }
-
-    public String getFieldName() {
+    public String fieldName() {
         return fieldName;
     }
 
-    public void setFieldName(String fieldName) {
-        this.fieldName = fieldName;
-    }
-
-    public Double getActualValue() {
+    public String actualValue() {
         return actualValue;
     }
 
-    public void setActualValue(Double actualValue) {
-        this.actualValue = actualValue;
-    }
-
-    public String getPageName() {
+    public String pageName() {
         return pageName;
     }
 
-    public void setPageName(String pageName) {
-        this.pageName = pageName;
+    public String sessionId() {
+        return sessionId;
     }
 
-    //    @Column(name = "actualValue")
-//    private List<String> screenShots;
-
-
-    /*public List<String> getScreenShots() {
-        return screenShots;
+    public String tagName() {
+        return tagName;
     }
-
-    public void setScreenShots(List<String> screenShots) {
-        this.screenShots = screenShots;
-    }*/
 }

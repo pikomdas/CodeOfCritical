@@ -50,7 +50,7 @@ public class TestReport_jui extends TestData
             try
             {
 //                System.out.println(exp);
-                dc = new DataCollectorMultipleTime("6e057dt99ae33t", "HealthCheck",
+                dc = new DataCollectorMultipleTime("6e057et99ae33t", "HealthCheck",
                         new PageLevelData("test scenario_2", "P2", "C2", 22.2, 22.2, "passed"));
                 
             }

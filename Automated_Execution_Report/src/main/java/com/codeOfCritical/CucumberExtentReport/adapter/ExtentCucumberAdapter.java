@@ -506,8 +506,6 @@ public class ExtentCucumberAdapter implements ConcurrentEventListener, StrictAwa
         return docString.getContent().replaceAll("(\r\n|\n)", "<br />");
     }
 
-    // the below additions are from PR #33
-    // https://github.com/extent-framework/extentreports-cucumber4-adapter/pull/33
     public static synchronized void addTestStepLog(String message)
     {
         stepTestThreadLocal.get().info(message);

@@ -80,7 +80,7 @@ public class DataCollector
                 .forEach(x ->
                 {
 //                    System.out.println("Thread: " + Thread.currentThread().getName());
-                    jsonBuilder.collectData(scenarioName.get(), x.getPageName(), x.getFieldName(), x.getExpectedValue(),
+                    jsonBuilder.collectData(sessionId.get(), currentTagName.get(), scenarioName.get(), x.getPageName(), x.getFieldName(), x.getExpectedValue(),
                             x.getActualValue(), screenshot.get(), LocalDate.now().toString());
                 });
         jsonBuilder.createJSONFile(path_of_json_file);

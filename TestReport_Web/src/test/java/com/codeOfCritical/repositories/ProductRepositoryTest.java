@@ -22,12 +22,12 @@ public class ProductRepositoryTest {
     @Test
     public void testSaveProduct() {
         //setup product
-        Deviations deviation = new Deviations();
-        deviation.setScenarioName("Spring Framework Partha");
-//        deviation.getActualValue(18.95);
-        deviation.setExpectedValue(22.22);
-//        deviation.setScreenShots(List.of("A", "B"));
-        deviation.setFieldName("Price");
+//        Deviations deviation = new Deviations();
+//        deviation.setScenarioName("Spring Framework Partha");
+////        deviation.getActualValue(18.95);
+//        deviation.setExpectedValue(22.22);
+////        deviation.setScreenShots(List.of("A", "B"));
+//        deviation.setFieldName("Price");
 
         /*//save product, verify has ID value after save
         assertNull(deviation.getScenarioCount()); //null before save

@@ -333,6 +333,7 @@ public class PageLevelData
                     fromJSONAsString, fromUIAsString));
             // Storing objects deviation into a LikedList
             jsonToUI_Data.get().add(getDetailsOfDeviations.get());
+            //throw new RuntimeException("abcd");
         }
     }
 
@@ -344,7 +345,6 @@ public class PageLevelData
      * not be visible to other thread</h2>
      * <p>
      * This method is added for string validation
-     *
      * @param scenarioName
      * @param PageName
      * @param ExpectedValue
@@ -353,20 +353,21 @@ public class PageLevelData
      */
     public PageLevelData(String scenarioName, String PageName, String ExpectedValue, String ActualValue, String attribute)
     {
-        if (ActualValue.contains(ExpectedValue))
+        if (ActualValue.equalsIgnoreCase(ExpectedValue))
         {
             String s = "Page :" + PageName + " +attribute value is : " + ActualValue.toUpperCase() + " matched";
             log.info(s);
         }
         else
         {
-            String s = "Page :" + PageName + " +attribute value is : " + ActualValue.toUpperCase();
+            String s = "Page : " + PageName + " attribute value is : " + ActualValue.toUpperCase();
             log.warn(s);
             Reporter.addStepLog(s);
             // Creating object of GetDetailsOfDeviations to catch deviations
-            getDetailsOfDeviations.set(new GetDetailsOfDeviations(scenarioName, ActualValue, attribute, "0 (page Name should not be displayed in UI)", "1 (page Name is displayed in UI)"));
-            // Storing objects deviation into a LikedList
-            log.info(PageName + "Verification of " + attribute + " Failed");
+            getDetailsOfDeviations.set(new GetDetailsOfDeviations(scenarioName, PageName, attribute,ExpectedValue , ActualValue));
+            // Storing objects deviation into a
+            jsonToUI_Data.get().add(getDetailsOfDeviations.get());
+            log.info(PageName + " Verification of " + attribute + " Failed");
         }
 
     }
