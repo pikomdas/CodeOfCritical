@@ -1,27 +1,20 @@
-package com.codeOfCritical;
+package com.codeOfCritical.test;
 
-import java.io.*;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Set;
-import java.util.stream.IntStream;
+import java.io.BufferedReader;
+import java.io.FileOutputStream;
+import java.io.FileReader;
+import java.io.IOException;
+import java.util.*;
+import java.util.stream.Stream;
 
 public class RnD {
 
-    public static void main(String[] args) throws IOException {
-        int[] arri = {1, 33, 4, 5, 1, 2, 22, 5};
-//        Character[] arr = IntStream.of(arri).boxed().toArray(Character[]::new);
-
-//        findDuplicate(arri);
-//        System.out.println("===========================");
-//        findDuplicate1(arr);
-//        System.out.println("===========================");
-//        sort(arr);
-        /*writeFile(convertArrToString(findDuplicate(arri))
-                .concat("\n")
-                .concat(convertArrToString(sort(arri)))
-                .concat("\n"));*/
-        writeFile(startPattern(10));
+    public static void main(String[] args) {
+//        findDuplicateHowManyTimes(new String[]{"Partha", "Sarathi Das"});
+//        findDuplicate(new int[]{55, 5, 6, 55, 3, 6, 61, 9});
+//        sort(new int[]{55, 5, 6, 55, 3, 6, 61, 9});
+//        findDuplicate1(new Integer[]{55, 5, 6, 55, 3, 6, 61, 9});
+        findMaxMin(new Integer[]{43,44,211,3,5,44,5,6,1,5});
     }
 
     public static int[] findDuplicate(int[] a) {
@@ -60,7 +53,7 @@ public class RnD {
             }
         }
         for (int x : a) {
-            System.out.println(x);
+            System.out.println("Sorting " + x);
         }
         return a;
     }
@@ -89,25 +82,58 @@ public class RnD {
         String s = "";
         for (int i = 0; i < x; i++) {
 //            System.out.print(" ");
-            s=s.concat(" ");
+            s = s.concat(" ");
             for (int j = 0; j < i; j++) {
 //                System.out.print(" *");
-               s= s.concat(" *");
+                s = s.concat(" *");
             }
 //            System.out.println();
-            s=s.concat("\n");
+            s = s.concat("\n");
 
         }
         for (int i = 0; i < x; i++) {
 //            System.out.print(" ");
-            s=s.concat(" ");
+            s = s.concat(" ");
             for (int j = x; j > i; j--) {
 //                System.out.print(" *");
-                s=s.concat(" *");
+                s = s.concat(" *");
             }
 //            System.out.println();
-            s=s.concat("\n");
+            s = s.concat("\n");
         }
         return s;
     }
+
+    public static void findDuplicateHowManyTimes(String[] arr) {
+        Stream.of(arr).forEach(x -> {
+            char[] eachString = x.toCharArray();
+            Map<Character, Integer> m = new HashMap<Character, Integer>();
+            for (char c : eachString) {
+                if (m.containsKey(c)) {
+                    m.put(c, m.get(c) + 1);
+                } else {
+                    m.put(c, 1);
+                }
+            }
+            System.out.println(x + " have " + m);
+        });
+
+    }
+
+    public static void findMaxMin(Integer[] a) {
+        int max = Integer.MAX_VALUE,min= Integer.MIN_VALUE;
+        for (int i = 0; i <= a.length-1; i++) {
+            if(max>a[i]){
+                max=a[i];
+            }
+            if(min<a[i]){
+                min=a[i];
+            }
+        }
+        System.out.println("max "+max +" min"+min);
+
+        List<Integer>ll= Arrays.asList(a);
+        System.out.println("max "+Collections.max(ll) +" min "+Collections.min(ll));
+    }
+
 }

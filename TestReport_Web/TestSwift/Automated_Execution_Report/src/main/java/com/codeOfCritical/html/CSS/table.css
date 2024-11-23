@@ -1,0 +1,118 @@
+tbody {
+    margin-top: 30px;
+    overflow: scroll;
+    align-self: normal;
+}
+
+.container {
+    position: relative;
+    max-width: 960px;
+}
+
+.table > tbody > tr.active > td, .table > tbody > tr.active > th, .table > tbody > tr > td.active,
+.table > tbody > tr > th.active, .table > tfoot > tr.active > td, .table > tfoot > tr.active > th,
+.table > tfoot > tr > td.active, .table > tfoot > tr > th.active, .table > thead > tr.active > td,
+.table > thead > tr.active > th, .table > thead > tr > td.active, .table > thead > tr > th.active {
+    background-color: #fff;
+}
+
+.table-bordered > tbody > tr > td, .table-bordered > tbody > tr > th,
+.table-bordered > tfoot > tr > td, .table-bordered > tfoot > tr > th,
+.table-bordered > thead > tr > td, .table-bordered > thead > tr > th {
+    border-color: #e4e5e7;
+}
+
+.table tr.header {
+    font-weight: bold;
+    background-color: #fff;
+    cursor: pointer;
+    -webkit-user-select: none;
+    /* Chrome all / Safari all */
+    -moz-user-select: none;
+    /* Firefox all */
+    -ms-user-select: none;
+    /* IE 10+ */
+    user-select: none;
+    /* Likely future */
+}
+
+/* hide all tr except with className header */
+tr:not(.header ) {
+    display: none;
+}
+
+.Entity {
+    background: rgba(183, 226, 51, 0.58);
+}
+
+.Deviation {
+    background: rgba(164, 195, 234, 0.6);
+}
+
+.columnName {
+
+}
+
+.expectedAndActual {
+
+}
+
+body .Entity:hover, body .Deviation:hover {
+    color: #800000;
+    cursor: pointer;
+    display: block;
+    font-weight: bold;
+    position: inherit;
+    border: 2px solid #F7CA18;
+    transition: all 0.4s cubic-bezier(0.215, 0.61, 0.355, 1) 0s;
+}
+
+.table .header td:before {
+    content: "\002b";
+    position: relative;
+    top: 1px;
+    display: inline-block;
+    font-family: 'Glyphicons Halflings';
+    font-style: normal;
+    font-weight: 400;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    float: right;
+    color: #999;
+    text-align: center;
+    padding: 3px;
+    transition: transform .25s linear;
+    -webkit-transition: -webkit-transform .25s linear;
+}
+
+.table .header.active td:after {
+    content: "\2212";
+    background: rgba(0, 0, 0, 0.5);
+}
+
+p.count {
+    position: inherit;
+    right: 200px;
+    text-align: right;
+    display: inline-block;
+    border-radius: 5px;
+    border: 1px solid #e1b68c;
+    background: #d18f4f;
+    padding: 1px 3px 1px 1px;
+}
+
+.time {
+    position: relative;
+    text-align: center;
+    font-size: 16px;
+    letter-spacing: 0;
+    padding: 8px 10px;
+    margin: -10px -10px 0;
+    color: #000000;
+    background: #b6966b;
+}
+
+/*tr:not(.deActive ) {
+    display: none;
+}*/

@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite errors="0" failures="3" name="io.cucumber.core.plugin.JUnitFormatter"
+           skipped="0"
+           tests="3"
+           time="6.221">
+   <testcase classname="Demo BDD FRAMEWORK"
+             name="Verifying the title length of the Websites &#34;https://google.com&#34;"
+             time="2.867">
+      <failure message="Could not start a new session. Response code 500. Message: session not created: This version of ChromeDriver only supports Chrome version 102&#xA;Current browser version is 108.0.5359.94 with binary path C:\Program Files\Google\Chrome\Application\chrome.exe&#xA;Build info: version: '4.2.1', revision: 'ac4d0fdd4a'&#xA;System info: host: 'DESKTOP-159LRLC', ip: '192.168.0.111', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '11.0.12'&#xA;Driver info: org.openqa.selenium.chrome.ChromeDriver&#xA;Command: [null, newSession {capabilities=[Capabilities {browserName: chrome, goog:chromeOptions: {args: [--disable-web-security, --no-proxy-server, --ignore-certificate-errors], excludeSwitches: [enable-automation], extensions: [], prefs: {credentials_enable_service: false, download.default_directory: D:\BitBucket\autofw\TestRep..., profile.password_manager_enabled: false}, useAutomationExtension: false}}], desiredCapabilities=Capabilities {browserName: chrome, goog:chromeOptions: {args: [--disable-web-security, --no-proxy-server, --ignore-certificate-errors], excludeSwitches: [enable-automation], extensions: [], prefs: {credentials_enable_service: false, download.default_directory: D:\BitBucket\autofw\TestRep..., profile.password_manager_enabled: false}, useAutomationExtension: false}}}]"
+               type="org.openqa.selenium.SessionNotCreatedException">Given I open "https://google.com" url.......................................failed
+When I search for title length 11...........................................skipped
+Then It will be length of "99"..............................................skipped
+
+StackTrace:
+org.openqa.selenium.SessionNotCreatedException: Could not start a new session. Response code 500. Message: session not created: This version of ChromeDriver only supports Chrome version 102
+Current browser version is 108.0.5359.94 with binary path C:\Program Files\Google\Chrome\Application\chrome.exe
+Build info: version: '4.2.1', revision: 'ac4d0fdd4a'
+System info: host: 'DESKTOP-159LRLC', ip: '192.168.0.111', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '11.0.12'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [null, newSession {capabilities=[Capabilities {browserName: chrome, goog:chromeOptions: {args: [--disable-web-security, --no-proxy-server, --ignore-certificate-errors], excludeSwitches: [enable-automation], extensions: [], prefs: {credentials_enable_service: false, download.default_directory: D:\BitBucket\autofw\TestRep..., profile.password_manager_enabled: false}, useAutomationExtension: false}}], desiredCapabilities=Capabilities {browserName: chrome, goog:chromeOptions: {args: [--disable-web-security, --no-proxy-server, --ignore-certificate-errors], excludeSwitches: [enable-automation], extensions: [], prefs: {credentials_enable_service: false, download.default_directory: D:\BitBucket\autofw\TestRep..., profile.password_manager_enabled: false}, useAutomationExtension: false}}}]
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:144)
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:102)
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:67)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:156)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:167)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:142)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:551)
+	at org.openqa.selenium.remote.RemoteWebDriver.startSession(RemoteWebDriver.java:246)
+	at org.openqa.selenium.remote.RemoteWebDriver.&lt;init&gt;(RemoteWebDriver.java:162)
+	at org.openqa.selenium.chromium.ChromiumDriver.&lt;init&gt;(ChromiumDriver.java:106)
+	at org.openqa.selenium.chrome.ChromeDriver.&lt;init&gt;(ChromeDriver.java:106)
+	at org.openqa.selenium.chrome.ChromeDriver.&lt;init&gt;(ChromeDriver.java:93)
+	at org.openqa.selenium.chrome.ChromeDriver.&lt;init&gt;(ChromeDriver.java:82)
+	at com.codeOfCritical.BaseClass.BrowserConfig.startBrowser(BrowserConfig.java:119)
+	at com.codeOfCritical.StepDefinations.Demo_StepDefinition.iOpenUrl(Demo_StepDefinition.java:21)
+	at ✽.I open "https://google.com" url(file:///D:/BitBucket/autofw/TestReport_Web/TestSwift/TestSwift_Web/../TestSwift_Web/src/main/java/com/codeOfCritical/featureFile/Demo.feature:5)
+</failure>
+   </testcase>
+   <testcase classname="Demo BDD FRAMEWORK"
+             name="Verifying the title length of the Websites &#34;https://bing.com&#34;"
+             time="1.597">
+      <failure message="Could not start a new session. Response code 500. Message: session not created: This version of ChromeDriver only supports Chrome version 102&#xA;Current browser version is 108.0.5359.94 with binary path C:\Program Files\Google\Chrome\Application\chrome.exe&#xA;Build info: version: '4.2.1', revision: 'ac4d0fdd4a'&#xA;System info: host: 'DESKTOP-159LRLC', ip: '192.168.0.111', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '11.0.12'&#xA;Driver info: org.openqa.selenium.chrome.ChromeDriver&#xA;Command: [null, newSession {capabilities=[Capabilities {browserName: chrome, goog:chromeOptions: {args: [--disable-web-security, --no-proxy-server, --ignore-certificate-errors], excludeSwitches: [enable-automation], extensions: [], prefs: {credentials_enable_service: false, download.default_directory: D:\BitBucket\autofw\TestRep..., profile.password_manager_enabled: false}, useAutomationExtension: false}}], desiredCapabilities=Capabilities {browserName: chrome, goog:chromeOptions: {args: [--disable-web-security, --no-proxy-server, --ignore-certificate-errors], excludeSwitches: [enable-automation], extensions: [], prefs: {credentials_enable_service: false, download.default_directory: D:\BitBucket\autofw\TestRep..., profile.password_manager_enabled: false}, useAutomationExtension: false}}}]"
+               type="org.openqa.selenium.SessionNotCreatedException">Given I open "https://bing.com" url.........................................failed
+When I search for title length 11...........................................skipped
+Then It will be length of "11"..............................................skipped
+
+StackTrace:
+org.openqa.selenium.SessionNotCreatedException: Could not start a new session. Response code 500. Message: session not created: This version of ChromeDriver only supports Chrome version 102
+Current browser version is 108.0.5359.94 with binary path C:\Program Files\Google\Chrome\Application\chrome.exe
+Build info: version: '4.2.1', revision: 'ac4d0fdd4a'
+System info: host: 'DESKTOP-159LRLC', ip: '192.168.0.111', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '11.0.12'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [null, newSession {capabilities=[Capabilities {browserName: chrome, goog:chromeOptions: {args: [--disable-web-security, --no-proxy-server, --ignore-certificate-errors], excludeSwitches: [enable-automation], extensions: [], prefs: {credentials_enable_service: false, download.default_directory: D:\BitBucket\autofw\TestRep..., profile.password_manager_enabled: false}, useAutomationExtension: false}}], desiredCapabilities=Capabilities {browserName: chrome, goog:chromeOptions: {args: [--disable-web-security, --no-proxy-server, --ignore-certificate-errors], excludeSwitches: [enable-automation], extensions: [], prefs: {credentials_enable_service: false, download.default_directory: D:\BitBucket\autofw\TestRep..., profile.password_manager_enabled: false}, useAutomationExtension: false}}}]
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:144)
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:102)
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:67)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:156)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:167)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:142)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:551)
+	at org.openqa.selenium.remote.RemoteWebDriver.startSession(RemoteWebDriver.java:246)
+	at org.openqa.selenium.remote.RemoteWebDriver.&lt;init&gt;(RemoteWebDriver.java:162)
+	at org.openqa.selenium.chromium.ChromiumDriver.&lt;init&gt;(ChromiumDriver.java:106)
+	at org.openqa.selenium.chrome.ChromeDriver.&lt;init&gt;(ChromeDriver.java:106)
+	at org.openqa.selenium.chrome.ChromeDriver.&lt;init&gt;(ChromeDriver.java:93)
+	at org.openqa.selenium.chrome.ChromeDriver.&lt;init&gt;(ChromeDriver.java:82)
+	at com.codeOfCritical.BaseClass.BrowserConfig.startBrowser(BrowserConfig.java:119)
+	at com.codeOfCritical.StepDefinations.Demo_StepDefinition.iOpenUrl(Demo_StepDefinition.java:21)
+	at ✽.I open "https://bing.com" url(file:///D:/BitBucket/autofw/TestReport_Web/TestSwift/TestSwift_Web/../TestSwift_Web/src/main/java/com/codeOfCritical/featureFile/Demo.feature:5)
+</failure>
+   </testcase>
+   <testcase classname="Demo BDD FRAMEWORK"
+             name="Verifying the title length of the Websites &#34;https://www.yahoo.com&#34;"
+             time="1.544">
+      <failure message="Could not start a new session. Response code 500. Message: session not created: This version of ChromeDriver only supports Chrome version 102&#xA;Current browser version is 108.0.5359.94 with binary path C:\Program Files\Google\Chrome\Application\chrome.exe&#xA;Build info: version: '4.2.1', revision: 'ac4d0fdd4a'&#xA;System info: host: 'DESKTOP-159LRLC', ip: '192.168.0.111', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '11.0.12'&#xA;Driver info: org.openqa.selenium.chrome.ChromeDriver&#xA;Command: [null, newSession {capabilities=[Capabilities {browserName: chrome, goog:chromeOptions: {args: [--disable-web-security, --no-proxy-server, --ignore-certificate-errors], excludeSwitches: [enable-automation], extensions: [], prefs: {credentials_enable_service: false, download.default_directory: D:\BitBucket\autofw\TestRep..., profile.password_manager_enabled: false}, useAutomationExtension: false}}], desiredCapabilities=Capabilities {browserName: chrome, goog:chromeOptions: {args: [--disable-web-security, --no-proxy-server, --ignore-certificate-errors], excludeSwitches: [enable-automation], extensions: [], prefs: {credentials_enable_service: false, download.default_directory: D:\BitBucket\autofw\TestRep..., profile.password_manager_enabled: false}, useAutomationExtension: false}}}]"
+               type="org.openqa.selenium.SessionNotCreatedException">Given I open "https://www.yahoo.com" url....................................failed
+When I search for title length 11...........................................skipped
+Then It will be length of "112".............................................skipped
+
+StackTrace:
+org.openqa.selenium.SessionNotCreatedException: Could not start a new session. Response code 500. Message: session not created: This version of ChromeDriver only supports Chrome version 102
+Current browser version is 108.0.5359.94 with binary path C:\Program Files\Google\Chrome\Application\chrome.exe
+Build info: version: '4.2.1', revision: 'ac4d0fdd4a'
+System info: host: 'DESKTOP-159LRLC', ip: '192.168.0.111', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '11.0.12'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [null, newSession {capabilities=[Capabilities {browserName: chrome, goog:chromeOptions: {args: [--disable-web-security, --no-proxy-server, --ignore-certificate-errors], excludeSwitches: [enable-automation], extensions: [], prefs: {credentials_enable_service: false, download.default_directory: D:\BitBucket\autofw\TestRep..., profile.password_manager_enabled: false}, useAutomationExtension: false}}], desiredCapabilities=Capabilities {browserName: chrome, goog:chromeOptions: {args: [--disable-web-security, --no-proxy-server, --ignore-certificate-errors], excludeSwitches: [enable-automation], extensions: [], prefs: {credentials_enable_service: false, download.default_directory: D:\BitBucket\autofw\TestRep..., profile.password_manager_enabled: false}, useAutomationExtension: false}}}]
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:144)
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:102)
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:67)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:156)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:167)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:142)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:551)
+	at org.openqa.selenium.remote.RemoteWebDriver.startSession(RemoteWebDriver.java:246)
+	at org.openqa.selenium.remote.RemoteWebDriver.&lt;init&gt;(RemoteWebDriver.java:162)
+	at org.openqa.selenium.chromium.ChromiumDriver.&lt;init&gt;(ChromiumDriver.java:106)
+	at org.openqa.selenium.chrome.ChromeDriver.&lt;init&gt;(ChromeDriver.java:106)
+	at org.openqa.selenium.chrome.ChromeDriver.&lt;init&gt;(ChromeDriver.java:93)
+	at org.openqa.selenium.chrome.ChromeDriver.&lt;init&gt;(ChromeDriver.java:82)
+	at com.codeOfCritical.BaseClass.BrowserConfig.startBrowser(BrowserConfig.java:119)
+	at com.codeOfCritical.StepDefinations.Demo_StepDefinition.iOpenUrl(Demo_StepDefinition.java:21)
+	at ✽.I open "https://www.yahoo.com" url(file:///D:/BitBucket/autofw/TestReport_Web/TestSwift/TestSwift_Web/../TestSwift_Web/src/main/java/com/codeOfCritical/featureFile/Demo.feature:5)
+</failure>
+   </testcase>
+</testsuite>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="Test"
+           tests="5"
+           failures="0"
+           errors="0"
+           skipped="0"
+           time="2.723">
+    <properties/>
+
+
+    <testcase name="getCustomerDeatils" time="0.228" classname="com.codeOfCritical.BDD.getCustomer"/>
+    <testcase name="getCustomerDeatils" time="1.737" classname="com.codeOfCritical.BDD.getCustomer"/>
+    <testcase name="getCustomerDeatils" time="0.247" classname="com.codeOfCritical.BDD.getCustomer"/>
+    <testcase name="getCustomerDeatils" time="0.253" classname="com.codeOfCritical.BDD.getCustomer"/>
+    <testcase name="getCustomerDeatils" time="0.258" classname="com.codeOfCritical.BDD.getCustomer"/>
+
+</testsuite>

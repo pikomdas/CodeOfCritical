@@ -1,0 +1,6 @@
+/target/
+/bin/
+/screenShots/
+/logs/
+/test-outout/cucumber-reports/
+/test-outout/Custom-Report-HealthCheck/

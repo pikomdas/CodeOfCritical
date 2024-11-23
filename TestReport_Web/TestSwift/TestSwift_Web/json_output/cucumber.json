@@ -1,0 +1,358 @@
+[
+  {
+    "line": 1,
+    "elements": [
+      {
+        "start_timestamp": "2022-12-04T15:33:15.671Z",
+        "before": [
+          {
+            "result": {
+              "duration": 331927800,
+              "status": "passed"
+            },
+            "match": {
+              "location": "com.codeOfCritical.Hooks.CommonHooks.doSomethingBeforeStep(io.cucumber.java.Scenario)"
+            }
+          }
+        ],
+        "line": 11,
+        "name": "Verifying the title length of the Websites \"https://google.com\"",
+        "description": "",
+        "id": "demo-bdd-framework;verifying-the-title-length-of-the-websites-\"\u003curl\u003e\";;2",
+        "after": [
+          {
+            "result": {
+              "error_message": "java.lang.RuntimeException: java.lang.NullPointerException\r\n\tat ru.yandex.qatools.ashot.util.InnerScript.execute(InnerScript.java:32)\r\n\tat ru.yandex.qatools.ashot.shooting.ViewportPastingDecorator.getFullHeight(ViewportPastingDecorator.java:67)\r\n\tat ru.yandex.qatools.ashot.shooting.ViewportPastingDecorator.getScreenshot(ViewportPastingDecorator.java:41)\r\n\tat ru.yandex.qatools.ashot.shooting.ViewportPastingDecorator.getScreenshot(ViewportPastingDecorator.java:35)\r\n\tat ru.yandex.qatools.ashot.AShot.takeScreenshot(AShot.java:145)\r\n\tat com.codeOfCritical.commonUtils.cucumberReportAfterExecution.\u003cinit\u003e(cucumberReportAfterExecution.java:37)\r\n\tat com.codeOfCritical.Hooks.CommonHooks.beforeSecondRnd(CommonHooks.java:43)\r\nCaused by: java.lang.NullPointerException\r\n\tat ru.yandex.qatools.ashot.util.InnerScript.execute(InnerScript.java:30)\r\n\tat ru.yandex.qatools.ashot.shooting.ViewportPastingDecorator.getFullHeight(ViewportPastingDecorator.java:67)\r\n\tat ru.yandex.qatools.ashot.shooting.ViewportPastingDecorator.getScreenshot(ViewportPastingDecorator.java:41)\r\n\tat ru.yandex.qatools.ashot.shooting.ViewportPastingDecorator.getScreenshot(ViewportPastingDecorator.java:35)\r\n\tat ru.yandex.qatools.ashot.AShot.takeScreenshot(AShot.java:145)\r\n\tat com.codeOfCritical.commonUtils.cucumberReportAfterExecution.\u003cinit\u003e(cucumberReportAfterExecution.java:37)\r\n\tat com.codeOfCritical.Hooks.CommonHooks.beforeSecondRnd(CommonHooks.java:43)\r\n\tat java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)\r\n\tat java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)\r\n\tat java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)\r\n\tat java.base/java.lang.reflect.Method.invoke(Method.java:566)\r\n\tat io.cucumber.java.Invoker.doInvoke(Invoker.java:66)\r\n\tat io.cucumber.java.Invoker.invoke(Invoker.java:24)\r\n\tat io.cucumber.java.AbstractGlueDefinition.invokeMethod(AbstractGlueDefinition.java:44)\r\n\tat io.cucumber.java.JavaHookDefinition.execute(JavaHookDefinition.java:59)\r\n\tat io.cucumber.core.runner.CoreHookDefinition.execute(CoreHookDefinition.java:44)\r\n\tat io.cucumber.core.runner.HookDefinitionMatch.runStep(HookDefinitionMatch.java:21)\r\n\tat io.cucumber.core.runner.TestStep.executeStep(TestStep.java:92)\r\n\tat io.cucumber.core.runner.TestStep.run(TestStep.java:63)\r\n\tat io.cucumber.core.runner.TestCase.run(TestCase.java:102)\r\n\tat io.cucumber.core.runner.Runner.runPickle(Runner.java:71)\r\n\tat io.cucumber.junit.PickleRunners$NoStepDescriptions.run(PickleRunners.java:140)\r\n\tat io.cucumber.junit.FeatureRunner.runChild(FeatureRunner.java:118)\r\n\tat io.cucumber.junit.FeatureRunner.runChild(FeatureRunner.java:24)\r\n\tat org.junit.runners.ParentRunner$3.run(ParentRunner.java:290)\r\n\tat org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71)\r\n\tat org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288)\r\n\tat org.junit.runners.ParentRunner.access$000(ParentRunner.java:58)\r\n\tat org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268)\r\n\tat org.junit.runners.ParentRunner.run(ParentRunner.java:363)\r\n\tat io.cucumber.junit.Cucumber.runChild(Cucumber.java:192)\r\n\tat io.cucumber.junit.Cucumber.runChild(Cucumber.java:88)\r\n\tat org.junit.runners.ParentRunner$3.run(ParentRunner.java:290)\r\n\tat org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71)\r\n\tat org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288)\r\n\tat org.junit.runners.ParentRunner.access$000(ParentRunner.java:58)\r\n\tat org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268)\r\n\tat io.cucumber.junit.Cucumber$RunCucumber.evaluate(Cucumber.java:227)\r\n\tat org.junit.runners.ParentRunner.run(ParentRunner.java:363)\r\n\tat org.junit.runner.JUnitCore.run(JUnitCore.java:137)\r\n\tat com.intellij.junit4.JUnit4IdeaTestRunner.startRunnerWithArgs(JUnit4IdeaTestRunner.java:69)\r\n\tat com.intellij.rt.junit.IdeaTestRunner$Repeater$1.execute(IdeaTestRunner.java:38)\r\n\tat com.intellij.rt.execution.junit.TestsRepeater.repeat(TestsRepeater.java:11)\r\n\tat com.intellij.rt.junit.IdeaTestRunner$Repeater.startRunnerWithArgs(IdeaTestRunner.java:35)\r\n\tat com.intellij.rt.junit.JUnitStarter.prepareStreamsAndStart(JUnitStarter.java:235)\r\n\tat com.intellij.rt.junit.JUnitStarter.main(JUnitStarter.java:54)\r\n",
+              "status": "failed"
+            },
+            "match": {
+              "location": "com.codeOfCritical.Hooks.CommonHooks.beforeSecondRnd(io.cucumber.java.Scenario)"
+            }
+          }
+        ],
+        "type": "scenario",
+        "keyword": "Scenario Outline",
+        "steps": [
+          {
+            "result": {
+              "error_message": "org.openqa.selenium.SessionNotCreatedException: Could not start a new session. Response code 500. Message: session not created: This version of ChromeDriver only supports Chrome version 102\nCurrent browser version is 108.0.5359.94 with binary path C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe\nBuild info: version: \u00274.2.1\u0027, revision: \u0027ac4d0fdd4a\u0027\nSystem info: host: \u0027DESKTOP-159LRLC\u0027, ip: \u0027192.168.0.111\u0027, os.name: \u0027Windows 10\u0027, os.arch: \u0027amd64\u0027, os.version: \u002710.0\u0027, java.version: \u002711.0.12\u0027\nDriver info: org.openqa.selenium.chrome.ChromeDriver\nCommand: [null, newSession {capabilities\u003d[Capabilities {browserName: chrome, goog:chromeOptions: {args: [--disable-web-security, --no-proxy-server, --ignore-certificate-errors], excludeSwitches: [enable-automation], extensions: [], prefs: {credentials_enable_service: false, download.default_directory: D:\\BitBucket\\autofw\\TestRep..., profile.password_manager_enabled: false}, useAutomationExtension: false}}], desiredCapabilities\u003dCapabilities {browserName: chrome, goog:chromeOptions: {args: [--disable-web-security, --no-proxy-server, --ignore-certificate-errors], excludeSwitches: [enable-automation], extensions: [], prefs: {credentials_enable_service: false, download.default_directory: D:\\BitBucket\\autofw\\TestRep..., profile.password_manager_enabled: false}, useAutomationExtension: false}}}]\r\n\tat org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:144)\r\n\tat org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:102)\r\n\tat org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:67)\r\n\tat org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:156)\r\n\tat org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:167)\r\n\tat org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:142)\r\n\tat org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:551)\r\n\tat org.openqa.selenium.remote.RemoteWebDriver.startSession(RemoteWebDriver.java:246)\r\n\tat org.openqa.selenium.remote.RemoteWebDriver.\u003cinit\u003e(RemoteWebDriver.java:162)\r\n\tat org.openqa.selenium.chromium.ChromiumDriver.\u003cinit\u003e(ChromiumDriver.java:106)\r\n\tat org.openqa.selenium.chrome.ChromeDriver.\u003cinit\u003e(ChromeDriver.java:106)\r\n\tat org.openqa.selenium.chrome.ChromeDriver.\u003cinit\u003e(ChromeDriver.java:93)\r\n\tat org.openqa.selenium.chrome.ChromeDriver.\u003cinit\u003e(ChromeDriver.java:82)\r\n\tat com.codeOfCritical.BaseClass.BrowserConfig.startBrowser(BrowserConfig.java:119)\r\n\tat com.codeOfCritical.StepDefinations.Demo_StepDefinition.iOpenUrl(Demo_StepDefinition.java:21)\r\n\tat ✽.I open \"https://google.com\" url(file:///D:/BitBucket/autofw/TestReport_Web/TestSwift/TestSwift_Web/../TestSwift_Web/src/main/java/com/codeOfCritical/featureFile/Demo.feature:5)\r\n",
+              "duration": 2457481700,
+              "status": "failed"
+            },
+            "line": 5,
+            "name": "I open \"https://google.com\" url",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"https://google.com\"",
+                  "offset": 7
+                }
+              ],
+              "location": "com.codeOfCritical.StepDefinations.Demo_StepDefinition.iOpenUrl(java.lang.String)"
+            },
+            "after": [
+              {
+                "result": {
+                  "status": "passed"
+                },
+                "match": {
+                  "location": "com.codeOfCritical.Hooks.CommonHooks.doSomethingAfterStep()"
+                }
+              }
+            ],
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "status": "skipped"
+            },
+            "line": 6,
+            "name": "I search for title length 11",
+            "match": {
+              "location": "com.codeOfCritical.StepDefinations.Demo_StepDefinition.iSearchForTitleLength()"
+            },
+            "after": [
+              {
+                "result": {
+                  "status": "skipped"
+                },
+                "match": {
+                  "location": "com.codeOfCritical.Hooks.CommonHooks.doSomethingAfterStep()"
+                }
+              }
+            ],
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "status": "skipped"
+            },
+            "line": 7,
+            "name": "It will be length of \"99\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"99\"",
+                  "offset": 21
+                }
+              ],
+              "location": "com.codeOfCritical.StepDefinations.Demo_StepDefinition.itWillBeLengthOf(java.lang.String)"
+            },
+            "after": [
+              {
+                "result": {
+                  "status": "skipped"
+                },
+                "match": {
+                  "location": "com.codeOfCritical.Hooks.CommonHooks.doSomethingAfterStep()"
+                }
+              }
+            ],
+            "keyword": "Then "
+          }
+        ],
+        "tags": [
+          {
+            "name": "@t1"
+          }
+        ]
+      },
+      {
+        "start_timestamp": "2022-12-04T15:33:18.563Z",
+        "before": [
+          {
+            "result": {
+              "status": "passed"
+            },
+            "match": {
+              "location": "com.codeOfCritical.Hooks.CommonHooks.doSomethingBeforeStep(io.cucumber.java.Scenario)"
+            }
+          }
+        ],
+        "line": 12,
+        "name": "Verifying the title length of the Websites \"https://bing.com\"",
+        "description": "",
+        "id": "demo-bdd-framework;verifying-the-title-length-of-the-websites-\"\u003curl\u003e\";;3",
+        "after": [
+          {
+            "result": {
+              "error_message": "java.lang.RuntimeException: java.lang.NullPointerException\r\n\tat ru.yandex.qatools.ashot.util.InnerScript.execute(InnerScript.java:32)\r\n\tat ru.yandex.qatools.ashot.shooting.ViewportPastingDecorator.getFullHeight(ViewportPastingDecorator.java:67)\r\n\tat ru.yandex.qatools.ashot.shooting.ViewportPastingDecorator.getScreenshot(ViewportPastingDecorator.java:41)\r\n\tat ru.yandex.qatools.ashot.shooting.ViewportPastingDecorator.getScreenshot(ViewportPastingDecorator.java:35)\r\n\tat ru.yandex.qatools.ashot.AShot.takeScreenshot(AShot.java:145)\r\n\tat com.codeOfCritical.commonUtils.cucumberReportAfterExecution.\u003cinit\u003e(cucumberReportAfterExecution.java:37)\r\n\tat com.codeOfCritical.Hooks.CommonHooks.beforeSecondRnd(CommonHooks.java:43)\r\nCaused by: java.lang.NullPointerException\r\n\tat ru.yandex.qatools.ashot.util.InnerScript.execute(InnerScript.java:30)\r\n\tat ru.yandex.qatools.ashot.shooting.ViewportPastingDecorator.getFullHeight(ViewportPastingDecorator.java:67)\r\n\tat ru.yandex.qatools.ashot.shooting.ViewportPastingDecorator.getScreenshot(ViewportPastingDecorator.java:41)\r\n\tat ru.yandex.qatools.ashot.shooting.ViewportPastingDecorator.getScreenshot(ViewportPastingDecorator.java:35)\r\n\tat ru.yandex.qatools.ashot.AShot.takeScreenshot(AShot.java:145)\r\n\tat com.codeOfCritical.commonUtils.cucumberReportAfterExecution.\u003cinit\u003e(cucumberReportAfterExecution.java:37)\r\n\tat com.codeOfCritical.Hooks.CommonHooks.beforeSecondRnd(CommonHooks.java:43)\r\n\tat java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)\r\n\tat java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)\r\n\tat java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)\r\n\tat java.base/java.lang.reflect.Method.invoke(Method.java:566)\r\n\tat io.cucumber.java.Invoker.doInvoke(Invoker.java:66)\r\n\tat io.cucumber.java.Invoker.invoke(Invoker.java:24)\r\n\tat io.cucumber.java.AbstractGlueDefinition.invokeMethod(AbstractGlueDefinition.java:44)\r\n\tat io.cucumber.java.JavaHookDefinition.execute(JavaHookDefinition.java:59)\r\n\tat io.cucumber.core.runner.CoreHookDefinition.execute(CoreHookDefinition.java:44)\r\n\tat io.cucumber.core.runner.HookDefinitionMatch.runStep(HookDefinitionMatch.java:21)\r\n\tat io.cucumber.core.runner.TestStep.executeStep(TestStep.java:92)\r\n\tat io.cucumber.core.runner.TestStep.run(TestStep.java:63)\r\n\tat io.cucumber.core.runner.TestCase.run(TestCase.java:102)\r\n\tat io.cucumber.core.runner.Runner.runPickle(Runner.java:71)\r\n\tat io.cucumber.junit.PickleRunners$NoStepDescriptions.run(PickleRunners.java:140)\r\n\tat io.cucumber.junit.FeatureRunner.runChild(FeatureRunner.java:118)\r\n\tat io.cucumber.junit.FeatureRunner.runChild(FeatureRunner.java:24)\r\n\tat org.junit.runners.ParentRunner$3.run(ParentRunner.java:290)\r\n\tat org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71)\r\n\tat org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288)\r\n\tat org.junit.runners.ParentRunner.access$000(ParentRunner.java:58)\r\n\tat org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268)\r\n\tat org.junit.runners.ParentRunner.run(ParentRunner.java:363)\r\n\tat io.cucumber.junit.Cucumber.runChild(Cucumber.java:192)\r\n\tat io.cucumber.junit.Cucumber.runChild(Cucumber.java:88)\r\n\tat org.junit.runners.ParentRunner$3.run(ParentRunner.java:290)\r\n\tat org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71)\r\n\tat org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288)\r\n\tat org.junit.runners.ParentRunner.access$000(ParentRunner.java:58)\r\n\tat org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268)\r\n\tat io.cucumber.junit.Cucumber$RunCucumber.evaluate(Cucumber.java:227)\r\n\tat org.junit.runners.ParentRunner.run(ParentRunner.java:363)\r\n\tat org.junit.runner.JUnitCore.run(JUnitCore.java:137)\r\n\tat com.intellij.junit4.JUnit4IdeaTestRunner.startRunnerWithArgs(JUnit4IdeaTestRunner.java:69)\r\n\tat com.intellij.rt.junit.IdeaTestRunner$Repeater$1.execute(IdeaTestRunner.java:38)\r\n\tat com.intellij.rt.execution.junit.TestsRepeater.repeat(TestsRepeater.java:11)\r\n\tat com.intellij.rt.junit.IdeaTestRunner$Repeater.startRunnerWithArgs(IdeaTestRunner.java:35)\r\n\tat com.intellij.rt.junit.JUnitStarter.prepareStreamsAndStart(JUnitStarter.java:235)\r\n\tat com.intellij.rt.junit.JUnitStarter.main(JUnitStarter.java:54)\r\n",
+              "status": "failed"
+            },
+            "match": {
+              "location": "com.codeOfCritical.Hooks.CommonHooks.beforeSecondRnd(io.cucumber.java.Scenario)"
+            }
+          }
+        ],
+        "type": "scenario",
+        "keyword": "Scenario Outline",
+        "steps": [
+          {
+            "result": {
+              "error_message": "org.openqa.selenium.SessionNotCreatedException: Could not start a new session. Response code 500. Message: session not created: This version of ChromeDriver only supports Chrome version 102\nCurrent browser version is 108.0.5359.94 with binary path C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe\nBuild info: version: \u00274.2.1\u0027, revision: \u0027ac4d0fdd4a\u0027\nSystem info: host: \u0027DESKTOP-159LRLC\u0027, ip: \u0027192.168.0.111\u0027, os.name: \u0027Windows 10\u0027, os.arch: \u0027amd64\u0027, os.version: \u002710.0\u0027, java.version: \u002711.0.12\u0027\nDriver info: org.openqa.selenium.chrome.ChromeDriver\nCommand: [null, newSession {capabilities\u003d[Capabilities {browserName: chrome, goog:chromeOptions: {args: [--disable-web-security, --no-proxy-server, --ignore-certificate-errors], excludeSwitches: [enable-automation], extensions: [], prefs: {credentials_enable_service: false, download.default_directory: D:\\BitBucket\\autofw\\TestRep..., profile.password_manager_enabled: false}, useAutomationExtension: false}}], desiredCapabilities\u003dCapabilities {browserName: chrome, goog:chromeOptions: {args: [--disable-web-security, --no-proxy-server, --ignore-certificate-errors], excludeSwitches: [enable-automation], extensions: [], prefs: {credentials_enable_service: false, download.default_directory: D:\\BitBucket\\autofw\\TestRep..., profile.password_manager_enabled: false}, useAutomationExtension: false}}}]\r\n\tat org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:144)\r\n\tat org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:102)\r\n\tat org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:67)\r\n\tat org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:156)\r\n\tat org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:167)\r\n\tat org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:142)\r\n\tat org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:551)\r\n\tat org.openqa.selenium.remote.RemoteWebDriver.startSession(RemoteWebDriver.java:246)\r\n\tat org.openqa.selenium.remote.RemoteWebDriver.\u003cinit\u003e(RemoteWebDriver.java:162)\r\n\tat org.openqa.selenium.chromium.ChromiumDriver.\u003cinit\u003e(ChromiumDriver.java:106)\r\n\tat org.openqa.selenium.chrome.ChromeDriver.\u003cinit\u003e(ChromeDriver.java:106)\r\n\tat org.openqa.selenium.chrome.ChromeDriver.\u003cinit\u003e(ChromeDriver.java:93)\r\n\tat org.openqa.selenium.chrome.ChromeDriver.\u003cinit\u003e(ChromeDriver.java:82)\r\n\tat com.codeOfCritical.BaseClass.BrowserConfig.startBrowser(BrowserConfig.java:119)\r\n\tat com.codeOfCritical.StepDefinations.Demo_StepDefinition.iOpenUrl(Demo_StepDefinition.java:21)\r\n\tat ✽.I open \"https://bing.com\" url(file:///D:/BitBucket/autofw/TestReport_Web/TestSwift/TestSwift_Web/../TestSwift_Web/src/main/java/com/codeOfCritical/featureFile/Demo.feature:5)\r\n",
+              "duration": 1576007400,
+              "status": "failed"
+            },
+            "line": 5,
+            "name": "I open \"https://bing.com\" url",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"https://bing.com\"",
+                  "offset": 7
+                }
+              ],
+              "location": "com.codeOfCritical.StepDefinations.Demo_StepDefinition.iOpenUrl(java.lang.String)"
+            },
+            "after": [
+              {
+                "result": {
+                  "status": "passed"
+                },
+                "match": {
+                  "location": "com.codeOfCritical.Hooks.CommonHooks.doSomethingAfterStep()"
+                }
+              }
+            ],
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "status": "skipped"
+            },
+            "line": 6,
+            "name": "I search for title length 11",
+            "match": {
+              "location": "com.codeOfCritical.StepDefinations.Demo_StepDefinition.iSearchForTitleLength()"
+            },
+            "after": [
+              {
+                "result": {
+                  "status": "skipped"
+                },
+                "match": {
+                  "location": "com.codeOfCritical.Hooks.CommonHooks.doSomethingAfterStep()"
+                }
+              }
+            ],
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "status": "skipped"
+            },
+            "line": 7,
+            "name": "It will be length of \"11\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"11\"",
+                  "offset": 21
+                }
+              ],
+              "location": "com.codeOfCritical.StepDefinations.Demo_StepDefinition.itWillBeLengthOf(java.lang.String)"
+            },
+            "after": [
+              {
+                "result": {
+                  "status": "skipped"
+                },
+                "match": {
+                  "location": "com.codeOfCritical.Hooks.CommonHooks.doSomethingAfterStep()"
+                }
+              }
+            ],
+            "keyword": "Then "
+          }
+        ],
+        "tags": [
+          {
+            "name": "@t1"
+          }
+        ]
+      },
+      {
+        "start_timestamp": "2022-12-04T15:33:20.161Z",
+        "before": [
+          {
+            "result": {
+              "status": "passed"
+            },
+            "match": {
+              "location": "com.codeOfCritical.Hooks.CommonHooks.doSomethingBeforeStep(io.cucumber.java.Scenario)"
+            }
+          }
+        ],
+        "line": 13,
+        "name": "Verifying the title length of the Websites \"https://www.yahoo.com\"",
+        "description": "",
+        "id": "demo-bdd-framework;verifying-the-title-length-of-the-websites-\"\u003curl\u003e\";;4",
+        "after": [
+          {
+            "result": {
+              "error_message": "java.lang.RuntimeException: java.lang.NullPointerException\r\n\tat ru.yandex.qatools.ashot.util.InnerScript.execute(InnerScript.java:32)\r\n\tat ru.yandex.qatools.ashot.shooting.ViewportPastingDecorator.getFullHeight(ViewportPastingDecorator.java:67)\r\n\tat ru.yandex.qatools.ashot.shooting.ViewportPastingDecorator.getScreenshot(ViewportPastingDecorator.java:41)\r\n\tat ru.yandex.qatools.ashot.shooting.ViewportPastingDecorator.getScreenshot(ViewportPastingDecorator.java:35)\r\n\tat ru.yandex.qatools.ashot.AShot.takeScreenshot(AShot.java:145)\r\n\tat com.codeOfCritical.commonUtils.cucumberReportAfterExecution.\u003cinit\u003e(cucumberReportAfterExecution.java:37)\r\n\tat com.codeOfCritical.Hooks.CommonHooks.beforeSecondRnd(CommonHooks.java:43)\r\nCaused by: java.lang.NullPointerException\r\n\tat ru.yandex.qatools.ashot.util.InnerScript.execute(InnerScript.java:30)\r\n\tat ru.yandex.qatools.ashot.shooting.ViewportPastingDecorator.getFullHeight(ViewportPastingDecorator.java:67)\r\n\tat ru.yandex.qatools.ashot.shooting.ViewportPastingDecorator.getScreenshot(ViewportPastingDecorator.java:41)\r\n\tat ru.yandex.qatools.ashot.shooting.ViewportPastingDecorator.getScreenshot(ViewportPastingDecorator.java:35)\r\n\tat ru.yandex.qatools.ashot.AShot.takeScreenshot(AShot.java:145)\r\n\tat com.codeOfCritical.commonUtils.cucumberReportAfterExecution.\u003cinit\u003e(cucumberReportAfterExecution.java:37)\r\n\tat com.codeOfCritical.Hooks.CommonHooks.beforeSecondRnd(CommonHooks.java:43)\r\n\tat java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)\r\n\tat java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)\r\n\tat java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)\r\n\tat java.base/java.lang.reflect.Method.invoke(Method.java:566)\r\n\tat io.cucumber.java.Invoker.doInvoke(Invoker.java:66)\r\n\tat io.cucumber.java.Invoker.invoke(Invoker.java:24)\r\n\tat io.cucumber.java.AbstractGlueDefinition.invokeMethod(AbstractGlueDefinition.java:44)\r\n\tat io.cucumber.java.JavaHookDefinition.execute(JavaHookDefinition.java:59)\r\n\tat io.cucumber.core.runner.CoreHookDefinition.execute(CoreHookDefinition.java:44)\r\n\tat io.cucumber.core.runner.HookDefinitionMatch.runStep(HookDefinitionMatch.java:21)\r\n\tat io.cucumber.core.runner.TestStep.executeStep(TestStep.java:92)\r\n\tat io.cucumber.core.runner.TestStep.run(TestStep.java:63)\r\n\tat io.cucumber.core.runner.TestCase.run(TestCase.java:102)\r\n\tat io.cucumber.core.runner.Runner.runPickle(Runner.java:71)\r\n\tat io.cucumber.junit.PickleRunners$NoStepDescriptions.run(PickleRunners.java:140)\r\n\tat io.cucumber.junit.FeatureRunner.runChild(FeatureRunner.java:118)\r\n\tat io.cucumber.junit.FeatureRunner.runChild(FeatureRunner.java:24)\r\n\tat org.junit.runners.ParentRunner$3.run(ParentRunner.java:290)\r\n\tat org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71)\r\n\tat org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288)\r\n\tat org.junit.runners.ParentRunner.access$000(ParentRunner.java:58)\r\n\tat org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268)\r\n\tat org.junit.runners.ParentRunner.run(ParentRunner.java:363)\r\n\tat io.cucumber.junit.Cucumber.runChild(Cucumber.java:192)\r\n\tat io.cucumber.junit.Cucumber.runChild(Cucumber.java:88)\r\n\tat org.junit.runners.ParentRunner$3.run(ParentRunner.java:290)\r\n\tat org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71)\r\n\tat org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288)\r\n\tat org.junit.runners.ParentRunner.access$000(ParentRunner.java:58)\r\n\tat org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268)\r\n\tat io.cucumber.junit.Cucumber$RunCucumber.evaluate(Cucumber.java:227)\r\n\tat org.junit.runners.ParentRunner.run(ParentRunner.java:363)\r\n\tat org.junit.runner.JUnitCore.run(JUnitCore.java:137)\r\n\tat com.intellij.junit4.JUnit4IdeaTestRunner.startRunnerWithArgs(JUnit4IdeaTestRunner.java:69)\r\n\tat com.intellij.rt.junit.IdeaTestRunner$Repeater$1.execute(IdeaTestRunner.java:38)\r\n\tat com.intellij.rt.execution.junit.TestsRepeater.repeat(TestsRepeater.java:11)\r\n\tat com.intellij.rt.junit.IdeaTestRunner$Repeater.startRunnerWithArgs(IdeaTestRunner.java:35)\r\n\tat com.intellij.rt.junit.JUnitStarter.prepareStreamsAndStart(JUnitStarter.java:235)\r\n\tat com.intellij.rt.junit.JUnitStarter.main(JUnitStarter.java:54)\r\n",
+              "duration": 999400,
+              "status": "failed"
+            },
+            "match": {
+              "location": "com.codeOfCritical.Hooks.CommonHooks.beforeSecondRnd(io.cucumber.java.Scenario)"
+            }
+          }
+        ],
+        "type": "scenario",
+        "keyword": "Scenario Outline",
+        "steps": [
+          {
+            "result": {
+              "error_message": "org.openqa.selenium.SessionNotCreatedException: Could not start a new session. Response code 500. Message: session not created: This version of ChromeDriver only supports Chrome version 102\nCurrent browser version is 108.0.5359.94 with binary path C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe\nBuild info: version: \u00274.2.1\u0027, revision: \u0027ac4d0fdd4a\u0027\nSystem info: host: \u0027DESKTOP-159LRLC\u0027, ip: \u0027192.168.0.111\u0027, os.name: \u0027Windows 10\u0027, os.arch: \u0027amd64\u0027, os.version: \u002710.0\u0027, java.version: \u002711.0.12\u0027\nDriver info: org.openqa.selenium.chrome.ChromeDriver\nCommand: [null, newSession {capabilities\u003d[Capabilities {browserName: chrome, goog:chromeOptions: {args: [--disable-web-security, --no-proxy-server, --ignore-certificate-errors], excludeSwitches: [enable-automation], extensions: [], prefs: {credentials_enable_service: false, download.default_directory: D:\\BitBucket\\autofw\\TestRep..., profile.password_manager_enabled: false}, useAutomationExtension: false}}], desiredCapabilities\u003dCapabilities {browserName: chrome, goog:chromeOptions: {args: [--disable-web-security, --no-proxy-server, --ignore-certificate-errors], excludeSwitches: [enable-automation], extensions: [], prefs: {credentials_enable_service: false, download.default_directory: D:\\BitBucket\\autofw\\TestRep..., profile.password_manager_enabled: false}, useAutomationExtension: false}}}]\r\n\tat org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:144)\r\n\tat org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:102)\r\n\tat org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:67)\r\n\tat org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:156)\r\n\tat org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:167)\r\n\tat org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:142)\r\n\tat org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:551)\r\n\tat org.openqa.selenium.remote.RemoteWebDriver.startSession(RemoteWebDriver.java:246)\r\n\tat org.openqa.selenium.remote.RemoteWebDriver.\u003cinit\u003e(RemoteWebDriver.java:162)\r\n\tat org.openqa.selenium.chromium.ChromiumDriver.\u003cinit\u003e(ChromiumDriver.java:106)\r\n\tat org.openqa.selenium.chrome.ChromeDriver.\u003cinit\u003e(ChromeDriver.java:106)\r\n\tat org.openqa.selenium.chrome.ChromeDriver.\u003cinit\u003e(ChromeDriver.java:93)\r\n\tat org.openqa.selenium.chrome.ChromeDriver.\u003cinit\u003e(ChromeDriver.java:82)\r\n\tat com.codeOfCritical.BaseClass.BrowserConfig.startBrowser(BrowserConfig.java:119)\r\n\tat com.codeOfCritical.StepDefinations.Demo_StepDefinition.iOpenUrl(Demo_StepDefinition.java:21)\r\n\tat ✽.I open \"https://www.yahoo.com\" url(file:///D:/BitBucket/autofw/TestReport_Web/TestSwift/TestSwift_Web/../TestSwift_Web/src/main/java/com/codeOfCritical/featureFile/Demo.feature:5)\r\n",
+              "duration": 1539022900,
+              "status": "failed"
+            },
+            "line": 5,
+            "name": "I open \"https://www.yahoo.com\" url",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"https://www.yahoo.com\"",
+                  "offset": 7
+                }
+              ],
+              "location": "com.codeOfCritical.StepDefinations.Demo_StepDefinition.iOpenUrl(java.lang.String)"
+            },
+            "after": [
+              {
+                "result": {
+                  "status": "passed"
+                },
+                "match": {
+                  "location": "com.codeOfCritical.Hooks.CommonHooks.doSomethingAfterStep()"
+                }
+              }
+            ],
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "status": "skipped"
+            },
+            "line": 6,
+            "name": "I search for title length 11",
+            "match": {
+              "location": "com.codeOfCritical.StepDefinations.Demo_StepDefinition.iSearchForTitleLength()"
+            },
+            "after": [
+              {
+                "result": {
+                  "status": "skipped"
+                },
+                "match": {
+                  "location": "com.codeOfCritical.Hooks.CommonHooks.doSomethingAfterStep()"
+                }
+              }
+            ],
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 999600,
+              "status": "skipped"
+            },
+            "line": 7,
+            "name": "It will be length of \"112\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"112\"",
+                  "offset": 21
+                }
+              ],
+              "location": "com.codeOfCritical.StepDefinations.Demo_StepDefinition.itWillBeLengthOf(java.lang.String)"
+            },
+            "after": [
+              {
+                "result": {
+                  "status": "skipped"
+                },
+                "match": {
+                  "location": "com.codeOfCritical.Hooks.CommonHooks.doSomethingAfterStep()"
+                }
+              }
+            ],
+            "keyword": "Then "
+          }
+        ],
+        "tags": [
+          {
+            "name": "@t1"
+          }
+        ]
+      }
+    ],
+    "name": "Demo BDD FRAMEWORK",
+    "description": "",
+    "id": "demo-bdd-framework",
+    "keyword": "Feature",
+    "uri": "file:src/main/java/com/codeOfCritical/featureFile/Demo.feature",
+    "tags": []
+  }
+]

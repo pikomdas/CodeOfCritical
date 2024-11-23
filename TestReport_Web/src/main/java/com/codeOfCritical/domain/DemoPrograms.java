@@ -1,4 +1,9 @@
-package com.codeOfCritical;
+package com.codeOfCritical.domain;
+
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.ComponentScan;
+import org.springframework.context.annotation.Configuration;
+import org.springframework.stereotype.Component;
 
 import java.io.*;
 import java.util.HashSet;
@@ -6,24 +11,11 @@ import java.util.List;
 import java.util.Set;
 import java.util.stream.IntStream;
 
-public class RnD {
+@Component
+@ComponentScan("com.codeOfCritical.domain")
+public class DemoPrograms {
 
-    public static void main(String[] args) throws IOException {
-        int[] arri = {1, 33, 4, 5, 1, 2, 22, 5};
-//        Character[] arr = IntStream.of(arri).boxed().toArray(Character[]::new);
-
-//        findDuplicate(arri);
-//        System.out.println("===========================");
-//        findDuplicate1(arr);
-//        System.out.println("===========================");
-//        sort(arr);
-        /*writeFile(convertArrToString(findDuplicate(arri))
-                .concat("\n")
-                .concat(convertArrToString(sort(arri)))
-                .concat("\n"));*/
-        writeFile(startPattern(10));
-    }
-
+    //@Bean
     public static int[] findDuplicate(int[] a) {
 
         for (int i = 0; i < a.length; i++) {
@@ -36,6 +28,7 @@ public class RnD {
         return a;
     }
 
+    //@Bean
     public static Integer[] findDuplicate1(Integer[] a) {
         List<Integer> ll = List.of(a);
         Set<Integer> ss = new HashSet<>();
@@ -49,6 +42,7 @@ public class RnD {
         return a;
     }
 
+    //@Bean
     public static int[] sort(int[] a) {
         for (int i = 0; i < a.length; i++) {
             for (int j = i + 1; j < a.length; j++) {
@@ -65,6 +59,7 @@ public class RnD {
         return a;
     }
 
+    //@Bean
     public static void writeFile(String x) throws IOException {
         FileOutputStream fo = new FileOutputStream("D:\\AM_FM\\autofw\\TemenosT24\\TemenosT24_Web\\src\\test\\java\\com\\temenos\\test\\abc.txt");
 
@@ -75,6 +70,7 @@ public class RnD {
         System.out.println(br.readLine());
     }
 
+    //@Bean
     public static String convertArrToString(int[] a) {
 //        StringBuffer ss = new StringBuffer();
         String s = "";
@@ -85,29 +81,32 @@ public class RnD {
         return s.toString();
     }
 
+    //@Bean
     public static String startPattern(int x) {
         String s = "";
         for (int i = 0; i < x; i++) {
 //            System.out.print(" ");
-            s=s.concat(" ");
+            s = s.concat(" ");
             for (int j = 0; j < i; j++) {
 //                System.out.print(" *");
-               s= s.concat(" *");
+                s = s.concat(" *");
             }
 //            System.out.println();
-            s=s.concat("\n");
+            s = s.concat("\n");
 
         }
         for (int i = 0; i < x; i++) {
 //            System.out.print(" ");
-            s=s.concat(" ");
+            s = s.concat(" ");
             for (int j = x; j > i; j--) {
 //                System.out.print(" *");
-                s=s.concat(" *");
+                s = s.concat(" *");
             }
 //            System.out.println();
-            s=s.concat("\n");
+            s = s.concat("\n");
         }
         return s;
     }
+
+
 }
