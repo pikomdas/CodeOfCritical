@@ -1,5 +1,6 @@
 package com.codeOfCritical.services;
 
+import com.codeOfCritical.data.ReadData;
 import com.codeOfCritical.domain.Deviations;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -35,7 +36,7 @@ public class DeviationServiceImpl implements DeviationsService {
     }
 
     @Override
-    public DeviationServiceImpl readJSON() {
+    public ReadData readJSON() {
 
         JSONArray jsonArray = (JSONArray) obj.get("Scenarios");
         for (Object o : jsonArray) {
@@ -72,7 +73,7 @@ public class DeviationServiceImpl implements DeviationsService {
             }
 
         }
-        return this;
+        return null;
     }
 
     @Override
@@ -88,6 +89,21 @@ public class DeviationServiceImpl implements DeviationsService {
     @Override
     public Set<String> listAllFailedScenarios() {
         return scenarioName;
+    }
+
+    @Override
+    public List<Integer> listOfAllScenarios() {
+        return null;
+    }
+
+    @Override
+    public Map<String, Map<String, String>> getFieldNameWithDeviationDetails() {
+        return null;
+    }
+
+    @Override
+    public Map<String, Map<String, Map<String, String>>> getdeviationDetailsWithPageName() {
+        return null;
     }
 
     @Override

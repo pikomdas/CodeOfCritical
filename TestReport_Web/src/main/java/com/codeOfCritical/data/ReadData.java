@@ -6,8 +6,6 @@ import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.context.annotation.Bean;
 import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
 
@@ -22,7 +20,7 @@ public class ReadData implements DeviationsService {
     public Map<String, Map<String, String>> fieldDeviationDetails = new HashMap<>();
     public Set<String> users = new HashSet<>();
     public Set<String> dates = new HashSet<>();
-    public List<String> scenarioName = new ArrayList<>();
+    public Set<String> scenarioName = new HashSet<>();
 
     public List<Deviations> deviationsObject=new ArrayList<>();
 
@@ -88,7 +86,17 @@ private String fileName = "D:\\BitBucket\\autofw\\TemenosT24\\TemenosT24_Web\\te
     }
 
     @Override
-    public List<String> listAllFailedScenarios() {
+    public Integer getNumberOfAllFailedScenarios() {
+        return null;
+    }
+
+    @Override
+    public Set<Deviations> getListOfAllDeviations() {
+        return null;
+    }
+
+    @Override
+    public Set<String> listAllFailedScenarios() {
         return scenarioName;
     }
 

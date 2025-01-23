@@ -2,17 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/ApiTest/ApiTest.iml" filepath="$PROJECT_DIR$/ApiTest/ApiTest.iml" />
-      <module fileurl="file://$PROJECT_DIR$/Automated_Execution_Report/Automated_Execution_Report.iml" filepath="$PROJECT_DIR$/Automated_Execution_Report/Automated_Execution_Report.iml" />
       <module fileurl="file://$PROJECT_DIR$/CodeOfCritical.iml" filepath="$PROJECT_DIR$/CodeOfCritical.iml" />
-      <module fileurl="file://$PROJECT_DIR$/Linkedin/Linkedin.iml" filepath="$PROJECT_DIR$/Linkedin/Linkedin.iml" />
-      <module fileurl="file://$PROJECT_DIR$/LionsFlame/LionsFlame.iml" filepath="$PROJECT_DIR$/LionsFlame/LionsFlame.iml" />
-      <module fileurl="file://$PROJECT_DIR$/Naukri/Naukri.iml" filepath="$PROJECT_DIR$/Naukri/Naukri.iml" />
-      <module fileurl="file://$PROJECT_DIR$/TestReport_Web/TestReport_Web.iml" filepath="$PROJECT_DIR$/TestReport_Web/TestReport_Web.iml" />
-      <module fileurl="file://$PROJECT_DIR$/dataSimplifier/dataSimplifier.iml" filepath="$PROJECT_DIR$/dataSimplifier/dataSimplifier.iml" />
-      <module fileurl="file://$PROJECT_DIR$/jarTest/jarTest.iml" filepath="$PROJECT_DIR$/jarTest/jarTest.iml" />
-      <module fileurl="file://$PROJECT_DIR$/report/report.iml" filepath="$PROJECT_DIR$/report/report.iml" />
-      <module fileurl="file://$PROJECT_DIR$/setEnvironmentAndBrowser/setEnvironmentAndBrowser.iml" filepath="$PROJECT_DIR$/setEnvironmentAndBrowser/setEnvironmentAndBrowser.iml" />
     </modules>
   </component>
 </project>

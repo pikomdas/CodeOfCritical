@@ -51,6 +51,9 @@ public class Deviations {
        // this.screenShots = screenShots;
     }
 
+    public <E> Deviations(String s, String scenarioId, String expectedValue, String fieldName, String actualValue, String pageName, String sessionId, String tagName, List<E> a) {
+    }
+
     @Override
     public String toString() {
         return "Deviations{" +

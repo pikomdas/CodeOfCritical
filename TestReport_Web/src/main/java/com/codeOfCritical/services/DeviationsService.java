@@ -2,6 +2,7 @@ package com.codeOfCritical.services;
 
 
 import com.codeOfCritical.data.ReadData;
+import com.codeOfCritical.domain.Deviations;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -11,7 +12,7 @@ import java.util.Set;
 @Service
 public interface DeviationsService {
 
-    List<String> listAllFailedScenarios();
+    Set<String> listAllFailedScenarios();
 
     List<Integer> listOfAllScenarios();
 
@@ -25,4 +26,7 @@ public interface DeviationsService {
 
     Set<String> getDate();
 
+    Integer getNumberOfAllFailedScenarios();
+
+    Set<Deviations> getListOfAllDeviations();
 }
