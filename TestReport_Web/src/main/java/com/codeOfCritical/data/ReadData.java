@@ -22,10 +22,10 @@ public class ReadData implements DeviationsService {
     public Set<String> dates = new HashSet<>();
     public Set<String> scenarioName = new HashSet<>();
 
-    public List<Deviations> deviationsObject=new ArrayList<>();
+    public List<Deviations> deviationsObject = new ArrayList<>();
 
-//    private String fileName = "D:\\Automation_Framework\\autofw\\TemenosT24\\TestReport_Web\\src\\main\\java\\com\\codeOfCritical\\data\\backup_deviations.json";
-private String fileName = "D:\\BitBucket\\autofw\\TemenosT24\\TemenosT24_Web\\test-outout\\Custom-Report-HealthCheck\\deviations.json";
+    //    private String fileName = "D:\\Automation_Framework\\autofw\\TemenosT24\\TestReport_Web\\src\\main\\java\\com\\codeOfCritical\\data\\backup_deviations.json";
+    private String fileName = "./src/main/java/com/codeOfCritical/data/backup_deviations.json";
 
     private JSONParser parser;
     private JSONObject obj;
@@ -43,7 +43,7 @@ private String fileName = "D:\\BitBucket\\autofw\\TemenosT24\\TemenosT24_Web\\te
             JSONObject trigger = (JSONObject) o;
             String s = (String) trigger.get("Scenario Name");
             String user = (String) trigger.get("User");
-            String date=(String) trigger.get("Date");
+            String date = (String) trigger.get("Date");
             System.out.println(s + " " + user + " " + date);
             scenarioName.add(s);
             users.add(user);
@@ -66,7 +66,7 @@ private String fileName = "D:\\BitBucket\\autofw\\TemenosT24\\TemenosT24_Web\\te
 
                     deviationsDetailsMap.put(fieldName, Map.of(expectedValue, actualValue));
                     System.out.println(expectedValue + " " + fieldName + " " + actualValue);
-                    deviationsObject.add(new Deviations(s,expectedValue,fieldName,actualValue,pageName,sessionId,tagName,List.of("A","B")));
+                    deviationsObject.add(new Deviations(s, expectedValue, fieldName, actualValue, pageName, sessionId, tagName, List.of("A", "B")));
                 }
 
             }

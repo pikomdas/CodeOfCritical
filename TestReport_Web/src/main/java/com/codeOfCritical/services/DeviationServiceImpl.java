@@ -25,7 +25,7 @@ public class DeviationServiceImpl implements DeviationsService {
     public Set<String> scenarioName = new HashSet<>();
     public Set<Deviations> deviationsObject = new HashSet<>();
 
-    private String fileName = "../TestReport_Web/TestSwift/TestSwift_Web/test-outout/Custom-Report-HealthCheck/deviations.json";
+    private String fileName = "./src/main/java/com/codeOfCritical/data/backup_deviations.json";
 
     private JSONParser parser;
     private JSONObject obj;

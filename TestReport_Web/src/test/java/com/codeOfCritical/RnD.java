@@ -1,9 +1,8 @@
 package com.codeOfCritical;
 
 import java.io.*;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Set;
+import java.util.*;
+import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 
 public class RnD {
@@ -21,7 +20,17 @@ public class RnD {
                 .concat("\n")
                 .concat(convertArrToString(sort(arri)))
                 .concat("\n"));*/
-        writeFile(startPattern(10));
+//        writeFile(startPattern(10));
+//        findOccourance(new String("Pioneer"));
+        /*Map<String, Integer> map = new HashMap<String, Integer>();
+        map.put("Apple", 3);
+        map.put("Banana", 1);
+        map.put("Orange", 2);
+        sortMapByValue(map);*/
+
+        List<String> list = Arrays.asList("Apple", "Banana", "Kiwi", "Strawberry");
+        sortStringByLength(list);
+
     }
 
     public static int[] findDuplicate(int[] a) {
@@ -89,25 +98,57 @@ public class RnD {
         String s = "";
         for (int i = 0; i < x; i++) {
 //            System.out.print(" ");
-            s=s.concat(" ");
+            s = s.concat(" ");
             for (int j = 0; j < i; j++) {
 //                System.out.print(" *");
-               s= s.concat(" *");
+                s = s.concat(" *");
             }
 //            System.out.println();
-            s=s.concat("\n");
+            s = s.concat("\n");
 
         }
         for (int i = 0; i < x; i++) {
 //            System.out.print(" ");
-            s=s.concat(" ");
+            s = s.concat(" ");
             for (int j = x; j > i; j--) {
 //                System.out.print(" *");
-                s=s.concat(" *");
+                s = s.concat(" *");
             }
 //            System.out.println();
-            s=s.concat("\n");
+            s = s.concat("\n");
         }
         return s;
+    }
+
+    public static void findOccourance(String s) {
+        char[] arr = s.toCharArray();
+        Map<Character, Integer> counter = new HashMap<>();
+        for (char c : arr) {
+            counter.put(c, counter.getOrDefault(c, 0) + 1);
+        }
+        System.out.println(counter);
+
+    }
+
+    public static void sortMapByValue(Map<String, Integer> map) {
+        Map<String, Integer> sortedMap = new LinkedHashMap<>();
+        List<Map.Entry<String, Integer>> list = new ArrayList<>(map.entrySet());
+        Collections.sort(list, (o1, o2) -> o1.getValue().compareTo(o2.getValue()));
+        for (Map.Entry<String, Integer> entry : list) {
+            sortedMap.put(entry.getKey(), entry.getValue());
+        }
+        System.out.println(sortedMap);
+    }
+    public static void sortStringByLength(List<String>words){
+        List<String>asc=words.stream()
+                .sorted(Comparator.comparingInt(String::length))
+                .collect(Collectors.toList());
+        System.out.println(asc);
+
+        List<String>desc=words.stream()
+                .sorted(Comparator.comparingInt(String::length).reversed())
+                .collect(Collectors.toList());
+
+        System.out.println(desc);
     }
 }
