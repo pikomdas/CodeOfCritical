@@ -5,6 +5,7 @@ import java.io.FileOutputStream;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.*;
+import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 public class RnD {
@@ -14,7 +15,10 @@ public class RnD {
 //        findDuplicate(new int[]{55, 5, 6, 55, 3, 6, 61, 9});
 //        sort(new int[]{55, 5, 6, 55, 3, 6, 61, 9});
 //        findDuplicate1(new Integer[]{55, 5, 6, 55, 3, 6, 61, 9});
-        findMaxMin(new Integer[]{43,44,211,3,5,44,5,6,1,5});
+//        findMaxMin(new Integer[]{43,44,211,3,5,44,5,6,1,5});
+//        findDuplicateHowManyTimes1(new String("partha sarathi das"));
+//        findDuplicateHowManyTimes(new String("partha sarathi das"));
+        removeConsonants(new String("partha sarathi das"));
     }
 
     public static int[] findDuplicate(int[] a) {
@@ -120,6 +124,25 @@ public class RnD {
 
     }
 
+    public static void findDuplicateHowManyTimes(String text){
+        List<Character> arr=new ArrayList<>();
+        char[] carr=text.toCharArray();
+        for(char c:carr){
+            arr.add(c);
+        }
+        Map<Character,Integer> counter=arr.stream()
+                .collect(Collectors.toMap(item->item,item->1,Integer::sum));
+        System.out.println(counter);
+    }
+    public static void findDuplicateHowManyTimes1(String text){
+        char [] arr=text.toCharArray();
+        Map<Character,Integer> count=new HashMap<>();
+        for(char c: arr){
+            count.put(c,count.getOrDefault(c,0)+1);
+        }
+        System.out.println(count);
+    }
+
     public static void findMaxMin(Integer[] a) {
         int max = Integer.MAX_VALUE,min= Integer.MIN_VALUE;
         for (int i = 0; i <= a.length-1; i++) {
@@ -136,4 +159,12 @@ public class RnD {
         System.out.println("max "+Collections.max(ll) +" min "+Collections.min(ll));
     }
 
+    public static void removeConsonants(String text){
+        String ss=text.replaceAll("[AEIOUaeiou]", "");
+        System.out.println(ss);
+        String vv=text.replaceAll("[^AEIOUaeiou]", "");
+        System.out.println(vv);
+    }
+
 }
+
