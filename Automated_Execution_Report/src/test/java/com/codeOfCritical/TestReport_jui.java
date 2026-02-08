@@ -19,14 +19,14 @@ public class TestReport_jui extends TestData
 {
     public static void main(String[] a) throws IOException, InterruptedException
     {
-        Thread t1 = new Thread(() ->
+        /*Thread t1 = new Thread(() ->
         {
             DataCollectorMultipleTime dc = null;
             try
             {
 //                System.out.println(exp);
                 dc = new DataCollectorMultipleTime("6e057dt99ae33t", "HealthCheck",
-                        new PageLevelData("test scenario_1", "P1", "C1", 22.2, 22.3, "passed"));
+                        SCENARIO_ID.get(), new PageLevelData("test scenario_1", "P1", "C1", 22.2, 22.3, "passed"));
             }
             catch (Exception e)
             {
@@ -51,7 +51,7 @@ public class TestReport_jui extends TestData
             {
 //                System.out.println(exp);
                 dc = new DataCollectorMultipleTime("6e057et99ae33t", "HealthCheck",
-                        new PageLevelData("test scenario_2", "P2", "C2", 22.2, 22.2, "passed"));
+                        SCENARIO_ID.get(), new PageLevelData("test scenario_2", "P2", "C2", 22.2, 22.2, "passed"));
                 
             }
             catch (Exception e)
@@ -72,6 +72,6 @@ public class TestReport_jui extends TestData
         });
         
         t1.start();
-        t2.start();
+        t2.start();*/
     }
 }

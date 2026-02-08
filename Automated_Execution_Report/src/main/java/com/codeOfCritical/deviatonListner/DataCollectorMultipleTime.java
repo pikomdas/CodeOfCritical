@@ -38,10 +38,11 @@ public class DataCollectorMultipleTime {
      *
      * @param sessionId      will be provided manually from base
      * @param currentTagName will be provided manually from base
+     * @param s
      * @param pageLevelData  CucumberBeforeExecution.SCENARIO.get().getName(), positionName, columnName,
      *                       fromJSON, fromUI, passMessage
      */
-    public DataCollectorMultipleTime(String sessionId, String currentTagName, PageLevelData pageLevelData) {
+    public DataCollectorMultipleTime(String sessionId, String currentTagName, String s, PageLevelData pageLevelData) {
         this.sessionId.set(sessionId);
         this.currentTagName.set(currentTagName);
         DataCollectorMultipleTime.pageLevelData.set(pageLevelData);
