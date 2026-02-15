@@ -1,5 +1,6 @@
 package com.linkedin.Browser;
 
+import io.github.bonigarcia.wdm.WebDriverManager;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.WebDriver;
@@ -73,8 +74,9 @@ public abstract class BrowserConfig {
 			{
 				if (browserName.equalsIgnoreCase("chrome"))
 				{
-					String exePath = "./src/main/java/com/linkedin/BrowserDriver/chromedriver.exe";
-					System.setProperty("webdriver.chrome.driver", exePath);
+//					String exePath = "./src/main/java/com/linkedin/BrowserDriver/chromedriver.exe";
+//					System.setProperty("webdriver.chrome.driver", exePath);
+					WebDriverManager.chromedriver().setup();
 					ChromeOptions caps = new ChromeOptions();
 					caps.addArguments("--disable-web-security");
 					caps.addArguments("--no-proxy-server");
