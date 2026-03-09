@@ -72,7 +72,7 @@ public class LinkedIn_DDT extends browser
 
 		// Click on Job Apply on FEEDS page
 		feedPage fp = new feedPage(driver);
-		fp.informationAboutMyProfile();
+//		fp.informationAboutMyProfile();
 		fp.clickOnJobButton();
 		log.info(">>>>>>>>>>>>>>>>>>>>> Clicked on JOB link present on Feed page");
 		screenShot.takeScreenShotofCurrentpage();

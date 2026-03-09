@@ -15,7 +15,8 @@ public class RnD {
 //        System.out.println("===========================");
 //        findDuplicate1(arr);
 //        System.out.println("===========================");
-//        sort(arr);
+        sort(arri);
+        sortDesc(arri);
         /*writeFile(convertArrToString(findDuplicate(arri))
                 .concat("\n")
                 .concat(convertArrToString(sort(arri)))
@@ -35,7 +36,8 @@ public class RnD {
 //        longestWordFind(sentence);
 //        firstRepeatingCharacter("swiss");
 //         countVowels("Hello World");
-        findVowelsInEachWords(list);
+//        findVowelsInEachWords(list);
+//        findVowelsInEachWordsJava7(list);
     }
 
     public static int[] findDuplicate(int[] a) {
@@ -74,8 +76,26 @@ public class RnD {
             }
         }
         for (int x : a) {
-            System.out.println(x);
+            System.out.print(x+" ");
         }
+        System.out.println();
+        return a;
+    }
+
+    public static int[] sortDesc(int[] a) {
+        for (int i = 0; i < a.length; i++) {
+            for (int j = i + 1; j < a.length; j++) {
+                if (a[i] < a[j]) {
+                    int x = a[i];
+                    a[i] = a[j];
+                    a[j] = x;
+                }
+            }
+        }
+        for (int x : a) {
+            System.out.print(x+" ");
+        }
+        System.out.println();
         return a;
     }
 
@@ -144,71 +164,91 @@ public class RnD {
         }
         System.out.println(sortedMap);
     }
-    public static void sortStringByLength(List<String>words){
-        List<String>asc=words.stream()
+
+    public static void sortStringByLength(List<String> words) {
+        List<String> asc = words.stream()
                 .sorted(Comparator.comparingInt(String::length))
                 .collect(Collectors.toList());
         System.out.println(asc);
 
-        List<String>desc=words.stream()
+        List<String> desc = words.stream()
                 .sorted(Comparator.comparingInt(String::length).reversed())
                 .collect(Collectors.toList());
 
         System.out.println(desc);
     }
-    public static void removeVowelsFromAListOfString(){
+
+    public static void removeVowelsFromAListOfString() {
         List<String> words = Arrays.asList("Interview", "Preparation", "Java", "Streams");
-        List<String> withoutVowels=words.stream()
-                .map(word->word.replaceAll("[AEIOUaeiou]",""))
+        List<String> withoutVowels = words.stream()
+                .map(word -> word.replaceAll("[AEIOUaeiou]", ""))
                 .collect(Collectors.toList());
         withoutVowels.forEach(System.out::println);
     }
-    public static void longestWordFind(String sentence){
-        String longest=Arrays.stream(sentence.split(" "))
+
+    public static void longestWordFind(String sentence) {
+        String longest = Arrays.stream(sentence.split(" "))
                 .max(Comparator.comparingInt(String::length))
                 .orElse(" ");
         System.out.println(longest);
     }
-    public static void firstRepeatingCharacter(String text){
-        Map<Character,Integer>freqMap=new LinkedHashMap<>();
 
-        char[] arr=text.toCharArray();
+    public static void firstRepeatingCharacter(String text) {
+        Map<Character, Integer> freqMap = new LinkedHashMap<>();
 
-        for(char c:arr){
-            freqMap.put(c,freqMap.getOrDefault(c,0)+1);
+        char[] arr = text.toCharArray();
+
+        for (char c : arr) {
+            freqMap.put(c, freqMap.getOrDefault(c, 0) + 1);
         }
 
-        for(Map.Entry<Character,Integer>charMap:freqMap.entrySet()){
-            if(charMap.getValue()==1){
-                System.out.println("First non-repeating character "+charMap.getKey());
+        for (Map.Entry<Character, Integer> charMap : freqMap.entrySet()) {
+            if (charMap.getValue() == 1) {
+                System.out.println("First non-repeating character " + charMap.getKey());
                 break;
             }
         }
     }
-    public static void countVowels(String s){
-        int count=0;
-        String lowerCase=s.toLowerCase();
-        char[] arr=lowerCase.toCharArray();
-        for(int i=0;i<lowerCase.length();i++){
-            if(arr[i]=='a' || arr[i]=='e'||arr[i]=='i'||arr[i]=='o'||arr[i]=='u'){
+
+    public static void countVowels(String s) {
+        int count = 0;
+        String lowerCase = s.toLowerCase();
+        char[] arr = lowerCase.toCharArray();
+        for (int i = 0; i < lowerCase.length(); i++) {
+            if (arr[i] == 'a' || arr[i] == 'e' || arr[i] == 'i' || arr[i] == 'o' || arr[i] == 'u') {
                 count++;
             }
         }
-        System.out.println("Count of vowels "+count);
+        System.out.println("Count of vowels " + count);
 
-        long counter=s.toLowerCase()
+        long counter = s.toLowerCase()
                 .chars()
-                .filter(ch->"aeiou".indexOf(ch)!=-1)
+                .filter(ch -> "aeiou".indexOf(ch) != -1)
                 .count();
-        System.out.println("Count of vowels "+counter);
+        System.out.println("Count of vowels " + counter);
     }
 
-    public static void findVowelsInEachWords(List<String> arr){
+    public static void findVowelsInEachWords(List<String> arr) {
         //Map each words to its vowels count
-        Map<String,Long>vowelsCountMap=arr.stream()
-                .collect(Collectors.toMap(word->word,
-                        word->word.toLowerCase().chars().filter(ch->"aeiou".indexOf(ch)!=-1)
+        Map<String, Long> vowelsCountMap = arr.stream()
+                .collect(Collectors.toMap(word -> word,
+                        word -> word.toLowerCase().chars().filter(ch -> "aeiou".indexOf(ch) != -1)
                                 .count()));
         System.out.println(vowelsCountMap);
+    }
+
+    public static void findVowelsInEachWordsJava7(List<String> arr) {
+        Map<String, Integer> countVowels = new HashMap<>();
+        for (String s : arr) {
+            int count = 0;
+            char[] ch = s.toLowerCase().toCharArray();
+            for (char c : ch) {
+                if ("aeiou".indexOf(c) != -1) {
+                    count++;
+                }
+            }
+            countVowels.put(s, count);
+        }
+        System.out.println(countVowels);
     }
 }

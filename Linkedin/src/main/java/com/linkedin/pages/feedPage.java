@@ -24,7 +24,7 @@ public class feedPage extends browser
 
 	@FindBy(css = "span[id*='mynetwork-tab-icon']")
 	private WebElement myNetworkTabIcon;
-	@FindBy(css = "span[id*='jobs-tab-icon']")
+	@FindBy(xpath = "//*[@id='root']/div[2]/div[2]/div[1]/header/div/div/div/div[3]/div/div[2]/div/nav/ul/li[3]/button/span[2]/span")
 	private WebElement jobSearchButtonOnFeedpage;
 	@FindBy(css = "span[class*='nav-item__badge-count']")
 	private WebElement notificationCount;

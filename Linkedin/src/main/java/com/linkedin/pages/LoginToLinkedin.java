@@ -6,6 +6,7 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -19,9 +20,9 @@ public class LoginToLinkedin extends browser
 	private WebElement loginEmailId;
 	@FindBy(css = "input[id*='password']")
 	private WebElement password;
-	@FindBy(xpath = "//*[text()='Sign in']")
+	@FindBy(xpath = "//*[@id='organic-div']/form/div[4]/button")
 	private WebElement logInBtn;
-	@FindBy(xpath = "//*[@class='nav__button-secondary' and text()='Sign in']")
+	@FindBy(xpath = "/html/body/div[2]/nav/div/a[1]")
 	private WebElement signIn;
 
 	public LoginToLinkedin(final WebDriver driver)
@@ -67,7 +68,9 @@ public class LoginToLinkedin extends browser
 		SendKeysTo(getPassword(), strPasword);
 		log.info("Password is  thrown");
 		// Click on Login Button
-		ClickOnElement(getLogInBtn());
+//		ClickOnElement(getLogInBtn());
+		Actions actions=new Actions(driver);
+		actions.moveToElement(getLogInBtn()).click().perform();
 
 		// Waiting to complete the page loading
 		CheckPageLoadingState.waitToLoadPage();

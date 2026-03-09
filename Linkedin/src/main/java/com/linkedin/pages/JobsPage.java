@@ -28,60 +28,23 @@ public class JobsPage extends browser
 
 	WebDriverWait w1 = new WebDriverWait(driver, 10);
 
-	@FindBy(xpath = "//input[starts-with(@id,'jobs-search-box-keyword-')]")
+	@FindBy(xpath = "//*[@id=':r2d:']")
 	WebElement jobSeaarchBox1;
 	@FindBy(xpath = "//input[starts-with(@id,'jobs-search-box-location-')]")
 	WebElement location1;
 	@FindBy(xpath = "//div[contains(@id,'ember')]/button[1][text()='Search']")
 	WebElement jobSearchButtonOnJobpage;
 
-	/**
-	 * @return the location
-	 */
-	public final WebElement getLocation()
-	{
-		return location1;
-	}
-
-	/**
-	 * @param location the location to set
-	 */
-	public final void setLocation(final WebElement location)
-	{
-		this.location1 = location;
-	}
-
-	/**
-	 * @return the jobSeaarchBox
-	 */
-	public final WebElement getJobSeaarchBox()
-	{
+	public WebElement getJobSeaarchBox() {
 		return jobSeaarchBox1;
 	}
 
-	/**
-	 * @param jobSeaarchBox the jobSeaarchBox to set
-	 */
-	public final void setJobSeaarchBox(final WebElement jobSeaarchBox)
-	{
-		this.jobSeaarchBox1 = jobSeaarchBox;
+	public WebElement getLocation1() {
+		return location1;
 	}
 
-	/**
-	 * @return the jobSearchButtonOnJobpage
-	 */
-
-	public final WebElement getJobSearchButtonOnJobpage()
-	{
+	public WebElement getJobSearchButtonOnJobpage() {
 		return jobSearchButtonOnJobpage;
-	}
-
-	/**
-	 * @param jobSearchButtonOnJobpage the jobSearchButtonOnJobpage to set
-	 */
-	public final void setJobSearchButtonOnJobpage(final WebElement jobSearchButtonOnJobpage)
-	{
-		this.jobSearchButtonOnJobpage = jobSearchButtonOnJobpage;
 	}
 
 	public void jobSearch() throws IOException, InterruptedException
@@ -89,13 +52,13 @@ public class JobsPage extends browser
 		waitToLoadPage();
 		
 		log.info("INSERTING JOB TEXT TO SEARCH");
-		w1.until(ExpectedConditions.visibilityOf(getJobSeaarchBox()));
+		w1.until(ExpectedConditions.visibilityOf(getJobSeaarchBox())).click();
 		String currentTitle = driver.getTitle();
 		log.info("Current page name is : " + currentTitle);
 		// Sending Job search text
 		SendKeysTo(getJobSeaarchBox(), getMyProperty.readmyFile("jobsearch1"));
 		// Sending Location
-		SendKeysTo(getLocation(), getMyProperty.readmyFile("location1"));
+//		SendKeysTo(getLocation(), getMyProperty.readmyFile("location1"));
 		// Clicking on job search button
 		getJobSearchButtonOnJobpage().click();
 		log.info("Clicked on JOB SEARCH BUTTON");
